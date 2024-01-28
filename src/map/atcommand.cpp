@@ -11744,6 +11744,74 @@ ACMD_FUNC(whosell) {
 	return 0;
 }
 
+
+static int buildin_itemmap_sub(block_list *bl, va_list ap) {
+	int nameid, amount, bound;
+
+	nameid = va_arg(ap, int);
+	amount = va_arg(ap, int);
+	bound = va_arg(ap, int);
+
+	struct item item_tmp = {};
+
+	item_tmp.nameid = nameid;
+	item_tmp.identify = 1;
+	item_tmp.bound = bound;
+
+	pc_additem((map_session_data *)bl, &item_tmp, amount, LOG_TYPE_COMMAND);
+	return 0;
+}
+
+/*==========================================
+ * @itemmap command (usage: @itemmap <itemid> <quantity>)
+ *------------------------------------------*/
+ACMD_FUNC(itemmap)
+{
+	char item_name[100];
+	int number = 0, bound = BOUND_NONE;
+	char flag = 0;
+
+	nullpo_retr(-1, sd);
+	memset(item_name, '\0', sizeof(item_name));
+
+	parent_cmd = atcommand_alias_db.checkAlias(command+1);
+
+	if (!strcmpi(parent_cmd,"itemmapbound")) {
+		if (!message || !*message || (
+			sscanf(message, "\"%99[^\"]\" %11d %11d", item_name, &number, &bound) < 3 &&
+			sscanf(message, "%99s %11d %11d", item_name, &number, &bound) < 3))
+		{
+			clif_displaymessage(fd, "(usage: @itemmap <itemid> <quantity>)"); // Please enter an item name or ID (usage: @item <item name/ID> <quantity> <bound_type>).
+			clif_displaymessage(fd, msg_txt(sd,298)); // Invalid bound type
+			return -1;
+		}
+		if( bound <= BOUND_NONE || bound >= BOUND_MAX ) {
+			clif_displaymessage(fd, msg_txt(sd,298)); // Invalid bound type
+			return -1;
+		}
+	} else if (!message || !*message || (
+		sscanf(message, "\"%99[^\"]\" %11d", item_name, &number) < 1 &&
+		sscanf(message, "%99s %11d", item_name, &number) < 1
+	)) {
+		clif_displaymessage(fd, msg_txt(sd,983)); // Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
+		return -1;
+	}
+
+	std::shared_ptr<item_data> item_data = item_db.search_aegisname(item_name);
+
+	if( item_data == nullptr )
+		item_data = item_db.find(strtoul(item_name,nullptr,10));
+
+	if (item_data == nullptr)
+		return -1;
+
+	map_foreachinmap(buildin_itemmap_sub, sd->bl.m, BL_PC,item_data->nameid, number, bound);
+	return 0;
+}
+
+
+
+
 #include <custom/atcommand.inc>
 
 /**
@@ -12077,6 +12145,8 @@ void atcommand_basecommands(void) {
 		ACMD_DEFR(roulette, ATCMD_NOCONSOLE|ATCMD_NOAUTOTRADE),
 		ACMD_DEF(setcard),
 		ACMD_DEF(whosell),
+		ACMD_DEF(itemmap),
+		ACMD_DEF2("itemmapbound", itemmap),
 	};
 	AtCommandInfo* atcommand;
 	int i;
