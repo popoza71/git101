@@ -1,0 +1,180 @@
+/*
+=================== TERMS OF SERVICES. ===================
+1. ALL RIGHT RESERVED RE-SELLER OR SHARE SCRIPT TO PUBLISH.
+2. BUT YOU RE-SELLER OR SHARE SCRIPT WITH OUT UNAUTHORIZRD
+   I WILL ALL CANCEL MY SUPPORT FOR YOU.
+3. MAINTENANCE SCRIPTS WILL BE FREE SERVICES.
+4. I WILL NOT KEEP ANY INFORMATIONS FROMS YOU SERVER THAT
+   YOU SEND FOR ME.
+5. I HOPE YOU WILL ALL ACCEPT TERMS OF SERVICES.
+==========================================================
+Script. Hourly Point																				 
+Create By. [PTY-Studio]
+Translator By. PTY Studio
+Bug Report. PUP KUAANAN [ FB ]																					 
+Contact Us. PUP KUAANAN [ FB ]																					 																				 
+==========================================================
+*/
+/*-	cashshop	CashShop_Cashcoin	FAKE_NPC,20001:10;
+
+-	script	NPC_Shop_cashcoin	-1,{
+	callshop "CashShop_Cashcoin",0;
+
+end;
+
+OnInit:
+	// =============== Configure ==============================
+		set $@cc_WAITINGROOM, 1;							// เปิดแสดงชื่อห้องบนหัว ( 0 = ปิด / 1 = เปิด )
+		set $@cc_WAITINGROOM$, " แลก Cash Coin";					// ชื่อห้องบนหัว
+	// ========================================================
+	
+	
+	sleep 1000;
+		if($@cc_WAITINGROOM) waitingroom "" + $@cc_WAITINGROOM$,0;
+end;
+
+}
+
+morocc,143,80,3	duplicate(NPC_Shop_cashcoin)	Cash Coin Trader	478
+new_1-1,66,126,4	duplicate(NPC_Shop_cashcoin)	Cash Coin Trader#1	478
+*/
+
+
+-	shop	F_shop_all	-1,40325:-1,662:-1,523:-1,1750:-1,1751:-1,1752:-1,578:1500,611:-1,501:-1,502:-1,503:-1,504:-1,506:-1,645:-1,656:-1,657:-1,716:-1,717:-1,525:-1,601:-1,602:-1,1065:-1
+
+-	script	NPC_Shop	-1,{
+	
+	callshop "F_shop_all",0;
+	
+end;
+
+}
+
+-	script	NPC_Kafra2	FAKE_NPC,{
+	cutin "kafra_05",2;
+	callfunc "F_KafSet";
+	mes "[ พนักงาน Kafra ]";
+	mes "Kafra Corporation";
+	mes "ทำงานอยู่เสมอเพื่อให้บริการกับคุณ";
+	mes "เพื่อให้คุณได้ใช้บริการที่สะดวกสบาย";
+	mes "มีอะไรที่ฉันช่วยเหลือคุณได้บ้าง ?";
+	callfunc "F_Kafra",5,0,0,60,930;
+	getmapxy .@mapname$,.@mapx,.@mapy,BL_PC,strcharinfo(0);
+	savepoint .@mapname$,.@mapx,.@mapy;
+	callfunc "F_KafEnd",0,1,"ในเมือง Morroc";
+}
+
+
+//NPC 0
+morocc,147,102,5	duplicate(NPC_Shop)	Shop#add_0	93
+
+
+
+//NPC 1
+morocc,182,32,3	duplicate(BuffsSupports)	Maggi#add_1	612
+morocc,182,29,3	duplicate(NPC_Kafra2)	Kafra Employee#add_1	113
+morocc,182,26,3	duplicate(NPC_Shop)	Shop#add_1	97
+//NPC 2
+morocc,104,55,4	duplicate(BuffsSupports)	Maggi#add_2	612
+morocc,110,55,3	duplicate(NPC_Kafra2)	Kafra Employee#add_2	113
+morocc,107,55,5	duplicate(NPC_Shop)	Shop#add_2	97
+//NPC 3
+morocc,40,78,4	duplicate(BuffsSupports)	Maggi#add_3	612
+morocc,43,78,4	duplicate(NPC_Kafra2)	Kafra Employee#add_3	113
+morocc,46,78,4	duplicate(NPC_Shop)	Shop#add_3	97
+//NPC 4
+morocc,91,101,4	duplicate(BuffsSupports)	Maggi#add_4	612
+morocc,94,101,4	duplicate(NPC_Kafra2)	Kafra Employee#add_4	113
+morocc,88,101,4	duplicate(NPC_Shop)	Shop#add_4	97
+//NPC 5
+morocc,204,110,4	duplicate(BuffsSupports)	Maggi#add_5	612
+morocc,207,110,4	duplicate(NPC_Kafra2)	Kafra Employee#add_5	113
+morocc,210,110,4	duplicate(NPC_Shop)	Shop#add_5	97
+//NPC 6
+morocc,246,37,4	duplicate(BuffsSupports)	Maggi#add_6	612
+morocc,243,37,3	duplicate(NPC_Kafra2)	Kafra Employee#add_6	113
+morocc,240,37,3	duplicate(NPC_Shop)	Shop#add_6	97
+//NPC 7
+morocc,268,144,4	duplicate(BuffsSupports)	Maggi#add_7	612
+morocc,272,143,3	duplicate(NPC_Kafra2)	Kafra Employee#add_7	113
+morocc,272,140,3	duplicate(NPC_Shop)	Shop#add_7	97
+//NPC 8
+morocc,288,214,4	duplicate(BuffsSupports)	Maggi#add_8	612
+morocc,284,214,4	duplicate(NPC_Shop)	Shop#add_8	97
+//NPC 9
+morocc,244,274,4	duplicate(BuffsSupports)	Maggi#add_9	612
+morocc,240,274,3	duplicate(NPC_Kafra2)	Kafra Employee#add_9	113
+morocc,248,274,5	duplicate(NPC_Shop)	Shop#add_9	97
+//NPC 10
+morocc,145,270,5	duplicate(NPC_Shop)	Shop#add_10	97
+morocc,148,270,4	duplicate(BuffsSupports)	Maggi#add_10	612
+//NPC 11
+morocc,107,290,4	duplicate(BuffsSupports)	Maggi#add_11	612
+morocc,110,290,4	duplicate(NPC_Kafra2)	Kafra Employee#add_11	113
+morocc,104,290,4	duplicate(NPC_Shop)	Shop#add_11	97
+//NPC 12
+morocc,85,229,5	duplicate(BuffsSupports)	Maggi#add_12	612
+morocc,87,231,5	duplicate(NPC_Kafra2)	Kafra Employee#add_12	113
+morocc,83,227,5	duplicate(NPC_Shop)	Shop#add_12	97
+//NPC 13
+morocc,230,248,4	duplicate(BuffsSupports)	Maggi#add_13	612
+morocc,227,248,4	duplicate(NPC_Kafra2)	Kafra Employee#add_13	113
+morocc,233,248,4	duplicate(NPC_Shop)	Shop#add_13	97
+
+
+//NPC 14
+
+//NPC 15
+morocc,81,177,4	duplicate(BuffsSupports)	Maggi#add_15	612
+morocc,84,177,4	duplicate(NPC_Kafra2)	Kafra Employee#add_15	113
+morocc,87,177,4	duplicate(NPC_Shop)	Shop#add_15	97
+
+//NPC 16
+morocc,32,37,4	duplicate(BuffsSupports)	Maggi#add_16	612
+morocc,33,34,4	duplicate(NPC_Kafra2)	Kafra Employee#add_16	113
+morocc,36,32,4	duplicate(NPC_Shop)	Shop#add_16	97
+
+//NPC 17
+morocc,226,161,5	duplicate(BuffsSupports)	Maggi#add_17	612
+morocc,229,161,5	duplicate(NPC_Kafra2)	Kafra Employee#add_17	113
+morocc,232,161,4	duplicate(NPC_Shop)	Shop#add_17	97
+
+//NPC 18
+morocc,155,161,5	duplicate(BuffsSupports)	Maggi#add_18	612
+morocc,158,161,5	duplicate(NPC_Kafra2)	Kafra Employee#add_18	113
+morocc,161,161,4	duplicate(NPC_Shop)	Shop#add_18	97
+
+
+//NPC 19
+morocc,249,102,5	duplicate(BuffsSupports)	Maggi#add_19	612
+morocc,249,99,5	duplicate(NPC_Kafra2)	Kafra Employee#add_19	113
+morocc,249,96,5	duplicate(NPC_Shop)	Shop#add_19	97
+
+
+//NPC 20
+moc_ruins,169,155,5	duplicate(BuffsSupports)	Maggi#add_20	612
+moc_ruins,172,155,5	duplicate(NPC_Kafra2)	Kafra Employee#add_20	113
+moc_ruins,175,155,4	duplicate(NPC_Shop)	Shop#add_20	97
+
+
+//NPC 21
+moc_ruins,142,165,5	duplicate(BuffsSupports)	Maggi#add_21	612
+moc_ruins,145,165,5	duplicate(NPC_Kafra2)	Kafra Employee#add_21	113
+moc_ruins,148,165,4	duplicate(NPC_Shop)	Shop#add_21	97
+
+
+//NPC 22
+ayothaya,212,172,5	duplicate(BuffsSupports)	Maggi#22	612
+ayothaya,222,179,4	duplicate(NPC_Kafra2)	Kafra Employee#add_22	113
+ayothaya,212,175,4	duplicate(NPC_Shop)	Shop#22	97
+
+
+//NPC 23
+niflheim,190,204,5	duplicate(BuffsSupports)	Maggi#23	612
+niflheim,193,204,4	duplicate(NPC_Kafra2)	Kafra Employee#add_23	113
+niflheim,196,204,4	duplicate(NPC_Shop)	Shop#23	97
+
+
+//NPC 24
+morocc,39,174,5	duplicate(BuffsSupports)	Maggi#add_24	612
+morocc,42,174,4	duplicate(NPC_Shop)	Shop#24	97

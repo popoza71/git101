@@ -1,0 +1,112 @@
+//===== rAthena Script ======================================= 
+//= Quest NPCs related to Aldebaran 
+//===== By: ================================================== 
+//= rAthena Dev Team
+//===== Current Version: ===================================== 
+//= 1.3
+//===== Compatible With: ===================================== 
+//= rAthena Project; 7.15 +
+//===== Description: ========================================= 
+//= 'Doctor Band', 'Feather Bonnet', 'Opera Masque', 'Sakkat Hat' Quests.
+//===== Additional Comments: ================================= 
+//= Fully working
+//= 1.1 Fixed Doctor Band items [Lupus]
+//= 1.2 Removed Duplicates [Silent]
+//= 1.3 Updated headgear NPC. [L0ne_W0lf]
+//============================================================ 
+
+// 'Doctor Band', 'Feather Bonnet', 'Opera Masque', 'Sakkat Hat' Quest
+//============================================================
+aldeba_in,152,166,4	script	Trader#01	86,{
+	mes "[Trader]";
+	mes "ใครคือผู้ชายคนนี้?";
+	mes "ฉัน 'Trader?' ลึกซึ้งและหล่อหลอมนี้?";
+	next;
+	mes "[Trader]";
+	mes "เดินทางไปทั่วทวีป Midgard พร้อมกับหมวกทุกอย่าง? ไม่มีใครทราบ...";
+	next;
+	mes "[Trader]";
+	mes "เพื่อวัตถุประสงค์ใด ฉันเก็บและแลกเปลี่ยนหมวกเหล่านี้จากทั่วโลก? เลือกหมวก, เข้าใกล้เพื่อแกะสลักปริศนา...";
+	next;
+	mes " (1) ^3355FFDoctor Band^000000:";
+	mes "1 Red Bandana + 50 Irons + 1 Cracked Diamond + 3500 Zeny";
+	mes " (2)^3355FFFeather Bonnet^000000:";
+	mes "1 Romantic Gent + 300 Feather of Birds + 500 Zeny";
+	mes " (3) ^3355FFPhantom of Opera^000000:";
+	mes "20 Iron + 1 Singing Plant + 5000 Zeny ";
+	mes " (4) ^3355FFSakkat^000000:";
+	mes "120 Trunks + 10000 Zeny ";
+	next;
+	switch(select(" Doctor Band : Feather Bonnet : Phantom of Opera : Sakkat ")) {
+	case 1:
+		if ((countitem(2275) > 0) && (countitem(998) > 49) && (countitem(733) > 0) && (Zeny > 3499)) {
+			delitem 2275,1; //Red_Bandana
+			delitem 998,50; //Iron
+			delitem 733,1; //Crystal_Jewel___
+			set Zeny, Zeny-3500;
+			mes "[Trader]";
+			mes "ฮม! คุณไม่มีใบอนุญาตทางการแพทย์ใช่ไหม? มันสบายใจ, ฉันได้ยินเรื่องของหมอที่ถูกห้ามทำการแพทย์! แต่... น่าจะเป็นหนังสือการ์ตูน.";
+			next;
+			mes "[Trader]";
+			mes "โอ้ อย่ากังวล. เพียงแค่อย่าให้จับได้เท่านั้น.";
+			getitem 2273,1; //Doctor_Cap
+			close;
+		}
+		else {
+			mes "[Trader]";
+			mes "คุณคนนี้~";
+			mes "ตรวจสอบข้อกำหนดอีกครั้ง.";
+			mes "แม้ว่าคุณจะดูไม่เหมือนคนโง่ๆ แต่มาทำที่จริงๆ เถอะ.";
+			close;
+		}
+	case 2:
+		if ((countitem(2247) > 0) && (countitem(916) > 299) && (Zeny > 499)) {
+			delitem 2247,1; //Oldman's_Romance
+			delitem 916,300; //Feather_Of_Birds
+			set Zeny, Zeny-500;
+			mes "[Trader]";
+			mes "โอ๊ะ~! คุณมีรสนิยมทางแฟชั่นที่ดี. ฉันรู้ว่าคุณต้องมีเวลาที่ยากลำบากในการเก็บของนี้, แต่หมวกนี้คือความคุ้มค่า. ใช้ไปเถอะ. ทุกอย่างที่คุณต้องการตอนนี้คือเสื้อคลุมขนและไม้เท้า!";
+			getitem 5018,1; //Feather_Bonnet
+			close;
+		}
+		else {
+			mes "[Trader]";
+			mes "คุณคนนี้~";
+			mes "ไปตรวจสอบข้อกำหนดของฉันอีกครั้ง. แม้ว่าคุณจะดูไม่เหมือนคนโง่ๆ แต่มาทำที่จริงๆ เถอะ.";
+			close;
+		}
+	case 3:
+		if ((countitem(998) > 19) && (countitem(707) > 0) && (Zeny > 4999)){ //Iron Singing_Plant 
+			delitem 998,20; //Iron
+			delitem 707,1; //Singing_Plant
+			set Zeny, Zeny-5000;
+			mes "[Trader]";
+			mes "นี่หรือไม่? มันดูน่ากลัวนิดหน่อย, แม้ว่ามันจะมีความโรแมนติก. คุณคิดยังไง? คุณชอบมันไหม? โอเค, เอามันไปเถอะ, มันเป็นของคุณ!";
+			getitem 2281,1; //Phantom_Of_Opera
+			close;
+		}
+		else {
+			mes "[Trader]";
+			mes "คุณที่นี้~";
+			mes "ไปตรวจสอบข้อกำหนดของฉันอีกครั้ง. ^3355FFPhantom of Opera^000000 ไม่ได้ง่ายมาก. มาทำที่จริงๆ เถอะ.";
+			close;
+		}
+	case 4:
+		if ((countitem(1019) > 119) && (Zeny > 9999)){ //Wooden_Block 
+			delitem 1019,120; //Wooden_Block
+			set Zeny, Zeny-10000;
+			mes "[Trader]";
+			mes "ถ้าคุณมีโอกาสไปเยี่ยมหมู่บ้าน Uplander, Payon กรุณาไปพบช่างที่ทำหมวก Sakkat.";
+			next;
+			mes "[Trader]";
+			mes "เขาไม่?ขาย Sakkat ให้กับ Trader คนอื่นนอกจากฉัน, เนื่องจากฉันเท่านั้นที่สามารถรู้จักคุณภาพได้. เนื่องจากความหายาก, Sakkat กลายเป็นผลิตภัณฑ์ที่หาได้ยากและพิเศษมาก. โอเค! เอามันไปเถอะ, มันเป็นของคุณ!";
+			getitem 2280,1; //Sahkkat
+			close;
+		}
+		else {
+			mes "[Trader]";
+			mes "โง่~ ตรวจสอบข้อกำหนดของฉันอีกครั้ง. มาทำที่จริงๆ เถอะนะ. คุณดูไม่ได้เหมือนคนโง่, มาทำที่จริงๆเถอะนะ~";
+			close;
+		}
+	}
+}

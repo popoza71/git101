@@ -1,0 +1,253 @@
+-	shop	Online Spin	-1,909:-1
+
+
+prontera,0,0,0	script	Goldpoint Manager::GOLDPCCAFE	1_F_GYPSY,{
+//morocc,148,86,5	script	Online Spin#Moc	563,{
+	
+	set .@npc$,"[ "+strnpcinfo(1)+" ]";
+	
+	if( !Event_Mes1 ) {
+		mes .@npc$;
+		mes "กรุณาโหลด Patch Game";
+		mes "ก่อนหมุนสปิน ขอบคุณค่ะ";
+		mes "เพื่อได้เห็นรูปภาพใหม่ที่เราอัพเดท";
+		mes "หากโหลดแล้ว กดเข้าใหม่อีกครั้งค่ะ";
+		set Event_Mes1,1;
+		close;
+	}
+	if( !Event_Mes2 ) {
+		mes .@npc$;
+		mes "โหลด Patch Game";
+		mes "แล้วใช่หรือไม่ ????";
+		mes "หากโหลดแล้ว กดเข้าใหม่อีกครั้งค่ะ";
+		set Event_Mes2,1;
+		close;
+	}
+	if( !Event_Mes3 ) {
+		mes .@npc$;
+		mes "มั่นใจว่าโหลด Patch Game";
+		mes "นะค่ะ ไม่งั้นจะไม่เห็นรูปภาพ";
+		mes "หากโหลดแล้ว กดเข้าใหม่อีกครั้งค่ะ";
+		set Event_Mes3,1;
+		close;
+	}
+	mes .@npc$;
+	mes "คุณมีแต้มออนไลน์ ^FF0000"+ callfunc("F_InsertComma",Goldpc_Points) +"^000000 Point.";
+	mes "คุณต้องการแลกของรางวัลหรือไม่ ?";
+	next;
+	if (select("~ ใช่,จัดไปเลย", "~ ข้าแค่ผ่านมา !") == 2) goto L_Cancel;
+	mes .@npc$;
+	mes "ยินดีต้อนรับเข้าสู่กิจกรรม";
+	mes "วงล้อ เสี่ยงโชค !!";
+	mes "สุ่มรางวัล โอกาสได้รับไอเทมแรร์";
+	mes "โดยต้องมีแต้มออนไลน์";
+	mes "- ^FF0000"+$@PS_req_point1 +"^000000 แต้มออนไลน์ = หมุนได้ ^FF00001^000000 ครั้ง";
+	next;
+	switch(select("~ ตัวอย่างไอเทมกิจกรรม:~ หมุนวงล้อ เสี่ยงโชค ^0000FF"+$@PS_req_point1 +"^000000 Point:~ ยกเลิก"))
+	{
+		
+		case 1:
+			close2;
+			npcshopattach .SHOPEX_X$, 1;
+			callshop .SHOPEX_X$, 1;
+		end;
+		
+		case 2:
+			if (Goldpc_Points < $@PS_req_point1) {
+				mes .@npc$;
+				mes "ฉันต้องการแต้มออนไลน์";
+				mes "- ^FF0000"+ callfunc("F_InsertComma",Goldpc_Points) +"^000000 / "+$@PS_req_point1+ " Points";
+				mes " ";
+				mes "ถึงจะสามารถกดสปินได้ค่ะ !";
+				close;
+			}
+			mes .@npc$;
+			mes "คุณยืนยันที่จะหมุนวงล้อ";
+			mes "ด้วยแต้มเวลาออนไลน์ใช่หรือไม่";
+			mes "^FF0000*หมายเหตุ : เมื่อกดยืนยัน ห้ามสลับเปลี่ยนหน้าจอใดๆ โปรดรอให้กิจกรรมหมุนเสร็จสิ้น เข้าใจหรือไม่ ?^000000";
+			switch(select("~ ยืนยัน:~ ยกเลิก")) {
+				case 1:
+					//announce "Online Spin : คุณ " + strcharinfo(0) + " ได้เริ่มหมุนวงล้อ เสี่ยงโชค ด้วย แต้ม Online Point แล้วตอนนี้ ขอให้โชคดี",bc_blue|bc_all;
+					Goldpc_Points -= $@PS_req_point1;
+					close2;
+					sleep2 500;
+					doevent "GASHA_IMG#NPC::OnBonuS";
+				end;
+				case 2:
+				end;
+			}
+		case 3:
+		end;
+	}	
+	
+	
+	L_Cancel:
+	mes .@npc$;
+	mes "โอกาสหน้าเชิญใหม่";
+	close2;
+	cutin "", 255;
+	end;
+
+	
+	
+	
+	OnBuyItem:
+		end;
+		
+	OnInit:
+		// Logs System
+		query_sql "CREATE TABLE IF NOT EXISTS `spin_reward_status` (`id` int(11) NOT NULL AUTO_INCREMENT,`char_id` int(11) NOT NULL DEFAULT '0',`name` varchar(24) NOT NULL DEFAULT 'NULL',`spin_item` varchar(24) NOT NULL DEFAULT 'NULL',`item_id` int(11) NOT NULL DEFAULT '0',`amount` int(5) NOT NULL,`date` datetime NOT NULL,PRIMARY KEY (`id`) USING BTREE) ENGINE=MyISAM" ;
+
+
+
+		// Online Point
+		set $@PS_req_point1,24;
+		
+		// ชื่อร้านที่จะแสดง
+		set .SHOPEX_X$, "Online Spin";
+
+		// ตั้งค่าตัวอย่างโชว์ไอเท็ม
+		setarray .SHOP_X[0], 5388,11503,7776,25793,30003,11503,40504,40322,30003,41014,40508,30003,5286,40335,30003,11504,30003,41014,40508,40322,25793,30003,40505,11504;
+
+		// Don't Touch
+		set .SHOPS_X, getarraysize(.SHOP_X);
+		npcshopdelitem .SHOPEX_X$, 909;
+		for (set .@i, 0; .@i < .SHOPS_X; set .@i, .@i + 1)
+			npcshopadditem .SHOPEX_X$, .SHOP_X[.@i], 0;
+		
+		/*
+		// =============== Configure ==============================
+		set $@ESPIN_WAITINGROOM, 1;							// เปิดแสดงชื่อห้องบนหัว ( 0 = ปิด / 1 = เปิด )
+		set $@ESPIN_WAITINGROOM$, " วงล้อออนไลน์สปิน";					// ชื่อห้องบนหัว
+		// ========================================================
+	
+		sleep 1000;
+			if($@ESPIN_WAITINGROOM) waitingroom "" + $@ESPIN_WAITINGROOM$,0;
+		*/
+	end;
+}
+
+function	script	GASHA_IMG_NextSlot	{
+	set .@img,getarg(0) + 1;
+	
+	if (.@img >= $@GASHA_IMG_size_db[0])
+		set .@img,0;
+		
+	cutin $@GASHA_IMG_filename$[.@img],4;
+	sleep2 getarg(1);
+	
+	return .@img;
+}
+
+-	script	GASHA_IMG#NPC	FAKE_NPC,{
+
+
+OnBonuS:
+	pcblockmove getcharid(3),1;
+	set .@img,0;
+	set .@round,rand(1,2);
+	set .@speed,10;
+	for (set .@i,0; .@i < .@round; set .@i,.@i+1)
+	{
+		set .@mini_round,rand($@GASHA_IMG_size_db[0]/2, $@GASHA_IMG_size_db[0]);
+		for (set .@j,0; .@j < .@mini_round; set .@j,.@j+1)
+		set .@img,callfunc("GASHA_IMG_NextSlot", .@img, .@speed);
+		set .@speed,.@speed+10;
+	}
+	
+	set .@round,rand($@GASHA_IMG_size_db[0]/2, $@GASHA_IMG_size_db[0]);
+	
+	for (set .@i,0; .@i < .@round; set .@i,.@i+1)
+	{
+		set .@img,callfunc("GASHA_IMG_NextSlot", .@img, .@speed);
+		set .@speed,.@speed+50;
+	}
+	set .@min,($@GASHA_IMG_size_db[0]/2)/2;
+	set .@round,rand(.@min, $@GASHA_IMG_size_db[0]/2);
+	set .@round_per_50,.@round/2;
+	set .@round_per_25,.@round_per_50/2;
+
+	for (set .@i,0; .@i < .@round; set .@i,.@i+1)
+	{
+		set .@img,callfunc("GASHA_IMG_NextSlot", .@img, .@speed);
+
+		if (.@i < .@round_per_25)
+			set .@speed,.@speed+25;
+		else if (.@i < .@round_per_50)
+			set .@speed,.@speed+100;
+		else
+			set .@speed,.@speed+250;
+		
+		if(.@i == .@round-1 && .PERX[.@img] < rand(100)){
+			set .@i,.@i-1;
+		}
+	}
+	
+	pcblockmove getcharid(3),0;
+	
+	while(1) {
+		set .@id, .SHOP[.@img];
+		set .@count, .ITEM[.@img];
+		set .@px, .PERX[.@img];
+		if (.@px == 0) {
+			mes "คุณไม่ได้รับไอเท็ม เสียใจด้วย";
+			end;
+		}
+		if (rand(100) > .@px)
+			continue;
+		
+		
+		getitem .@id, .@count;
+		
+		//announce "[ Online Spin : คุณ "+strcharinfo(0)+" ได้รับไอเท็ม "+getitemname(.@id)+" จำนวน "+.@count+" ea. โอกาสได้รับ "+.PERX[.@img]+"% ]",bc_blue|bc_all;
+		announce "[ Online Spin ]: คุณ "+strcharinfo(0)+" ได้รับไอเท็ม "+getitemname(.@id)+" จำนวน "+.@count+" ea. ",bc_blue|bc_all;
+
+		query_sql ("INSERT INTO `spin_reward_status`(`char_id`,`name`, `spin_item`, `item_id` , `amount`,`date`) VALUES('"+ getcharid(0) +"','" + strcharinfo(0) + "', 'Online Bonus', '"+.@id+"', '"+.@count+"' ,'"+gettimestr("%Y-%m-%d %H:%M:%S",21)+"')");
+
+		
+		
+		break;
+	}
+	mes "[ Online Spin ]";
+	mes "คุณได้รับไอเท็ม";
+	mes "- ^FF0000"+getitemname(.@id)+"^000000";
+	mes "- จำนวน "+.@count+" ea.";
+	mes " ";
+	mes "ขอบคุณที่ร่วมสนุกกิจกรรม.";
+	cutin "", 255;
+
+	close;
+	
+end;
+
+
+
+OnInit:
+		// ห้ามแก้ไข
+		set $@GASHA_IMG_default_filename$,"spin_ob_01";
+		setarray $@GASHA_IMG_filename$[0],
+		
+		"es_v2_01", "es_v2_02", "es_v2_03", "es_v2_04", "es_v2_05", "es_v2_06", "es_v2_07", "es_v2_08",
+		"es_v2_09", "es_v2_10", "es_v2_11", "es_v2_12", "es_v2_13", "es_v2_14", "es_v2_15", "es_v2_16",
+		"es_v2_17", "es_v2_18", "es_v2_19", "es_v2_20", "es_v2_21", "es_v2_22", "es_v2_23", "es_v2_24";
+		// ห้ามแก้ไข
+		setarray $@GASHA_IMG_size_db[0],
+		getarraysize($@GASHA_IMG_filename$);
+
+		// รหัสไอเทมในการสุ่ม
+		setarray .SHOP[0], 5388,11503,7776,25793,30003,11503,40504,40322,30003,41014,40508,30003,5286,40335,30003,11504,30003,41014,40508,40322,25793,30003,40505,11504;
+		
+		// จำนวนไอเท็มในการสุ่ม
+		setarray .ITEM[0],1,5,1,1,5,5,1,1,15,1,1,1,1,1,20,5,10,1,1,1,1,1,1,5;
+
+		// โอกาสการออกไอเทม
+		// 1 คือยากที่สุด 100 คือ ง่ายที่สุด
+		setarray .PERX[0], 1,100,1,20,20,100,20,20,10,20,20,60,1,1,10,100,20,20,20,20,20,60,5,100;
+		
+		// Don't Touch
+		set .SHOPS, getarraysize(.SHOP);
+		npcshopdelitem .SHOPEX$, 909;
+		for (set .@i, 0; .@i < .SHOPS; set .@i, .@i + 1)
+		npcshopadditem .SHOPEX$, .SHOP[.@i], 0;
+end;
+}

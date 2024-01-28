@@ -1,0 +1,351 @@
+//===== rAthena Script =======================================
+//= Luoyang City NPCs
+//===== By: ==================================================
+//= Vidar (1.0)
+//= Mass Zero (1.1)
+//= Dino9021, roughly translated by Celest (1.2)
+//= Mass Zero (1.3)
+//= MasterOfMuppets (2.0)
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 3.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= [Official Conversion]
+//= Luoyang Town Script
+//===== Additional Comments: =================================
+//= 2.9 Rescripted to Aegis 10.3 Standards. [L0ne_W0lf]
+//= 3.0 Moved Alberta NPC to pre-re/re paths. [Euphy]
+//============================================================
+
+// Luoyang Transportation
+//============================================================
+-	script	::Girl_louyang	-1,{
+	mes "[Girl]";
+	mes "ลา ลา ลา ลา~";
+	mes "ฉันมีความสุขยิ่งหนักในวันนี้~";
+	mes "ฉันอยากจะไปปิคนิคจัง ฮิๆๆ";
+	next;
+	switch(select("~ เกี่ยวกับลั่วหยาง.:~ ไปเมืองลั่วหยาง.:~ ไม่ล่ะ,ไว้ก่อนเถอะ")) {
+	case 1:
+		mes "[Girl]";
+		mes "โอ้โห...";
+		mes "อยากไป Louyang หรอ?";
+		mes "ฮู้~~ มันเป็นที่ๆดีมากเลยล่ะ";
+		mes "สิ่งมหัศจรรย์มาหมายที่นั้น";
+		mes "เมืองและพื้นที่ๆสวยงาม~~~";
+		next;
+		mes "[Girl]";
+		mes "ยิ่งไปกว่านั้นยังมี Monster มากมายที่น่าประหลาดใจ";
+		mes "ยิ่งที่ให้น่าสนใจขึ้นไปอีก งิ~~ ";
+		mes "ยิ่งไปกว่านั้น คุณอาจจะได้ Item หายากด้วยนะ";
+		mes "Panacea เองก็มีขายที่นั่น่ะ";
+		next;
+		mes "[Girl]";
+		mes "มีผู้คนมากมายที่พยายามศึกษามวยจีน";
+		mes "Kkunyang ฝึกมันทุกๆ เช้า แข็งแรงกันมากๆๆ";
+		next;
+		mes "[Girl]";
+		mes "ถ้าคุณอยากไปมาบอกฉันได้ทุกเมื่อน่ะ";
+		mes "ฉันคิดค่าเดินทางเล็กน้อยเท่านั้น";
+		mes "และฉันจะส่งคุณไปที่นั้นทันทีเลย";
+		next;
+		mes "[Girl]";
+		mes "ฮ่าๆๆ Kkunyang รู้สึกสบายใจจริงๆวันนี้";
+		close;
+	case 2:
+		mes "[Girl]";
+		mes "เรือจะออกแล้ว งิๆๆ";
+		mes "ค่าเดินทางแค่ 10,000 zeny เท่านั้น";
+		mes "สนุกกับการเดินทางน่ะ ฮิๆ";
+		next;
+		mes "[Girl]";
+		mes "เอาล่ะ พร้อมจะไปกันรึยัง?";
+		next;
+		if (select("~ ออกเดินทาง !:....ฉันเมาเรือง่าย ขอคิดดูก่อน") == 1) {
+			if (Zeny > 9999) {
+				mes "[Girl]";
+				mes "โอเค~";
+				mes "ไปกันเลย";
+				mes "เตรียมตัวออกเดินทาง";
+				close2;
+				set Zeny, Zeny-10000;
+				warp "lou_fild01",190,101;
+				end;
+			}
+			mes "[Girl]";
+			mes "...";
+			mes "ฉันต้องการค่าเดินเรือ 10,000Zeny";
+			mes "ถ้าคุณอยากไป นำเงินมาให้กับฉัน";
+			close;
+		}
+		mes "[Girl]";
+		mes "อ๋าๆ...";
+		mes "ขัดใจฉันอะไรอย่างนี้";
+		mes "ไม่อยากไป ก็กลับบ้านไปดีกว่า";
+		mes "แล้วก็ไปนั่งทำบะหมี่กินคนเดียวเหอะ";
+		close;
+	case 3:
+		mes "[Girl]";
+		mes "อ๋าๆ...";
+		mes "ขัดใจฉันอะไรอย่างนี้";
+		mes "ไม่อยากไป ก็กลับบ้านไปดีกว่า";
+		mes "แล้วก็ไปนั่งทำบะหมี่กินคนเดียวเหอะ";
+		close;
+	}
+}
+
+lou_fild01,190,100,7	script	Girl#1lou	815,{
+	mes "[Girl]";
+	mes "เอ้าๆ~~";
+	mes "จะกลับเมือง Alberta?";
+	mes "แล้วหรอ.....";
+	next;
+	if (select("~ กลับเมือง Alberta.:~ ไม่ล่ะ,ขอดูต่ออีกสักพัก") == 1) {
+		mes "[Girl]";
+		mes "แล้วมาใหม่น้า~~~~";
+		mes "ออกเดินทาง~~";
+		mes "บาย บาย!";
+		close2;
+		if (checkre(0))
+			warp "alberta",236,40;
+		else
+			warp "alberta",235,45;
+		end;
+	}
+	mes "[Girl]";
+	mes "ถ้าคุณรู้สึกดี";
+	mes "คุณก็อยู่ที่นี้เลยก็ได้น่ะ";
+	mes "อาหารที่นี้ก็อร่อย";
+	mes "สาวๆก็น่ารักคุณว่าไม๊ งิๆ";
+	next;
+	if (Sex == SEX_MALE) {
+		mes "[Girl]";
+		mes "และด้วยสถานที่ท่องเที่ยว ...";
+		mes "ฉันหมายถึงสาว ๆ !";
+		mes "ฮิ ฮิ ~";
+	}
+	else {
+		mes "[Girl]";
+		mes "และพวกผู้ชายที่นี่";
+		mes "หล่อๆทั้งนั้น คุณว่ามัย~";
+	}
+	close;
+}
+
+// Generic Luoyang NPCs
+//============================================================
+louyang,297,167,2	script	Muscular Woman#lou	815,{
+	if (Sex == SEX_FEMALE) {
+		mes "[Zhi Ching Li]";
+		mes "สมาชิกทุกคนในคณะเด็กสาว, รวมทั้งฉันและเจ้านายของเรา, ล้วนเป็นผู้หญิงทั้งหมด";
+		next;
+		mes "[Zhi Ching Li]";
+		mes "เร็วนี้เรามีปัญหาในการรับสมาชิกใหม่, เพราะฉะนั้นฉันมาที่นี่เพื่อตรวจสอบว่ามีผู้หญิงใดๆ ที่ต้องการเข้าร่วมหรือไม่";
+		emotion ET_THINK;
+		close;
+	}
+	mes "[Zhi Ching Li]";
+	mes "...";
+	next;
+	mes "[Zhi Ching Li]";
+	mes "...";
+	mes "......";
+	next;
+	mes "[Zhi Ching Li]";
+	mes "อย่ามายุ่งกับข้า";
+	close;
+
+}
+
+louyang,274,136,4	script	Powerful-looking guy#lou	819,{
+	mes "[Akiira]";
+	mes "ฉันกำลังฝึกฝน 'Claw of Dragon' ของฉัน ฉันไม่เพียงแต่ต้องใช้พลังของกล้ามเนื้อของฉัน, แต่ฉันต้องปรับปรุงจิตใจของฉันด้วย";
+	next;
+	mes "[Akiira]";
+	mes "ทุกศิลปะการต่อสู้";
+	mes "ต้องมีการฝึกจิตใจเพราะ";
+	mes "จิตวิญญาณควบคุมร่างกาย";
+	mes "ถ้าคุณได้ฝึกตนเองในด้านจิตใจ, คุณสามารถใช้";
+	mes "ส่วนใดส่วนหนึ่งของร่างกายได้ง่ายๆ!";
+	next;
+	mes "[Akiira]";
+	mes "ถ้าคุณกำลัง";
+	mes "พิจารณาเรียนรู้ศิลปะการต่อสู้, คุณควรเพิ่มความรู้ก่อนที่จะเริ่มทำ";
+	mes "ฝึกร่างกาย";
+	next;
+	mes "[Akiira]";
+	mes "เรียนรู้เกี่ยวกับศิลปะการต่อสู้";
+	mes "และสมาธิเกี่ยวกับความจริงของชีวิต คุณต้องหาสันติใจก่อนที่คุณจะหวังที่จะเรียนรู้การควบคุมจิตใจและร่างกาย";
+	close;
+}
+
+louyang,276,136,4	script	Fist master#lou	819,{
+	mes "[Zhiang Xiau Ji]";
+	mes "ท้ายที่สุด...";
+	mes "ฉันได้เรียนรู้";
+	mes " 'Claw of Dragon' ได้แล้ว!";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "แม้ว่ามีแค่ขั้นตอนแปดขั้นที่เบื้องต้น ฉันต้องเรียนรู้ประวัติศาสตร์ของศิลปะนี้ และทำสมาธิเพื่อปรับปรุงจิตใจของฉัน";
+	mes "เป็นเวลาสามปี";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "หลังจากนั้น, อาจารย์ของฉันทำให้ฉันเริ่มการฝึกกายภาพเพื่อให้ฉันสามารถใช้ 'Claw of Dragon' ทั้งแปดขั้นได้ ฉันได้ทุ่มเทเวลานี้ไปกับศิลปะนี้มาถึงสามสิบปี";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "ฉันภูมิใจมากที่ได้เรียนรู้ศิลปะนี้ได้ไวเป็นสิบปี นอกจากนี้, ฉันต้องศึกษารูปแบบนี้และปรับปรุงโดยการแก้ไขจุดอ่อนและเพิ่มความแข็งแกร่งของมัน";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "คงจะใช้เวลาประมาณสิบปีเพิ่ม แต่ฉันไม่เสียใจกับมันเลย";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "เมื่อคุณกำลังเรียนรู้ศิลปะมาร์ทิล, คุณไม่สามารถรีบตัวและเรียนรู้ทุกอย่างในระยะเวลาสั้นได้ นั่นเป็นไปไม่ได้! นอกจากนี้, นั่นไม่ใช่ศิลปะที่แท้จริงของมัน...";
+	close;
+}
+
+louyang,276,133,0	script	Trainee#1lou::LouTrainee	819,{
+	mes "[Trainee]";
+	mes "เย้ป~!";
+	mes "ต้าาา~~!!";
+	mes "ฮู้~";
+	close;
+}
+
+louyang,276,131,0	script	Trainee#2lou	819,{
+	mes "[Trainee]";
+	mes "ทา ทา ทา!";
+	mes "ต้าาา~~!!";
+	mes "ชวู้ววว~";
+	close;
+}
+
+louyang,276,129,0	script	Trainee#3lou	819,{
+	mes "[Trainee]";
+	mes "Si!";
+	mes "Ayah!!";
+	close;
+}
+
+louyang,274,133,0	script	Trainee#4lou	819,{
+	mes "[Trainee]";
+	mes "เดอร์ห์!";
+	mes "เดอร์ห์!";
+	mes "ชวา--!";
+	close;
+}
+
+louyang,274,131,0	script	Trainee#5lou	819,{
+	mes "[Trainee]";
+	mes "เย้ เย้ เย้!";
+	mes "ต้าาา~~!!";
+	mes "วาตะอาาอาอา!";
+	close;
+}
+
+louyang,274,129,0	script	Trainee#6lou	819,{
+	mes "เย้ป~!";
+	mes "ต้าาา~~!!";
+	mes "ฮู้~";
+	close;
+}
+
+louyang,278,133,0	duplicate(LouTrainee)	Trainee#7lou	819
+louyang,278,131,0	duplicate(LouTrainee)	Trainee#8lou	819
+louyang,278,129,0	duplicate(LouTrainee)	Trainee#9lou	819
+louyang,272,133,0	duplicate(LouTrainee)	Trainee#10lou	819
+louyang,272,131,0	duplicate(LouTrainee)	Trainee#11lou	819
+louyang,272,129,0	duplicate(LouTrainee)	Trainee#12lou	819
+
+// Luoyang Viewing Tower
+//============================================================
+lou_in01,25,23,5	script	Friendly Looking Lady#lo	817,{
+	mes "[Hong Miao]";
+	mes "ยินดีต้อนรับ";
+	next;
+	mes "[Hong Miao]";
+	mes "นี่คือลิฟท์ที่นำไป";
+	mes "สู่หอสังเกตการณ์";
+	mes "เราให้บริการถ่ายเทอย่างปลอดภัยและรวดเร็วในราคาที่เป็นมิตร";
+	mes "คุณต้องการใช้บริการนี้หรือไม่?";
+	next;
+	switch(select("~ ข้อมูล:~ ใช่:~ ไว้คราวหน้า")){
+	case 1:
+		mes "[Hong Miao]";
+		mes "หลังจากที่มีการเสนอแนะและข้อเสนอมากมายถูกส่งไปที่สำนักงานการท่องเที่ยวของลูเยาง";
+		next;
+		mes "[Hong Miao]";
+		mes "เนื่องจากลักษณะทางภูมิศาสตร์ของลูเยาง, การชมวิวที่งดงามที่แผ่นดินของเราเสนอมีความยากลำบาก";
+		next;
+		mes "[Hong Miao]";
+		mes "คุณสามารถมาที่หอสังเกตการณ์ได้โดยการใช้ลิฟท์ที่นี่  เราให้บริการถ่ายเทนี้อย่างรวดเร็วและปลอดภัย ในราคา 500 เซนี่ต่อคน";
+		close;
+	case 2:
+		if (Zeny < 500) {
+			mes "[Hong Miao]";
+			mes "ขอโทษครับ แต่คุณไม่มีเซนี่เพียงพอ  หวังว่าคุณจะกลับมาในภายหลังเพื่อสนุกกับหอสังเกตการณ์  ขอให้คุณมีวันที่ดี";
+			close;
+		}
+		mes "[Hong Miao]";
+		mes "ขอบคุณมากที่ให้การสนับสนุน";
+		mes "เราพยายามที่จะให้บริการที่ดีที่สุดให้กับคุณ กรุณา";
+		mes "กลับมาอีกครั้ง";
+		next;
+		set Zeny, Zeny-500;
+		warp "lou_in01",17,19;
+		end;
+	case 3:
+		mes "โปรดกลับมา";
+		mes "ในภายหลัง";
+		mes "ขอให้คุณมีวันที่ดี";
+		close;
+	}
+}
+
+louyang,84,254,0	script	Exit#lou	111,{
+	mes "^3355FFมีบางอย่าง";
+	mes "อุปกรณ์ปีนป่าย";
+	mes "คุณต้องการใช้มันไหม?^000000";
+	next;
+	if (select("~ ใช่:~ ไม่") == 1) {
+		if (rand(1,100) == 34) {
+			percentheal -99,0;
+			warp "louyang",86,269;
+			mapannounce "louyang",""+strnpcinfo(0)+" : โอ้พระเจ้า ฉันกำลังตกลงไปปปปปปปป~~!!!!",bc_map;
+		}
+		else {
+			warp "lou_in01",10,18;
+		}
+		end;
+	}
+	close;
+}
+
+//============================================================
+// Old changelog
+//============================================================
+//= Originally made for Vidar
+//= 1.2 Added official warp NPC's
+//= 1.3 Fixed gramatical errors. (Like wtf's with the weird
+//=     texts celest? xD)
+//= 2.0 Completely rewrote the current scripts based on iRO.
+//=     Added the 'Shouting Quest' and the 'Medicine Quest'
+//= 2.1 Optimized, made quest vars unique [Lupus]
+//= 2.1a minor fix, 2.1b Fixed Typos [Nexon]
+//= 2.2 Fixed exploits [Lupus]
+//= 2.2a Updated the color codes a little and fixed the shouting quest
+//=     to broadcast green text.
+//= 2.2b A small fix to the shout quest npc in louyang field not warping you
+//=     back up to the tower if you died or teleported out of there. [MasterOfMuppets]
+//= 2.3 A small fix, the code is so messy I can't believe I scripted it >.< [MasterOfMuppets]
+//= 2.4 Implemented a few more npcs, thanks to Prometheus for them. [MasterOfMuppets]
+//= 2.5 Implemented the Poison King quest, beware of potential bugs. [MasterOfMuppets]
+//= 2.6 Removed Duplicates [Silent]
+//= 2.6a Updated a few names with new item_db.txt names [Evera]
+//= 2.7 Split quests to quests/quests_louyang.txt [Evera]
+//= 2.7a Minor optimizations before Luoyang quests [Lupus]
+//= 2.7b Moved guides to the Guides folder. 2.7 more typos [Lupus]
+//= 2.8 Moved some quest-related NPCs to proper file. [SinSloth]
+//= 2.9 Rescripted to Aegis 10.3 Standards. [L0ne_W0lf]
+//============================================================

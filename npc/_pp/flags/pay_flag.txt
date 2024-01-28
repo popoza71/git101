@@ -1,0 +1,190 @@
+-	script	Arbor#1::OutsideFlagsMOC6	722,{
+
+	set .@GID, getcastledata("payg_cas01",1);
+
+	if (.@GID == 0) {
+		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " ";
+		mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+		mes " เราขอประกาศว่า";
+		mes " ปราสาทหลังนี้ ยังไม่มีผู้ใดครอบครอง";
+		mes " ";
+		mes "2. ผู้ใดที่สามารถ";
+		mes " เอาชนะสงสรามและสามารถ";
+		mes " ทำลาย Emperium ลงได้";
+		mes " จะเป็นผู้ที่ครอบครัว";
+		mes " ปราสาทหลังนี้";
+		close;
+	}
+
+	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes " ";
+	mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+	mes " เราขออนุมัติว่าสถานที่แห่งนี้";
+	mes " เป็นพื้นที่ส่วนตัวของ ^ff0000"+getguildname(.@GID)+"^000000 Guild.";
+	mes " ";
+	mes "2. Guild Master แห่ง ^ff0000"+getguildname(.@GID)+"^000000 Guild ";
+	mes " คือ ^ff0000"+getguildmaster(.@GID)+"^000000";
+	mes " หากมีใครก็ตามที่ต้องการพิสูจน์ความแข็งแกร่ง";
+	mes " โปรดหยิบดาบที่อยู่ในมือขึ้นมาต่อสู้ด้วยศักศรีดิ์และเกียรติยศ";
+	close;
+
+OnRecvCastlePy01:
+	flagemblem getcastledata("payg_cas01",1);
+	end;
+}
+morocc,181,188,3	duplicate(OutsideFlagsMOC6)	Arbor#1	722
+
+
+
+-	script	Scarlet Palace#1::OutsideFlagsMOC7	722,{
+
+	set .@GID, getcastledata("payg_cas02",1);
+
+	if (.@GID == 0) {
+		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " ";
+		mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+		mes " เราขอประกาศว่า";
+		mes " ปราสาทหลังนี้ ยังไม่มีผู้ใดครอบครอง";
+		mes " ";
+		mes "2. ผู้ใดที่สามารถ";
+		mes " เอาชนะสงสรามและสามารถ";
+		mes " ทำลาย Emperium ลงได้";
+		mes " จะเป็นผู้ที่ครอบครัว";
+		mes " ปราสาทหลังนี้";
+		close;
+	}
+
+	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes " ";
+	mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+	mes " เราขออนุมัติว่าสถานที่แห่งนี้";
+	mes " เป็นพื้นที่ส่วนตัวของ ^ff0000"+getguildname(.@GID)+"^000000 Guild.";
+	mes " ";
+	mes "2. Guild Master แห่ง ^ff0000"+getguildname(.@GID)+"^000000 Guild ";
+	mes " คือ ^ff0000"+getguildmaster(.@GID)+"^000000";
+	mes " หากมีใครก็ตามที่ต้องการพิสูจน์ความแข็งแกร่ง";
+	mes " โปรดหยิบดาบที่อยู่ในมือขึ้นมาต่อสู้ด้วยศักศรีดิ์และเกียรติยศ";
+	close;
+
+OnRecvCastlePy03:
+	flagemblem getcastledata("payg_cas02",1);
+	end;
+}
+morocc,181,185,3	duplicate(OutsideFlagsMOC7)	Scarlet Palace#1	722
+
+-	script	Shadow Of Buddha#1::OutsideFlagsMOC8	722,{
+
+	set .@GID, getcastledata("payg_cas03",1);
+
+	if (.@GID == 0) {
+		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " ";
+		mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+		mes " เราขอประกาศว่า";
+		mes " ปราสาทหลังนี้ ยังไม่มีผู้ใดครอบครอง";
+		mes " ";
+		mes "2. ผู้ใดที่สามารถ";
+		mes " เอาชนะสงสรามและสามารถ";
+		mes " ทำลาย Emperium ลงได้";
+		mes " จะเป็นผู้ที่ครอบครัว";
+		mes " ปราสาทหลังนี้";
+		close;
+	}
+
+	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes " ";
+	mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+	mes " เราขออนุมัติว่าสถานที่แห่งนี้";
+	mes " เป็นพื้นที่ส่วนตัวของ ^ff0000"+getguildname(.@GID)+"^000000 Guild.";
+	mes " ";
+	mes "2. Guild Master แห่ง ^ff0000"+getguildname(.@GID)+"^000000 Guild ";
+	mes " คือ ^ff0000"+getguildmaster(.@GID)+"^000000";
+	mes " หากมีใครก็ตามที่ต้องการพิสูจน์ความแข็งแกร่ง";
+	mes " โปรดหยิบดาบที่อยู่ในมือขึ้นมาต่อสู้ด้วยศักศรีดิ์และเกียรติยศ";
+	close;
+
+OnRecvCastlePy03:
+	flagemblem getcastledata("payg_cas03",1);
+	end;
+}
+
+morocc,181,182,3	duplicate(OutsideFlagsMOC8)	Shadow Of Buddha#1	722
+
+-	script	Sacred Altar#1::OutsideFlagsMOC9	722,{
+
+	set .@GID, getcastledata("payg_cas04",1);
+
+	if (.@GID == 0) {
+		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " ";
+		mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+		mes " เราขอประกาศว่า";
+		mes " ปราสาทหลังนี้ ยังไม่มีผู้ใดครอบครอง";
+		mes " ";
+		mes "2. ผู้ใดที่สามารถ";
+		mes " เอาชนะสงสรามและสามารถ";
+		mes " ทำลาย Emperium ลงได้";
+		mes " จะเป็นผู้ที่ครอบครัว";
+		mes " ปราสาทหลังนี้";
+		close;
+	}
+
+	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes " ";
+	mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+	mes " เราขออนุมัติว่าสถานที่แห่งนี้";
+	mes " เป็นพื้นที่ส่วนตัวของ ^ff0000"+getguildname(.@GID)+"^000000 Guild.";
+	mes " ";
+	mes "2. Guild Master แห่ง ^ff0000"+getguildname(.@GID)+"^000000 Guild ";
+	mes " คือ ^ff0000"+getguildmaster(.@GID)+"^000000";
+	mes " หากมีใครก็ตามที่ต้องการพิสูจน์ความแข็งแกร่ง";
+	mes " โปรดหยิบดาบที่อยู่ในมือขึ้นมาต่อสู้ด้วยศักศรีดิ์และเกียรติยศ";
+	close;
+
+OnRecvCastlePy04:
+	flagemblem getcastledata("payg_cas04",1);
+	end;
+}
+
+morocc,181,179,3	duplicate(OutsideFlagsMOC9)	Sacred Altar#1	722
+
+
+-	script	Bamboo#1::OutsideFlagsMOC10	722,{
+
+	set .@GID, getcastledata("payg_cas05",1);
+
+	if (.@GID == 0) {
+		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " ";
+		mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+		mes " เราขอประกาศว่า";
+		mes " ปราสาทหลังนี้ ยังไม่มีผู้ใดครอบครอง";
+		mes " ";
+		mes "2. ผู้ใดที่สามารถ";
+		mes " เอาชนะสงสรามและสามารถ";
+		mes " ทำลาย Emperium ลงได้";
+		mes " จะเป็นผู้ที่ครอบครัว";
+		mes " ปราสาทหลังนี้";
+		close;
+	}
+
+	mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+	mes " ";
+	mes "1. ตามคำสั่งของ The Divine แห่งราชอาณาจักร Rune-Midgarts";
+	mes " เราขออนุมัติว่าสถานที่แห่งนี้";
+	mes " เป็นพื้นที่ส่วนตัวของ ^ff0000"+getguildname(.@GID)+"^000000 Guild.";
+	mes " ";
+	mes "2. Guild Master แห่ง ^ff0000"+getguildname(.@GID)+"^000000 Guild ";
+	mes " คือ ^ff0000"+getguildmaster(.@GID)+"^000000";
+	mes " หากมีใครก็ตามที่ต้องการพิสูจน์ความแข็งแกร่ง";
+	mes " โปรดหยิบดาบที่อยู่ในมือขึ้นมาต่อสู้ด้วยศักศรีดิ์และเกียรติยศ";
+	close;
+
+OnRecvCastlePy05:
+	flagemblem getcastledata("payg_cas05",1);
+	end;
+}
+
+morocc,181,176,3	duplicate(OutsideFlagsMOC10)	Bamboo#1	722

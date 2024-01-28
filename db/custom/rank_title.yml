@@ -1,0 +1,144 @@
+###########################################################################
+#
+# Whispering Rain
+#
+###########################################################################
+
+Header:
+  Type: RANK_TITLE_DB
+  Version: 1
+
+Body:
+
+  - Id: 1101
+    RankName: Child
+    EXP: 1000
+    Script: |
+      bonus bStr,10;
+
+  - Id: 1102
+    RankName: Adult
+    EXP: 2000
+    Script: |
+      bonus bStr,20;
+
+  - Id: 1103
+    RankName: Rookie
+    EXP: 3000
+    Script: |
+      bonus bDex,10;
+
+  - Id: 1104
+    RankName: Novice
+    EXP: 99999
+    Script: |
+      bonus bDex,20;
+
+	# - Id: 1101
+  #   RankName: AAAA
+  #   EXP: 1000
+  #   Script: |
+  #     bonus bStr,1;
+
+	# - Id: 1102
+  #   RankName: BBBB
+  #   EXP: 1500
+  #   Script: |
+  #     bonus bStr,2;
+
+	# - Id: 1103
+  #   RankName: Child
+	# - Id: 1104
+  #   RankName: Adult
+	# - Id: 1105
+  #   RankName: Rookie
+	# - Id: 1106
+  #   RankName: Novice
+	# - Id: 1107
+  #   RankName: Common
+	# - Id: 1108
+  #   RankName: Soldier
+	# - Id: 1109
+  #   RankName: Sergeant
+	# - Id: 1110
+  #   RankName: Captain
+	# - Id: 1111
+  #   RankName: Major
+	# - Id: 1112
+  #   RankName: Colonel
+	# - Id: 1113
+  #   RankName: General
+	# - Id: 1114
+  #   RankName: Commander
+	# - Id: 1115
+  #   RankName: Supreme
+	# - Id: 1116
+  #   RankName: Sir
+	# - Id: 1117
+  #   RankName: Baron
+	# - Id: 1118
+  #   RankName: Viscount
+	# - Id: 1119
+  #   RankName: Count
+	# - Id: 1120
+  #   RankName: Marquis
+	# - Id: 1121
+  #   RankName: Duke
+	# - Id: 1122
+  #   RankName: King
+	# - Id: 1123
+  #   RankName: Great King
+	# - Id: 1124
+  #   RankName: Incredible
+	# - Id: 1125
+  #   RankName: Invincible
+	# - Id: 1126
+  #   RankName: Hero
+	# - Id: 1127
+  #   RankName: Nobel
+	# - Id: 1128
+  #   RankName: Berserker
+	# - Id: 1129
+  #   RankName: Legend
+	# - Id: 1130
+  #   RankName: Legendary
+	# - Id: 1131
+  #   RankName: Mythical
+	# - Id: 1132
+  #   RankName: Immortal
+	# - Id: 1133
+  #   RankName: Immortal Spirit
+	# - Id: 1134
+  #   RankName: Commander
+	# - Id: 1135
+  #   RankName: Saint
+	# - Id: 1136
+  #   RankName: Angel
+	# - Id: 1137
+  #   RankName: Angel Of Death
+	# - Id: 1138
+  #   RankName: Guardain
+	# - Id: 1139
+  #   RankName: Master
+	# - Id: 1140
+  #   RankName: Golden
+	# - Id: 1141
+  #   RankName: Evil God
+	# - Id: 1142
+  #   RankName: King Of Hell
+	# - Id: 1143
+  #   RankName: King Of Heaven
+	# - Id: 1144
+  #   RankName: God Of Prophesy
+	# - Id: 1145
+  #   RankName: God Of Hunt
+	# - Id: 1146
+  #   RankName: God Of War
+	# - Id: 1147
+  #   RankName: God Of Death
+	# - Id: 1148
+  #   RankName: Demi-God
+	# - Id: 1149
+  #   RankName: God
+	# - Id: 1150
+  #   RankName: Super God

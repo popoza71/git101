@@ -1,0 +1,221 @@
+function	script	F_RANK	{
+
+	get_currect_rank_data();
+	.npcname$ = "[^FF0000•^000000 ^2f00ffStatus Book^000000 ^FF0000•^000000]";
+
+	mes .npcname$;
+	if(@ranktitle_high_name$ != "")
+		mes "Rank สูงสุดของท่าน : ^0800ff" + @ranktitle_high_name$ + "^000000";
+	else
+		mes "Rank สูงสุดของท่าน : ^0800ffไม่มี^000000";
+	if(@ranktitle_current1_name$ != "")
+		mes "Rank : ^0800ff" + @ranktitle_current1_name$ + "^000000";
+	else
+		mes "Rank : ^0800ffไม่มี^000000";
+	if(@ranktitle_current2_name$ != "")
+		mes "Rank (Enchance) : ^0800ff" + @ranktitle_current2_name$ + "^000000";
+
+	mes "% แบ่ง EXP : ^ed00ed" + RANKTITLE_PERCENT + "^000000%";
+	
+	menu " ^FF0000•^000000 ปรับแต่ง EXP เข้า Status Book",-," ^FF0000•^000000 เปลี่ยน Rank โบนัส",-," ^FF0000•^000000 แลก EXP",-," ^FF0000•^000000 ยกเลิก",-;
+	set .@sel,@menu;
+	if(.@sel == 4){end;}
+	if(.@sel == 3){ doevent "STATUS_EXCHANGE::OnMenuCall"; end; }
+	if(.@sel == 2){ next;callsub OnChangeMainRank; }
+	input .@input_numb,0,100;
+
+	next;
+	mes .npcname$;
+	mes "ท่านต้องการปรับแต่ง EXP เข้า Status Book ใช่หรือไม่?";
+	mes "EXP : " + .@input_numb + "%";
+
+	menu " ^FF0000•^000000 ยันยืน",-," ^FF0000•^000000 ยกเลิก",-;
+	set .@c_sel,@menu;
+	if(.@c_sel == 2){end;}
+
+	RANKTITLE_PERCENT = .@input_numb;
+
+	mes "ทำการปรับแต่ง EXP เข้า Status Book เรียบร้อยแล้ว";
+	end;
+
+OnChangeMainRank:
+	get_currect_rank_data();
+	get_rank_data();
+	mes .npcname$;
+	mes "Rank สูงสุดของท่าน : ^0800ff" + @ranktitle_high_name$ + "^000000";
+	mes "Rank : ^0800ff" + @ranktitle_current1_name$ + "^000000";	
+
+	for(.@i=0;.@i<getarraysize(@ranktitle_id);.@i++){
+		set .@rank_menu$, .@rank_menu$ + " - ^0800ff" + @ranktitle_name$[.@i] + "^000000:";
+	}
+	set .@rank_sel, select(.@rank_menu$)-1;
+
+	next;
+	mes .npcname$;
+	mes "ท่านต้องการเปลี่ยน Rank ?";
+	mes "Rank : " + @ranktitle_name$[.@rank_sel];
+	mes "ใช่หรือไม่?";
+
+	menu " ^FF0000•^000000 ใช่แล้ว",-," ^FF0000•^000000 ยกเลิก",-;
+	set .@sel,@menu;
+
+	if(.@sel == 2){end;}
+	rank_status_change(@ranktitle_id[.@rank_sel]);
+	next;
+	mes .npcname$;
+	mes "ทำการเปลี่ยน Rank เรียบร้อยแล้ว";
+	end;
+}
+
+function	script	F_ENCHANCE_RANK	{
+	get_currect_rank_data();
+	get_rank_echance_data();
+	.@item = getarg(0);
+	.@npcname$ = "[^FF0000•^000000 ^2f00ffStatus Book^000000 ^FF0000•^000000]";
+
+	mes .@npcname$;
+
+	mes "Rank สูงสุดของท่าน : ^0800ff" + @ranktitle_high_name$ + "^000000";
+	mes "Rank : ^0800ff" + @ranktitle_current1_name$ + "^000000";
+	mes "Enchance : " + RANKTITLE_ENCHANCE + "|" + getbattleflag("rank_enchance_max");
+
+	if(RANKTITLE_ENCHANCE >= getbattleflag("rank_enchance_max")){
+		mes "ท่านได้ Enchance ครบแล้ว";
+		end;
+	}
+
+	mes "โปรดเลือก Rank ที่ต้องการ Enchance";
+
+	if(!getarraysize(@ranktitle_id)){
+		end;
+	}
+
+	for(.@i=0;.@i<getarraysize(@ranktitle_id);.@i++){
+		set .@rank_menu$, .@rank_menu$ + " - ^0800ff" + @ranktitle_name$[.@i] + "^000000:";
+	}
+	set .@rank_sel, select(.@rank_menu$)-1;
+
+	next;
+	mes .@npcname$;
+	mes "ท่านต้องการ Rank Enchance ?";
+	mes "Rank : " + @ranktitle_name$[.@rank_sel];
+	mes "ค่าบริการ : ^0800ff" + getitemname(.@item) + "^000000 x1 ea.";
+	mes "ใช่หรือไม่?";
+
+	menu " ^FF0000•^000000 ใช่แล้ว",-," ^FF0000•^000000 ยกเลิก",-;
+	set .@sel,@menu;
+
+	if(.@sel == 2){end;}
+
+	if(countitem(.@item) < 1){
+		next;
+		mes .@npcname$;
+		mes "ท่านไม่มีตั๋ว Enchance";
+		end;
+	}
+
+	.@result = rank_status_enchance(@ranktitle_id[.@rank_sel]);
+
+	if(.@result == 0){
+		next;
+		mes .@npcname$;
+		mes "ระบบ Rank Enchance ขัดข้อง กรุณาแจ้ง GM";
+		end;
+	}else if (.@result == 2){
+		next;
+		mes .@npcname$;
+		mes "ท่านได้ Enchance ครบแล้ว";
+		end;
+	}
+
+	delitem .@item,1;
+	next;
+	mes .@npcname$;
+	mes "ทำการ Rank Enchnace เรียบร้อยแล้ว";
+	end;
+}
+
+-	script	STATUS_EXCHANGE	-1,{
+	end;
+
+OnInit:
+
+	// 1 = จำกัดต่อวัน / 0 = ไม่จำกัด
+	.exchange_mode = 1;
+
+	.max_exchange_per_day = 10;
+
+	end;
+
+OnMenuCall:
+
+	if(.exchange_mode){
+		.@currect_date$ = gettime(DT_YYYYMMDD);
+		
+		if(.@currect_date$ != pc_date$){
+			pc_date$ = .@currect_date$;
+			pc_exchange_count = 0;
+		}
+		dispbottom "======== จำนวนการแลก EXP วันนี้ ========";
+		dispbottom " จำนวนที่แลกได้ : " + pc_exchange_count + "/" + .max_exchange_per_day;
+		dispbottom "==============================";
+	}
+	callshop "status_shop",1;
+	npcshopattach "status_shop";
+	end;
+
+OnBuyItem:
+
+	.@sum = 0;
+	.@total_cost = 0;
+
+	for(.@i=0;.@i<getarraysize(@bought_nameid);.@i++){
+		.@sum += @bought_quantity[.@i];
+	}
+
+	if(.exchange_mode){
+		if(pc_exchange_count + .@sum > .max_exchange_per_day){
+			dispbottom "ท่านสามารถแลก EXP ได้สูงสุด " + .max_exchange_per_day + " ครั้งต่อวัน";
+			end;
+		}
+	}
+
+	for(.@i=0;.@i<getarraysize(@bought_nameid);.@i++){
+		.@total_cost += callfunc("F_EXP_COST",@bought_nameid[.@i]) * @bought_quantity[.@i];
+	}
+
+	if(RANKTITLE_EXP < .@total_cost){
+		dispbottom "EXP ของท่านไม่เพียงพอ";
+		end;
+	}
+
+	for(.@i=0;.@i<getarraysize(@bought_nameid);.@i++){
+		getitem @bought_nameid[.@i],@bought_quantity[.@i];
+	}
+
+	pc_exchange_count += .@sum;
+
+	rank_title_exchange(.@total_cost);
+	end;
+}
+
+function	script	F_EXP_COST	{
+
+	.@itemid = getarg(0);
+
+	// กำหนดราคา EXP ต่อขวด
+	switch(.@itemid){
+		case 41023:
+			return 1000;
+		case 41024:
+			return 5000;
+		case 41025:
+			return 10000;
+		default:
+			return 0;
+	}
+
+}
+
+// กำหนดของที่จะขาย
+-	shop	status_shop	-1,41023:-1,41024:-1,41025:-1

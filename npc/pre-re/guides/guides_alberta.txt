@@ -1,0 +1,161 @@
+//===== rAthena Script =======================================
+//= Alberta Guides
+//===== By: ==================================================
+//= kobra_k88; L0ne_W0lf
+//===== Translations TH: =====================================
+//= Athena Studio
+//===== Current Version: =====================================
+//= 1.5a
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= [Official Conversion]
+//= Guides for the city of Alberta
+//===== Additional Comments: =================================
+//= Fully working
+//= 1.1 Fixed Armory coords, thanks to Freya team
+//= 1.2 Optimized, updated common guide names [Lupus]
+//= 1.3 Updated the guide according to how it is on iRO, thanks [MasterOfMuppets]
+//=     to Muad_Dib
+//= 1.4 Fitted the many lines into 1 or 2, and corrected some typos [erKURITA]
+//= 1.5 Rescripted to official 10.3 standards. [L0ne_W0lf]
+//= 1.5 Fixed some errors with the loop[Samuray22]
+//	-Thanks to $ephiroth.
+//============================================================
+
+alberta,23,238,4	script	Guide#alb::AlbGuide	105,{
+	cutin "prt_soldier",2;
+	mes "[Alberta Guide]";
+	mes "ยินดีต้อนรับสู่เมือง Alberta,";
+	mes "ศุนย์รวมท่าเรือต่างๆ";
+	mes "หากคุณกำลังมีปัญหา";
+	mes "ในการค้นหาอะไรสักอย่างในเมือง";
+	mes "หรือเพียงคุณต้องการแค่";
+	mes "คำแนะนำรอบเมือง.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("~ สอบถามไกด์:~ ลบตำแหน่งทั้งหมดออกจาก Mini-Map:~ หมายเหตุ:~ ยกเลิการสนทนา")) {
+		case 1:
+			mes "[Alberta Guide]";
+			mes "กรุณาเลือก";
+			mes "ตำแหน่งจาก";
+			mes "เมนูต่อไปนี้.";
+			if (.@compass_check == 0) {
+				mes "คุณต้องการที่จะ";
+				mes "ให้ฉันทำเครื่องหมายสถานที่";
+				mes "บน Mini-Map ของคุณหรือ ?";
+				next;
+				if (select("~ ใช่:~ ไม่") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while (.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				
+				switch(select("^FF0000~ สมาคม พ่อค้า^000000:~ ร้านจำหน่ายอาวุธ:~ ร้านค้าทั่วไป:~ โรงแรม:~ ร้านตีเหล็ก:~ ยกเลิก")) {
+				case 1:
+					mes "[Alberta Guide]";
+					mes "สมาคมพ่อค้า";
+					mes "สามารถที่จะเปลี่ยนอาชีพของคุณ";
+					mes "ให้เป็นเหล่า Merchant Class,";
+					mes "และ สถานที่ในการทำเครื่องหมาย";
+					mes "บนแผนที่จะตั้งอยู่ในมุมตะวันตกเฉียงใต้";
+					mes "ของเมือง Alberta.";
+					if (.@compass_check)
+						viewpoint 1,33,41,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Alberta Guide]";
+					mes "ร้านค้าขายอาวุธ";
+					mes "สามารถพบได้ใน";
+					mes "ตอนใต้สุดของเมือง Alberta.";
+					if (.@compass_check)
+						viewpoint 1,117,37,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Alberta Guide]";
+					mes "ร้านค้าทั่วไป";
+					mes "เป็นชนิดที่ไม่เปิดเผย";
+					mes "ซึ่งมันอาจจะอยู่บริเวณศูนย์กลาง";
+					mes "ของเมือง Alberta. ฉันคิดว่า";
+					mes "มันคงไม่ยากเกินไปที่จะตามหา.";
+					if (.@compass_check)
+						viewpoint 1,98,154,4,0xFF00FF;
+					break;
+				case 4:
+					mes "[Alberta Guide]";
+					mes "ที่นั่นมี โรงแรม";
+					mes "อยู่ที่ภาคเหนือ";
+					mes "ในตอนท้ายของเมือง Alberta";
+					mes "ที่ที่คุณสามารถพักผ่อนได้.";
+					if (.@compass_check)
+						viewpoint 1,65,233,5,0xFF00FF;
+					break;
+				case 5:
+					mes "[Alberta Guide]";
+					mes "สถานที่ตีเหล็กของเมือง Alberta";
+					mes "จะอยู่ในอาคารเดียวกัน";
+					mes "ของสมาคม Merchant Guild.";
+					mes "ซึ่งมันจะอยู่ทางทิศใต้.";
+					if (.@compass_check)
+						viewpoint 1,35,41,6,0xFF00FF;
+					break;
+				case 6:
+					mes "[Alberta Guide]";
+					mes "กรุณาถามฉันถ้าหากคุณต้องการ ''ลบ";
+					mes "ตำแหน่งจาก Mini-Map'' ถ้าคุณ";
+					mes "ไม่ต้องการที่จะมี";
+					mes "เครื่องหมายแสดงสถานที่ที่ตั้ง";
+					mes "บน Mini-Map ของคุณ.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,237,41,2,0xFF0000;
+			viewpoint 2,237,41,3,0xFF00FF;
+			viewpoint 2,46,345,4,0xFF00FF;
+			viewpoint 2,175,220,5,0xFF00FF;
+			viewpoint 2,175,220,6,0xFF00FF;
+			set .@compass_check,0;
+			break;
+		case 3:
+			mes "[Alberta Guide]";
+			mes "ด้วยความก้าวหน้าในการใช้เวทมนตร์";
+			mes "และ เทคโนโลยีเราได้รับอนุญาติให้";
+			mes "เราในการปรับปรุงข้อมูลของเรา";
+			mes "ในระบบ, ที่จะช่วยให้การขึ้นเครื่องหมายขนาดเล็ก";
+			mes "อยู่บนแผนที่ เพื่อสำหรับ";
+			mes "การนำทางที่แสนจะง่ายดายขึ้น.";
+			next;
+			mes "[Alberta Guide]";
+			mes "คุณมี Mini-Map ตั้งอยู่";
+			mes "ที่มุมบนด้านขวาของจอ";
+			mes "ถ้าคุณไม่สามารถ";
+			mes "ที่จะมองเห็นแผนที่ของคุณ, โปรดกด Ctrl + Tab";
+			mes "หรือ คลิกที่ปุ่ม ''Map'' ของคุณที่อยู่ในหน้าต่าง Basic Info.";
+			next;
+			mes "[Alberta Guide]";
+			mes "บน Mini-Map ของคุณ,";
+			mes "คลิกที่ ''+'' และ ''-''";
+			mes "สัญลักษณ์เพื่อที่จะซูมเข้าและซูมออก";
+			mes "ในแผนที่ขนาดเล็กของคุณ Mini-Map. เรา";
+			mes "หวังว่าคุณจะเพลิดเพลินไปกับการเดินทางของคุณ";
+			mes "ที่นี่ในเมืองของ Alberta.";
+			break;
+		case 4:
+			mes "[Alberta Guide]";
+			mes "คุณจะปลอดภัย";
+			mes "เมื่อคุณเดินทาง และ ไม่ลังเล";
+			mes "ที่จะถามฉันหากคุณมีคำถาม";
+			mes "เกี่ยวกับเมือง Alberta.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "prt_soldier",255;
+	end;
+}
+
+alberta,120,60,3	duplicate(AlbGuide)	Guide#2alb	105

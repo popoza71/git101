@@ -1,0 +1,72 @@
+###########################################################################
+# Whispering Rain
+###########################################################################
+#
+#
+###########################################################################
+
+Header:
+  Type: MEMBER_RANK_DB
+  Version: 1
+
+Body:
+  - Level: 1
+    Point: 1000
+    Icon: EFST_PROVOKE
+    Script: |
+      bonus2 bExpAddRace,RC_All,1;
+      bonus2 bDropAddRace,RC_All,1;
+      bonus bAddMaxWeight,500;
+      bonus bStr,100;
+  - Level: 2
+    Point: 2000
+    Icon: EFST_ENDURE
+    Script: |
+      bonus2 bExpAddRace,RC_All,2;
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bAddMaxWeight,1500;
+      bonus bAgi,100;
+  - Level: 3
+    Point: 4000
+    Icon: EFST_TWOHANDQUICKEN
+    Script: |
+      bonus2 bExpAddRace,RC_All,3;
+      bonus2 bDropAddRace,RC_All,3;
+      bonus bAddMaxWeight,2000;
+      bonus bDex,100;
+  - Level: 4
+    Point: 7000
+    Icon: EFST_CONCENTRATION
+    Script: |
+      bonus2 bExpAddRace,RC_All,4;
+      bonus2 bDropAddRace,RC_All,4;
+      bonus bAddMaxWeight,2500;
+      bonus bSPrecovRate,1;
+      bonus bLuk,100;
+  - Level: 5
+    Point: 10000
+    Icon: EFST_HIDING
+    Script: |
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus bAddMaxWeight,3000;
+      bonus bSPrecovRate,2;
+      bonus bVit,100;
+  - Level: 6
+    Point: 15000
+    Icon: EFST_CLOAKING
+    Script: |
+      bonus2 bExpAddRace,RC_All,6;
+      bonus2 bDropAddRace,RC_All,6;
+      bonus bAddMaxWeight,3500;
+      bonus bSPrecovRate,3;
+  - Level: 7
+    Point: 20000
+    Icon: EFST_ENCHANTPOISON
+    Script: |
+      bonus2 bExpAddRace,RC_All,7;
+      bonus2 bDropAddRace,RC_All,7;
+      bonus bAddMaxWeight,4000;
+      bonus bSPrecovRate,5;
+      bonus bStr,1000;
+

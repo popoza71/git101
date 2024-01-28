@@ -1,0 +1,8 @@
+function	script	F_Memeber	{
+
+	.@member_point = getarg(0);
+
+	dispbottom "[Member] ท่านได้รับ " + .@member_point + " แต้ม Member";
+	recal_status();
+	end;
+}

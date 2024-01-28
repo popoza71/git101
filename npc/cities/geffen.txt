@@ -1,0 +1,1429 @@
+//===== rA{a Script =======================================
+//= Geffen Town
+//===== By: ==================================================
+//= Everybody mentioned in the comments
+//===== Current Version: =====================================
+//= 2.0
+//===== Compatible With: =====================================
+//= rA{a Project
+//===== Description: =========================================
+//= [Official Conversion]
+//= Geffen Town NPCs
+//===== Additional Comments: =================================
+//= Fully working
+//= 1.1 Spell Checked [massdriller]
+//= 1.2 Fixed more typos [Nexon]
+//= 1.3 added a Level 4 weapon quest related NPC [MasterOfMuppets]
+//= 1.4 Removed Duplicates [Silent]
+//= 1.5 Fixed some typos and coordinates [Musashiden]
+//= 1.5a Fixed a small typo [Evera]
+//= 1.6 Rescripted to Aegis 10.3 standards. [L0ne_W0lf]
+//= 1.6a Small bug fix. (end -> next) care of Lesbian. [L0ne_W0lf]
+//= 1.7 Fixed bad NPC header data to comply with rev. 11603. [L0ne_W0lf]
+//= 1.8 Fixed character's name and swapped gender dialogues [Lupus]
+//= 1.9 Replaced effect numerics with constants. [Samuray22]
+//= 2.0 Bug fixes (bugreport:7928) [DeadlySilence]
+//============================================================
+
+geffen,59,143,3	script	Lady	91,{
+	mes "[Lady]";
+	mes "เจ้าเป็นคนแปลกหน้านิ.";
+	next;
+	mes "[Lady]";
+	mes "ยินดีต้อนรับสู่ geffen, เมืองแห่ง Magic.  เจ้าคงเหนื่อยสินะ ทำไมเจ้าไม่กิน ^ffaa00Honey^000000? มันจะบรรเทาความเหนื่อยล้าของเจ้า";
+	next;
+	mes "[Lady]";
+	mes "Honey มีรสหวานและสรรพคุณหลายอย่าง เช่น^0000ffฟื้น^000000 การฟื้นตัวของ ^0000ffHP และ SP^000000.";
+	mes "มันสามารถหาได้จาก Hornets หรือราชินีผึ้งอย่าง ^ff0000Mistress^000000.  MIstress เป็นราชินีผึ้งที่ดุร้ายมาก.";
+	next;
+	mes "[Lady]";
+	mes "ข้าคิดว่าเจ้าคงไม่ต้องการ honey จาก Mistress หรอกนะ";
+	next;
+	mes "[Lady]";
+	mes "มีมอนสเตอร์อื่นๆที่หล่น honey แต่ก็มีความแข็งแรงพอตัว honey จึงมีราคาที่สูงสุกหน่อย.";
+	next;
+	mes "[Lady]";
+	mes "แต่ยังมสิ่งอื่นที่ใช้ได้ดีกว่า honey.......";
+	mes "นั้นคือ ^ffaa00`Royal Jelly'^000000, มันหล่น ^ff0000Mistress^000000 แต่ก็ยากเหมือนกันที่จะจัดการ.";
+	next;
+	mes "[Lady]";
+	mes "เจ้า Royal Jelly มันคือน้ำหวานที่แสนวิเศษจริงๆ~";
+	close;
+}
+
+geffen,156,190,0	script	Orwalk	82,{
+	mes "[Orwalk]";
+	mes "...น่าสนใจ";
+	mes "น่าทึ่งมาก";
+	mes "โอ้! ให้ฉันบอก";
+	mes "เรื่องมหัศจรรย์นี้~";
+	next;
+	mes "[Orwalk]";
+	mes "ขณะที่ฉันกำลังศึกษาเวทมนตร์, ฉันค้นพบพิมพ์ลับที่ลึกลับนี้. มันอธิบายเกี่ยวกับต้นไม้ที่ชื่อ Yggdrasil.";
+	next;
+	mes "[Orwalk]";
+	mes "ใบ, เมล็ด, และผลของ Yggdrasil เชื่อมโยงทุกสิ่งมีชีวิตในโลกนี้. ตามรายงานนี้, Yggdrasil ยังมีบทบาทในการสร้างโลกด้วย.";
+	next;
+	mes "[Orwalk]";
+	mes "ฉันยังได้ยินเสียงลือลั่นเกี่ยวกับต้นไม้ที่มีความประหลาดในแดนใกล้ Comodo. มันต้องเชื่อมโยงกัน, ฉันมั่นใจ!";
+	close;
+}
+
+geffen_in,164,109,0	script	Wizard Stanza	64,{
+	mes "[Stanza]";
+	mes "ฉันรับรู้ถึงการมีอยู่ของวิญญาณที่แข็งแกร่ง. มันอาจเป็นคุณหรือไม่...?";
+	next;
+	mes "[Stanza]";
+	if (BaseJob == Job_Mage)
+		mes "ดูเหมือนว่าคุณได้รับการฝึกฝนในศิลปะเวทมนตร์. เวทมนตร์... พลังของมันถูกควบคุมโดยกฎของกรรมและผลกระทบ.";
+	else if (BaseJob == Job_Acolyte) {
+		mes "อะ...";
+		mes "ฉันเห็นว่าคุณใช้พลังที่มีลักษณะทางศาสนาในทางหนึ่งหรือหลายทาง. คงเป็นไปได้ที่พลังที่เป็นลักษณะหนึ่งของพลังมนตร์.";
+	}
+	else if (Class == Job_Novice)
+		mes "แม้ว่าในปัจจุบันคุณอาจจะไม่สามารถใช้เวทมนตร์หรือทักษะที่มีพลังกำลังมากมายได้, ความรู้นี้อาจมีประโยชน์ในอนาคต, เยาวชนที่แต่เริ่ม";
+	else
+		mes "แม้ว่าคุณจะไม่ได้รับการฝึกสอนอย่างเป็นทางการในการใช้เวทมนตร์, คุณใช้ทักษะที่ดึงพลังจากโลกอื่น, ไม่ว่าคุณจะรู้หรือไม่...";
+	next;
+	mes "[Stanza]";
+	mes "หากคุณใช้พลังมนตร์เพื่อทำให้คนอื่นเสียหาย, หรือขัดขวางกฎเกณฑ์ที่เจ้าแม่ธรรมได้ตั้งไว้, พลังนั้นจะถูกหงุดหงิดกลับมาทำร้ายคุณเอง. จำไว้ว่าคุณจะได้รับผลสวนทาง.";
+	next;
+	mes "[Stanza]";
+	mes "แต่มีของที่สามารถป้องกันผู้ใช้จากผลลัพธ์ที่ไม่ดี, ทำให้การใช้เวทมนตร์บางประการเป็นไปได้อย่างปลอดภัย. นั่นคือหินที่ว่าจะสะท้อนแสงที่มีลักษณะทางมนตร์และได้รู้จักในนามว่า Gemstone.";
+	next;
+	mes "[Stanza]";
+	mes "Gemstone...";
+	mes "ถ้าคุณต้องการใช้พลังของคุณให้เต็มที่, จำไว้เรื่องของของหรือที่เกี่ยวข้องกับ Gemstone นี้";
+	close;
+}
+
+geffen,147,26,0	script	Ralphie	97,{
+	mes "[Ralphie]";
+	mes "ในที่สุดในโลกนี้, มีไม้คาดพลังที่หายากที่สามารถเปลี่ยนพลังจิตใจเป็นพลังที่เข้มแข็งทางร่างกาย, ให้เจ้าของได้ ^990000พลังทำลาย^000000...";
+	next;
+	mes "[Ralphie]";
+	mes "ด้วยมัน, ใครก็สามารถมีพลังที่เท่ากับเฮอร์คิวลีสได้... แม้กระทั่งคนอ่อนแออย่างฉันเอง! ฮ่าฮ่าฮ่าฮ่าฮ่า,";
+	mes "ฉันต้องมีมัน!";
+	next;
+	emotion ET_SURPRISE;
+	mes "[Ralphie]";
+	mes "...โอ้วว!";
+	mes "มายืนอยู่ตรงนี้ตั้งแต่เมื่อไหร่";
+	mes "ได้ฟังอะไรไป";
+	mes "หรือเปล่า?";
+	next;
+	mes "[Ralphie]";
+	mes "คุณบังเอิญ";
+	mes "ได้ยินอะไรบ้าง";
+	mes "มั้ย?";
+	mes "มูววาฮ่า... ฮ่า. ฮ่า.";
+	next;
+	mes "[Ralphie]";
+	mes "ดี...";
+	mes "ฉันไม่ได้พูดอะไรเลย. แต่ถ้า";
+	mes "ฉันพูด, ลืมมันทั้งหมด,";
+	mes "อะไรๆ ก็ตามนะ~";
+	next;
+	mes "[Ralphie]";
+	mes "ไอ้หนู นี่มันน่าอึดอัดใจนะ";
+	close;
+}
+
+geffen,111,48,0	script	Stacey	101,{
+	if (getequipid(EQI_HEAD_TOP) == 2299) {
+		mes "[Stacey]";
+		mes "โอ้...!";
+		mes "นั่นมันคือ Orc Helm ที่คุณกำลังสวมอยู่เหรอ?! เจ๋งมาก! ว้าว...";
+		next;
+		mes "[Stacey]";
+		if (Sex == SEX_MALE) {
+			mes "คุณดูดีมาก...";
+			mes "แข็งแกร่งและเป็นลูกผู้ชาย~";
+		}
+		else {
+			mes "โอ้~!";
+			mes "ฉันอิจฉาจังเลย!";
+		}
+		close;
+	}
+	else if (getequipid(EQI_HEAD_TOP) == 5094) {
+		mes "[Stacey]";
+		mes "โอ้...";
+		mes "ว้าว...";
+		next;
+		mes "[Stacey]";
+		mes "นั่นคือ...";
+		mes "นั่นคือหมวก";
+		mes "ของ Orc Hero!";
+		next;
+		mes "[Stacey]";
+		if (Sex == SEX_MALE) {
+			mes "มันคือ...";
+			mes "มันเหมือนกับว่าคุณถูกรายล้อมไปด้วยออร่าความเป็นชายที่น่าทึ่งนี้! Oooh~! คุณจะต้องไม่อาจต้านทานได้สำหรับสาวๆ ทุกคน!";
+			next;
+			emotion ET_THROB;
+			mes "[Stacey]";
+			mes "และฉันก็ไม่มีข้อยกเว้น";
+		}
+		else {
+			mes "พระเจ้า เจ้าต้องแข็งแกร่งมาก!";
+			mes "แต่ฉันคิดว่ามีเพียงสมาชิกของเผ่า Orc เท่านั้นที่สามารถสวมใส่มันได้?";
+		}
+		close;
+	}
+	else {
+		mes "[Stacey]";
+		mes "สวัสดี~!";
+		mes "โอ้ ใช่ไหมล่ะ";
+		mes "นักผจญภัย?";
+		next;
+		mes "[Stacey]";
+		mes "คุณเคยเห็น Orcs จากเผ่ากึ่งมนุษย์บ้างไหม? ถ้าคุณลงไปทางใต้จากที่นี่ ฉันคิดว่าคุณจะพบ Orcs ได้ในป่าลึก";
+		next;
+		mes "[Stacey]";
+		mes "ฉันได้ยินมาว่า Orcs มีวัฒนธรรมและภาษาเป็นของตัวเอง เหมือนกับมนุษย์อย่างพวกเรา นั่นหมายความว่า Orcs ออกเดทกันหรือเปล่า...?";
+		next;
+		mes "[Stacey]";
+		mes "เธอก็รู้ ที่พวกเขากระซิบถ้อยคำหวานๆ อย่างแผ่วเบา แล้ว... โอ้! ฉันอยากรู้จริงๆ!";
+		close;
+	}
+}
+
+geffen_in,34,170,0	script	Theodore	47,{
+	mes "[Theodore]";
+	mes "สวัสดี!";
+	mes "วันนี้";
+	mes "เป็นวันที่";
+	mes "งดงาม";
+	next;
+	mes "[Theodore]";
+	mes "เอ่อ...";
+	mes "นั่นคงไม่รู้. ฉันเคยเรียนอย่างหนักเพื่อจะเป็นเวทมนตร์. ฉันทุกคืนไม่ได้นอน, กังวลเรื่องทุกอย่างที่เกี่ยวกับการใช้เวทมนตร์.";
+	next;
+	mes "[Theodore]";
+	mes "*อ๊าก...*";
+	mes "ฉันกังวลเป็นพิเศษเรื่องปัญหาทุกประการที่เกี่ยวกับการใช้เวทมนตร์.";
+	next;
+	mes "[Theodore]";
+	mes "อ๊าก! น่ารำคาญมากเมื่อมอนสเตอร์ที่มีขยะเริ่มหาเจอฉันครั้งล่าสุด. มอนสเตอร์แบบนั้นรบกวนการร่ายมาหลายครั้ง!";
+	next;
+	mes "[Theodore]";
+	mes "หลังจากนั้น, ฉันตระหนักรู้ว่าฉันต้องการอาวุธบางอย่างที่จะต่อต้านการโจมตีจากระยะไกลของมอนสเตอร์. บางอย่างที่สามารถโจมตีจากระยะไกล...";
+	next;
+	mes "[Theodore]";
+	mes "บางอย่าง...";
+	mes "Sharp, piercing";
+	mes "projectile launcher ที่น่าสนใจ, ที่ทำจากไม้ถูกนะ.";
+	next;
+	mes "[Theodore]";
+	mes "แต่ฉันจะหาได้ที่ไหน";
+	mes "ครับ?!";
+	close;
+}
+
+geffen,146,148,4	script	Suspicious Guy	99,6,6,{
+	end;
+
+OnTouch_:
+	mes "[?]";
+	mes "^333333*Psssst!*";
+	mes "H-Hey you!";
+	mes "You wanna get your hands on some great stuff? Come on over!^000000";
+	next;
+	mes "[Suspicious Guy]";
+	if (Sex == SEX_MALE)
+		mes "Hey there tough guy. You look smart enough to recognize a bargain when it's right in front of your eyes.";
+	else
+		mes "Well, well, well. Aren't you a pretty girl. Today just happens to be your lucky day!";
+	next;
+	mes "[Suspicious Guy]";
+	mes "So just tell me what you want, and I'll cut you a deal from amongst my valuable, yet affordable, wares.";
+	next;
+	switch(select("Gimme some potion so I can recover HP.:Um, you got a Knife?:Don't you have a good Manteau?:Don't you have something besides this?")) {
+	case 1:
+		mes "[Suspicious Guy]";
+		mes "Ah, you into Potions, eh?";
+		mes "Yeah, I got the stuff!";
+		next;
+		mes "[Suspicious Guy]";
+		mes "Here it is! High quality Red Potion! It starts working right away once you take it. Once it hits your lips, you can't stop. This stuff is that good.";
+		next;
+		mes "[Suspicious Guy]";
+		mes "C'mon dude. This is the latest Red Potion. I got it from a close friend of a friend, you know, a real dependable source, and it's real cheap too. You can't pass this up!";
+		next;
+		select("Uh, can I buy White Potions instead?");
+		mes "[Suspicious Guy]";
+		mes "White Potions? Oh, those don't exist. But, er, if someone's selling that kind of stuff, bring it to me so I can, um, test the difference. But yeah, I got the real stuff.";
+		next;
+		mes "[Suspicious Guy]";
+		mes "You can heal all your wounds by drinking Red Potions! And I'll sell you one for just ^FF3333500 zeny^000000!";
+		next;
+		mes "[Suspicious Guy]";
+		mes "Now, how cheap is that?! Since they're in such high demand, I can only sell you 100 of";
+		mes "them at a time.";
+		next;
+		while(1) {
+			input .@input;
+			if (.@input == 0) {
+				mes "[Suspicious Guy]";
+				if (Sex == SEX_MALE)
+					mes "Ah duuuuuude~ You're breakin' my heart! I mean, at these prices, I'm practically performing charity!";
+				else
+					mes "W-waaaait! You didn't let me tell you the part about how Red Potions help you lose and gain weight in all the right places! Waaaaait!";
+				close;
+			}
+			else if (.@input > 100) {
+				mes "[Suspicious Guy]";
+				mes "Whoa...";
+				mes "I can't let you buy that many. I mean, it's not like, you know, there's a trace impurity in these Potions or anything like that...";
+				next;
+			}
+			else
+				break;
+		}
+		set .@Red_potion_hap,.@input * 500;
+		if (Zeny < .@Red_potion_hap) {
+			mes "[Suspicious Guy]";
+			mes "Oh maaan~";
+			mes "Are you";
+			mes "short on dough?";
+			mes "That's no good.";
+			next;
+			mes "[Suspicious Guy]";
+			mes "^333333Now I gotta find some other sucker to dump this junk on!^000000 *Ahem* I mean, come again!";
+			close;
+		}
+		set Zeny, Zeny-.@Red_potion_hap;
+		getitem 501,.@input; //Red_Potion
+		break;
+	case 2:
+		mes "[Suspicious Guy]";
+		if (Sex == SEX_MALE) {
+			mes "What would a strong guy like you want a knife for? Those will just break under the force of your incredibly powerful swings!";
+			next;
+			mes "[Suspicious Guy]";
+			mes "Now...";
+			mes "What you really";
+			mes "need is a ^FF3333manly Dagger^000000.";
+		}
+		else {
+			mes "A nice lady like you? Come on now, kitchen knives are for old naggy wives and the hired help.";
+			next;
+			mes "[Suspicious Guy]";
+			mes "Now...";
+			mes "What you really";
+			mes "need is a fine, exquisite";
+			mes "^FF3333French Dagger^000000 to match your beauty and elegance.";
+		}
+		next;
+		mes "[Suspicious Guy]";
+		mes "I call it...";
+		mes "The ^FF3333Main Gauche^000000! I invented it myself. And I'm only selling it for 9,400 zeny!";
+		next;
+		select("Aren't you going to give me a sheath too?");
+		mes "[Suspicious Guy]";
+		mes "A sheath?";
+		mes "Whoa, that's almost asking too much! Alright, alright...";
+		next;
+		mes "[Suspicious Guy]";
+		mes "Since I like you so much, I'm giving you a free sheath with your purchase! Now how's that";
+		mes "for a bargain?";
+		next;
+		mes "[Suspicious Guy]";
+		mes "There's no way you can pass this up! Now, how many do you want?";
+		next;
+		while(1) {
+			input .@input;
+			if (.@input == 0) {
+				mes "[Suspicious Guy]";
+				mes "Man, how many chances of a lifetime have you passed up? Man, I hope you win the lottery...";
+				mes "You'd probably";
+				mes "pass that up too.";
+				close;
+
+			}
+			else if (.@input > 100) {
+				mes "[Suspicious Guy]";
+				mes "Whoa!";
+				mes "I can't sell that many Daggers! That'll attract the Prontera Chiv--I mean, um, I was gonna donate some Daggers to... Hungry children?";
+				next;
+			}
+			else
+				break;
+		}
+		set .@Main_gauche_hap,.@input * 9400;
+		if (Zeny < .@Main_gauche_hap) {
+			mes "[Suspicious Guy]";
+			mes "Short on zeny?";
+			mes "When the greatest deal in your life is right before your eyes?! Tragic, truly tragic...";
+			close;
+		}
+		set Zeny, Zeny-.@Main_gauche_hap;
+		getitem 1207,.@input; //Main_Gauche
+		break;
+	case 3:
+		mes "[Suspicious Guy]";
+		if (Sex == SEX_MALE)
+			mes "A Manteau? That's old news! You know what's the latest in protective armors?";
+		else
+			mes "Now why would such a beautiful woman wear something out of style? You know what would make you look even better?";
+		next;
+		mes "[Suspicious Guy]";
+		mes "That's right!";
+		mes "A Hood! Wearing one of those is the quickest way to win respect these days!";
+		next;
+		mes "[Suspicious Guy]";
+		mes "If you've got a Hood on, monsters will fear you and run away in terror! And check out this sturdy fabric. I can pull it all I want and it won't tear!";
+		next;
+		select("This hood has no drawstrings...? ");
+		mes "[Suspicious Guy]";
+		mes "Haha! What are you saying? You don't need drawstrings! The space age Rayon and Nylon and Krypton fibers keep the Hood secure on your head!";
+		next;
+		mes "[Suspicious Guy]";
+		mes "Man...";
+		mes "So much technology was invested into this Hood. Can you believe I'm only selling it for 930 zeny?";
+		next;
+		mes "[Suspicious Guy]";
+		mes "Clearly, this is the deal of the century. So how many do you want?";
+		next;
+		while(1) {
+			input .@input;
+			if (.@input == 0) {
+				mes "[Suspicious Guy]";
+				mes "Awww...";
+				mes "It wasn't because of the whole drawstrings thing, was it?";
+				close;
+			}
+			else if (.@input > 100) {
+				mes "[Suspicious Guy]";
+				mes "Whoa~!";
+				mes "I can't sell you that many! What are you trying to do, take advantage of me?";
+				next;
+			}
+			else
+				break;
+		}
+		set .@Hood__hap,.@input * 930;
+		if (Zeny < .@Hood__hap) {
+			mes "[Suspicious Guy]";
+			mes "Oh nuts...";
+			mes "Short on zeny, eh?";
+			close;
+		}
+		set Zeny, Zeny-.@Hood__hap;
+		getitem 2501,.@input; //Hood
+		break;
+	case 4:
+		mes "[Suspicious Guy]";
+		mes "Man...";
+		mes "You sure like to ask for the impossible. Well, let me tell you right now. No other Merchant in the world sells the goods only I can offer.";
+		next;
+		mes "[Suspicious Guy]";
+		mes "You just gotta believe me!";
+		close;
+	}
+	mes "[Suspicious Guy]";
+	mes "No need to look anywhere else at all when I clearly have the best items around!";
+	next;
+	mes "[Suspicious Guy]";
+	mes "Please come back sometime, and buy more of my stuff. I love a customer who knows what they want! Hehe~";
+	close;
+}
+
+geffen_in,22,125,1	script	Crumpler	52,{
+	mes "[Crumpler]";
+	mes "โอ้โห~!";
+	mes "คุณแต่งตัวสวยจริงๆ";
+	mes "Mage สุดวิเศษ!";
+	next;
+	if (Class == Job_Mage) {
+		mes "^3355FFสักวันหนึ่ง คุณสาบานกับตัวเองว่า คุณจะต้องแก้แค้นอย่างนองเลือดกับผู้เมาที่ทำสงครามคนนี้ที่พูดจาเยาะเย้ยอาชีพ Mage ที่ภาคภูมิใจ สักวันหนึ่ง...^000000";
+		close;
+	}
+	else if (Class == Job_Wizard) {
+		select("~ อันที่จริงฉันเป็นพ่อมด");
+		mes "[Crumpler]";
+		mes " ฉันกลัวมาก!";
+		mes "พ่อมด! วะฮ่าฮ่า!";
+		next;
+		mes "[Crumpler]";
+		mes " ทุกคนรู้ว่า Wizards ล้วนแต่มีความฉลาดและไม่มีความแข็งแกร่ง! เอาน่า เจ้าคนฉลาด! แสดงให้ข้าเห็นหน่อยสิว่าเจ้าแข็งแกร่งแค่ไหน!";
+		next;
+		switch(select("~ Meteor Storm!:~ Lord of Vermilion!:~ แสดงความเมตตา")) {
+		case 1:
+			mes "[Crumpler]";
+			mes "หือ?";
+			mes "เมื่อกี้เธอพูดว่าอะไรนะ?";
+			next;
+			mes "[Crumpler]";
+			mes "...";
+			next;
+			mes "[Crumpler]";
+			mes "...";
+			mes "......";
+			next;
+			mes "[Crumpler]";
+			mes "โอ้โห้";
+			mes "crraaaap!";
+			emotion  ET_SURPRISE;
+			next;
+			mes "[Crumpler]";
+			mes "ช่วยด้วย!";
+			specialeffect EF_METEORSTORM;
+			close;
+		case 2:
+			mes "[Crumpler]";
+			mes "ฮ่าๆๆๆ!";
+			mes "Silly Wizard! มีเพียงสัตว์ประหลาดเช่น Baphomet เท่านั้นที่สามารถจัดการกับเวทย์มนตร์ขนาดใหญ่เช่นนี้ได้--";
+			next;
+			mes "[Crumpler]";
+			mes "โอ้ ท่านเจ้าข้า...";
+			mes "คุณจริงจังนะ...";
+			next;
+			specialeffect EF_LORD;
+			mes "[Crumpler]";
+			mes "ARRRRRGH~!";
+			mes "มัน BUUUURNS!";
+			close;
+		case 3:
+			mes "["+strcharinfo(0)+"]";
+			mes "ไม่...";
+			mes "ฉันสามารถใช้ได้เท่านั้น";
+			mes "พลังแห่งความดีของฉัน";
+			next;
+			mes "[ครัมเปลอร์]";
+			mes "ฮ่าฮ่าฮ่า!";
+			mes "ดี...";
+			mes "เพื่ออะไร!";
+			close;
+		}
+	}
+	else if (Class == Job_Sage) {
+		select("~ ที่จริงแล้วท่าน ผมเป็น Sage.");
+		mes "[Crumpler]";
+		mes "อา...";
+		mes "Sage?";
+		emotion ET_QUESTION;
+		next;
+		mes "[Crumpler]";
+		mes " ฉันไม่รู้ว่ามันคืออะไร แต่ฉันคิดว่ามันคงไม่แย่เท่ากับ Mage เพียงครึ่งเดียวหรอก";
+		next;
+		mes "[Crumpler]";
+		mes "ซู่...";
+		mes "อยากดื่มกับฉันไหม?";
+		close;
+	}
+	else {
+		mes "[Crumpler]";
+		mes "เดี๋ยวก่อน...";
+		mes "คุณไม่ใช่ Mage!";
+		mes "จ-ฉันเมาขนาดนั้นเลยเหรอ?!";
+		next;
+		mes "[Crumpler]";
+		mes "เพื่อน ฉันเกลียดนักเวทย์อย่างแรงกล้า! คอยศึกษาและสวดมนต์อยู่เสมอ และทำภาษีให้สูงและสิ่งของต่างๆ...";
+		next;
+		mes "[Crumpler]";
+		mes "ตกงาน เซ็นเซอร์สื่อ ทำลายระบบการศึกษา ก่อให้เกิดมลพิษทางอากาศ เริ่มสงคราม ทำเพลงแร็พ...";		close;
+	}
+}
+
+geffen_in,59,61,1	script	Skyler	61,{
+	mes "[Skyler]";
+	mes "สวัสดี สวัสดี";
+	mes "คุณไม่ได้มาหา";
+	mes "Eric ใช่ไหม?";
+	next;
+	if (select("Eric? นั้นคือใคร?:ใช่ ใช่") == 1) {
+		mes "[Skyler]";
+		mes "อ๊ะ ฉันเข้าใจ. เขาคือคนที่อยู่ในห้องทางซ้ายของฉัน. เขาเสมอภาคตลอดเวลากับโปรเจคหนึ่ง.";
+		next;
+		mes "[Skyler]";
+		mes "บางอย่างที่เกี่ยวข้องกับหูฟังแบบมีเวทมนตร์. ฉันเดาว่าเขากำลังมองหานักลงทุนเพื่อช่วยเขาจะสร้างสิ่งใดสิ่งหนึ่งที่เขากำลังสร้าง.";
+		close;
+	}
+	mes "[Skyler]";
+	mes "โอเค คุณจะพบ Eric ในห้องทางซ้ายของฉัน. เขาคงจะดีใจที่มีคนสนใจสิ่งที่เขาพยายามสร้าง.";
+	next;
+	mes "[Skyler]";
+	mes "จากสิ่งที่ฉันจำได้, เขาดูเหมือนได้รับความประหลาดใจมาก, คิดว่าเขาจะไม่สามารถทำเสร็จโปรเจคขนาดเล็กของเขา.";
+	next;
+	mes "[Skyler]";
+	mes "ฉันดีใจที่ได้ยินว่าคุณมาที่นี่เพื่อช่วยเยียวยาเด็กหนุ่มคนนี้.";
+	close;
+}
+
+geffen_in,27,134,5	script	Waitress#elen	91,{
+	mes "[Elenore]";
+	mes "This place...";
+	mes "Certainly has";
+	mes "atmosphere.";
+	next;
+	mes "[Elenore]";
+	mes "We've got some kind of Fortune Teller that's always hanging around in the corner, and a loud, belligerent drunk who's always picking on Mages.";
+	next;
+	mes "[Elenore]";
+	mes "So...";
+	mes "What can";
+	mes "I do for you?";
+	next;
+	if (select("May I have a drink?:Is there any interesting gossip?") == 1) {
+		mes "[Elenore]";
+		mes "Well...";
+		mes "If you're looking for alcohol, King Tristram III outlawed it a while ago. Now I hear they only serve it in certain places.";
+		next;
+		mes "[Elenore]";
+		mes "Still, people manage to get drunk off the imitation drinks that we serve here. I guess it's all psychological.";
+		next;
+		mes "[Elenore]";
+		mes "I reeeeally want to be able to visit that place where they serve real drinks. I hear it's just like paradise!";
+		close;
+	}
+	switch(rand(1,4)) {
+	case 1:
+		mes "[Elenore]";
+		mes "Gossip...?";
+		mes "Well, I've heard that they're opening a new Airship Service";
+		mes "in Juno!";
+		next;
+		mes "[Elenore]";
+		mes "Or at least, they're planning to. The airship isn't really ready to take off just yet. In the meantime, there's some weird customer representative over there who's offering a teleport service.";
+		next;
+		mes "[Elenore]";
+		mes "It seems like Kafra Corporation may finally have a competitor! { again, I don't think many girls are as attractive as the Kafra Employees...";
+		break;
+	case 2:
+		mes "[Elenore]";
+		mes "Have you heard?";
+		mes "There are some new fashions floating around the Rune-Midgarts Kingdom!";
+		next;
+		mes "[Elenore]";
+		mes "People have been coming in, wearing some cute new hats. There was this cute Teddy Bear Hat I've never seen before, and a girl came in wearing these black Kitty Ears...";
+		next;
+		mes "[Elenore]";
+		mes "Of course, not every popular style suits my taste. I mean, I saw someone walking around with a Mushroom on their head. And I hear someone has been making hats made out of Fish?";
+		next;
+		mes "[Elenore]";
+		mes "I guess those";
+		mes "kinds of hats are too";
+		mes "artistic for my taste.";
+		break;
+	case 3:
+		mes "[Elenore]";
+		mes "Gossip, eh?";
+		next;
+		mes "[Elenore]";
+		mes "Well...";
+		mes "I hear there's this person somewhere in Rune-Midgarts...";
+		next;
+		mes "[Elenore]";
+		if (Sex == SEX_MALE)
+			mes "Tell me, have you ever heard of "+strcharinfo(0)+"? He's supposed to be the suavest hero around!";
+		else
+			mes "Have you ever heard of "+strcharinfo(0)+"? People say she's one of the prettiest girls in all of Rune-Midgarts!";
+		break;
+	case 4:
+		switch(rand(1,2)) {
+		case 1:
+			mes "[Elenore]";
+			mes "Gossip, eh?";
+			mes "W-wait...";
+			next;
+			mes "[Elenore]";
+			mes "Ugh...";
+			mes "Ooooh...";
+			mes "My he-head...";
+			mes "It huuurts...";
+			next;
+			mes "[William's Spirit]";
+			mes "^990000You get the hell away from my daughter, low-life, before I sell your organs for zeny!";
+			mes "You hear me?!^000000";
+			next;
+			mes "[Elenore]";
+			mes "*Cough*";
+			mes "Oh...!";
+			mes "Sorry about that!";
+			mes "I must be coming";
+			mes "down with the flu!";
+			mes "...Or something.";
+			next;
+			mes "^3355FFWeird...";
+			mes "Her voice was";
+			mes "really deep for";
+			mes "a minute there...";
+			break;
+		case 2:
+			mes "[William's Spirit]";
+			mes "^990000Hey you sex crazed bastard!! Stop looking at my daughter like that before I rip out your eyes, and eat them with pasta!^000000";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			if (Sex == SEX_MALE) {
+				mes "Huh...?";
+				mes "C-come again?";
+				next;
+				mes "[Elenore]";
+				mes "Huh...?";
+				mes "Oh, Dad must have possessed me again. It happens to me and my sister all the time.";
+				next;
+				mes "["+strcharinfo(0)+"]";
+				mes "No kidding?";
+				mes "Huh. Total bummer.";
+				next;
+				mes "[Elenore]";
+				mes "Yeah...";
+				mes "Tell me about it.";
+				break;
+			}
+			else {
+				mes "W-waaaaait~";
+				mes "But, But I'm a girl!";
+				next;
+				mes "[William's Spirit]";
+				mes "^990000What part of ^FF0000I will whup you where you stand^000000 ^990000do you not understand?! Now, quit it you pervert!^000000";
+				next;
+				mes "^3355FFWaaah~!";
+				mes "How did she";
+				mes "get all scary?!^000000";
+				break;
+			}
+		}
+	}
+
+	close;
+}
+
+geffen_in,70,67,3	script	Waitress#elise	90,{
+	mes "[Elisa]";
+	mes "สวัสดี~";
+	mes "มีอะไรให้ช่วยไหม";
+	next;
+	if (select("~ ขอดื่มหน่อยได้ไหม:~ ช่วงนี้มีเรื่องซุบซิบอะไรที่น่าสนใจบ้างไหม?") == 1) {
+		mes "[Elisa]";
+		mes "อา...";
+		mes "ดื่ม?";
+		next;
+		mes "[Elisa]";
+		mes "เธอก็รู้ว่าเราไม่เสิร์ฟเครื่องดื่มแอลกอฮอล์ที่นี่แล้ว เราแค่มีเครื่องดื่มปลอมๆ ไม่มีรสที่ไม่มีผล ใช่ มันน่าเบื่อมาก...";
+		next;
+		mes "[Elisa]";
+		mes "เราเสริฟแค่น้ำแถวนี้เท่านั้น และเครื่องดื่มแอลกอฮอล์เลียนแบบที่แย่มาก";
+		next;
+		mes "[Elisa]";
+		mes "เป็นเรื่องน่าสยดสยองที่ King Tristram III ทรงห้ามเครื่องดื่มแอลกอฮอล์ในราชอาณาจักร! มันอาจเป็นการตัดสินใจที่ไม่ดีเพียงครั้งเดียวที่เขาทำตลอดรัชสมัยของพระองค์!";
+		close;
+	}
+	switch(rand(1,4)) {
+	case 1:
+		mes "[Elisa]";
+		mes "คุณรู้";
+		mes "มีอะไรแปลกขนาดนั้น?";
+		next;
+		mes "[Elisa]";
+		mes "ข้าได้ลงไปที่เขตศักดิ์สิทธิ์พรอนเทรา และข้าได้สาบานแล้ว";
+		mes "ว่านักบวชได้แต่งงานกับนักบวชหญิง!";
+		next;
+		mes "[Elisa]";
+		mes "ฉันไม่รู้จริงๆ เลยว่าพวก Priest จะแต่งงานได้หรือไม่ แต่เนื่องจาก King Tristram III อยู่ที่นั่นด้วย";
+		mes "ฉันคิดว่ามันโอเคนะ!";
+		break;
+	case 2:
+		mes "[Elisa]";
+		mes "ฉันไม่ชอบคิดเหมารวมกับคนอื่น แต่เธอไม่เห็นหรือว่านักดาบและอัศวิน";
+		mes "มีแนวโน้มว่าจะเป็นเช่นนั้น เธอก็รู้...";
+		next;
+		mes "[Elisa]";
+		mes "...INT การแข่งขัน?";
+		mes "ทั้งหมดที่พวกเขาดูเหมือนจะรู้";
+		mes "กำลังทุบสิ่งต่างๆ!";
+		break;
+	case 3:
+		mes "[Elisa]";
+		mes "ข่าวลือ...?";
+		mes "อืม ก็...";
+		next;
+		mes "[Elisa]";
+		mes "คุณรู้จักชื่อนี้";
+		mes "แห่งอาณาจักรของเราใช่ไหม?";
+		mes "อาณาจักร Rune-Midgarts?";
+		next;
+		mes "[Elisa]";
+		mes "ฉันได้ยินมาว่าเดิมเรียกว่า Rune-Midgarts Kingdom ตามทวีปของเรา อย่างไรก็ตาม ด้วยเหตุผลบางอย่าง จึงเปลี่ยนชื่อเป็น 'Rune-Midgarts'";
+		next;
+		mes "[Elisa]";
+		mes "เห็นได้ชัดว่าเป็นการตัดสินใจที่ชาญฉลาด เนื่องจากมีคนจำนวนมากเกินไปที่สับสนระหว่างทวีปของเรากับอาณาจักรของเรา แปลกใช่มั้ย?";
+		break;
+	case 4:
+		switch(rand(1,2)) {
+		case 1:
+			mes "[Elisa]";
+			mes "ข่าวลือ...?";
+			mes "อืม ก็...";
+			next;
+			mes "[Elisa]";
+			mes "น่าตลกดี...";
+			mes "ฉัน ฉันคิดอะไรไม่ออก ทุกอย่างมันดูคลุมเครือมาก...";
+			next;
+			mes "...";
+			next;
+			mes "...";
+			mes "......";
+			next;
+			mes "[วิญญาณของวิลเลียม]";
+			mes "990000อยู่ให้ห่างจากลูกสาวฉัน ไม่งั้นฉันจะทุบสมองแกให้พังพังก์! Elisa จะแต่งงานกับหมอ! หรือทนายความ!^000000";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			if (Sex == SEX_MALE) {
+				mes "ใช่แล้ว ท่าน!";
+				next;
+				mes "^3355FFนั่นมันน่ากลัวมาก...!";
+				mes " ดูเหมือนความรักของพ่อจะคงอยู่ตลอดไป แม้ในชีวิตหลังความตาย^000000";
+			}
+			else {
+				mes "แต่...";
+				mes "ฉันเป็นผู้หญิง!";
+				next;
+				mes "[วิญญาณของวิลเลียม]";
+				mes "^990000อะไรนะ...?!";
+				mes "แย่กว่านั้นอีก!!^000000";
+				next;
+				mes "^3355FFนั่นมันน่ากลัวมาก...!";
+				mes "ดูเหมือนความรักของพ่อจะคงอยู่ตลอดไป แม้ในชีวิตหลังความตาย^000000";
+			}
+			break;
+		case 2:
+			mes "[วิญญาณของวิลเลียม]";
+			mes "^990000เจ้ากล้าดียังไงมาแย่งชิงลูกสาวคนสำคัญของข้า! เจ้าอยากลิ้มรสความโกรธเกรี้ยวของพ่อที่โกรธจัดไหม?^000000";
+			next;
+			mes "[Elisa]";
+			mes "ว-ว้าว...!";
+			mes "ฉันขอโทษจริงๆ!";
+			next;
+			mes "[Elisa]";
+			mes "มันก็แค่...";
+			mes "วิญญาณของพ่อฉัน";
+			mes "พระเจ้าสะกดวิญญาณของเขา อยู่";
+			mes "ปกป้องมากเกินไปหน่อย!";
+			next;
+			mes "^3355FFคุณก้าวออกไป";
+			mes "โปรด ระมัดระวังด้วย^000000";
+			break;
+		}
+	}
+	close;
+}
+
+geffen_in,79,76,2	script	Merchant Daven	120,{
+	mes "[Merchant Daven]";
+	mes "ฉันยังจำ Geffen";
+	mes "เมื่อมันน่าเบื่อมาก.";
+	next;
+	mes "[Merchant Daven]";
+	mes "แต่ตอนนี้มีเมจและวิซาร์ด, และเศรษฐกิจที่กำลังพัฒนา";
+	mes "ในเมืองนี้!";
+	next;
+	switch(select("~ เมจ...?:~ เศรษฐกิจ?:~ คุณคือใคร?")) {
+	case 1:
+		if (BaseJob == Job_Mage) {
+			mes "[Merchant Daven]";
+			mes "เมจคือผู้ถือเวทมนตร์. แต่คุณคงรู้มากขึ้นเกี่ยวกับหัวข้อนี้แล้ว, ใช่ไหม?";
+		}
+		else {
+			mes "[Merchant Daven]";
+			mes "เมจและวิซาร์ดมักถือหนังสือและศึกษาเวทมนตร์. นั่นก็คือทางที่พวกเขาเป็น.";
+			next;
+			mes "[Merchant Daven]";
+			mes "มีโรงเรียนเวทมนตร์ทางเหนือตัวเมืองสำหรับนักเรียนที่สนใจที่จะเป็นเมจ. ที่นั่น, พวกเขาสามารถเรียนรู้พื้นฐานของเวทมนตร์.";
+			next;
+			mes "[Merchant Daven]";
+			mes "หลังจากที่ได้ประสบความชำนาญในการใช้เวทมนตร์, เมจสามารถยื่นขอเข้าร่วมวิซาร์ดได้ที่บนหอเกฟเฟ่น";
+		}
+		break;
+	case 2:
+		if (Class == Job_Blacksmith) {
+			mes "[Merchant Daven]";
+			mes "เศรษฐกิจ...?";
+			mes "นั่นคือบุคลากรของช่างตีเหล็กทั้งหลาย! แต่คุณควรรู้แล้ว, ใช่ไหม?";
+		}
+		else {
+			mes "[Merchant Daven]";
+			mes "ดีนะ, คุณคงจะขอบคุณช่างตีเหล็กสำหรับเศรษฐกิจที่นี่ในเกฟเฟ่น. แน่นอน, พวกเขามักจะสกปรก, อับและกลับนกล่าวมุ้งมิ้ง...";
+			next;
+			mes "[Merchant Daven]";
+			mes "แต่พวกเขาเป็นคนทำงานหนัก. นอกจากนี้, แร่ที่พวกเขาทำละและอาวุธที่พวกเขาสร้างขึ้นมีอยู่ในความต้องการมาก";
+			next;
+			mes "[Merchant Daven]";
+			mes "ผู้ผจญภัยจ่ายเงินทองมากมายให้ช่างตีเหล็กสำหรับอาวุธที่มีคุณภาพสูงที่พวกเขาสร้าง";
+		}
+		break;
+	case 3:
+		mes "[Merchant Daven]";
+		mes "ฉัน? ฉันคือพ่อค้าถนนที่สวยที่สุดของโลก. ฮ่า ฮ่า~";
+		next;
+		select("...^EE0000Magnum Break^000000!");
+		if (Class == Job_Swordman) {
+			mes "[Merchant Daven]";
+			mes "ว้าว, ว้าว!";
+			mes "มันเป็นเพียงเรื่องขำๆ!";
+			mes "โปรดอภัยฉัน!";
+		}
+		else {
+			mes "[Merchant Daven]";
+			mes "Magnum Break?";
+			mes "แต่คุณไม่สามารถทำเช่นนั้นได้, ใช่ไหม?";
+		}
+		break;
+	}
+	close;
+	}
+
+
+geffen_in,114,73,5	script	Hadenheim	709,{
+	mes "[Hans Hadenheim]";
+	mes "มัน, ทวีป Midgard แน่นอนใหญ่มาก! สบายดีไหม, เด็กหนุ่ม?";
+	next;
+	mes "[Hans Hadenheim]";
+	mes "เกฟเฟ่นนี่แปลกประหลาดจริง ๆ. แต่มันคุ้มค่าที่จะเดินทางมาจาก Schwarzwald Republic.";
+	next;
+	if (select("~ Schwarzwald Republic?:~ แล้วทำไมคุณเดินทาง?") == 1) {
+		mes "[Hans Hadenheim]";
+		mes "คุณ...";
+		mes "ไม่รู้จัก";
+		mes "Schwarzwald Republic?";
+		next;
+		mes "[Hans Hadenheim]";
+		mes "คุณรู้, มิตรสหายของกาลเวลา Rune-Midgarts. อืม... เมืองหลวงของเราคือ จูโน?";
+		next;
+		mes "[Hans Hadenheim]";
+		mes "คุณควรจะ";
+		mes "อ่านข่าวทั่วโลก";
+		mes "นะครับ!";
+		close;
+	}
+	mes "[Hans Hadenheim]";
+	mes "โอ้, คุณรู้, สำหรับธุรกิจ. ดูเหมือนว่ามีเงินมากในการค้าระหว่างประเทศ.";
+	next;
+	mes "[Hans Hadenheim]";
+	mes "ฉันหมายถึง, ทุกที่มีการค้นพบเมืองใหม่ๆ โดยนักผจญภัย, การค้านำเข้าและการส่งออกเป็นเรื่องรุ่นใหม่!";
+	next;
+	mes "[Hans Handenheim]";
+	if (BaseJob == Job_Merchant)
+		mes "คุณเป็นนักธุรกิจที่ค้าขายเอง, ใช่ไหม? ดังนั้นคุณคงเข้าใจว่าเราอยู่ในยุคทองคำของการค้า!";
+	else if (Class == Job_Novice) {
+		mes "ฉันเดา...";
+		mes "ความคิดแบบนี้อาจจะสูงเกินไปสำหรับมือใหม่เช่นคุณ.";
+	}
+	else
+		mes "อย่างไรก็ตาม...";
+	next;
+	mes "[Hans Hadenheim]";
+	mes "คุณเคยไปที่บางแหล่งใหม่ๆ หรือไม่? ที่นั่นมันน่าสนใจมาก และคุณสามารถเรียนรู้สาระใหม่ๆ จากวัฒนธรรมต่างๆ ทั่วโลก.";
+	next;
+	mes "[Hans Hadenheim]";
+	mes "แต่ถ้าคุณต้องการไปเที่ยวชม, ฉันแนะนำส่วนตัวให้คุณไปเยี่ยมบ้านเกิดของฉันที่จูโน. มันสวยงามมาก, คุณรู้ไหม.";
+	close;
+}
+
+geffen_in,39,127,2	script	Psychic Advisor	704,{
+	mes "[Psychic Advisor]";
+	mes "Ah...";
+	mes "Don't tell me! You've come to have your fortune told, yes? I know,";
+	mes "I know... I can see the future! So what kind of fortune do you want?";
+	next;
+	switch(select("Life!:Love!:Money!:Grades!:Future!:Fashion!")) {
+	case 1:
+		mes "[Psychic Advisor]";
+		switch(rand(1,5)) {
+		case 1:
+			mes "Life...?";
+			mes "Wow, that's a really broad category. But let me contact some spirits of the spirit world and I'll see what I can do.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Hmmm...";
+			mes "Alright, I got something. Ummmm, you will live to be very, very old. How old you ask?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "^333333*cough!*^000000ty-nine years old. Isn't that good news? That's a ripe old age, and you have plenty of blissful years left to enjoy.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Also, you'll always be successful. You'll successfully win in life and you'll successfully lose in life!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "You might not understand that little nugget of wisdom now, but as you learn more about this crazy, crazy world, it will make more sense.";
+			next;
+			break;
+		case 2:
+			mes "Hmm...";
+			mes "What can I tell you about life? Let me contact the spirit world real quick~";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Alright, I got it!";
+			mes "Your dreams";
+			mes "will come true!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Of course, I'm not sure exactly which dreams will come true, but hopefully the good dreams that you've had will become reality, rather than any of your weird nightmares.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Which dreams exactly? Well, the spirits are awfully reticent today. They're not exactly in the mood to talk. Spirits have lives too, you know. Wait, did that make any sense?";
+			next;
+			break;
+		case 3:
+			mes "I sense that you may be about to make a rash decision that you might regret. I must advise you to slow down and think first.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Although the pressure may be high, remember that any decision made in excitement is usually a bad decision. Take a deep breath and relax.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Even if you're running out of time, it's better to slowly plan things out so that you don't waste any of your efforts, or make costly mistakes.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Remember that calm,";
+			mes "collected patience";
+			mes "is the key to overcoming crisis.";
+			next;
+			break;
+		case 4:
+			mes "Hmmm... I sense that you are experiencing a loss of direction in life. Should you prioritize security or happiness?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "I suggest that you think fully and carefully before deciding what path is best for you. And remember, you can only learn from your mistakes.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "If you plan carefully and perform positive, constructive actions with a good attitude, you can";
+			mes "have it all!";
+			next;
+			break;
+		case 5:
+			mes "Hmm...";
+			mes "I sense that you've had a quarrel with someone close to you. Someone for whom you care for dearly.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "You must take the initiative! Try and resolve this matter without getting too caught up in your emotions.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Try to make amends, swallow your pride and apologize sincerely if you have to. Isn't friendship worth it? I think so.";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Well, I hope I settled any doubts you've had about the future. That is, after all, my job as a professional psychic consultant. Come back anytime~";
+		close;
+	case 2:
+		mes "[Psychic Advisor]";
+		switch(rand(1,4)) {
+		case 1:
+			mes "You want to know your Love fortune? Oh ho~ { there must be somebody that you like! Come on, you can tell me!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Oh right...";
+			mes "Um, I sense a strong love energy emanating from your soul. It's quite intimidating and pushes away the weak and the spineless.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "So basically, I foresee that you'll only be attracting really strong people soon. You know, like professional athletes, bodybuilders, construction workers, that sort of thing.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "So if this is what you want, congratulations! Fortune smiles upon you with joy this day.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "But if this is the opposite of what you want, well, I'm sorry. Fortune smiles upon you with sarcasm this day. But it's not too late to change destiny!";
+			next;
+			break;
+		case 2:
+			mes "Looooove, eh? ";
+			mes "Let me contact";
+			mes "the spirits for a second.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Ah! An old flame will return! I don't know if they'll fall in love with you again, ask you for money, or if that person's back for revenge...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "But an old flame will definitely resurface in your life. Somehow. So if that's good news, congratulations! But, if that's bad news, { be careful!";
+			next;
+			break;
+		case 3:
+			mes "Um...";
+			if (Sex == SEX_MALE)
+				mes "The girl that you";
+			else
+				mes "The boy that you";
+			mes "are currently seeing";
+			mes "is perfect for you!";
+			next;
+			switch(select("How did you know?:You're so wrong!:I'm single!")) {
+			case 1:
+				mes "[Psychic Advisor]";
+				mes "Well...";
+				mes "We psychics are pretty accurate at this kind of thing. And it's so good to see that you're really happy with your partner!";
+				close;
+			case 2:
+				mes "[Psychic Advisor]";
+				mes "You didn't let me finish my sentence. What I meant to say was...";
+				next;
+				mes "[Psychic Advisor]";
+				if (Sex == SEX_MALE)
+					mes "The girl that you";
+				else
+					mes "The boy that you";
+				mes "are currently seeing is perfect for you if you want to live the rest of your life in utter misery!";
+				next;
+				mes "[Psychic Advisor]";
+				mes "But even if you break up, do it as soon as possible and try to be good friends after the matter.";
+				next;
+				mes "[Psychic Advisor]";
+				mes "It'll make better people out of both of you. But that's just what I think.";
+				close;
+			case 3:
+				mes "[Psychic Advisor]";
+				mes "Oh...";
+				mes "Um, I'm sorry.";
+				mes "Sometimes, I get the future and the present mixed up. You know, since I'm always looking into the future...?";
+				next;
+				mes "[Psychic Advisor]";
+				if (Sex == SEX_MALE) {
+					mes "What I meant to say was";
+					mes "^3355FFyou and the perfect woman will soon fall in love^000000. Yes, that's what I meant!";
+				}
+				else {
+					mes "What I meant to say was";
+					mes "^3355FFyou will soon be swept off your feet by the perfect guy^000000. Yes, that's what I meant!";
+				}
+				close;
+			}
+			break;
+		case 4:
+			mes "Looking for romance, eh? Life can always use a little more excitement.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "That's strange, I foresee a Love Triangle in your future. No, wait! A Love...";
+			mes "Decagon?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "What's the shape with eleven sides? Now, you can't expect me to know that off the top of my head. I'm a psychic, not a mathematician!";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Love is always fun! Even in this bleak world, love surrounds us in its inviting glow. Treasure that person who is special to you, and come back for another reading!";
+		close;
+	case 3:
+		mes "[Psychic Advisor]";
+		switch(rand(1,3)) {
+		case 1:
+			mes "Money? Well, you must be more fortunate in money than I am. After all, I sit here all day and give this service for free!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Well...";
+			mes "Um, the spirits tell me that you might not win the lottery, no matter how many tickets you buy. I'm sorry, but it's true.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "But I just saved you a lifetime's worth of lottery tickets! That could be quite a hefty sum of money!";
+			next;
+			break;
+		case 2:
+			mes "Ah yes. Let me contact the spirit world. They usually have sound financial advice, despite the fact that don't have any sort of economy over there.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "First off, be accountable for your own money and use a budget that works for you. A good rule of thumb? For every ten zeny you earn, put one zeny aside and either save it or invest it for later.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "And whatever you do, don't work as a psychic advisor in Rune-Midgarts. The real cash, apparently, is in discovering new countries. Why didn't I do that?!";
+			next;
+			break;
+		case 3:
+			mes "So you want to know about money, eh? Let me commune with the spirits of the supernatural realm...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Ah yes. They are telling me that it's best to be moderate in all things. Certainly, you must make sure that your expenditures don't exceed your budget.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "However, you should also avoid gambling with your money. By that, I mean you should save and invest carefully. Don't be tempted into risky get-rich-quick schemes!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "On the other hand, get-rich-not-as-quick schemes are okay, so long as you know what you are doing. I'm right, aren't I?";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Well, you need money to live, but having money alone isn't living. Don't forget that there are other important things. And try not to stress out, okay?";
+		close;
+	case 4:
+		mes "[Psychic Advisor]";
+		switch(rand(1,4)) {
+		case 1:
+			mes "Your grades? You're still in school? I'm impressed! Your eyes tell me you are rather mature for your age. Alright, let me contact the spirits...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Hm? All the spirits said was 'Did you study?' Well, I guess I answered your question with yet another question!";
+			next;
+			break;
+		case 2:
+			mes "You're asking me about your grades? That's weird. I mean, they only ask about your report card at school, right?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "An education is really important, but don't be discouraged if your grades aren't as good as you'd like.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Perhaps your style of learning isn't really supported by your school, or maybe you're not that interested in academics. Understandable.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "The spirits tell me that you should experiment with different learning styles, so that you can make sure that you get the grades that you want.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Yeah...";
+			mes "The spirits are";
+			mes "awfully lazy today.";
+			next;
+			break;
+		case 3:
+			mes "^FF0000F MINUS^000000!";
+			mes "Hahahahahahaha~!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Oh, I'm sorry, I just love doing that. Okay, let me ask the spirits for real this time. Hmmmm...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Hmm. The spirits are being awfully rude today. They're saying, 'If you're so worried about your grades, why don't you ask your teacher?'";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Now that I think about it, they do have a point. Why don't you ask your teacher, professor or whatever to see if you have any problems?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "I mean, they're being paid to help you. And well, my service is free. So... Yeah.";
+			next;
+			break;
+		case 4:
+			mes "Oh cool!";
+			mes "I sense that you will soon be receiving straight A's...";
+			mes "In Effort!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Now, I couldn't tell you what your real grades are. You might be destined to get an A in every class or subject, but if I told you that...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "You'd probably get cocky, slack off on studying, fail your classes and cause a time paradox. I mean, I have to actually be in the future to actually see it, you know?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Instead of worrying about time paradoxes, why don't you make your own destiny?";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Well, in any case, concentrating on your studies is tough, but it can be rewarding. I hope you do well in whatever you choose to do~";
+		close;
+	case 5:
+		mes "[Psychic Advisor]";
+		mes "The future? I thought it was implied that any fortune I tell you is about the future in the specific field that you choose.";
+		next;
+		mes "[Psychic Advisor]";
+		mes "I guess you want to know about the future in general. Let me commune with the spirits, and we'll see what they have to say, okay?";
+		next;
+		mes "[Psychic Advisor]";
+		switch(rand(1,4)) {
+		case 1:
+			mes "Hmm...";
+			mes "In the future, Sex, Violence, and Rock and Roll are completely abolished. Mankind experiences an era of complete peace and utter boredom.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "I don't know how far in the future that will occur, but it better not happen soon!";
+			next;
+			break;
+		case 2:
+			mes "In the future, Earth is protected by a single giant robot: Plutonium Overdrive Ignition Negatron G a.k.a POING.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "POING fights off many Kylorian invasions for years, until it is finally defeated by Dr. Hubris' Mechanical Overlord: Nyxltron 47.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Luckily, Doctor Pyeus finishes the Gravitron Oblivion Drive for the Plutonium Overdrive Ignition Negatron G system just in time.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "And so, POING rises again, reborn as the Automatic Hero: GOD-POING. Of course, Nyxltron 47 is destroyed.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "That's probably the most important thing you'll ever learn about the future. Trust me, the rest of it's boring.";
+			next;
+			break;
+		case 3:
+			mes "In the future, believe it or not, the internet will be replaced by a giant brain. I don't know how, but trust me, this brain's huge.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Thanks to the number of internet web journals, this brain becomes peaceful, and decides not to take over the world as it originally planned.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Yes...";
+			mes "This weird brain thing definitely becomes a source for good, a loving benefactor to the human race, so long as people keep writing personal entries on the internet.";
+			next;
+			break;
+		case 4:
+			mes "In the future, they genetically engineer all sorts of plants.";
+			mes "So many kinds! It's crazy I tell you!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Eventually, they create trees that grow celebrity impersonators. Today, it looks like a miracle of science, and a threat to Hollywood starlets.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "However, the people who buy these trees are the same kind who who wear those really tacky shirts...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "You know, the kind with a lame sense of humor where it will have the word 'Cat-o-strophic' and there's this little kitten dressed like a mad scientist or something.";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Well...";
+		mes "That's my prediction. Can you really argue with the wisdom of the spirit world?";
+		close;
+	case 6:
+		mes "[Psychic Advisor]";
+		mes "Fashion...?";
+		mes "What does that have to do with matters of the supernatural? Well, um, let me contact the spirits. Ah! Here we go...";
+		next;
+		mes "[Psychic Advisor]";
+		switch(rand(1,5)) {
+		case 1:
+			mes "...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "...";
+			mes "......";
+			next;
+			mes "[Psychic Advisor]";
+			mes "I'm seeing something...";
+			mes "It looks like, a...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "A...";
+			mes "A... Fish?";
+			mes "On someone's head?";
+			next;
+			mes "[Psychic Advisor]";
+			mes "...";
+			mes "It was the most horrible vision!";
+			next;
+			break;
+		case 2:
+			mes "It feels nice to wear expensive headgears! And it's nice to wear fancy clothing too! But remember...";
+			next;
+			mes "[Psychic Advisor]";
+			mes "No matter how much zeny you may put into your wardrobe, you'll look silly unless you match the things you wear.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Now, here's a good example of a mismatched outfit. Imagine some Crusader wearing a Crown, Elven ears and an Iron Cain.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Instead of looking cool, they look sort of like an Evil Keebler Prince. Spooky, huh?";
+			next;
+			break;
+		case 3:
+			mes "I predict...";
+			mes "That Cowboy Hats will be very popular among female";
+			mes "Super Novices";
+			mes "very soon!";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Come on, wouldn't you agree? Cowboy Hats look great on Super Novices!";
+			next;
+			break;
+		case 4:
+			mes "Sometimes, it's a cute idea to follow a theme. Like, if you wear both Angel Wing and Angel Wing Ears at the same time.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Of course, that might be too expensive for most people, but you get the idea.";
+			next;
+			break;
+		case 5:
+			mes "I now predict that the Sombrero will be come very popular when a mass group of Bards form a guild in which the members only wear Sombreros.";
+			next;
+			mes "[Psychic Advisor]";
+			mes "Or was it the Feathered Bonnet that's supposed to skyrocket in popularity? Both of those hats are just sooo stylish, especially on Bards...";
+			next;
+		}
+		mes "[Psychic Advisor]";
+		mes "Well...";
+		mes "We psychic consultants aren't really trained for fashion matters, but I hope I was at least a little bit of help to you.";
+		close;
+	}
+}
+
+geffen_in,109,72,2	script	Monster Scholar	90,{
+	mes "[Estheres]";
+	mes "สวัสดี, ฉันคือผู้เชี่ยวชาญด้าน Monsterology ที่นี่ในเกฟเฟ่น. มีอะไรที่คุณอยากรู้จักบ้างหรือเปล่า?";
+	next;
+	switch(select("~ สัตว์ประหลาดในพื้นที่:ข่าวสัตว์ประหลาดล่าสุด.:~ ยุคของสัตว์ประหลาด:~ ทฤษฎี Jellopy")) {
+	case 1:
+		mes "[Estheres]";
+		mes "ดีครับ, เหมือนคุณทราบอยู่แล้ว, เนื่องจากวิซาร์ดและเมจมีการฝึกฝนที่เกฟเฟ่น, มอนสเตอร์มักจะหลีกเลี่ยงเมือง. ดังนั้นผู้ผจญภัยที่เหนื่อยมีการต้อนรับที่นี่.";
+		next;
+		mes "[Estheres]";
+		mes "แต่ถ้าคุณต้องการที่จะไปค้นหามอนสเตอร์ที่แข็งแกร่ง, คุณสามารถข้ามสะพานไปทางตะวันตกและต่อสู้กับ Kobold.";
+		next;
+		mes "[Estheres]";
+		if (BaseLevel > 40)
+			mes "ดูเหมือนคุณแข็งแกร่งพอแล้วสำหรับการท้าทายประการนี้. แต่ถ้าคุณเห็นใครที่หลายคนข้างทางตะวันตก, คุณอาจต้องแจ้งเตือนพวกเขาบ้าง.";
+		else
+			mes "อืม, แต่ถ้าคุณวางแผนที่จะไปที่นั่น, คุณต้องไม่ไปคนเดียว. ฉันจะแนะนำให้คุณเตรียมตัวให้ดีถ้าคุณจะต่อสู้กับมอนสเตอร์ที่แข็งแกร่ง.";
+		break;
+	case 2:
+		mes "[Estheres]";
+		mes "ข่าวล่าสุด?";
+		mes "โชคดี, พิพิธภัณฑ์มอนสเตอร์จูโนเปิดให้ประชาชนชมแล้ว. พวกเขามีนิทรรศการที่น่าทึ่งและมอนสเตอร์ต่างๆ ตอนนี้ได้แสดง!";
+		next;
+		mes "[Estheres]";
+		mes "นั่นหมายถึง, ฉันได้อ่านเกี่ยวกับมอนสเตอร์ต่างๆ ในห้องสมุดโปรเนเทร่าและจูโน, และพบบางตัวในธรรมชาติบ้าง, แต่ตอนนี้ฉันมีโอกาสเห็นมอนสเตอร์แข็งแกร่งบางตัวจริงๆ!";
+		next;
+		mes "[Estheres]";
+		mes "สิ่งที่น่าตื่นเต้นคือการสำรวจที่ผู้ผจญภัยเหล่านี้ได้ทำให้กับอาณาจักรรูเนเมิดการ์ท์.";
+		next;
+		mes "[Estheres]";
+		mes "เมื่อพื้นที่ใหม่ถูกค้นพบ, มีมอนสเตอร์ที่ไม่เคยปรากฏมาก่อนที่จะเจอ.";
+		next;
+		mes "[Estheres]";
+		mes "ดังนั้นมอนสเตอร์ใหม่ๆ กำลังถูกค้นพบตลอดเวลา! ความหลากหลายของสิ่งมีชีวิตที่หลงเหลือในโลกนี้น่าตื่นเต้นมาก.";
+		break;
+	case 3:
+		mes "[Estheres]";
+		mes "ความจริงคือมอนสเตอร์มีอยู่ตั้งแต่ยุคโบราณ. ยุคของมอนสเตอร์คือเวลาที่พลังของมอนสเตอร์ที่สูงสุด.";
+		next;
+		mes "[Estheres]";
+		mes "พวกเขาได้ทำให้มนุษย์เดือดร้อนนาน, แต่ถูกทำลายจนหมดไปในสงครามยิ่งใหญ่ระหว่างมนุษย์กับมอนสเตอร์.";
+		next;
+		mes "[Estheres]";
+		mes "อย่างไรก็ตาม, เนื่องจากสมดุลของธรรมชาติเปลี่ยนแปลง, มอนสเตอร์กลับมาอย่างไม่หลีกเลี่ยงได้. ไม่มีหลายคนที่รู้เรื่องนี้, แต่มอนสเตอร์ส่วนใหญ่เคยเป็นสัตว์ที่อ่อนโยนเมื่อก่อน. น่าเสียดายจริงๆ...";
+		break;
+	case 4:
+		mes "[Estheres]";
+		mes "อา, Jellopy.";
+		mes "ดูเหมือนว่าเกือบทุกมอนสเตอร์รอบ ๆ นี้จะประกอบด้วย Jellopy. แต่มันคือเพียงการแข็งแรงที่สร้างขึ้นโดยบางมอนสเตอร์หรือมัน...";
+		next;
+		mes "[Estheres]";
+		mes "จากการวิจัยของมอนสเตอร์โบราณและการศึกษามอนสเตอร์ที่ค้นพบเร็ว ๆ นี้, ดูเหมือนว่าจะไม่สามารถพบเจอส่วนประกอบของ Jellopy ในมอนสเตอร์ที่แข็งแกร่ง.";
+		next;
+		mes "[Estheres]";
+		mes "แต่ยังมีบางคนเชื่อว่าอาจจะมีความเกี่ยวข้องกันระหว่าง Jellopy และมอนสเตอร์, ถึงแม้น่าจะยากเชื่อว่ามันจะเป็นไปได้ในทางใดทางหนึ่ง.";
+		next;
+		mes "[Estheres]";
+		mes "มันเป็นไปได้ว่า Jellopy อาจเชื่อมโยงกับบุคลิกภาพและความแข็งแกร่งของมอนสเตอร์. ดังนั้น, หากคุณผสม Jellopy กับบางสิ่ง, คุณก็อาจสร้างมอนสเตอร์ที่แข็งแกร่งขึ้น.";
+		next;
+		mes "[Estheres]";
+		mes "แน่นอน, การทดลองที่ทำในทางนั้นดูเสี่ยงมาก. คุณอาจได้ปล่อยปละละลายมอนสเตอร์ที่น่ากลัวเข้าไปในโลก...";
+		break;
+	}
+	close;
+}
+
+// Lvl 4 weapon quest related NPC ------------------------------------------------------
+
+geffen,203,146,5	script	Citizen	97,{
+	mes "[Citizen]";
+	mes "มีช่างปืนที่มีฝีมือดีในอัลเดอบาราน";
+	mes "เขามีลูกชายทั้งหมด 4 คน.";
+	mes "แย่ที่สุดคือเขาสูญเสียลูกทั้ง 4 คน";
+	mes "ขณะที่พัฒนาอาวุธที่มีพลังมหาศาล.";
+	mes "พ่อรอดชีวิตไว้เพียงคนเดียวจากความหายนะนั้น.";
+	next;
+	mes "[Citizen]";
+	mes "เสียใจจะเป็นอย่างไรสำหรับพ่อ...";
+	mes "เนื่องจากเหตุการณ์นี้, ช่างปืน";
+	mes "เกษียณอาชีพจากงานทำอาวุธและซ่อนตัวไปที่ไหนบางที่.";
+	mes "หลังจากนั้นไม่มีใครเห็น";
+	mes "อาวุธที่มีพลังที่เขาและลูกชายทั้ง 4 คนกำลังพัฒนา";
+	next;
+	mes "[Citizen]";
+	mes "ฉันไม่คิดว่าลูก 4 คนของเขา";
+	mes "ได้ไปสู่สวรรค์ด้วยความวิตกกังวล.";
+	close;
+}

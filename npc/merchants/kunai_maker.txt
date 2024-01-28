@@ -1,0 +1,102 @@
+//===== rAthena Script =======================================
+//= Kunai Merchant Kashin
+//===== By: ==================================================
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.3a
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Trades a few shurikens + ninja stones for elemental kunai.
+//===== Additional Comments: =================================
+//= 1.0 Added the npc. It uses a function that sends the item 
+//=     id of the 2 required items plus the amount. Can trade
+//=     up to 500 units (5,000 kunais) at once. [erKURITA]
+//= 1.1 Officialized script [Playtester]
+//= 1.2a Optimized/cleaned up a bit [ultramage]
+//= 1.3 Updated to match AEGIS script. [Kisuka]
+//= 1.3a Kagerou/Oboro support (BaseJob -> BaseClass) [Euphy]
+//============================================================
+
+que_ng,72,29,3	script	Kunai Merchant Kashin	83,{
+	if(BaseClass == Job_Ninja) {
+		mes "[Kashin]";
+		mes "I am Kashin, ผู้แจกจ่าย";
+		mes "Kunai สำหรับนินจา. ";
+		mes "แจ้งให้ฉันทราบถ้าคุณสนใจ";
+		next;
+		switch(select("10 Fell Poison Kunai:10 Icicle Kunai:10 High Wind Kunai:10 Black Earth Kunai:10 Heat Wave Kunai:ยกเลิก")) {
+		case 1: callfunc "Kunai_Trade",13250,20,7524,1,13259; break;
+		case 2: callfunc "Kunai_Trade",13251,8,7522,2,13255; break;
+		case 3: callfunc "Kunai_Trade",13252,4,7523,2,13257; break;
+		case 4: callfunc "Kunai_Trade",13253,2,7524,1,13256; break;
+		case 5: callfunc "Kunai_Trade",13254,1,7521,2,13258; break;
+		case 6:
+			mes "[Kashin]";
+			mes "ดีแล้ว, ขอบคุณ";
+			mes "ที่มาเยี่ยมร้านของฉัน.";
+			mes "โปรดมาหาฉันเมื่อ";
+			mes "คุณต้องการซื้อ Kunai";
+			mes "ลาก่อน~";
+			close;
+		}
+	}
+	mes "[Kashin]";
+	mes "ฉันคือ Kashin, ผู้แจกจ่าย";
+	mes "Kunai สำหรับนินจา. ถ้าคุณ";
+	mes "มีเพื่อนที่เป็นนินจา";
+	mes "คุณอาจต้องการบอกเขาเกี่ยวกับฉัน";
+	close;
+}
+
+function	script	Kunai_Trade	{
+	setarray .@item_req[0], getarg(0), getarg(2);
+	setarray .@req_amount[0], getarg(1), getarg(3);
+	.@item_id = getarg(4);
+
+	mes "[Kashin]";
+	mes "You can exchange";
+	mes .@req_amount[0] +" "+ getitemname(.@item_req[0]) +" and";
+	mes .@req_amount[1] +" "+ getitemname(.@item_req[1]) +" for every";
+	mes "set of 10 "+ getitemname(.@item_id) +".";
+	next;
+	mes "[Kashin]";
+	mes "ฉันสามารถให้คุณได้สูงสุด 500 เซ็ตของ Kunais ในครั้งเดียว";
+	mes "หากคุณต้องการยกเลิกรายการ, โปรดป้อน ''0''";
+	mes "คุณต้องการ Kunai เซ็ตเท่าไร?";
+	next;
+	input .@amount;
+	if(.@amount < 1 || .@amount > 500) {
+		mes "[Kashin]";
+		mes "เอ้? ขอโทษ, แต่ฉัน";
+		mes "ไม่สามารถให้คุณได้มากขนาดนั้น";
+		mes "กรุณาป้อนค่าน้อยกว่า 500";
+		close;
+	}
+	if (countitem(.@item_req[0]) < .@amount*.@req_amount[0] || countitem(.@item_req[1]) < .@amount*.@req_amount[1]) {
+		mes "[Kashin]";
+		mes "อืมมม, คุณไม่มี";
+		mes "ไอเท็มเพียงพอ";
+		mes "สำหรับการแลก Kunai นี้";
+		mes "กรุณาตรวจสอบไอเท็มของคุณอีกครั้ง";
+		close;
+ 	}
+	if (checkweight(.@item_id, .@amount*10) == 0) {
+		mes "[Kashin]";
+		mes "เฮม, ดูเหมือนว่า";
+		mes "ช่องเก็บของ ของคุณไม่มีพื้นที่";
+		mes "เพียงพอที่จะเก็บไอเท็มเพิ่มเติม";
+		mes "คุณควรเคลียร์พื้นที่บางส่วนก่อน";
+		close;
+	}
+	mes "[Kashin]";
+	mes "ดีมาก, ทุกอย่างดูเหมือน";
+	mes "เรียบร้อย, ดังนั้นเราไปขั้นตอนต่อไป";
+	mes "และทำการแลกเปลี่ยนนี้";
+	mes "ฉันมั่นใจว่าคุณจะพอใจมาก";
+	mes "กับ Kunais เหล่านี้";
+	delitem .@item_req[0],.@req_amount[0]*.@amount;
+	delitem .@item_req[1],.@req_amount[1]*.@amount;
+	getitem .@item_id,10*.@amount;
+	close;
+}

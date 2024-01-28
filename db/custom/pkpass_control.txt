@@ -1,0 +1,8 @@
+//===== Pkpass Map Control List Configulation Files =======================================
+//  Whispering Rain
+//= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+// Structure of Database:
+// mapname
+// EX. morocc
+//= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+morocc

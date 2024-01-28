@@ -1,0 +1,34 @@
+-	script	AutoGuildWar#EVENT	-1,{
+end;
+
+OnClock2215: 
+	announce "[ระบบ] : อีก 15 นาทีจะมีสงคราม Guild War ระหว่าง Estreamicalize VS THE POWERPUFF GIRLS [Scalet Altar] ขอให้ทั้งสองทีมเตรียมตัวให้พร้อม",16;
+end;
+
+OnClock2225: 
+	announce "[ระบบ] : อีก 5 นาทีจะมีสงคราม Guild War ระหว่าง Estreamicalize VS THE POWERPUFF GIRLS [Scalet Altar] ขอให้ทั้งสองทีมเตรียมตัวให้พร้อม",16;
+end;
+
+
+OnClock2230: //เวลาเปิด
+	announce "[ระบบ] : ขณะนี้ สงคราม Guild War ระหว่าง Estreamicalize VS THE POWERPUFF GIRLS ได้เริ่มขึ้นแล้ว",16;
+	agitstart;
+end;
+
+OnClock2329: //เวลาเปิด
+	announce "[ระบบ] : สงคราม Guild War 1 นาทีสุดท้าย",16;
+	set .@count,60;
+	while(.@count) {
+		if (.@count <= 15)
+		announce "[ระบบ] : สงคราม Guild War "+.@count+" วินาทีสุดท้าย",16;
+		set .@count,.@count-1;
+		sleep 1000;
+	}
+	sleep 1000;
+	announce "[ระบบ] : ขณะนี้ สงคราม Guild War ระหว่าง Estreamicalize VS THE POWERPUFF GIRLS ได้จบลงแล้ว",16;
+	agitend;
+end;
+}
+
+
+

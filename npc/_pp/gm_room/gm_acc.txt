@@ -1,0 +1,49 @@
+
+-	script	GMLogin	-1,{
+	end;
+	OnPCLoginEvent:
+
+	if(GetGMLevel() >= .GMLevel){
+		//AtCommand("@hide");
+		AtCommand("@speed 0");
+		//Warp("gm_room", 150, 146);
+		//Announce("Warning: " + StrCharInfo(0) + " has logged in.", bc_all, .AnnounceColor);
+	}
+
+End();
+
+OnInit:
+
+Set(.GMLevel, 80);
+
+Set(.AnnounceColor, 0x00FF66);
+
+End();
+
+}
+
+
+/*
+
+//-----GM MAP FILTER ACCES-----
+-	script	GMFILTER	-1,{
+	
+	OnPCLoadMapEvent:
+	if ( strcharinfo(3) == "gm_room" && getgmlevel()<=80) {
+	showscript strcharinfo(0)+" : คุณไม่สามารถเข้ามาในพื้นที่นี้ได้.";
+	sleep2 1000;
+	specialeffect2 18;
+	 warp "SavePoint",0,0;
+	end;
+	}
+
+}	
+
+
+//------Enable map OnPCLoadMapEvent-------------------
+gm_room	mapflag	loadevent
+
+
+*/
+
+

@@ -1,0 +1,138 @@
+-	script	BuffsSupports	-1,{
+/*mes "[ Maggi ]";
+mes "สวัสดีท่านผู้เล่น [ ^0000FF"+strcharinfo(0)+"^000000 ]";
+mes "การบัพจะมีค่าบริการ ^D75DF13000^000000 Zeny";
+mes "หาก Level น้อยกว่า ^ff000085^000000 สามารถรับบัพได้ฟรี";
+next;
+if(Baselevel >= 85) {
+set .@Zeny,3000;
+if(select("^D75DF1รับบัพ^000000 ( ^FF0000เสียค่าบริการ 3000z^000000 ) :^B6AFB8ยกเลิก") == 2) { end; }
+} else {
+if(select("^D75DF1รับบัพ^000000 ( ^10D513รับบัพฟรี^000000 ) :^B6AFB8ยกเลิก") == 2) { end; }
+}*/
+	set .@delay, 3;	// ดีเลย์การใช้งาน (วินาที)
+	set .@cast, 0;	// ระยะเวลาร่าย (วินาที)
+	if ( gettimetick(2)-@delay_heal < .@delay ) {
+	dispbottom "[ระบบ] โปรดรออีก "+(.@delay-(gettimetick(2)-@delay_heal))+" วินาทีถึงจะใช้งานได้อีกครั้งนะค่ะ";
+	end;
+	} else {
+		//if(Baselevel >= 85) {
+		//if(Zeny < 3000 ) { mes "[ Maggi ]"; mes "^ff0000คุณมีเงินค่าบริการไม่พอค่ะ^000000"; end; }
+		//Zeny -= 3000;
+		//}
+		progressbar "0x007000", .@cast;
+		set @delay_heal, gettimetick(2);
+		if (getbrokenid(1) > 0) { atcommand "@repairall"; }
+		//แก้สถานะต่างๆ
+		sc_end SC_POISON;
+		sc_end SC_FREEZE;
+		sc_end SC_SLEEP;
+		sc_end SC_STAN;
+		sc_end SC_STUN;
+		sc_end SC_STONE;
+		sc_end SC_SILENCE;
+		sc_end SC_BLIND;
+		sc_end SC_Bleeding;
+		sc_end SC_CONFUSION;
+		sc_end SC_CURSE;
+		sc_end SC_HALLUCINATION;
+		sc_end SC_ORCISH;
+		sc_end SC_DONTFORGETME;
+		sc_end SC_ITEMBOOST;
+		sc_end SC_ITEMBOOST_CARD;
+		atcommand "@identifyall";
+		//----------------เอฟเฟค------------------------
+		specialeffect2 37;
+		//specialeffect2 682;
+		specialeffect 37;
+		specialeffect 682;
+		specialeffect2 509;
+		specialeffect 509;
+		specialeffect2 42;
+		specialeffect 42;
+		//-----------------------------
+		if (vip_status(VIP_STATUS_ACTIVE)){
+			//sc_start SC_STRFood,1200000,3;
+			//sc_start SC_AGIFood,1200000,3;
+			//sc_start SC_VITFood,1200000,3;
+			//sc_start SC_INTFood,1200000,3;
+			//sc_start SC_DEXFood,1200000,3;
+			//sc_start SC_LUKFood,1200000,3;
+			sc_start SC_BLESSING,900000,5;
+			sc_start SC_INCREASEAGI,900000,5;
+			//sc_start 41,600000,10; //กอเรีย
+			//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
+			//sc_start4 SC_POEMBRAGI,1000*45*1,5,70,90,10;
+			//sc_start4 SC_SERVICE4U,1000*45*1,5,40,40,1;
+			percentheal 100,0;
+			dispbottom "คุณอยู่ในสถานะ  VIP";
+			end;
+		}
+		if ((rentalcountitem(41002) > 0) && agitcheck() || agitcheck2() || agitcheck3()){
+			//sc_start 41,600000,10; //กอเรีย
+			//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
+			sc_start SC_BLESSING,900000,10;
+			sc_start SC_INCREASEAGI,900000,10;
+			percentheal 100,0;
+			dispbottom "[Charms WOE] คุณได้บัพช่วงเวลาสงคราม";
+			end;
+			}
+		
+		else{
+			//sc_start SC_FOOD_STR_CASH,600000,10;
+			//sc_start SC_FOOD_AGI_CASH,600000,10;
+			//sc_start SC_FOOD_VIT_CASH,600000,10;
+			//sc_start SC_FOOD_INT_CASH,600000,10;
+			//sc_start SC_FOOD_DEX_CASH,600000,10;
+			//sc_start SC_FOOD_LUK_CASH,600000,10;
+			sc_start SC_BLESSING,300000,1;
+			sc_start SC_INCREASEAGI,300000,1;
+			//sc_start 41,600000,5; //กอเรีย
+			//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
+			//sc_start4 SC_POEMBRAGI,1000*30*1,5,70,90,10;
+			//sc_start4 SC_SERVICE4U,1000*30*1,5,40,40,3;
+			percentheal 0,0;
+			dispbottom "คุณไม่ได้อยู่ในสถานะ  VIP ";
+			end;
+		}
+		
+	}
+
+OnInit:
+	while(1) {
+		showscript "Heal & AB", getnpcid(0);
+		sleep 5000;
+		showscript "", getnpcid(0);
+		sleep 5000;
+	}
+	end;
+}
+
+function	script	SpeacialBuff	{
+sc_start SC_STRFood,1800000,10;
+sc_start SC_AGIFood,1800000,10;
+sc_start SC_VITFood,1800000,10;
+sc_start SC_INTFood,1800000,10;
+sc_start SC_DEXFood,1800000,10;
+sc_start SC_LUKFood,1800000,10;
+sc_start SC_BLESSING,1800000,10;
+sc_start SC_INCREASEAGI,1800000,10;
+sc_start SC_ATKPOTION,60000,20;
+sc_start SC_MATKPOTION,60000,20;
+itemskill "SM_SELFPROVOKE",1;
+end;
+}
+
+
+-	script	RemoveDancerStatus	-1,{
+OnPCDieEvent:
+	sc_end_class getcharid(0),20;
+end;
+}
+
+
+//==============================================
+
+// Duplicates
+//============================================================
+morocc,159,97,4	duplicate(BuffsSupports)	Maggi#ama	612

@@ -1,0 +1,43 @@
+prontera,150,188,0	script	Barter NPC	77,{
+	mes "[Barter NPC]";
+	next;
+	
+	switch(select("Normal barter shop.:Extended barter shop.:test stock")) {
+		case 1:
+			mes "[Barter NPC]";
+			mes "...";
+			close2;
+			callshop "barter_test_npc";
+			end;
+		case 2:
+			mes "[Barter NPC]";
+			mes "...";
+			close2;
+			callshop "barter_test_npc_ex";
+			end;
+		case 3:
+			mes "[Barter NPC]";
+			mes "...";
+			close2;
+			callshop "barter_test_npc_O";
+			end;
+	}
+	
+	end;
+OnInit:
+	//barter_clear "barter_test_npc";
+	//barter_add "barter_test_npc", 504, 10, 501, 20;
+	//barter_add "barter_test_npc", 504, 10, 502, 10;
+	//barter_add "barter_test_npc", "White_Potion", 10, "Yellow_Potion", 3;
+	//
+	//barter_clear "barter_test_npc_ex";
+	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9;
+	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9, "White_Potion", 10, 0;
+	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9, "White_Potion", 10, 0, "White_Potion", 10, 0;
+	end;
+}
+
+prontera,152,188,0	script	Barter NPC2	77,{
+	callshop "barter_test_npc";
+	end;
+}

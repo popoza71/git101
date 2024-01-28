@@ -1,0 +1,25 @@
+-	script	itemmap	-1,{
+OnInit:
+    bindatcmd "itemmap",strnpcinfo(3)+"::OnAtcommand",99,99;
+    end;
+OnAtcommand:
+		if ( .@atcmd_numparameters != 2 ) {
+			message .@myname$, "Usage: "+ .@atcmd_command$ +" <item id> <amount>";
+			end;
+		}
+		.atoi_id = atoi( .@atcmd_parameters$[0] );
+		.atoi_amount = atoi( .@atcmd_parameters$[1] );
+		.@myname$ = strcharinfo(0);
+		if ( getiteminfo( .atoi_id,0 ) == -1 ) {
+			message .@myname$, "Requesting to send an non-existing item ("+ .atoi_id +"). "+ .@atcmd_command$ +" failed.";
+			end;
+		}
+		else if ( .atoi_amount < 1 ) {
+			message .@myname$, "You can't send "+ .atoi_amount +" item. "+ .@atcmd_command$ +" failed.";
+			end;
+		}
+		addrid(1);
+		if(checkvending(strcharinfo(0))) { end; }
+		else { getitem .atoi_id, .atoi_amount; }
+		end;
+}

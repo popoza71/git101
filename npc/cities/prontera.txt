@@ -1,0 +1,688 @@
+//===== rAthena Script =======================================
+//= Prontera Town
+//===== Description: =========================================
+//= NPCs in Prontera
+//===== Changelogs: ==========================================
+//= 1.0 Initial release [kobra_k88]
+//= 1.2 added baby novice check [Lupus]
+//= 1.3 Spellchecked [massdriller]
+//= 1.4 Optimized. Novices > 20 BaseJob can go to Culvert, too [Lupus]
+//= 1.5 Added a Jawaii related npc [MasterOfMuppets]
+//= 1.6 Replaced sewer_prt with (MISC_QUEST & 8) [Lupus]
+//= 1.7 Removed Duplicates [Silent]
+//= 1.8 Moved Culvert to quests/quests_prontera.txt
+//= 1.9 Rescripted to Aegis 10.3 standards. [L0ne_W0lf]
+//= 2.0 Removed "Hans Solo", as he is a Jawaii NPC. [L0ne_W0lf]
+//= 2.1 Disabled the Library Curator (bugreport:4105) [L0ne_W0lf]
+//============================================================
+
+// Prontera
+//============================================================
+-	script	Guard#pront::prtguard	105,{
+	mes "[Prontera Guard]";
+	mes "ยินดีต้อนรับสู่ Prontera.";
+	close;
+}
+prontera,223,99,1	duplicate(prtguard)	Guard#2pront	105
+prontera,229,104,5	duplicate(prtguard)	Guard#3pront	105
+prontera,47,339,5	duplicate(prtguard)	Guard#4pront	105
+
+prontera,101,288,3	script	Shuger#pront	98,{
+	mes "[Shuger]";
+	mes "นอกเขตของเมือง มีมอนสเตอร์สีชมพูที่เรียกว่า '^FF8888Porings^000000'.";
+	mes "มันน่ารักและไม่เป็นอันตราย แต่เมื่อมันเห็นของตกบนพื้น มันจะชอบเก็บหรืออมเอาไว้.";
+	next;
+	mes "[Shuger]";
+	mes "แต่มีชนิดหนึ่งเช่นเดียวกับ Poring แต่มันตัวสีเขียว เรียกมันว่า  ^008800Poporings^000000'.  แต่จะแข็งแรงมากกว่า Poring มาก.";
+	mes "Poporing จะเหมือน Poring ทุกประการ ยกเว้นสี เท่านั้นเอง!";
+	close;
+}
+
+prontera,54,240,6	script	Tono	97,{
+	mes "[Tono]";
+	mes "เจ้ารู้ไหมว่าตัวอ่อนของ Creamy คือ Fabre.";
+	mes "มันเรียกว่า Fabre ตัวอย่างคือ Pupa.";
+	mes "มันมีมอนสเตอร์ที่เปลี่ยนแปลงไป โดยจะพบได้ที่ ทะเลทราย.";
+	next;
+	mes "[Tono]";
+	mes "มันคือ Peco Peco.";
+	mes "เจ้า Peco Peco มันมาจาก Picky";
+	mes "สีของมันจะแตกต่างจาก Peco Peco, คือ Picky จะมีสีชมพูน่ารัก.";
+	close;
+}
+
+prontera,106,116,6	script	Merideth#pront	91,{
+	mes "[Merideth]";
+	mes "อากาศที่ดี ทำให้ข้าและครอบครัวคดิว่า เราควรจะออกไปเที่ยวกันบ้าง.";
+	mes "ครอบครัวของข้าได้ออกไปเที่ยว สถานที่แห่งหนึ่ง แต่จะต้องประหลาดใจที่ได้พบ."; 
+	next;
+	mes "[Merideth]";
+	mes "ฝูงของ hornets! แต่สิ่งที่แปลกใจมากกว่านั้นคือ ข้าเห็น Queen Bee ราชนีผึ้ง.";
+	mes "Queen Bee เป็นหัวหน้าฝูงของ hornets";
+	emotion 23;
+	next;
+	mes "[Merideth]";
+	mes "ข้ารู้สึกว่าราชีผึ้งจะมีอำนาจมากกว่าสิ่งใด";
+	emotion 29;
+	close;
+}
+
+prontera,160,133,2	script	YuPi#pront	102,{
+	mes "[YuPi]";
+	mes "ในมอนสเตอร์จำนวนมากมาย มีบางสายพันธ์ที่เก่งกาด";
+	mes "มันอาจจะโจมตีผู้ที่พบเห็นก่อน.";
+	next;
+	mes "[YuPi]";
+	mes "เจ้าสามารถรู้ว่ามอนสเตอร์ประเภทไหนจะโจมตีก่อน โดยดูจากรูปร่างหรือสีของมัน.";
+	mes "มอนสเตอร์ที่ดุร้าย มันจะมีสีที่ฉูดฉาด.";
+	close;
+}
+
+prontera,149,202,2	script	YuNa#pront	700,{
+	mes "[YuNa]";
+	mes "Odin คือเทพแห่งปัญญาและสงคราม. ";
+	next;
+	mes "[YuNa]";
+	mes "รุปปั้นที่น้ำพุคือ Odin ซึ่งเป็นสัญญาลักษณ์ของเทพ Odin.";
+	mes "แต่ข้าไม่รู้จริงๆ ว่าใครเป็นคนสร้างขึ้นมา";
+	next;
+	mes "[YuNa]";
+	mes "มีคนเคยพูด แต่ก็ไม่เคยมีใครพูดถูก!!";
+	emotion 7;
+	next;
+	mes "[YuNa]";
+	mes "รุปปั้น Odin เป็นความทรงจำของทุกคน และทุกคนมองว่ามันเป็นศิลปะที่ดี";
+	next;
+	mes "[YuNa]";
+	mes "เขาไม่ได้ใส่หมวก broad brimmed หรือขี่ Sleipnir";
+	emotion 32;
+	close;
+}
+
+prontera,216,70,2	script	Strife#pront	48,{
+	if (Class == Job_Novice) {
+		if (event_prt_nov_dreamtalk == 0) {
+			mes "[Strife]";
+			mes "ว้าว!";
+			mes "เพื่อนมนุษย์...";
+			mes " ฉันจะเป็นแบบนั้น";
+			mes "อัศวินผู้ยิ่งใหญ่!";
+			next;
+			mes "[Strife]";
+			mes "ฉันรู้ ฉันรู้...";
+			mes "ก่อนอื่น ฉันต้องเป็นนักดาบ แต่ถ้าฉันฝึกฝนต่อไป ฉันจะกลายเป็นนักดาบที่ยอดเยี่ยมได้ และหลังจากนั้น...";
+			next;
+			mes "[Strife]";
+			mes "ฉันจะเป็นคนให้มากที่สุด";
+			mes "อัศวินที่เก่งที่สุด!";
+			mes " มัน... มันเป็นความฝันอันล้ำค่าที่สุดของฉัน";
+			next;
+			mes "[Strife]";
+			mes "MAGNUM BREAK!";
+			next;
+			if (select("~ ฉันก็อยากจะเข้มแข็งเหมือนกัน!:~ อืม... ทำให้ดีที่สุดนะ") == 1) {
+				set event_prt_nov_dreamtalk,1;
+				mes "[Strife]";
+				mes "ว้าว...!";
+				mes " มันสุดยอดมาก!";
+				mes " เราทั้งสองแบ่งปันกัน";
+				mes " ความฝันเดียวกัน! ";
+				next;
+				mes "[Strife]";
+				mes "เฮ้ ถ้าคุณอยากเป็น Swordie คุณต้องไปที่ Izlude ที่นั่น คุณสามารถไปทดสอบงาน Swordman ได้ ครั้งแรก ฉัน อืม ล้มเหลวอย่างน่าสังเวช แต่ฉันจะไม่ล้มเหลวอีกครั้ง!" ;				next;
+				mes "[Strife]";
+				mes "Training! Training! ต้องฝึกฝนต่อไป! คุณต้องเข้มแข็งด้วย! เมื่อเราทั้งคู่แข็งแกร่งขึ้น เราก็จะได้พบกันใหม่!";
+				close;
+			}
+			mes "[Strife]";
+			mes "เฮ่ เฮ่! ฉันจะทำแน่นอน! 'Strife, อัศวินผู้กล้าหาญ' มันฟังดูเจ๋งใช่มั้ยล่ะ?";
+			close;
+		}
+		else {
+			mes "[Strife]";
+			mes "สู้...!";
+			mes "สู้ สู้ สู้.!";
+			close;
+		}
+	}
+	else if (Class != Job_Novice) {
+		if (event_prt_nov_dreamtalk == 1) {
+			mes "[Strife]";
+			mes "เฮ้...!";
+			mes "ตอนนี้คุณดูแตกต่างออกไป *อ้าปากค้าง* คุณเข้าใจแล้ว... ^993333stronger^000000 ว้าว มันเยี่ยมมาก!";
+			next;
+			mes "[Strife]";
+			mes "ฉันอิจฉาจังเลย!";
+			mes "ฉันเดาว่านั่นหมายความว่า";
+			mes "ว่าตอนนี้ฉันต้อง";
+			mes "ฝึกฝนให้หนักยิ่งขึ้น!!";
+			next;
+			set event_prt_nov_dreamtalk,2;
+			getitem 2501,1; //Hood
+			mes "[Strife]";
+			mes " เอาละ นี่คือสำหรับคุณที่จะช่วยให้คุณแข็งแกร่งขึ้น ฉันคิดว่าฉันอยากจะขอบคุณคุณที่เป็นตัวอย่างที่ดีเช่นนี้";
+			close;
+		}
+		else if (event_prt_nov_dreamtalk == 2) {
+			mes "[Strife]";
+			mes "สู้...!";
+			close;
+		}
+		mes "[Strife]";
+		mes "ว้าว!";
+		mes "เพื่อน...";
+		mes " ฉันจะเป็นแบบนั้น";
+		mes "อัศวินผู้ยิ่งใหญ่!";
+		next;
+		mes "[Strife]";
+		mes "ฉันรู้ ฉันรู้...";
+		mes "ก่อนอื่น ฉันต้องเป็นนักดาบ แต่ถ้าฉันฝึกฝนต่อไป ฉันจะกลายเป็นนักดาบที่ยอดเยี่ยมได้ และหลังจากนั้น...";
+		next;
+		mes "[Strife]";
+		mes "ฉันจะเป็นคนให้มากที่สุด";
+		mes "อัศวินที่เก่งที่สุด!";
+		mes " มัน... มันเป็นความฝันอันล้ำค่าที่สุดของฉัน";
+		next;
+		if (select("~ ทำให้ดีที่สุด:~ เลิกเถอะเด็กน้อย") == 1) {
+			mes "[Strife]";
+			mes " ใช่ ใช่ แน่นอน! สักวันหนึ่ง ฉันจะแข็งแกร่งเหมือนกับเธอ! เมื่อวันนั้นมาถึง ฉันหวังว่าเราจะได้ฝึกฝนด้วยกัน!";
+			close;
+		}
+		mes "[Strife]";
+		mes "อะไรนะ--?";
+		mes "ก็ได้! แต่ฉันจะฝึกฝนต่อไป และมาดูกันว่าใครจะได้หัวเราะครั้งสุดท้าย!";
+		close;
+	}
+}
+
+prontera,78,150,3	script	Dairenne#pront	90,{
+	mes "[Towngirl Dairenne]";
+	mes "ข้าคิดว่าเมืองหลวงไม่ได้ดีอย่างที่คิด ข้าว่ามันสกปรกเกินไป";
+	next;
+	if (select("~ พูดคุย:~ เปล่า, ไม่มีไร") == 1) {
+		mes "[Towngirl Dairenne]";
+		mes "การแต่งกายของเจ้าดูแปลกๆนะ";
+		mes "ที่ข้าจะคุยกับเจ้า คือเรื่องของการย้อมสีผ้า.";
+		next;
+		mes "[Towngirl Dairenne]";
+		mes "สีสันจะสวยงามขึ้นหากใช้ ^0000ffDyestuffs^000000 ที่ผลิตขึ้นนใน ^0000ffMorroc^000000 แต่มันมีค่าใช้จ่ายนะ.";
+		next;
+		mes "[Towngirl Dairenne]";
+		mes "ข้าหวังว่าเจ้าจะชื่นชอบมัน";
+		close;
+	}
+	mes "[Towngirl Dairenne]";
+	mes "ข้าเพียงมาเดินเล่นเท่านั้น.";
+	close;
+}
+
+// inside Prontera
+//============================================================
+
+//This NPC has been disabled officially.
+prt_in,178,92,0	script	Curator of Library#pront	57,{
+	mes "[Curator Guiss]";
+	mes "ภายในห้องสมุดห้องนี้มีบันทึกของมอนสเตอร์ทั่วหมดใน Rune-Midgard.";
+	mes "และมีการจัดระเบียบเนื้อหาของมอนสเตอร์ที่หาได้ง่าย.";
+	next;
+	mes "[Curator Guiss]";
+	mes "หนังสือสำหรับนักผจนภัยนั้น ถูกวางไว้ชั้นวางด้านบน.";
+	next;
+	mes "[Curator Guiss]";
+	mes "และในห้องหนังสือถัดไป ยังมีการแบ่งประเภท หรือ คุณสมบัติของมอนสเตอร์.";
+	mes "เจ้าต้องอ่านให้เข้าใจนะ.";
+	close;
+}
+
+
+prt_in,175,50,0	script	Library Girl#pront	71,{
+	mes "[Librarian Ellen]";
+	mes "ยินดีต้อนรับสู่ห้องสมุด";
+	mes "คุณจัดคุณสมบัติของ มอนสเตอร์";
+	mes "นอกจากนี้ยังมีหนังสือเกี่ยวกับ พ่อค้า";
+	mes "อย่าง Merchant และ ช่างตีเหล็กอย่าง Blacksmith อีกด้วย,";
+	next;
+	mes "[Librarian Ellen]";
+	mes "และห้องสมุดถัดไป ยังมีสมุดอีกมากมาย เจ้าจงเดินดูและอ่านรายละเอียดที่น่าสนใจเองแล้วกันนะ.";
+	close;
+}
+
+prt_in,47,141,0	script	An Old Man#pront	56,{
+	mes "[Old Man]";
+	mes "The Prontera Culvert sewers have been left unattended for a long time. Now that place is infested with ^000077Thief Bugs^000000!";
+	next;
+	mes "[Old Man]";
+	mes "These Thief Bugs seem to quickly grab items dropped on the ground, and then run away with them... They're even more annoying than cockroaches!!";
+	close;
+}
+
+prt_in,26,31,0	script	An Old Man#2pront	54,{
+	mes "[Old Man]";
+	mes "ข้าชื่อ dunno เมื่อข้ามีชีวิตอยู่ ข้าเห็นคนลงไปใน ^5555FFCulvert Sewers^000000.";
+	mes "ข้าเคยลงไปใน  Culvert ระดับ 3 ในที่แห่งนั้น ข้ารู้หมดทุกอย่าง.";
+	next;
+	mes "[Old Man]";
+	mes "แต่เมื่อลงไปใน  Culvert ระดับที่ 4 ภายในนั้นจะมีแมลงสาบจำนวนมาก";
+	next;
+	mes "[Old Man]";
+	mes "และจะมีหัวหน้าแมลงสาบที่เรียกว่า ^FF5555GOLDEN THIEF BUG^000000.";
+	emotion 0;
+	next;
+	mes "[Old Man]";
+	mes "แมลงสาบมันชอบขโมย และ มีแมลงสาบจำนวนมากในนั้น เจ้าต้องระวังให้มาก!";
+	close;
+}
+
+prt_in,180,20,2	script	Bartender#pront	61,{
+	mes "[Bartender]";
+	mes "ข้ากลัวเหลือเกิน.";
+	mes "ข้าเคยทำธุรกิจด้าน อาหาร";
+	next;
+	mes "[Bartender]";
+	mes "แต่เมื่อมีมอนสเตอร์ดุร้ายเข้ามาปรากฏภายในเมือง.";
+	mes "ตัวข้าไม่กล้าที่จะออกไปจากบ้าน?";
+	next;
+	mes "[Bartender]";
+	mes "และข้าไม่มีวัตถุดิบใดๆ ที่จะทำอาหารอีกต่อไป.";
+	mes "ข้าอยากจะหาคนที่ว่าจ้าง.";
+	mes "ในการจัดการกับมอนสเตอร์เหล่านั้นเหลือเกิน";
+	next;
+	mes "[Bartender]";
+	mes "และข้าต้องการวัตถุดิบสำหรับทำอาหาร 'Sour Crunches' และ 'Tasty Yum-Yum' มันคืออาหารชั้นเลิศ";
+	emotion 28;
+	while(1) {
+			next;
+			switch(select("~ 'Sour Crunches'?:~ 'Tasty Yum-Yum?':~ เปล่า, แค่แวะมาเฉยๆ")) {
+				case 1:
+				mes "[Bartender]";
+				mes "มด คือส่วนประกอบในการทำ Crunches มันมีรสเปรี้ยวและสามารถหาได้ใน เมืองแห่งทะเลทรายเช่น  Morrocco.";
+				mes "แต่ มดเหล่านั้นไม่ได้เป็นมิตรกับมนุษย์เอาเสียเลย.";
+				next;
+				mes "[Bartender]";
+				mes "และตอนนี้มันเป็นสิ่งที่ยากมาก ที่ข้าจะหามัน";
+				continue;
+				
+				case 2:
+				mes "[Bartender]";
+				mes "มันเป็นอาหารที่อร่อยมาก ซึ่งทำโดยขาของตั๊กแตนที่เรียกว่า Rockers สามารถพบมันได้ในทิศตะวันตก";
+				mes "และข้าต้องการมันเป็นจำนวนมาก.";
+				next;
+				mes "[Bartender]";
+				mes "และตอนนี้มันเป็นสิ่งที่ยากมาก ที่ข้าจะหามัน";
+				continue;
+				
+				case 3:
+				mes "[Bartender]";
+				mes "เจ้าต้องระมัดระวัง และ ดูแลตัวเองให้ดี.";
+				close;
+			}
+	}
+	end;
+
+}
+
+prt_in,173,24,2	script	Shevild#pront	85,{
+	mes "[Shevild]";
+	mes "กาลครั้งหนึ่ง";
+	mes "ฉันเคยไปยังสถานที่มีมอนสเตอร์";
+	mes "จำนวนมากและฉันเคยไปในที่";
+	mes "ทุกคนเคยจินตนาการใน Prontera.";
+	next;
+	switch(select("~ เกี่ยวกับสถานที่เหล่านั้น.?:~ ยกเลิก")) {
+		mes "[Shevild]";
+		mes "หลายคนมองว่า ฉันเป็นคนที่น่ากลัว";
+		mes "เพราะฉันพกอาวุธติดตัวเสมอ";
+		next;
+		mes "[Shevild]";
+		mes "ฉันว่า ฉันมีความภูมิใจในสิ่งที่ฉันได้ทำในตอนนี้";
+		next;
+		mes "[Shevild]";
+		mes "และสำหรับอาชีพของฉันนั้น เป็นการผจนภัยในทุกสถานที่ ที่น่าสนใจ";
+		mes "มันเป็นสิ่งที่ดีในการทำงานของฉัน";
+		next;
+		mes "[Shevild]";
+		mes "แต่อยู่ดีๆ ฉันก็นึกถึงดันเจี้ยนลึกลับและป่าที่มีความอันตราย";
+		emotion 20;
+		next;
+		switch(select("~ ข้อมูลดันเจี้ยนลึกลับ..!:~ ข้อมูลป่าที่อันตราย..!")) {
+		case 1:
+			mes "[Shevild]";
+			mes "ฉันเคยเดินทางไปในดันเจี้ยนลึกลับ ในทิศเหนือของ Prontera.";
+			next;
+			mes "[Shevild]";
+			mes "สถานที่แห่งนั้นมีมอนสเตอร์ที่มีความอันตราย";
+			mes "เจ้าต้องมีทักษะที่สูงพอที่จะเข้าไปในที่แห่งนั้น";
+			next;
+			mes "[Shevild]";
+			mes "ภายในเมือง Prontera แห่งนี้ ยังมีสิ่งที่เล้นลับ ที่เจ้ายังไม่รู้.";
+			mes "และยังคงต้องหาคนที่สำรวจพื้นที่อันตรายนั้น.";
+			next;
+			if (select("~ ฉันจะไปที่นั่นได้อย่างไร:~ ยกเลิก") == 1) {
+				mes "[Shevild]";
+				mes "เอ่อ? คุณยังไม่ได้ไปเที่ยวด้านนอกของ Prontera เหรอ?";
+				mes "เขาวงกตสามารถพบได้ในป่าทางตอนเหนือของพรอนเทรา ลองตรวจดูทางฝั่งตะวันตกเฉียงเหนือของป่าสิ";
+				close;
+			}
+			mes "[Shevild]";
+			mes "ใช่แล้ว ระวังหน่อยเวลาคุณผจญภัยคนเดียว~";
+			close;
+
+		case 2:
+			mes "[Shevild]";
+				mes "ครั้งหนึ่งทางทิศตะวันออกเฉียงเหนือของ Prontera ในขณะที่ข้าได้ส่งพระสงฆ์และกลับมา.";
+				mes "หลังจากนั้นภายในป่า ข้าได้พบกับลิง ที่เรียกว่า ^FF4444Yoyos^000000.";
+			next;
+			mes "[Shevild]";
+				mes "เจ้าอย่าเผลอทำของหล่นหล่ะ เพราะ Yoyo นั้น มันมีความรวดเร็ว และ ชอบอมของที่ตกอยู่บนพื้น.";
+			next;
+			if (select("~ ฉันจะไปที่นั่นได้อย่างไร:~ ยกเลิก") == 1) {
+				mes "[Shevild]";
+				mes "ไม่มีถนนใดที่ตรงไปสู่ซากปรักหักพัง แต่ถ้าคุณไปทางเหนือและมุ่งหน้าไปทางทิศตะวันออก คุณจะไปถึงที่นั่น";
+				mes "โอ้ ระวังให้ดีระหว่างทางไปยังซากปรักหักพัง เพราะมีต้นไม้แปลกๆ ที่ทำร้ายผู้คนที่สัญจรไปมาโดยไม่มีเหตุผล";
+				close;
+			}
+			mes "[Shevild]";
+			mes "ใช่แล้ว ระวังหน่อยเวลาคุณผจญภัยคนเดียว~";
+			close;
+
+		case 3:
+			mes "[Shevild]";
+			mes "ใช่แล้ว ระวังหน่อยเวลาคุณผจญภัยคนเดียว~";
+			close;
+		}
+	}
+	mes "[Shevild]";
+	mes "กลับมาเมื่อไรก็ได้~";
+	close;
+}
+
+prt_in,177,20,2	script	TenSue#pront	97,{
+	switch(rand(3)) {
+	case 1:
+		mes "[TenSue]";
+		mes "ฉันเคยเดินทางไปที่ 'Al de Baran'. ระหว่างทางมีมอนสเตอร์ที่อันตรายจำนวนมาก...";
+		mes "บางชนิดเข้าทำร้ายคนโดยอัตโนมัติ.";
+		next;
+		mes "[TenSue]";
+		mes "เมืองนั้นเป็นเมืองที่สวยงามมาก";
+		mes "แต่ก็มีสิ่งชั่วร้ายที่มาทำลายความสวยงามของ 'Al de Baran'.";
+		next;
+		mes "[TenSue]";
+		mes "ที่นั้นเป็น ที่ทำการใหญ่ของ Kafra เจ้าคงได้ไปเยี่ยมที่นั้นบ่อยแน่นอน.";
+		close;
+
+	case 2:
+		mes "[TenSue]";
+		mes "เจ้ากำลังเหนื่อยกับการฆ่ามอนสเตอร์ในดันเจี้ยนและรอบๆเมือง";
+		mes "เมื่อเจ้าได้ฝึกฝนมาอย่างหนัก";
+		mes "ทำไมเจ้าไม่ไปสถานที่อื่นๆบ้าง เช่น Izlude, หรือ Prontera.";
+		emotion 1;
+		next;
+		mes "[TenSue]";
+		mes "Cool Event Corp. ได้มีกิจกรรมการต่อสู้ มีทั้งการจำกัดเวลา และ อุปสรรค์ในการต่อสู้";
+		mes "แต่ยังมีค่าใช้จ่ายเล็กๆน้อยๆนะ...";
+		next;
+		mes "[TenSue]";
+		mes "มันน่าจะเหมาะกับเจ้านะ?";
+		close;
+	Default:
+		mes "[TenSue]";
+		mes "Prontera เป็นเมืองที่อยู่ในการคุ้มครองของ Tristram.";
+		next;
+		mes "[TenSue]";
+		mes "มันเหมือนกับมีบุคคลภายนอกมาเป็นคนดูแล Prontera?.";
+		mes "มันอาจทำให้เมืองไม่สงบ";
+		close;
+	}
+}
+
+prt_in,177,18,2	script	Marvin#pront	80,{
+	mes "[Marvin]";
+	mes "โดยปกติทักษะทั้งหลาย จะสามารถเรียรู้ได้ถึงระดับ 10.";
+	next;
+	mes "[Marvin]";
+	mes "แต่มันยังมีขีดจำกัดเรื่องจุดสิ้นสุดของทักษะ";
+	mes "เจ้าต้องทำการแบ่งทักษะที่มีอยู่สูงสุด 50";
+	mes "และไม่จำเป็นต้องเพิ่มทักษะจนถึง 10 แต่จะเป็นการแบ่งให้ทักษะอื่นด้วย";
+	next;
+	mes "[Marvin]";
+	mes "ในบางครั้ง หากเจ้าเพิ่มทักษะ ใน 1 หรือ 2";
+	mes "จะเป็นการดี ทำให้เจ้าได้เหลือทักษะเพื่อไปเพิ่มทักษะอื่นที่มีประโยชน์กว่า.";
+	next;
+	mes "[Marvin]";
+	mes "เจ้าไม่ต้องเป็นต้องเพิ่มทักษะทั้งหมด เพียงแต่ให้เพิ่มทักษะที่จำเป็นเท่านั้น.";
+	mes "และต้องเพิ่มทักษะอย่างชาญฉลาด โดยไม่เสียเปล่า.";
+	close;
+}
+/*
+prt_in,284,168,3	script	Ginedin Rephere#pront	55,{
+	mes "[Tailor Ginedin Rephere]";
+	mes "11...";
+	mes "12...";
+	mes "Mmm, good. I think I'll be able to finish before tonight's party.";
+	next;
+	mes "[Tailor Ginedin Rephere]";
+	mes "Oh! I didn't realize I had a guest. How may I help you?";
+	next;
+	switch(select("Talk:Dye Clothing:Cancel")) {
+	case 1:
+		mes "[Tailor Ginedin Rephere]";
+		mes "Life may have gotten a little better, but receiving all these orders? *Whew!* Young ladies these days must be very well off, so my services may no longer be a luxury.";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "Well, people like them probably further the pursuit of beauty and fashion. But, of course, that's only my opinion.";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "I believe for us humans, clothes are one of the few ways to show our personality, style, and beauty.";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "Considering this, I personally think my job is very helpful and rather fancy. This in itself makes it all worthwhile. Coarse fabric and rough leather burst with energy and life when colored...";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "It is a very hard and tedious process, but the happiness and delight you feel when your clothes are done makes up for all the hard work.";
+		close;
+	case 2:
+		mes "[Tailor Ginedin Rephere]";
+		mes "Ah...!";
+		mes "You came to dye";
+		mes "your clothes as well.";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "But... I'm so sorry.";
+		mes "I don't have enough time to dye your clothes right now. I have so many orders that are still waiting to be done.";
+		next;
+		mes "[Tailor Ginedin Rephere]";
+		mes "I'm sorry for the inconvenience, but could you come back again next time?";
+		close;
+	case 3:
+		mes "[Tailor Ginedin Rephere]";
+		mes "Feel free to take your time and relax here. I apologize that I have nothing to serve you, though.";
+		close;
+	}
+}
+*/
+// Prontera Church
+//============================================================
+prt_church,103,76,0	script	Garnet#pront	67,{
+	mes "[Garnet]";
+	mes "คุณจะมีความสุขการช่วยเหลือผู้อื่น";
+	mes "ถ้าคุณมีทักษะที่ช่วยเหลือผู้อื่นได้";
+	next;
+	mes "[Garnet]";
+	mes "เราสามารถช่วยผู้อื่นให้มีความ";
+	mes "แข็งแกร่งที่ซ่อนอยู่ในร่างกาย.";
+	next;
+	mes "[Garnet]";
+	mes "สำหรับอาชีพ Priest";
+	mes "จะมีทักษะเหล่านี้มากมายเลยทีเดียว.";
+	while(1) {
+		next;
+		switch(select("~ ข้อมูล สกิล Heal:~ ข้อมูล สกิล Cure:~ ข้อมูล สกิล Increase AGI:~ ข้อมูล สกิล Angelus:~ ข้อมูล สกิล Blessing:~ ข้อมูล สกิล Warp Portal:~ยกเลิก")) {
+		
+		case 1:
+		mes "[Garnet]";
+		mes "เจ้าสามารถฟื้นฟู HP ด้วยการใช้ 'Heal'.";
+		next;
+		mes "[Garnet]";
+		mes "หากจะเรียนรู้ทักษะ 'Heal' ในขณะที่เจ้าเป็น Acolyte เท่านั้น, แต่เมื่อได้เปลี่ยนเป็น priest เจ้าจะสามารถฟื้น HP เป็นกลุ่ม โดยใช้ 'Sanctuary'.";
+		next;
+		mes "[Garnet]";
+		mes "ข้ามีเทคนิคเล็กๆน้อยๆจะบอก หากใช้ 'Heal' กับ Undead, จะทำให้เกิดความเสียหายกับ Undead.";
+		mes "อย่าลืมว่าหากต้องการใช้ให้กด 'Shift' และ เลือกเป้าหมายที่ต้องการใช้";
+		continue;
+		
+		case 2:
+		mes "[Garnet]";
+		mes "'Cure' สามารถแก้อาการผิดปกติ  แต่ต้องการทักษะ 'Heal' ระดับ 2.";
+		continue;
+		
+		case 3:
+		mes "[Garnet]";
+		mes "'Increase AGI' เป็นการเพิ่มความเร็วในการเคลื่อนที่และอัตราการหลบหลีก แต่เจ้าต้องเรียนรู็ 'Heal' ระดับ 3 เสียก่อน.";
+		continue;
+		
+		case 4:
+		mes "[Garnet]";
+		mes "เมื่อเจ้าใช้ 'Angelus' จะเป็นการเพิ่มพลังป้องกันให้ตัวเองและสมาชิกในปาร์ติ้.";
+		mes "เจ้าสามารถใช้มันได้เสมอ.";
+		next;
+		mes "[Garnet]";
+		mes "แต่ต้องมี 'Divine Protection' ทักษะระดับ 3 หากต้องการเรียนรู้ทักษะนี้.";
+		next;
+		mes "[Garnet]";
+		mes "หากเจ้าเรียนรู้ทักษะ 'Angelus' แล้วเจ้าจะสามารถใช้ 'Kyrie Eleison' โดย Priest, จะทำให้มอนสเตอร์หรือผู้เล่นอื่นทำอะไรเจ้าไม่ได้.";
+		continue;
+		
+		case 5:
+		mes "[Garnet]";
+		mes "'Blessing' ทักษะนี้เป็นการเพิ่ม STR, DEX and INT.  เจ้าสามารถใช้ทักษะนี้ไม่ว่ากับตัวเองหรือผู้อื่น.";
+		next;
+		mes "[Garnet]";
+		mes "'Blessing', หรือ 'Angelus', จะทำให้สามารถรู้ทักษะ 'Divine Protection'. แต่เจ้าต้องมีทักษะ ทั้ง 2 อย่าง ระดับ 5 จึงจะสามารถเรียนรู้ 'Divine Protection' ได้.";
+		continue;
+		
+		case 6:
+		mes "[Garnet]";
+		mes "ในการใช้ทักษะ 'Warp Portal' สิ่งแรกที่เรียนรู้คือ 'Teleport', และหากอยากใช้ทักษะ 'Teleport, เจ้าต้องเรียนรู้ทักษะ 'Ruwach' เสียก่อน.";
+		next;
+		mes "[Garnet]";
+		mes "เจ้าสามารถเรียนรู้ 'Warp Portal' ได้ถึง ระดับ 4 เมื่อเจ้าเรียนรู้ทักษะ.";
+		mes "ถึงระดับนั้นแล้ว เจ้าจะสามารถมีทักษะคล้ายกับบริการของ Kafra employee.";
+		next;
+		mes "[Garnet]";
+		mes "ทักษะเล็กๆน้อยๆ หากเจ้าอยู่ในสถานการณ์อันตราย.";
+		mes "เจ้าสามารถใช้ 'Teleport' เพื่อหลบหนีได้!";
+		next;
+		mes "[Garnet]";
+		mes "หากต้องการใช้ 'Warp Portal' สิ่งแรกเจ้าต้องมี 'Blue Gemstone' ประกอบกับการใช้ทักษะ.";
+		next;
+		mes "[Garnet]";
+		mes "แต่มันจะบันทึกจุดที่เจ้าจะไปในดันเจี้ยนไม่ได้นะ.";
+		continue;
+		
+		case 7:
+		mes "[Garnet]";
+		mes "ข้าไม่มีอะไรจะปกปิดกับเจ้าหรอก ขอให้เจ้ามีความสุขละกันนะ";
+		close;
+		
+		}
+	}
+	end;
+}
+
+prt_church,103,71,0	script	Henson#pront	120,{
+	mes "[Henson]";
+	mes "หน้าที่ของฉันไม่เพียงแต่";
+	mes "ช่วยเหลือผู้อื่น..แต่ยังมีวิญญาณ";
+	mes "ที่บริสุทธิ์ได้เปลี่ยนแปลงธาตุเป็น Undead.";
+	mes "และเราต้องมีทักษะพิเศษ";
+	next;
+	mes "[Henson]";
+	mes "ข้อมูลเกี่ยวกับทักษะ.. ?";
+	while(1) {
+		next;
+		switch(select("~ ข้อมูล Divine Protection:~ ข้อมูล Demon Bane:~ ข้อมูล Decrease AGI:~ ข้อมูล Signum Crisis:~ ข้อมูล Pneuma:~ ข้อมูล Ruwach:~ ข้อมูล Teleport:ยกเลิก")) {
+		case 1:
+		mes "[Henson]";
+		mes "มันเป็นทักษะที่ช่วยป้องกัน Undead, มันเรียกว่าทักษะ 'Divine Protection'.";
+		mes "มันเป็นทักษะพื้นฐานมาก";
+		next;
+		mes "[Henson]";
+		mes "หากเจ้าเรียนรู้ ทักษะ 'Demon Bane' ในระดับ 3 เจ้าจะโจมตี Undead ได้รุนแรงมากขึ้น.";
+		mes "ด้วย 'Divine Protection' มันเป็นทักษะที่เพิ่มขึ้นมาจาก 'Angelus' และ 'Blessing' มันจะดีกับตัวเจ้า.";
+		continue;
+		
+		case 2:
+		mes "[Henson]";
+		mes "'Demon Bane' เพิ่มการโจมตีให้กับ Undead.  ต้องการทักษะระดับ 3 เพื่อเรียนรู้ทักษะ 'Divine Protection' แต่เจ้าต้องเรียนร้ Demon Bane เสียก่อน.";
+		mes "จึงจะสามารถใช้ 'Devine Protection', 'Demon Bane' คือทักษะที่ติดตัว ไม่จำเป็นต้องใช้ HP หรือ SP.";
+		next;
+		mes "[Henson]";
+		mes "นอกจากนี้ยังต้องเรียนรู้ทักษะ 'Demon Bane' ระดับ 3 ถึงจะสามารถเรียนรู้ทักษะ, 'Signum Crisis', เพื่อลดป้องกันของ Undead และ Dark property ในตัวมอนสเตอร์.";
+		continue;
+		
+		case 3:
+		mes "[Henson]";
+		mes "เมื่อเจ้าใช้ทักษะ Decrease AGI นี้อัตราการเคลื่อนที่และการหลบหลีก.";
+		mes "ของมอนสเตอร์เป้าหมายจะลดลง .";
+		continue;
+		
+		case 4:
+		mes "[Henson]";
+		mes "เจ้าสามารถลดป้องกันของ Undead และ Dark property โดยใช้ทักษะนี้.";
+		mes "ทักษะจะสำเร็จนั้น ขึ้นอยู่กับระดับของทักษะด้วย.";
+		next;
+		mes "[Henson]";
+		mes "ในบางครั้งทักษะอาจจะใช้งานไม่ได้  แต่หากเจ้ามีทักษะ 'Demon Bane' ระดับ 3 เจ้าจะได้รับทักษะนี้.";
+		continue;
+		
+		case 5:
+		mes "[Henson]";
+		mes "เมื่อเจ้าเรียนอยากจะใช้ 'Warp Portal', เจ้าต้องเรียนรู้ทักษะเสียก่อน.";
+		next;
+		mes "[Henson]";
+		mes "มันมีประโยชน์มาก ถ้าหากเจ้าต้องการหนี.";
+		continue;
+		
+		case 6:
+		mes "[Henson]";
+		mes "Ruwach ช่วยให้เจ้าพบสิ่งที่ซ่อนเจ้าอยู่ นอกจากนี้ยังเป็นทักษะพื้นฐานของการใช้ 'Teleport.";
+		continue;
+		
+		case 7:
+		mes "[Henson]";
+		mes "ทักษะระดับ 1, ของทักษะ teleport เจ้าสามารถที่จะสุ่มพื้นที่ตัวละคร.  ทักษะระดับ ของทักษะ teleport เจ้าสามารถบันทึกจุด Teleport สำหรับการกลับมาในครั้งหน้า.";
+		mes "แต่เจ้าต้องเรียรู้ทักษะ Ruwach ก่อน ถึงจะเรียนรู้ทักษะ teleport ได้.";
+		continue;
+		
+		case 8:
+		mes "[Henson]";
+		mes "หากเจ้าสนใจ สามารถมาคุยกับข้าได้อีกในครั้งหน้า!";
+		close;		
+		}
+	}
+	end;
+}
+
+// Hidden Temple
+//============================================================
+prt_maze02,100,69,0	script	Soldier#pront	105,{
+	mes "[Soldier]";
+	mes "ฮ-เฮ้!";
+	mes "ทำไม";
+	mes "เจ้ามาอยู่ที่นี่?!";
+	next;
+	mes "[Soldier]";
+	mes "คุณไม่รู้เหรอว่ามีปีศาจอาศัยอยู่ในป่านี้! ฉันไม่สามารถรับประกันความปลอดภัยของคุณได้";
+	mes "ถ้าเจ้าเข้าไป!";
+	close;
+}
+
+prt_maze02,110,69,0	script	Soldier#2pront	105,{
+	mes "[Soldier]";
+	mes "*ถอนหายใจ...* ผู้ชายคนสุดท้ายที่เข้ามาในสถานที่แห่งนี้ยังไม่กลับมาเลย เขาไม่ฟังฉันเลยเข้าไปรวบรวมสมุนไพรหรืออะไรโง่ๆแบบนั้น...";
+	next;
+	mes "[Soldier]";
+	mes "เป็นคนโง่ไง. ทำไมใครๆ ถึงอยากจะสละชีวิตของเขาเพียงเพื่อรวบรวมสมุนไพรโง่ๆ บ้าง?";
+	close;
+}

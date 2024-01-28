@@ -1,0 +1,266 @@
+//===== rAthena Script =======================================
+//===== Description: =========================================
+// Premium Service
+//===== Additional Comments: =================================
+//= 1.0 First Version.
+//============================================================
+
+-	script	PREMIUM_CHK_PREMIUM	-1,{
+OnPCLoginEvent:
+    if (#PREMIUM_SERVICE_TIME)  {
+        sc_end SC_AID_PERIOD_ADDSTOREITEMCOUNT;
+        sc_end SC_AID_PERIOD_RECEIVEITEM_2ND;
+        sc_end SC_AID_PERIOD_PLUSJOBEXP_2ND;
+        sc_end SC_AID_PERIOD_PLUSEXP_2ND;
+        
+        if (#PREMIUM_SERVICE_TIME > gettimetick(2)) {
+            .@time_tick = (#PREMIUM_SERVICE_TIME-gettimetick(2))*1000;
+            sc_start SC_AID_PERIOD_ADDSTOREITEMCOUNT,.@time_tick, 300;
+            sc_start SC_AID_PERIOD_RECEIVEITEM_2ND,.@time_tick, 20;
+            sc_start SC_AID_PERIOD_PLUSJOBEXP_2ND,.@time_tick, 20;
+            sc_start SC_AID_PERIOD_PLUSEXP_2ND,.@time_tick, 20;
+        }
+    }
+
+    if (#PREMIUM_BEXP) {
+        sc_end SC_AID_PERIOD_PLUSEXP;
+        if (#PREMIUM_BEXP > gettimetick(2)) {
+            sc_start SC_AID_PERIOD_PLUSEXP ,((#PREMIUM_BEXP-gettimetick(2))*1000), 30;
+        }
+    }
+
+    if (#PREMIUM_JEXP) {
+        sc_end SC_AID_PERIOD_PLUSJOBEXP;
+        if (#PREMIUM_JEXP > gettimetick(2)) {
+            sc_start SC_AID_PERIOD_PLUSJOBEXP ,((#PREMIUM_JEXP-gettimetick(2))*1000), 30;
+        }
+    }
+
+    if (#PREMIUM_ITEM) {
+        sc_end SC_AID_PERIOD_RECEIVEITEM;
+        if (#PREMIUM_ITEM > gettimetick(2)) {
+            sc_start SC_AID_PERIOD_RECEIVEITEM, ((#PREMIUM_ITEM-gettimetick(2))*1000), 30;
+        }
+    }
+
+    if (#PREMIUM_LIFE) {
+        sc_end SC_AID_PERIOD_DEADPENALTY;
+        if (#PREMIUM_LIFE > gettimetick(2)){
+            sc_start SC_AID_PERIOD_DEADPENALTY, ((#PREMIUM_LIFE-gettimetick(2))*1000), 50;
+        }
+    }
+end;
+}
+
+prontera,156,193,4	script	Storage VIP	4_F_KAFRA5,{
+    mes "เปิดคลังเก็บของให้กับ";
+    mes "Premium Service เท่านั้น !!";
+    if (#PREMIUM_SERVICE_TIME) {
+        if (#PREMIUM_SERVICE_TIME <= gettimetick(2)) {
+            mes "^CC0000ขณะนี้บริการ Premium Service หมดแล้ว";
+            mes "^CC0000สามารถเปิดคลังเพื่อหยิบออกเท่านั้น !!^000000";
+        }
+        mes "คุณ " + strcharinfo(0) + " ต้องการเปิดคลังไหม ?";
+        if (select("เปิดคลังเก็บของ:ยกเลิก") == 1) {
+            if (#PREMIUM_SERVICE_TIME > gettimetick(2)) {
+                openstorage2 1, STOR_MODE_GET|STOR_MODE_PUT;
+            } else {
+                openstorage2 1, STOR_MODE_GET;
+            }
+        }
+        mes "ขอบคุณที่ใช้บริการ";
+    }
+    close;
+}
+
+new_zone04,1,0,4	script	Premi#ps	4_F_PREMI,{
+
+    mes "[Premi]";
+    mes "สวัสดี เมี้ยว~";
+    mes "ข้าคือ ^00CC00Premi^000000 เอง!";
+    mes "ยินดีที่ได้รู้จักนะ~";    
+    cutin "prm_3", 2;
+    next;
+
+    cutin "prm_2", 2;
+    mes "[Premi]";
+    mes "วันนี้ให้ Premi ช่วยบริการอะไรดีเจ้าคะ?";
+    next;
+
+    setarray .@items[0], 4, 2, 1, 6, 0;
+    setarray .@names$[0], "เพิ่มค่าประสบการณ์", "เพิ่มอัตราการดรอป", "ลดบทลงโทษตอนตาย", "รับบริการทั้งหมดครั้งเดียว", "ไม่ทำสิ่งใด";
+    setarray .@names2$[0], "เพิ่มค่าประสบการณ์", "เพิ่มอัตราการดรอป", "ลดบทลงโทษตอนตาย", "ทั้งหมด";
+    setarray .@useable[0], 0, 0, 0, 0;
+
+    if (#PREMIUM_BEXP > gettimetick(2)) {
+        .@names$[0] = "^aaaaaa" +.@names$[0];
+        .@useable[0] = 1;
+    }
+
+    if (#PREMIUM_ITEM > gettimetick(2)) {
+        .@names$[1] = "^aaaaaa" +.@names$[1];
+        .@useable[1] = 1;
+    }
+
+    if (#PREMIUM_LIFE > gettimetick(2)) {
+        .@names$[2] = "^aaaaaa" +.@names$[2];
+        .@useable[2] = 1;
+    }
+
+    if (#PREMIUM_BEXP > gettimetick(2) || #PREMIUM_ITEM > gettimetick(2) || #PREMIUM_LIFE > gettimetick(2)) {
+        .@names$[3] = "^aaaaaa" +.@names$[3];
+        .@useable[3] = 1;
+    }
+
+    for (.@i = 0;.@i < 5;.@i++) {
+        if (countitem(6417) <.@items[.@i] ||.@status[.@i]) {
+            .@status[.@i] = 2;
+            .@menu$ =.@menu$ + "^aaaaaa" +.@names$[.@i] + " (วัตถุดิบไม่พอ)^000000:";
+        } else if (.@i == 4) {
+            .@menu$ =.@menu$ +.@names$[.@i] + "^000000:";
+        } else {
+            .@status[.@i] = 1;
+            if (.@useable[.@i]) {
+                .@menu$ =.@menu$ +.@names$[.@i] + "^aaaaaa (1วัน)^000000:";
+            } else {
+                .@menu$ =.@menu$ +.@names$[.@i] + "^000000 (1วัน)^000000:";
+            }
+        }
+    }
+
+    .@i = select(.@menu$) - 1;
+
+    if (.@useable[.@i]) {
+        mes "อ่าา!";
+        mes "วันนี้ช่างอากาศดี ไม่ต้องทำอะไร!";
+        end;
+    }
+
+    if (.@i == 4) {
+        cutin "prm_3", 2;
+        mes "[Premi]";
+        mes "อ่าา!";
+        mes "วันนี้ช่างอากาศดี ไม่ต้องทำอะไร!";
+        next;
+        cutin "prm_2", 2;
+        mes "[Premi]";
+        mes "สำหรับ Premi, วันแบบนี้ถ้าได้กิน";
+        mes getitemname(6417) + " คงจะดีที่สุดเลย!";
+        close2;
+        cutin "", 255;
+        end;
+    }
+
+    switch (.@status[.@i]) {
+        case 0:
+        case 1:
+            break;
+        case 2:
+            cutin "prm_4", 2;
+            mes "[Premi]";
+            mes "สำหรับ " +.@names$[.@i] + " (1วัน)";
+            mes "ต้องใช้ " + getitemname(6417) + " " +.@items[.@i] + " ชิ้น";
+            close2;
+            cutin "", 255;
+            end;
+    }
+
+    cutin "prm_1", 2;
+    mes "^00CC00[Premi]";
+    mes "^00CC00หากต้องการใช้เวทมนต์";
+
+    if (.@i == 3) {
+        mes "^00CC00หากต้องการใช้เวทมนต์";
+        mes "^00CC00เพิ่มค่าประสบการณ์";
+        mes "^00CC00เพิ่มอัตราการดรอป";
+        mes "^00CC00ลดบทลงโทษตอนตาย";
+        mes "^00CC00พร้อมกัน ต้องให้";
+    } else {
+        mes "^00CC00" +.@names2$[.@i];
+    }
+
+    mes "^00CC00" + getitemname(6417) + " " +.@items[.@i] + " ชิ้น";
+    mes "^00CC00ในการเสกนะเจ้าคะ^000000";
+    next;
+    mes "^CC0000? คำเตือน ?";
+    mes "^CC0000ให้ " + getitemname(6417) + " " +.@items[.@i] + " ชิ้น จะได้รับ Buff";
+
+    if (.@i == 3) {
+        mes "^CC0000เพิ่มค่าประสบการณ์ (1วัน)";
+        mes "^CC0000เพิ่มอัตราการดรอป (1วัน)";
+        mes "^CC0000ลดบทลงโทษตอนตาย (1วัน)";
+    } else {
+        mes "^CC0000" +.@names2$[.@i] + " (1วัน)";
+    }
+
+    mes "^CC0000Buff ที่ได้รับ";
+    mes "^CC0000ไม่สามารถถอดสิทธิ์ออกจากตัวได้^000000";
+    next;
+
+    if (select("รับ Buff:ยกเลิก") == 2) {
+        cutin "prm_3", 2;
+        mes "[Premi]";
+        mes "อ่าา!";
+        mes "วันนี้ช่างอากาศดี ไม่ต้องทำอะไร!";
+        next;
+        
+        cutin "prm_2", 2;
+        mes "[Premi]";
+        mes "สำหรับ Premi, วันแบบนี้ถ้าได้กิน";
+        mes getitemname(6417) + " คงจะดีที่สุดเลย!";
+        close2;
+        cutin "", 255;
+        end;
+    }
+
+    delitem 6417, .@items[.@i];
+
+    cutin "prm_1", 2;
+    mes "[Premi]";
+    mes "อาฮ่า!";
+    mes "เรามาลองดูความสามารถกันหน่อยไหม!!!";
+    next;
+
+    switch (.@i) {
+        case 0:
+            @time_unix = gettimetick(2)+86400;
+            @time_tick = 86400000;
+            sc_start SC_AID_PERIOD_PLUSEXP,@time_tick, 30;
+            sc_start SC_AID_PERIOD_PLUSJOBEXP,@time_tick, 30;
+            #PREMIUM_BEXP = @time_unix;
+            #PREMIUM_JEXP = @time_unix;
+            break;
+        case 1:
+            sc_start SC_AID_PERIOD_RECEIVEITEM, 86400000, 30;
+            #PREMIUM_ITEM = gettimetick(2)+86400;
+            break;
+        case 2:
+            sc_start SC_AID_PERIOD_DEADPENALTY, 86400000, 50;
+            #PREMIUM_LIFE = gettimetick(2)+86400;
+            break;
+        case 3:
+            @time_unix = gettimetick(2)+86400;
+            @time_tick = 86400000;
+
+            sc_start SC_AID_PERIOD_PLUSEXP, @time_tick, 30;
+            sc_start SC_AID_PERIOD_PLUSJOBEXP, @time_tick, 30;
+            sc_start SC_AID_PERIOD_RECEIVEITEM, @time_tick, 30;
+            sc_start SC_AID_PERIOD_DEADPENALTY, @time_tick, 50;
+
+            #PREMIUM_BEXP = @time_unix;
+            #PREMIUM_JEXP = @time_unix;
+            #PREMIUM_ITEM = @time_unix;
+            #PREMIUM_LIFE = @time_unix;
+            break;
+    }
+
+    mes "[Premi]";
+    mes "เป็นอย่างไรบ้างคะ คุณ " + strcharinfo(0) + "!";
+    mes "ยังไม่รู้สึกถึงเวทมนต์ " +.@name$ + " หรือเจ้าคะ?";
+    mes "จะมาเป็นแบบนี้ไม่ได้นะ!";
+    mes "รีบออกไปลองต่อสู้ดูค่ะ!";
+    close2;
+    cutin "", 255;
+    end;
+    
+}

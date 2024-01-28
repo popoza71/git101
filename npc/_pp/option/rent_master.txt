@@ -1,0 +1,132 @@
+/*
+=================== TERMS OF SERVICES. ===================
+1. ALL RIGHT RESERVED RE-SELLER OR SHARE SCRIPT TO PUBLISH.
+2. BUT YOU RE-SELLER OR SHARE SCRIPT WITH OUT UNAUTHORIZRD
+   I WILL ALL CANCEL MY SUPPORT FOR YOU.
+3. MAINTENANCE SCRIPTS WILL BE FREE SERVICES.
+4. I WILL NOT KEEP ANY INFORMATIONS FROMS YOU SERVER THAT
+   YOU SEND FOR ME.
+5. I HOPE YOU WILL ALL ACCEPT TERMS OF SERVICES.
+==========================================================
+Script. Hourly Point																				 
+Create By. [PTY-Studio]
+Translator By. PTY Studio
+Bug Report. PUP KUAANAN [ FB ]																					 
+Contact Us. PUP KUAANAN [ FB ]																					 																				 
+==========================================================
+*/
+
+morocc,168,111,4	script	Rent Master	4_TOWER_09,{
+	
+	mes "[ ^FF0000Rent Master^000000 ]";
+	mes "สวัสดี คุณ,^FF0000" +strcharinfo(0)+ "^000000";
+	mes "ที่นีบริการ การเช่าทุกชนิด";
+	mes "คุณต้องการเช่าอะไร โปรดเลือกเมนู";
+	next;
+	menu "^ff0000~^000000 เช่า Pecopeco (1,000z)",Repeco,"^ff0000~^000000 เช่า Falcon (1,000z)",Refal,"^ff0000~^000000 เช่า Cart (1,000z)",Recart;
+
+Repeco:
+
+	if (checkriding()) {
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "ฮืม...เกิดอะไรขึ้นหว้า";
+		mes "คุณมี Peco Peco อยู่แล้วน่ะ..";
+		mes "ทำไมถึงต้องการเช่าอีก ?";
+		close;
+		
+	} else if (Zeny < 1000) {
+		
+	mes "[ ^FF0000Rent Master^000000 ]";
+	mes "คุณมีเงินไม่เพียงพ่อน่ะ..";
+	mes "ฉันต้องการเงิน 1,000Zeny";
+	close;
+	
+	} else if ( (Class == 7) || (Class == 14) || (Class == 4008) || (Class == 4015) || (Class == 4030) || (Class == 4037) ) {
+		
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "เช่าเป็ดเรียบร้อยแล้วค่ะ";
+		setriding;
+		set Zeny,Zeny-1000;
+		close;
+		
+	} else {
+		
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "คุณไม่มีสิทธิ์เช่า Peco Peco ได้เนอะ";
+		close;
+		
+	}
+	
+Refal:
+	if (checkriding()) {
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "ฮืม...เกิดอะไรขึ้นหว้า";
+		mes "คุณมี Falcon อยู่แล้วน่ะ..";
+		mes "ทำไมถึงต้องการเช่าอีก ?";
+		close;
+			
+	} else if (Zeny < 1000) {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "คุณมีเงินไม่เพียงพ่อน่ะ..";
+		mes "ฉันต้องการเงิน 1,000Zeny";
+		close;
+		
+	} else if ( (Class == 11) || (Class == 4012) || (Class == 4034) ) {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "เช่านกเรียบร้อยแล้วค่ะ";
+		setfalcon;
+		set Zeny,Zeny-1000;
+		close;
+			
+	} else {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "คุณไม่มีสิทธิ์เช่า Falcon ได้เนอะ";
+		close;
+			
+	}
+
+Recart:
+
+	if (checkriding()) {
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "ฮืม...เกิดอะไรขึ้นหว้า";
+		mes "คุณมี Cart อยู่แล้วน่ะ..";
+		mes "ทำไมถึงต้องการเช่าอีก ?";
+		close;
+			
+	} else if (Zeny < 1000) {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "คุณมีเงินไม่เพียงพ่อน่ะ..";
+		mes "ฉันต้องการเงิน 1,000Zeny";
+		close;
+		
+	} else if ( (Class == 5) || (Class == 10) || (Class == 23) || (Class == 18) || (Class == 4006) || (Class == 4011) || (Class == 4019) || (Class == 4028) || (Class == 4033) || (Class == 4041) || (Class == 4045) ) {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "เช่ารถเข็นเรียบร้อยแล้วค่ะ";
+		setcart;
+		set Zeny,Zeny-1000;
+		close;
+			
+	} else {
+			
+		mes "[ ^FF0000Rent Master^000000 ]";
+		mes "คุณไม่มีสิทธิ์เช่า Cart ได้เนอะ";
+		close;
+			
+	}
+
+
+OnInit:	
+	// ------------ CONFIGURE ------------
+	set $@RentM_WAITINGROOM, 1;		// เปิดแสดงชื่อห้องบนหัว ( 0 = ปิด / 1 = เปิด )
+	set $@RentM_WAITINGROOM$, " บริการเช่าต่างๆ";	// ชื่อห้องบนหัว
+	sleep 1000;
+		if($@RentM_WAITINGROOM) waitingroom "" + $@RentM_WAITINGROOM$,0;
+	// -----------------------------------
+end;
+}

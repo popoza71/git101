@@ -1,0 +1,34 @@
+// Jail Map
+sec_pri	mapflag	norodex
+
+// Guild Castles ==========
+aldeg_cas01	mapflag	norodex
+aldeg_cas02	mapflag	norodex
+aldeg_cas03	mapflag	norodex
+aldeg_cas04	mapflag	norodex
+aldeg_cas05	mapflag	norodex
+gefg_cas01	mapflag	norodex
+gefg_cas02	mapflag	norodex
+gefg_cas03	mapflag	norodex
+gefg_cas04	mapflag	norodex
+gefg_cas05	mapflag	norodex
+payg_cas01	mapflag	norodex
+payg_cas02	mapflag	norodex
+payg_cas03	mapflag	norodex
+payg_cas04	mapflag	norodex
+payg_cas05	mapflag	norodex
+prtg_cas01	mapflag	norodex
+prtg_cas02	mapflag	norodex
+prtg_cas03	mapflag	norodex
+prtg_cas04	mapflag	norodex
+prtg_cas05	mapflag	norodex
+schg_cas01	mapflag	norodex
+schg_cas02	mapflag	norodex
+schg_cas03	mapflag	norodex
+schg_cas04	mapflag	norodex
+schg_cas05	mapflag	norodex
+arug_cas01	mapflag	norodex
+arug_cas02	mapflag	norodex
+arug_cas03	mapflag	norodex
+arug_cas04	mapflag	norodex
+arug_cas05	mapflag	norodex

@@ -1,0 +1,205 @@
+//===== rAthena Script ======================================= 
+//= Archer Job Quest
+//===== By: ================================================== 
+//= kobra_k88; L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 1.9
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Job quest for Archer classes
+//===== Additional Comments: ================================= 
+//= 1.0 Fully working.
+//= 1.1 Added instant job change for High Novice [Lupus]
+//= 1.3 Added Baby Class support [Lupus]
+//= 1.4 Optimised and moved first checker to Jfunc1-1 [massdriller]
+//= 1.5 Now saves/restores all quest skills [Lupus]
+//= 1.6 Merged back JFunc [Lupus]
+//= 1.7 Rescripted to Aegis 10.3 stadards. [L0ne_W0lf]
+//=     Arrow reward is now equal to the type sof trunks brought.
+//=     No longer uses function "F_ToHigh"
+//= 1.7a Fixed minor dialogue bug at Grade==25 [Lupus]
+//= 1.8 Fixed mistake in condition check. [L0ne_W0lf]
+//= 1.9 Added Quest Log commands. [L0ne_W0lf]
+//============================================================ 
+
+payon_in02,64,71,4	script	Archer Guildsman#archer	85,{
+	if (Upper == 1) {
+		if (Class == Job_Novice_High && (ADVJOB == Job_Sniper || ADVJOB == Job_Clown || ADVJOB == Job_Gypsy)) {
+			mes "[Archer Guildsman]";
+			mes "เฮ้, ข้ารู้จักเจ้า";
+			mes "เจ้าได้ทำการทดสอบนี้";
+			mes "มาก่อนหรือเปล่า?";
+			next;
+			mes "[Archer Guildsman]";
+			mes "อ๊ะ, เจ้าคงจะได้";
+			mes "ไปที่วาลฮัลลาและได้รับการ";
+			mes "เกิดใหม่นั่นเอง";
+			mes "ว้าว, น่าประทับใจจริงๆ!";
+			next;
+			if (!callfunc("F_CanChangeJob")) {
+				mes "[Archer Guildsman]";
+				mes "เอ๊ะ...";
+				mes "เจ้าควรเรียนรู้ทุกทักษะพื้นฐาน";
+				mes "ก่อนที่จะเป็นนักธนูได้";
+				next;
+				mes "[Archer Guildsman]";
+				mes "โอเค, แล้วเจอกันนะ";
+				close;
+			}
+			mes "[Archer Guildsman]";
+			mes "ดีแล้วนะ ไม่ต้องพูดอะไรมาก";
+			mes "ข้ารู้ว่าเจ้าจะกลายเป็นนักธนูที่ยอดเยี่ยม...";
+			next;
+			skill "NV_TRICKDEAD",0,SKILL_PERM;
+			jobchange Job_Archer_high;
+			skill "AC_MAKINGARROW",1,SKILL_PERM;
+			skill "AC_CHARGEARROW",1,SKILL_PERM;
+			mes "[Archer Guildsman]";
+			mes "แม้ว่าคราวนี้เจ้าจะไม่ได้รับรางวัลพิเศษอะไร";
+			mes "หวังว่าเจ้าจะเข้าใจ ดูแลตัวเองดีๆ นะ";
+			close;
+		}
+		else {
+			mes "[Archer Guildsman]";
+			mes "โอ้...?";
+			mes "เฮ้ย, เจ้ามาทำอะไรนี่...?";
+			next;
+			mes "[Archer Guildsman]";
+			mes "ข้ารู้สึกว่าเจ้าไม่เหมาะกับการเป็น Archers นะ";
+			mes "มันคือความรู้สึกว่าเจ้าควรทำอย่างอื่น...";
+			close;
+		}
+	}
+	mes "[Archer Guildsman]";
+	mes "มีอะไรให้ข้าช่วยเจ้าไหม?";
+	next;
+	switch(select("ข้าต้องการเป็น Archers.:ข้าต้องการทราบข้อมูลที่ต้องการ.:ไม่ครับ ขอบเจ้า.")) {
+	case 1:
+	if (BaseJob == Job_Archer) {
+		mes "[Archer Guildsman]";
+		mes "เจ้าเป็น Archer อยู่แล้ว...";
+		close;
+	}
+	else if (BaseJob != Job_Archer && BaseJob != Job_Novice) {
+		mes "[Archer Guildsman]";
+		mes "มันดูไม่ค่อยเหมือน Novice อย่างมาก...";
+		next;
+		mes "[Archer Guildsman]";
+		mes "ทั้งนี้เจ้าไม่สามารถเป็น Archer ได้";
+		close;
+	}
+	if (job_archer_q == 0) {
+		mes "[Archer Guildsman]";
+		mes "เจ้าต้องการเป็น Archers ใช่ไหม?";
+		mes "ถ้าใช่ เจ้าต้องกรอกแบบฟอร์มนี้.";
+		next;
+		if (select("สมัคร.:ยกเลิก") == 1) {
+			set job_archer_q,1;
+			setquest 1004;
+			mes "[Archer Guildsman]";
+			mes "ดี ลงนามที่นี่. โอเค, ข้าจะเลื่อนเจ้าเป็นอัตลักษณ์เมื่อเจ้าตรงตามข้อกำหนดแล้ว.";
+			next;
+			mes "[Archer Guildsman]";
+			mes "ถ้าเจ้าคิดว่าเจ้าตรงตามแล้ว, ข้าจะตรวจสอบเดี๋ยวนี้.";
+			mes "เจ้าพร้อมแล้วหรือไม่?";
+			next;
+			if (select("ใช่, พร้อมแล้ว.:ไม่, ยังไม่พร้อม.") == 1) {
+				mes "[Archer Guildsman]";
+				mes "โอเค, ข้าจะตรวจสอบ.";
+				next;
+			}
+			else {
+				mes "[Archer Guildsman]";
+				mes "ข้าเข้าใจ. เจ้าสามารถดูข้อกำหนดได้ทุกเมื่อที่เจ้าต้องการ.";
+				close;
+			}
+		}
+		else {
+			mes "[Archer Guildsman]";
+			mes "ดี, ถามตอบครั้งหน้า.";
+			close;
+		}
+	}
+	mes "[Archer Guildsman]";
+	mes "เจ้าคือ..." + strcharinfo(0) + "?";
+	next;
+	if (!callfunc("F_CanChangeJob")) {
+		mes "[Archer Guildsman]";
+		mes "เจ้าไม่อยู่ในระดับงานที่ถูกต้อง กรุณาตรวจสอบข้อกำหนดอีกครั้ง.";
+		next;
+		mes "[Archer Guildsman]";
+		mes "ต้องมี Job Level 10, และอย่าลืมที่จะเรียนรู้ทักษะพื้นฐานทุกอย่าง. เมื่อเจ้าทำครบทุกอย่างแล้ว, กลับมาที่นี่.";
+		close;
+	}
+	if (job_archer_q == 1) {
+		set .@archer_item1,countitem(1066) * 5;
+		set .@archer_item2,countitem(1067) * 3;
+		set .@archer_item3,countitem(1068) * 2;
+		set .@archer_item4,countitem(1019);
+		set .@total_archer,.@archer_item1 + .@archer_item2 + .@archer_item3 + .@archer_item4;
+		set .@total_archer2,(((.@archer_item2 + .@archer_item3) * 2) + .@archer_item4);
+		mes "[Archer Guildsman]";
+		mes "ยอดเยี่ยม!";
+		mes "เดี๋ยวนี้,";
+		mes "ข้าจะประเมินค่าของพวกไม้ต่าง ๆ ที่เจ้านำมาสร้างความสามารถ.";
+		next;
+		mes "[Archer Guildsman]";
+		mes "เพื่อที่จะกลายเป็น Archer, เจ้าต้องมีคะแนนอย่างน้อย 25 จาก 40 คะแนน. เจ้าสามารถได้รับที่ต้นไม้ 'Willow'. กรุณาระวังเจ้ามีมอนสเตอร์ที่แข็งแรงมาก.";
+		close;
+	}
+	next;
+	callfunc "Job_Change",Job_Archer;
+	callfunc "F_ClearJobVar";
+	completequest 1004;
+	mes "[Archer Guildsman]";
+	mes "ยินดีด้วย!";
+	mes "เจ้ากลายเป็น Archers แล้ว!";
+	next;
+	mes "[Archer Guildsman]";
+	mes "แน่นอน, เราคาดหวังว่าเจ้าจะช่วยเสริมสร้างสิ่งที่จะเกิดขึ้นในอนาคตของ Archers Guild ด้วยความพยายามของเจ้า.";
+	next;
+	mes "[Archer Guildsman]";
+	mes "อ๊ะ, ธนูของเจ้ามีครบที่มาจาก Bow Production Department. เอาไปเถอะ! เป็นของของเจ้า~";
+	getitem 1702,1; //Bow_
+	getitem 1750,.@total_archer2; //Arrow
+	next;
+	mes "[Archer Guildsman]";
+	mes "ตอนนี้, ไปเถอะ. ล่าด้วยความภูมิฐานที่เจ้าได้รับการฝึกอบรมจากคนที่เก่งที่สุด!";
+	close;
+case 2:
+	mes "[Archer Guildsman]";
+	mes "ข้าจะอธิบายข้อกำหนดในการเป็น Archers";
+	if (BaseJob != Job_Novice) {
+		if (BaseJob == Job_Archer) {
+			next;
+			mes "[Archer Guildsman]";
+			mes "แต่...";
+			mes "เจ้าเป็น Archer อยู่แล้ว. เจ้าควรรู้เหล่านี้แล้ว...";
+		}
+		else {
+			next;
+			mes "[Archer Guildsman]";
+			mes "รอสักครู่. เจ้าเลือกงานอื่นไว้แล้ว. เจ้าไม่ต้องรู้เหล่านี้นะ~";
+		}
+		mes "เพราะ...ใช่...ไม่มีเหตุผลจริง ๆ ที่จะบอกข้อกำหนดเจ้า...";
+	}
+	next;
+		mes "[Archer Guildsman]";
+		mes "ต่อจากนี้ เจ้าจะต้องเป็น Novice ที่ Job Level 9 และรู้จักทุก Basic Skills";
+		next;
+		mes "[Archer Guildsman]";
+		mes "Archer ต้องมีความ Concentration และ Reflexes สูงมาก เราจึงไม่รับคนที่ไม่ได้รับมอบ";
+		next;
+		mes "[Archer Guildsman]";
+		mes "เจ้าจะต้องเก็บ ^FF0000Trunks^000000 มีทั้งหมด 4 ประเภท แต่ละประเภทมีเจ้าภาพที่แตกต่างกัน เจ้าจะได้เกรดต่าง ๆ ตามเจ้าภาพของ Trunks";
+		next;
+		mes "[Archer Guildsman]";
+		mes "เพื่อเป็น Archer เจ้าต้องเก็บเพิ่มอย่างน้อย ^0000FF25^000000 จาก 40 คะแนน เจ้าสามารถได้ Trunks จาก 'Willow' ต้นไม้ แต่ระวัง มันเป็นมอนสเตอร์ที่แข็งแกร่ง";
+		close;
+	case 3:
+		close;
+	}
+}
+

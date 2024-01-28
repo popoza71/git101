@@ -1,0 +1,35 @@
+
+
+-	script	PK_Event	-1,{
+	
+OnInit:
+	setarray .maps$, "xmas_dun02", "in_sphinx2", "in_sphinx3", "in_sphinx4", "in_sphinx5",
+						"moc_pryd02", "moc_pryd04", "moc_pryd05", "moc_pryd06", "pay_dun03",
+						"pay_dun04", "orcsdun02", "mjo_dun03", "prt_maze03", "gl_in01", "gl_cas02",
+						"gl_knt01", "gl_knt02", "gl_prison", "gl_prison1", "gl_chyard", "gl_sew01",
+						"gl_dun01", "gl_dun02", "gef_dun02", "alde_dun04", "beach_dun", "beach_dun2",
+						"gef_fild06", "gef_fild08", "mjolnir_05", "mjolnir_10", "alde_dun02",
+						"alde_dun03", "iz_dun03", "iz_dun04", "mjo_dun03";
+
+
+OnMinute00:
+	set .rand, rand(getarraysize(.maps$));
+	pvpon .maps$[.rand];
+	announce "[ระบบ] PK Map เกิดขึ้นที่ "+setchar(.maps$[.rand], strtoupper(charat(.maps$[.rand],0)), 0)+" เป็นเวลา 30 นาที หวังว่าคุณจะอยู่รอดปลอดภัย",bc_all,0xFF7DBD;
+	sleep 1800000;// 30 min of delay
+	pvpoff .maps$[.rand];
+	set .rand,0;
+	end;
+	
+OnMinute30:
+	set .rand2, rand(getarraysize(.maps$));
+	pvpon .maps$[.rand2];
+	announce "[ระบบ] PK Map เกิดขึ้นที่ "+setchar(.maps$[.rand2], strtoupper(charat(.maps$[.rand2],0)), 0)+" เป็นเวลา 30 นาที หวังว่าคุณจะอยู่รอดปลอดภัย",bc_all,0xFF7DBD;
+	sleep 1800000;// 30 min of delay
+	pvpoff .maps$[.rand2];
+	set .rand2,0;	
+	end;
+	
+}
+
+

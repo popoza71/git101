@@ -1,0 +1,319 @@
+///////////////////////////////////////////////
+//                                          //
+//                                          //
+//Tharakan Khumtong                         //
+//////////////////////////////////////////////
+
+-	script	Auto_Anti_guildmap	-1,{
+OnInit:
+//////ตั่วค่า////////////////////
+///MAP////
+set $guildmap_mount, 20; // แมพทั้งหมด
+setarray $@GDSmap$[1],
+"prtg_cas01",
+"prtg_cas02",
+"prtg_cas03",
+"prtg_cas04",
+"prtg_cas05",
+"gefg_cas01",
+"gefg_cas02",
+"gefg_cas03",
+"gefg_cas04",
+"gefg_cas05",
+"payg_cas01",
+"payg_cas02",
+"payg_cas03",
+"payg_cas04",
+"payg_cas05",
+"aldeg_cas01",
+"aldeg_cas02",
+"aldeg_cas03",
+"aldeg_cas04",
+"aldeg_cas05";
+///ชื่อ MAP ///
+setarray $@GDSmapname$[1],
+"บ้าน - prtg_cas01",
+"บ้าน - prtg_cas02",
+"บ้าน - prtg_cas03",
+"บ้าน - prtg_cas04",
+"บ้าน - prtg_cas05",
+"บ้าน - gefg_cas01",
+"บ้าน - gefg_cas02",
+"บ้าน - gefg_cas03",
+"บ้าน - gefg_cas04",
+"บ้าน - gefg_cas05",
+"บ้าน - payg_cas01",
+"บ้าน - payg_cas02",
+"บ้าน - payg_cas03",
+"บ้าน - payg_cas04",
+"บ้าน - payg_cas05",
+"บ้าน - aldeg_cas01",
+"บ้าน - aldeg_cas02",
+"บ้าน - aldeg_cas03",
+"บ้าน - aldeg_cas04",
+"บ้าน - aldeg_cas05";
+/////////////เพิ่ม mapflag///////////////
+setmapflag	"prtg_cas01",	mf_loadevent;
+setmapflag	"prtg_cas02",	mf_loadevent;
+setmapflag	"prtg_cas03",	mf_loadevent;
+setmapflag	"prtg_cas04",	mf_loadevent;
+setmapflag	"prtg_cas05",	mf_loadevent;
+setmapflag	"gefg_cas01",	mf_loadevent;
+setmapflag	"gefg_cas02",	mf_loadevent;
+setmapflag	"gefg_cas03",	mf_loadevent;
+setmapflag	"gefg_cas04",	mf_loadevent;
+setmapflag	"gefg_cas05",	mf_loadevent;
+setmapflag	"payg_cas01",	mf_loadevent;
+setmapflag	"payg_cas02",	mf_loadevent;
+setmapflag	"payg_cas03",	mf_loadevent;
+setmapflag	"payg_cas04",	mf_loadevent;
+setmapflag	"payg_cas05",	mf_loadevent;
+setmapflag	"aldeg_cas01",	mf_loadevent;
+setmapflag	"aldeg_cas02",	mf_loadevent;
+setmapflag	"aldeg_cas03",	mf_loadevent;
+setmapflag	"aldeg_cas04",	mf_loadevent;
+setmapflag	"aldeg_cas05",	mf_loadevent;
+///////////////////
+end;
+
+OnPCLoadMapEvent:
+getmapxy( .@map$, @x, @y, BL_PC );
+query_sql "SELECT `class_id` FROM `tharakan_guild_class` WHERE `class_id` = '" + class + "'  AND map = '" + .@map$ + "'", .@class_list;
+if(getarraysize(.@class_list)){message	strcharinfo(0),"Class " + jobname(.@class_list) + " ไม่ได้รับอณุญาติให้เข้าแมพ "+.@map$+"";warp	"SavePoint",0,0;end;}
+query_sql "SELECT `guild_id`,`map` FROM `tharakan_guild_map` WHERE `guild_id` = '" + getcharid(2) + "'  AND map = '" + .@map$ + "'", .@guild_list,.@mapsql$;
+		for (set .@i, 1; .@i < ($guildmap_mount+1); set .@i, .@i + 1) {
+			if($@GDSmap$[.@i]==.@map$){
+			if(.@map$==.@mapsql$){end;}
+			message	strcharinfo(0),"คุณไม่ได้รับอณุญาติให้เข้าแมพ "+.@map$+"";
+			warp	"SavePoint",0,0;	
+			}		
+	}	
+
+end;
+}
+
+
+morocc,225,84,4	script	Registered Castle#2	480,{ 
+if (getgmlevel() < 90)
+{
+mes "สวัสดีคุณ : "+strcharinfo(0)+"";
+mes "Guild ID : " + getcharid(2) + "";
+next;
+menu 
+"^009933•^000000 รายละเอียดบ้าน Guild War",APP_HOME;	
+end;
+}
+menu 
+"^009933•^000000 กำหนด Guild War",APP_MAP,
+"^009933•^000000 ดูบ้านที่ตั่งไว้",APP_HOME,
+"^009933•^000000 GID ทั้งหมดใน Server",APP_GIDserv,
+"^FF0000•^000000 ยกเลิก ",no;
+
+
+APP_GIDserv:
+		query_sql "SELECT `guild_id` FROM `guild` ORDER BY `guild_id`", .@guild_list;
+			if (!getarraysize(.@guild_list)) {
+				mes "ไม่มีข้อมูล SQL";
+			} else {
+				mes "Guild ID ทั้งหมดในเซิฟ";
+				mes "###################";
+				for (set .@i, 0; .@i < getarraysize(.@guild_list); set .@i, .@i + 1) {
+				query_sql ("SELECT `name` FROM `guild` WHERE `guild_id` = '" + .@guild_list[.@i] + "'", .@name$);
+					mes "- ^0000FF" + .@name$[0] + "^000000 [ID:^0000FF" + .@guild_list[.@i] + "^000000]";
+				}
+			}
+			
+end;
+
+APP_HOME:
+mes "1.รายละเอียด Guild ID ที่เข้า MAP ได้";
+mes "2.รายละเอียด Job Class ^FF0000ที่เข้า MAP ไม่ได้^000000";
+next;
+menu 
+"^009933•^000000 Guild ที่กำหนด",APP_GID,
+"^009933•^000000 Job Class ที่กำหนด",APP_CLASS;
+end;
+
+APP_CLASS:
+
+		query_sql "SELECT `class_id`,`map` FROM `tharakan_guild_Class` ORDER BY `class_id`", .@class_list, .@map$;
+			if (!getarraysize(.@class_list)) {
+				mes "ไม่มีข้อมูล";
+			} else {
+				mes "Job Class ที่จำกัดการเข้า MAP";
+				mes "###################";
+				for (set .@i, 0; .@i < getarraysize(.@class_list); set .@i, .@i + 1) {
+					mes "[^0000FF"+jobname(.@class_list[.@i])+"^000000] ^FF0000Ban MAP^000000 : [" + .@map$[.@i] + "]";
+				}
+			}
+end;
+
+APP_GID:
+		query_sql "SELECT `guild_id`,`map` FROM `tharakan_guild_map` ORDER BY `guild_id`", .@guild_list, .@map$;
+			if (!getarraysize(.@guild_list)) {
+				mes "ไม่มีข้อมูล";
+			} else {
+				mes "Guild MAP ทั้งหมด";
+				mes "###################";
+				for (set .@i, 0; .@i < getarraysize(.@guild_list); set .@i, .@i + 1) {
+				query_sql ("SELECT `name` FROM `guild` WHERE `guild_id` = '" + .@guild_list[.@i] + "'", .@name$);
+					mes "- ^0000FF" + .@name$[0] + "^000000 [ID:^0000FF" + .@guild_list[.@i] + "^000000] MAP : [^FF0000" + .@map$[.@i] + "^000000]";
+				}
+			}
+			
+end;
+
+APP_MAP:
+	freeloop(0);
+	set .menu$,"";
+	for(set .@i,1; .@i<=getarraysize($@GDSmapname$); set .@i,.@i+1) {
+		set .menu$, .menu$+$@GDSmapname$[.@i]+":";
+	}
+	set .@size, getarraysize(@i);
+	if (!.@size) set .@i, select(.menu$);
+	else if (.@size == 1) set .@i, @i[0];
+	else {
+		for(set .@j,0; .@j<.@size; set .@j,.@j+1)
+			set .@menu$, .@menu$+$@GDSmapname$[@i[.@j]]+":";
+		set .@i, @i[select(.@menu$)-1];
+	}
+	deletearray @i[0],getarraysize(@i);
+	if ($@GDSmapname$[.@i] == "") {
+		message strcharinfo(0),"มีข้อผิดพลาดที่เกิดขึ้น.";
+		end;
+	}
+	set .@menuA,.@i;
+	goto ADD_MAP;
+
+
+
+no:
+end;
+///////////////////////////////
+ADD_MAP:
+		query_sql "SELECT `guild_id` FROM `tharakan_guild_map` WHERE `map` = '" + $@GDSmap$[.@menuA] + "' ORDER BY `guild_id`", .@guild_list;
+			if (!getarraysize(.@guild_list)) {
+				mes "- ไม่มีกิลด์ใดที่ได้ลงทะเบียน -";
+				mes "ท่านต้องการเพิ่มเลยไหม ?";
+			} else {
+				mes "      กิลด์ที่ลงทะเบียนแล้ว";
+				mes "###################";
+				for (set .@i, 0; .@i < getarraysize(.@guild_list); set .@i, .@i + 1) {
+				query_sql ("SELECT `name` FROM `guild` WHERE `guild_id` = '" + .@guild_list[.@i] + "'", .@name$);
+					mes "- ^0000FF" + .@name$[0] + "^000000 [GID^0000FF" + .@guild_list[.@i] + "^000000]";
+				}
+			}
+next;
+
+menu 
+"^FF0000•^000000 เพิ่ม Guild",ADD_guild,
+"^FF0000•^000000 ลบ Guild",DEL_guild,
+"^FF0000•^000000 จำกัด Class อาชีพ",ADD_class,
+"^FF0000•^000000 ลบ Class อาชีพ",DEL_class;
+	
+
+
+///////////////////////////////////////////////
+ADD_guild:
+mes "กำหนดเลข Guild ที่ต้องการเพิ่ม";
+next;
+input .@GID;
+if(.@GID==0){end;}
+set .@mod,1;
+goto APP_check;
+
+DEL_guild:
+mes "กำหนดเลข Guild ที่ต้องการลบ";
+next;
+input .@GID;
+if(.@GID==0){end;}
+set .@mod,2;
+goto APP_check;
+end;
+/////////////////////////////////////////////////////
+ADD_class:
+mes "กำหนดเลข Class ที่ต้องการจำกัด";
+next;
+input .@class;
+if(.@class==0){end;}
+set .@mod,1;
+goto APP_check2;
+
+DEL_class:
+mes "กำหนดเลข Class ที่ต้องการลบ";
+next;
+input .@class;
+if(.@class==0){end;}
+set .@mod,2;
+goto APP_check2;
+end;
+/////////////////////////////////////////////////////
+
+APP_check:
+query_sql ("SELECT `guild_id`,`name` FROM `guild` WHERE `guild_id` = '" + .@GID + "'", .@CGID, .@name$);
+if(.@CGID==0){mes "^FF0000ไม่มี Guild ที่ท่านต้องการอยู่^000000";end;}
+mes "ตรวจสอบความถูกต้อง";
+mes "------------------";
+mes "^FF0000Guild^000000 : "+.@name$+" ";
+mes "^FF0000บ้าน^000000 : "+$@GDSmapname$[.@menuA]+" ";
+mes "^FF0000แมพที่กำหนด^000000 : "+$@GDSmap$[.@menuA]+" ";
+next;
+if(.@mod==2){mes "^FF0000ยืนยันการลบ Guild^000000 : "+.@name$+" ";}
+menu 
+"^009933•^000000 ยืนยันข้อมูล",check_ok,
+"^FF0000ยกเลิก^000000",no;
+
+check_ok:
+if(.@mod==1){
+	query_sql "SELECT `guild_id` FROM `tharakan_guild_map` WHERE `guild_id` = '" + .@GID + "'", .@guild_list;
+			
+	query_sql("SELECT guild_id FROM `tharakan_guild_map` WHERE map = '"+$@GDSmap$[.@menuA]+"'  AND guild_id = '" + .@GID + "'",.@GID_MAP);
+if(.@GID_MAP==.@GID){mes "^FF0000คุณได้กำหนด Guild ไว้ในแมพ "+$@GDSmap$[.@menuA]+" แล้ว^000000";end;}
+query_sql( "INSERT INTO `tharakan_guild_map` SET `guild_id`='"+.@GID+"',`guild_name`='"+escape_sql(.@name$)+"',`map`='"+$@GDSmap$[.@menuA]+"'");
+mes "บันทึกเรียบร้อย";
+}
+if(.@mod==2){
+	query_sql("SELECT guild_id FROM `tharakan_guild_map` WHERE map = '"+$@GDSmap$[.@menuA]+"'  AND guild_id = '" + .@GID + "'",.@CGID2);
+if(.@CGID2==0){mes "^FF0000แมพ "+$@GDSmap$[.@menuA]+" ไม่มี Guild ที่ท่านต้องการอยู่^000000";end;}
+query_sql("DELETE FROM `tharakan_guild_map` WHERE `guild_id` = '"+.@GID+"'  AND map = '" + $@GDSmap$[.@menuA] + "'");	
+mes "บันทึกเรียบร้อย";	
+}
+end;
+/////////////////////////////////////////////////////
+
+APP_check2:
+mes "ตรวจสอบความถูกต้อง";
+mes "------------------";
+mes "^FF0000Class^000000 : " + jobname(.@class) + " ";
+mes "^FF0000บ้าน^000000 : "+$@GDSmapname$[.@menuA]+" ";
+mes "^FF0000แมพที่กำหนด^000000 : "+$@GDSmap$[.@menuA]+" ";
+next;
+if(.@mod==2){mes "^FF0000ยืนยันการลบ Class^000000 : "+jobname(.@class)+" ";}
+menu 
+"^009933•^000000 ยืนยันข้อมูล",check_ok2,
+"^FF0000ยกเลิก^000000",no;
+
+check_ok2:
+if(.@mod==1){
+	query_sql "SELECT `class_id` FROM `tharakan_guild_class` WHERE `class_id` = '" + .@class + "'", .@guild_list;
+			
+	query_sql("SELECT class_id FROM `tharakan_guild_class` WHERE map = '"+$@GDSmap$[.@menuA]+"'  AND class_id = '" + .@class + "'",.@ClassID_MAP);
+if(.@ClassID_MAP==.@class){mes "^FF0000คุณได้กำหนด Class ไว้ในแมพ "+$@GDSmap$[.@menuA]+" แล้ว^000000";end;}
+query_sql( "INSERT INTO `tharakan_guild_class` SET `class_id`='"+.@class+"',`class_name`='"+jobname(.@class)+"',`map`='"+$@GDSmap$[.@menuA]+"'");
+mes "บันทึกเรียบร้อย";
+}
+if(.@mod==2){
+	query_sql("SELECT class_id FROM `tharakan_guild_class` WHERE map = '"+$@GDSmap$[.@menuA]+"'  AND class_id = '" + .@class + "'",.@ClassID_MAP2);
+if(.@ClassID_MAP2==0){mes "^FF0000แมพ "+$@GDSmap$[.@menuA]+" ไม่มี Class ที่ท่านต้องการอยู่^000000";end;}
+query_sql("DELETE FROM `tharakan_guild_class` WHERE `class_id` = '"+.@class+"'  AND map = '" + $@GDSmap$[.@menuA] + "'");	
+mes "บันทึกเรียบร้อย";	
+}
+end;
+///////////////////////////////////////
+OnInit:
+waitingroom "   เช็ค Guild ID",0;
+end;
+}
+
+
+

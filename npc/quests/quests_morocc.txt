@@ -1,0 +1,138 @@
+//===== rAthena Script ======================================= 
+//= Quest NPCs related to Morroc
+//===== By: ================================================== 
+//= kobra_k88
+//===== Current Version: ===================================== 
+//= 3.2
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= - Stop Post
+//= - Binoculars Quest
+//= - Assassin Pub NPCs/supporting quest NPCS. [Disabled]
+//= - Resurrection of Satan Morroc
+//= - The Crow of the Fate
+//= - Succession of the Prince
+//===== Additional Comments: ================================= 
+//============================================================ 
+
+// Stop Post Quest
+// ============================================================
+morocc_in,142,100,1	script	William	89,{
+	mes "[William]";
+	mes "ยินดีต้อนรับสุ่ MacMillan's ";
+	mes "โรงงาน ^3355FF'ทำป้าย'^000000.";
+	next;
+	mes "[William]";
+	mes "ฉันคือ Clan, MacMillan,";
+	mes "มืออาชีพในด้านของการ";
+	mes "ทำป้ายมานานกว่า 250 ปีแล้ว.";
+	mes "ฉันสามารทำป้ายที่ไม่ซ้ำกันชื่อว่า";
+	mes "^3355FF'Stop Post'^000000.";
+	next;
+	switch(select("~ ฉันต้องการทำ ^3355FFStop Post^000000?:~ ไม่ล่ะ, ขอบคุณ...")) {
+		case 1:
+			mes "[William]";
+			mes "MacMillan's เป็นหนึ่งเรื่อง";
+			mes "^3355FF'Stop Post'^000000";
+			mes "เมื่อสวมใส่แล้วจะรู้สึกสบายศีรษะ.";
+			mes "มันเป็นอุปกรณ์ที่น่าสนใจ และ";
+			mes "สามารถใช้บอกว่าให้หยุดได้เช่นกัน.";
+			next;
+			mes "[William]";
+			mes "ฉันคือพนักงานคนหนึ่งในโรงงานทำ";
+			mes "^3355FF'Stop Post'^000000 ข่าวลือว่าโรงงานนี้";
+			mes "ได้ทำมาเป็น 100 ปีแล้ว โดย MacMillan!!";
+			next;
+			mes "[William]";
+			mes "หากเจ้าต้องการ ^3355FF'Stop Post'^000000,";
+			mes "จะต้องมีสิ่งของแลกเปลี่ยน:";
+			mes "^3355FF9,1100 Zeny,";
+			mes "Wooden Blocks 50ea,";
+			mes "และ Black Dyestuffs 1ea^000000.";
+			next;
+			if((countitem(1019) >= 50) && (countitem(983) >= 1) && (Zeny >= 91100)) {
+				mes "[William]";
+				mes "เจ้าอยากได้ป้าย, ^3355FF'Stop Post '^000000! ใช่ไหม ขอบคุณที่ใช้บริการ!";
+				getitem 2272,1;
+				delitem 1019,50;
+				delitem 983,1;
+				set Zeny, Zeny - 91100;
+				emotion 15;
+				close;
+			}
+			mes "[William]";
+			mes "กลับมาใหม่ เมื่อเจ้าได้มีไอเทมครบ.";
+		close;
+		
+		case 2:
+			mes "[William]";
+			mes "ขอบคุณที่เจ้าได้เชิญชวน";
+			mes "ฉันมาเยี่ยมชมโรงงานของเรา.";
+		close;
+	}
+}
+
+
+//==================================================================================//
+//				Binoculars Quest
+//==================================================================================//
+morocc_in,76,163,5	script	Alchemist	64,{
+	mes "[Marius]";
+	mes "สิ่งต่อไปนี้..คือสิ่งมหัศจรรย์";
+	mes "ที่เจ้าไม่เคยพบที่ไหน?";
+	next;
+	switch(select("~ ข้อมูลเกี่ยวกับ Binoculars:~ ทำเควส Binoculars :~ เปล่า, ไม่มีไร")) {
+		case 1:
+			mes "[Marius]";
+			mes "ชื่อของมันคือ ^3355FFBinoculars^000000";
+			mes "มันเปรียบเสมือนแว่นขยาย";
+			mes "ที่ทำให้มองเห็นได้ชัดเจนขึ้น.";
+			next;
+			mes "[Marius]";
+			mes "มันมีขนาด 2เลนส์ มันเป็นอุปกรณ์ที่ดีมาก";
+			next;
+			mes "[Marius]";
+			mes "แต่ดูเหมือนเจ้าจะไม่ได้";
+			mes "ชื่นชอบที่ฉันอธิบายนะ...!";
+			emotion 20;
+			next;
+			mes "[Marius]";
+			mes "แต่สิ่งที่ฉันได้บอกนั้น..มันดีจริงๆนะ!";
+		close;
+		
+		case 2:
+			mes "[Marius]";
+			if(countitem(2243) < 1) || (countitem(999) < 100) {
+				mes "เจ้าต้องหาไอเทมเหล่านี้มาให้ครบนะ";
+				mes "^3355FFPair of Geek Glasses 1ea";
+				mes "และ Steel 100ea^000000.";
+				mes "ค่าบริการ ^3355FF50,000 Zeny^000000!";
+				emotion 6;
+				close;
+			}
+			mes "ขอให้เจ้าได้ใช้มันอย่างคุ้มค่า!";
+			next;
+			mes "[Marius]";
+			mes "อ่ะ ฉันให้ Binoculars !";
+			getitem 2296,1;
+			delitem 2243,1;
+			delitem 999,100;
+			set Zeny, Zeny - 50000;
+			next;
+			mes "[Marius]";
+			mes "ใช้ตามความสามารถที่ของเจ้า...";
+			if(sex== SEX_FEMALE) mes "ฉันไม่ต้องการใช้มันสักเท่าไร แค่เป็นของสะสม";
+			if(sex== SEX_MALE) mes "ว้าว มันดูสวยงาม มีศิลปะมาก";
+		close;
+		
+		case 3:
+			mes "[Marius]";
+			mes "เห้ เจ้าไม่สนใจฉันใช่ไหม";
+			mes "ฉันชื่อ MARIUS และฉันคือ Alchemist";
+			mes "รู้จักไหม ALCHEMISTS...!!!!!";
+			emotion 23;
+		close;
+	}
+}

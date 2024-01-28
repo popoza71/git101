@@ -1,0 +1,270 @@
+function	script	auto_ai_	{
+
+mes "[ SYSTEM AI V1.2 ]";
+mes "รายละเอียด";
+mes "- ช่วยโจมตี และ ค้นหามอนอัตโนมัติ";
+mes "- เก็บไอเท็มอัตโนมัติ";
+mes "- น้ำหนักเกิน 50% กลับเมืองทันที";
+mes "- Fly Wing น้อยกว่า10 กลับเมืองทันที";
+next;
+switch(select("~ AI Beta - [เปิด] / [ปิด] โจมตีทุกตัว:~ AI Beta - โจมตีเฉพาะตัว (ใส่เลข ID Mob)"))
+		{
+		case 1:
+			switch(select("~ AI Beta - ^009900[เปิด]^000000:~ AI Beta - ^FF0000[ปิด]^000000"))
+			{
+				case 1:
+					.@weight = 100 * Weight / MaxWeight;
+	
+					if ( 50 <= .@weight ) {
+						mes "[^0000FF System AI ^000000]";
+						mes "ระบบตรวจพบ คุณมีน้ำหนักมากกว่า 50% กรุณานำไอเท็มฝากคลังสินค้า";
+						mes "ระบบจะปิดอัตโนมัติ ขอบคุณค่ะ";
+						close;
+
+					}
+					if( countitem(601) < 10) {
+						mes "[^0000FF System AI^000000]";
+						mes "ไม่สามารถเปิดระบบ AI ได้ค่ะ";
+						mes "คุณไอเท็ม "+getitemname(601)+"";
+						mes "น้อยกว่า 10ชิ้น แนะนำ";
+						mes "พกไอเทมติดตัวมากกว่า 50ชิ้น ขึ้นไป";
+						end;
+					}
+					if(autoattack_status()){
+						deltimer "battle_ai_loot::OnReplay";
+						mes "[^0000FF System AI ^000000]";
+						mes "ระบบโจมตีอัตโนมัติกำลังใช้งานอยู่";
+						close;
+					}else{
+						deltimer "battle_ai_loot::OnReplay";
+						deltimer "ai_auto_buff::OnReplay";
+						specialeffect2 EF_BASH3D;
+						addtimer 6000,"battle_ai_loot::OnReplay";
+						atcommand "@autoattack";
+						sc_start SC_AUTOAI,-1,0;
+						//fakeIcon(getcharid(0),1271,0,1);
+					}
+				end;
+				
+				case 2:
+					if(autoattack_status()){
+						deltimer "battle_ai_loot::OnReplay";
+						deltimer "ai_auto_buff::OnReplay";
+						atcommand "@autoattack";
+						sc_end SC_AUTOAI;
+						//fakeIcon(getcharid(0),1271,0,0);
+					}else{
+						deltimer "battle_ai_loot::OnReplay";
+						mes "[^0000FF System AI ^000000]";
+						mes "ระบบโจมตีอัตโนมัติยังไม่เปิดใช้งาน";
+						close;
+					}
+				end;
+			}
+		end;
+		
+		case 2:
+			deltimer "ai_auto_buff::OnReplay";
+			deltimer "battle_ai_loot::OnReplay";
+			input @playersearchname$;
+			
+			.@id = @playersearchname$;
+			if (getmonsterinfo(.@id,MOB_NAME) == "null") {
+				deltimer "battle_ai_loot::OnReplay";
+				deltimer "ai_auto_buff::OnReplay";
+				mes "[^0000FF System AI ^000000]";
+				mes "ไม่พบมอนสเตอร์ที่ค้นหา";
+				mes "กรุณาใส่ด้วยเลข ID MOB ขอบคุณค่ะ";
+				close;
+			}
+			setarray .Size$[0],"เล็ก","กลาง","ใหญ่";
+			setarray .Race$[0],"ไร้รูปร่าง","ผีดิบ","สัตว์","พืช","แมลง","ปลา","ปีศาจ","กึ่งมนุษย์","เทวทูต","มังกร";
+			setarray .Element$[0],"ไร้ธาตุ","น้ำ","ดิน","ไฟ","ลม","พิษ","ศักดิ์สิทธิ์","ความมืด","วิญญาณ","ผีดิบ";
+			mes "^FF0000===รายละเอียดของมอนเตอร์===^000000";
+			mes "^0033FFชื่อ ^FF0000: ^000000" + getmonsterinfo(.@id,MOB_NAME);
+			mes "^0033FFเลเวล ^FF0000: ^000000" + getmonsterinfo(.@id,MOB_LV) +" | ^0033FFเลือด ^FF0000: ^000000" + callfunc("F_InsertComma",getmonsterinfo(.@id,MOB_MAXHP));
+			mes "^0033FFExp & Job ^FF0000: ^000000" + callfunc("F_InsertComma",getmonsterinfo(.@id,MOB_BASEEXP)) +" / "+ callfunc("F_InsertComma",getmonsterinfo(.@id,MOB_JOBEXP));
+			mes "^0033FFขนาด ^FF0000: ^000000"+ .Size$[getmonsterinfo(.@id,MOB_SIZE)]+" | ^0033FFประเภท^FF0000 : ^000000"+ .Race$[getmonsterinfo(.@id,MOB_RACE)];
+			mes "^0033FFธาตุ^FF0000 : ^000000"+ .Element$[getmonsterinfo(.@id,MOB_ELEMENT)];
+			mes "กรุณาตรวจสอบข้อมูล . . .";
+			next;
+			switch(select("~ ^009900[เปิด]^000000 โจมตีมอนสเตอร์:~ ^FF0000[ปิด]^000000 โจมตีมอนสเตอร์"))
+			{
+					case 1:
+						.@weight = 100 * Weight / MaxWeight;
+		
+						if ( 50 <= .@weight ) {
+							mes "[^0000FF System AI ^000000]";
+							mes "ระบบตรวจพบ คุณมีน้ำหนักมากกว่า 50% กรุณานำไอเท็มฝากคลังสินค้า";
+							mes "ระบบจะปิดอัตโนมัติ ขอบคุณค่ะ";
+							close;
+		
+						}
+						if( countitem(601) < 10) {
+							mes "[^0000FF System AI^000000]";
+							mes "ไม่สามารถเปิดระบบ AI ได้ค่ะ";
+							mes "คุณไอเท็ม "+getitemname(601)+"";
+							mes "น้อยกว่า 10ชิ้น แนะนำ";
+							mes "พกไอเทมติดตัวมากกว่า 50ชิ้น ขึ้นไป";
+							end;
+						}
+						if(autoattack_status()){
+							deltimer "battle_ai_loot::OnReplay";
+							deltimer "ai_auto_buff::OnReplay";
+							mes "[^0000FF System AI ^000000]";
+							mes "ระบบโจมตีอัตโนมัติกำลังใช้งานอยู่";
+							close;
+						}else{
+							deltimer "battle_ai_loot::OnReplay";
+							deltimer "ai_auto_buff::OnReplay";
+							specialeffect2 EF_BASH3D;
+							addtimer 6000,"battle_ai_loot::OnReplay";
+							atcommand "@autoattack " +.@id+"";
+							sc_start SC_AUTOAI,-1,0;
+							//fakeIcon(getcharid(0),1271,0,1);
+						}
+					end;
+				 
+					case 2:
+						if(autoattack_status()){		
+							deltimer "battle_ai_loot::OnReplay";
+							deltimer "ai_auto_buff::OnReplay";
+							atcommand "@autoattack";
+							sc_end SC_AUTOAI;
+							//fakeIcon(getcharid(0),1271,0,0);
+						}else{
+							deltimer "battle_ai_loot::OnReplay";
+							deltimer "ai_auto_buff::OnReplay";
+							mes "[^0000FF System AI ^000000]";
+							mes "ระบบโจมตีอัตโนมัติยังไม่เปิดใช้งาน";
+							close;
+						}
+					end;
+			}
+			end;
+		}			
+}
+
+-	script	battle_ai_loot	-1,{
+OnReplay:
+	.@weight = 100 * Weight / MaxWeight;
+    if ( 50 <= .@weight ) {
+		deltimer "battle_ai_loot::OnReplay";
+		deltimer "ai_auto_buff::OnReplay";
+		warp "SavePoint",0,0;
+		atcommand "@autoattack";
+		sc_end SC_AUTOAI;
+		//fakeIcon(getcharid(0),1271,0,0);
+		dispbottom "[ ระบบ ] ตรวจพบ คุณมีน้ำหนักมากกว่า 50% กรุณานำไอเท็มฝากคลังสินค้า ดังนั้นระบบ AI จะปิดลงอัตโนมัติทันที",0xFFFFFF;
+		;
+	}
+	if( countitem(601) < 10) {
+		deltimer "battle_ai_loot::OnReplay";
+		deltimer "ai_auto_buff::OnReplay";
+		warp "SavePoint",0,0;
+		atcommand "@autoattack";
+		sc_end SC_AUTOAI;
+		//fakeIcon(getcharid(0),1271,0,0);
+		dispbottom "[ ระบบ ] ตรวจพบ คุณมีไอเท็ม "+getitemname(601)+" น้อยกว่า 10ชิ้น ดังนั้นระบบ AI จะปิดลงอัตโนมัติทันที",0xFFFFFF;
+		end;
+	}
+		deltimer "ai_auto_buff::OnReplay";
+		addtimer 60000,"ai_auto_buff::OnReplay";
+end;
+}
+
+-	script	ai_auto_buff	-1,{
+	
+OnReplay:
+	percentheal 100,100;
+	sc_start SC_BLESSING,1000*60*10,5;
+	sc_start SC_INCREASEAGI,1000*60*10,5;
+	sc_start SC_MAGNIFICAT,1000*60*10,3;
+	sc_start SC_GLORIA,1000*60*10,3;
+	sc_start SC_STRFood, 1000*60*10,5;
+	sc_start SC_AGIFood, 1000*60*10,5;
+	sc_start SC_INTFood, 1000*60*10,5;
+	sc_start SC_DEXFood, 1000*60*10,5;
+	sc_start SC_LUKFood, 1000*60*10,5;
+	//End SC
+	sc_end SC_Poison;
+	sc_end SC_Freeze;
+	sc_end SC_Sleep;
+	sc_end SC_Stan;
+	sc_end SC_Stun;
+	sc_end SC_Stone;
+	sc_end SC_Silence;
+	sc_end SC_Blind;
+	sc_end SC_Bleeding;
+	sc_end SC_Confusion;
+	sc_end SC_Curse;
+	sc_end SC_Hallucination;
+	sc_end SC_ORCISH;
+	sc_end SC_Xmas;
+	
+	deltimer "battle_ai_loot::OnReplay";
+	addtimer 60000,"battle_ai_loot::OnReplay";
+end;
+}
+
+-	script	check_ai_login	-1,{
+	
+	OnPCLoginEvent:
+		if(autoattack_status()){
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+			atcommand "@autoattack";
+			sc_end SC_AUTOAI;
+			//fakeIcon(getcharid(0),1271,0,0);
+		}else{
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+		}
+	end;
+	
+	OnPCLogoutEvent:
+		if(autoattack_status()){
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+			atcommand "@autoattack";
+			sc_end SC_AUTOAI;
+			//fakeIcon(getcharid(0),1271,0,0);
+			dispbottom "[ ระบบ ] คุณได้ออกจากเกมส์ระบบ AI ได้ทำการปิดลงอัตโนมัติทันที",0xFFFFFF;
+		}else{
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+		}
+	end;
+		
+	OnPCDieEvent:
+		if(autoattack_status()){
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+			atcommand "@autoattack";
+			sc_end SC_AUTOAI;
+			//fakeIcon(getcharid(0),1271,0,0);
+			dispbottom "[ ระบบ ] เมื่อคุณตายระบบ AI ได้ทำการปิดลงอัตโนมัติทันที",0xFFFFFF;
+		}else{
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+		}
+	end;
+	
+	OnPCLoadMapEvent:
+		if(autoattack_status()){
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+			atcommand "@autoattack";
+			sc_end SC_AUTOAI;
+			//fakeIcon(getcharid(0),1271,0,0);
+			dispbottom "[ ระบบ ] เมื่อคุณกลับเมืองระบบ AI ได้ทำการปิดลงอัตโนมัติทันที",0xFFFFFF;
+		}else{
+			deltimer "battle_ai_loot::OnReplay";
+			deltimer "ai_auto_buff::OnReplay";
+		}
+	end;
+	
+OnInit:
+	setmapflag	"morocc",mf_loadevent;
+end;
+}

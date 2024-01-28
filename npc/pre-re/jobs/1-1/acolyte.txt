@@ -1,0 +1,468 @@
+//===== rAthena Script ======================================= 
+//= Acolyte Job Quest
+//===== By: ================================================== 
+//= kobra_k88; L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 2.2
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Job quest for Acolyte classes
+//===== Additional Comments: ================================= 
+//= 1.0 Fully working.
+//= 1.1 Added function calls for Priest Quest.
+//= 1.2 Fixed Marthilda, Yosuke bugs. [Lupus]
+//= 1.2a Added instant job change for High Novice [Lupus]
+//= 1.3 Added Baby Class support [Lupus]
+//= 1.4 Optimised and moved first checker to Jfunc1-1 [massdriller]
+//= 1.5 Now saves/restores all quest skills [Lupus]
+//= 1.6 Merged back JFunc [Lupus]
+//= 1.7 Rescripted to Aegis 10.3 stadards. [L0ne_W0lf]
+//=     No longer uses function "F_ToHigh"
+//=     Proper dialog for Priest job quest is unused (for now.)
+//= 1.7a Functions now make use of proper priest quest dialog [L0ne_W0lf]
+//= 1.8 Removed an Unnecessary "set job_acolyte_q,0;" [Samuray22]
+//= 1.8a More bug fixes care of Crashy. [L0ne_W0lf]
+//= 1.9 Changed Marthilda to Mathilda. [L0ne_W0llf]
+//= 2.0 Fixed High Acolytesnot being given holy light. [L0ne_W0lf]
+//= 2.1 Added Quest Log commands. [L0ne_W0lf]
+//= 2.2 Fixed an issue with completequest by adding checkquest. [Kisuka]
+//============================================================ 
+
+prt_church,184,41,4	script	Cleric#aco	60,{
+	if (Upper == 1) {
+		if (ADVJOB == Job_High_Priest || ADVJOB == Job_Champion) {
+			if (Class == Job_Novice_High) {
+				mes "[บาทหลวง Mareusis]";
+				mes "อา, ข้ารับรู้ว่าเจ้าได้";
+				mes "ทำประสบการณ์ในชีวิตที่ผ่านมา. เจ้าต้องได้เรียนรู้หลายๆ อย่างก่อนที่จะเข้ามาที่ Valhalla.";
+				next;
+				if (!callfunc("F_CanChangeJob")) {
+					mes "[บาทหลวง Mareusis]";
+					mes "น่าเสียดายที่ข้าไม่คิดว่าเจ้ายังไม่พร้อมที่จะเป็น Acolyte กรุณาเรียนรู้ทักษะพื้นฐานทั้งหมดให้เสร็จสิ้นก่อน";
+					next;
+					mes "[บาทหลวง Mareusis]";
+					mes "ในระหว่างนี้,";
+					mes "ข้าจะรอจนกว่า";
+					mes "เจ้าจะพร้อม.";
+					mes "ขอพระเจ้าอยู่กับ";
+					mes "เจ้า.";
+					close;
+				}
+				mes "[บาทหลวง Mareusis]";
+				mes "ข้ายินดีต้อนรับเจ้า";
+				mes "กลับจาก Valhalla และ";
+				mes "ขอให้โชคดีในการเริ่ม";
+				mes "การเดินทางของชีวิตครั้งใหม่ของเจ้า.";
+				next;
+				skill "NV_TRICKDEAD",0,SKILL_PERM;
+				jobchange Job_Acolyte_High;
+				skill "AL_HOLYLIGHT",1,SKILL_PERM;
+				mes "[บาทหลวง Mareusis]";
+				mes "ตอนนี้ออกไปผจญภัยและค้นหาผู้ที่ต้องการความช่วยเหลือจากเจ้า ขอพระเจ้าทรงส่องทางของเจ้า";
+				close;
+			}
+			else {
+				mes "[บาทหลวง Mareusis]";
+				mes "ตอนนี้ออกไปค้นหาคนที่ต้องการความช่วยเหลือจากเจ้า ขอพระเจ้าให้ความกระจ่างแก่ทางของเจ้า";
+				close;
+			}
+		}
+		else {
+			mes "[บาทหลวง Mareusis]";
+			mes "ข้ารู้สึกว่าเจ้าได้อดทนกับประสบการณ์ชีวิตที่ผ่านมา เจ้าต้องได้เรียนรู้หลายสิ่งหลายอย่างก่อนที่จะเข้าสู่ Valhalla";
+			next;
+			mes "[บาทหลวง Mareusis]";
+			mes "อย่างไรก็ตาม ข้าบอกได้เลยว่าเจ้าไม่เหมาะที่จะเป็น Acolyte โปรดจำไว้ว่าเจ้าเป็นใครในชีวิตที่แล้วและค้นหาเส้นทางของเจ้า";
+			close;
+		}
+	}
+	mes "[บาทหลวง Mareusis]";
+	mes "เจ้ามีความประสงค์อะไร?";
+	next;
+	switch(select("ผมอยากเป็น Acolyte:ข้อกำหนดของ Acolyte :แค่เดินดูรอบๆ")) {
+	case 1:
+		mes "[บาทหลวง Mareusis]";
+		if (BaseJob == Job_Acolyte) {
+			mes "วันนี้เจ้ารู้สึกโอเคไหม? ข้าสามารถบอกได้จากเครื่องแต่งกายของเจ้าว่าเจ้าเป็น Acolyte อยู่แล้ว เจ้าไม่ได้ล้อเล่นใช่ไหม?";
+			close;
+		}
+		else if (BaseJob != Job_Novice) {
+			mes "ข้าขอโทษ แต่เรายอมรับได้เฉพาะมือใหม่เท่านั้นเนื่องจากผู้สมัครงานเปลี่ยนเป็น Acolyte";
+			close;
+		}
+		if (job_acolyte_q == 0) {
+			mes "จริงเหรอ.";
+			mes "ต้องการที่จะเป็น";
+			mes "ผู้รับใช้ของพระเจ้า?";
+			next;
+			if (select("ใช่ Father, ข้าต้องการ.:ไม่ ข้าโกหก.") == 1) {
+				mes "[บาทหลวง Mareusis]";
+				mes "ดี. ข้ายอมรับ " + strcharinfo(0) + "'s จะได้เป็นลูกศิษย์ เจ้าเข้าใจว่าเจ้าต้องปลงอาบัติก่อนจึงจะสามารถเป็นผู้รับใช้ของพระเจ้าได้ใช่ไหม?";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "ข้าจะ";
+				mes "ให้ภารกิจแก่เจ้า...";
+				switch(rand(3)) {
+				default:
+					set job_acolyte_q,2;
+					mes "โปรดไปเยี่ยม ^000077บาทหลวง Rubalkabara^000000, สมาชิกของ โบสถ์ประจำ Prontera, และกลับมาที่นี่ ท่านได้ฝึกฝนอยู่ใน ^000077Relics ทางทิศตะวันออกเหนือของ Prontera City^000000";
+					setquest 1001;
+					break;
+				case 1:
+					set job_acolyte_q,3;
+					mes "โปรดไปเยี่ยม ^000077Mother Mathilda^000000 และกลับมาหาข้า ท่านได้ฝึกฝนอยู่ใน ^000077Morocc Town, ทางทิศตะวันตกเฉียงใต้ของ Prontera City^000000";
+					setquest 1002;
+					break;
+				case 2:
+					set job_acolyte_q,4;
+					mes "โปรดไปเยี่ยม ^000077Father Yosuke^000000 และกลับมาหาข้า ท่านได้ฝึกฝนอยู่รอบ ^000077สะพานที่ตั้งทางทิศตะวันตกเฉียงเหนือของ Prontera^000000";
+					setquest 1003;
+					break;
+				}
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "ขอให้พระเจ้าของพระเจ้าส่องสว่างเส้นทางของเจ้าและนำทางเจ้าในระหว่างการเดินทางแห่งการแสวงบุญ";
+				close;
+			}
+			mes "[บาทหลวง Mareusis]";
+			mes "ท่านได้โกหก?";
+			mes "เป็นสิ่งดีที่ท่านได้สารภาพบาปของท่าน";
+			mes "ไปสันติสุขเถอะลูกของข้า";
+			close;
+		}
+		mes "อ๊ะ เจ้ากลับมาแล้วนะ ขอให้ข้าตรวจสอบเพื่อดูว่าเจ้าพร้อมที่จะรับใช้พระเจ้าแล้วหรือไม่ ไปดูกันเถอะ...";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		if (!callfunc("F_CanChangeJob")) {
+			mes "พระเจ้าที่ดี! เจ้ายังไม่สำเร็จการฝึกขั้นพื้นฐานใช่ไหม! สิ่งสำคัญคือเจ้าต้องทำให้เสร็จ!";
+			next;
+			mes "[บาทหลวง Mareusis]";
+			mes "เจ้าควรจะฝึกฝนให้มากกว่านี้! ย้อนกลับไปและตรวจสอบให้แน่ใจว่าเจ้าถึงระดับงานมือใหม่ระดับ 9 และเรียนรู้ทักษะพื้นฐานทั้งหมด!";
+			close;
+		}
+		if (job_acolyte_q < 5) {
+			mes "โอ้? ข้าไม่พบชื่อของเจ้าในรายการลงทะเบียน";
+			next;
+			switch(job_acolyte_q) {
+			case 2:
+				mes "[บาทหลวง Mareusis]";
+				mes "ไปพบ ^000077บาทหลวง Rubalkabara^000000 สมาชิกของเขตพรอนเทรา และกลับมาที่นี่";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "เขาได้บำเพ็ญใน ^000077พระธาตุทางตะวันออกเฉียงเหนือของเมืองพรอนเทรา^000000";
+				break;
+			case 3:
+				mes "[บาทหลวง Mareusis]";
+				mes "ไปพบ ^000077Mother Mathilda^000000 และกลับมาหาข้าที่นี่";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "เขาได้บำเพ็ญใกล้ ^000077Morocc Town, ตั้งอยู่ทางตะวันตกเฉียงใต้ของเมืองพรอนเทรา^000000.";
+				break;
+			case 4:
+				mes "[บาทหลวง Mareusis]";
+				mes "ไปพบ ^000077 บาทหลวง Yosuke ^000000 และกลับมาหาข้าที่นี่.";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "ขากำลังบำเพ็ญใกล้กับ ^000077สะพานที่ไหนสักแห่งทางตะวันตกเฉียงเหนือของพรอนเทรา^000000.";
+				break;
+			}
+			next;
+			mes "[บาทหลวง Mareusis]";
+			mes "ขอพระเจ้าของพระเจ้าทำให้เส้นทางของเจ้าสดใสขึ้น และนำทางเจ้าในการเดินทางแห่งการปลงอาบัติ";
+			close;
+		}
+		mes "อืม...";
+		mes "ชื่อของเจ้าอยู่ในรายชื่อและเจ้าได้พิสูจน์เจ้าสมบัติของเจ้าแล้ว";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		mes "I am proud to say that you are now ready to become an Acolyte!";
+		next;
+		skill "NV_TRICKDEAD",0,SKILL_PERM;
+		callfunc "Job_Change",Job_Acolyte;
+		callfunc "F_ClearJobVar";
+		if(checkquest(1001) != -1) {
+			completequest 1001;
+		}
+		else if(checkquest(1002) != -1) {
+			completequest 1002;
+		}
+		else {
+			completequest 1003;
+		}
+		mes "[บาทหลวง Mareusis]";
+		mes "โปรดจำไว้เสมอว่าต้องขอบพระเจ้าพระเจ้าผู้ทรงดูแลเราตลอดเวลา";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		mes "ใช้ของประทานของเจ้าเพื่อรับใช้พระองค์โดยช่วยเหลือผู้อื่นเสมอ ในความสับสนวุ่นวายและช่วงเวลาที่ยากลำบาก เผชิญความยากลำบากด้วยศรัทธาอันแน่วแน่";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		mes "สุดท้ายนี้ ข้าขอแสดงความยินดีอย่างจริงใจกับเจ้าที่อดทนผ่านการพิจารณาคดีปลงอาบัติ";
+		close;
+	case 2:
+		mes "[บาทหลวง Mareusis]";
+		mes "เจ้าต้องการที่จะเป็น Acolyte หรือไม่? เจ้าต้องปฏิบัติตามข้อกำหนดสองประการ";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		mes "ขั้นแรก เจ้าต้องไปถึงระดับงานมือใหม่อย่างน้อย 9 และเรียนรู้ทักษะพื้นฐานทั้งหมด ประการที่สอง เจ้าจะได้รับการทดลองการปลงอาบัติเพื่อเอาชนะ";
+		next;
+		mes "[บาทหลวง Mareusis]";
+		if (job_acolyte_q != 0) {
+			switch(job_acolyte_q) {
+			case 2:
+				mes "สำหรับการทดสอบ โปรดไปหา ^000077บาทหลวง Rubalkabara ^000000 แล้วกลับมาหาข้าที่นี่";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "เขากำลังบำเพ็ญตบะใน ^000077พระธาตุทางตะวันออกเฉียงเหนือของเมืองพรอนเทรา^000000";
+				break;
+			case 3:
+				mes "สำหรับการทดสอบ โปรดไปหา ^000077Mother Mathilda^000000 และกลับมาหาข้าที่นี่";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "เธอได้บำเพ็ญตบะใกล้กับ ^000077Morocc ซึ่งตั้งอยู่ทางตะวันตกเฉียงใต้ของเมืองพรอนเทรา^000000";
+				break;
+			default:
+				mes "สำหรับการทดสอบของเจ้า โปรดไปหา ^000077บาทหลวง Yosuke^000000 และกลับมาหาข้าที่นี่";
+				next;
+				mes "[บาทหลวง Mareusis]";
+				mes "เขาได้บำเพ็ญตบะรอบสะพานที่ไหนสักแห่ง ^000077ทางตะวันตกเฉียงเหนือของพรอนเทรา^000000";
+				break;
+			}
+			next;
+			mes "[บาทหลวง Mareusis]";
+			mes "ขอให้พระเจ้าของพระเจ้าส่องสว่างเส้นทางของเจ้าและนำทางเจ้าในการเดินทางแห่งการปลงอาบัติ";
+		}
+		else {
+			mes "จุดหมายปลายทางสำหรับการทดลองใช้นี้จะถูกตัดสินใจเมื่อเจ้ากรอกแบบฟอร์มใบสมัคร";
+		}
+		next;
+		mes "[บาทหลวง Mareusis]";
+		mes "โปรดกลับมาอีกครั้งหลังจากปฏิบัติตามข้อกำหนดสองข้อที่ข้าขอจากเจ้าแล้ว ตราบใดที่ความปรารถนาของเจ้าที่จะรับใช้พระเจ้าและผู้อื่นมีความจริงใจ เจ้าก็สามารถทำได้";
+		close;
+	case 3:
+		close;
+	}
+}
+
+prt_fild03,365,255,2	script	Ascetic#aco	89,{
+	mes "[บาทหลวง Rubalkabara]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 6) {
+			mes "ดูแลตัวเองด้วย. พวกเขาควรจะรู้ว่าเจ้าพบข้าตอนที่มาถึง";
+			next;
+			mes "[บาทหลวง Rubalkabara]";
+			mes "ข้าได้ส่งนกพิราบผู้ให้บริการพร้อมข้อความแล้ว ข้าหวังว่ามันจะมาถึงที่นั่นอย่างปลอดภัย...";
+			close;
+		}
+		if (job_acolyte_q != 0) {
+			if (job_acolyte_q == 2) {
+				mes "โอ้...? เจ้าจะต้องเป็นคนที่ปรารถนาที่จะเป็น Acolyte ข้าได้รับข่าวจากสถานศักดิ์สิทธิ์แล้วว่าเจ้าอาจจะมา";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ตอนนี้เจ้าชื่อ " + strcharinfo(0) + ", ถูกต้องไหม? ยอดเยี่ยมครับ ขอบเจ้าที่แวะมา.";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ข้าเชื่อว่าเจ้าคงได้รับการบอกเล่ามากมายเกี่ยวกับ Acolytes จาก Friar Mareusis นอกจากนี้ ยังมีผู้คนที่เป็นประโยชน์อีกมากมายในเขตรักษาพันธุ์สัตว์ป่าพรอนเทรา";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ข้าคิดว่าข้าไม่จำเป็นต้องสอนเจ้ามากนัก นอกจากนี้ ข้าแน่ใจว่าคนรุ่นเดียวกับเจ้าอาจมีปัญหาในการฟังคนแก่อย่างข้า ฮ่าๆๆ~";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "อย่างไรก็ตาม บทเรียนอาจมาจากสถานที่ที่เจ้าคาดไม่ถึง พระเจ้าชอบสอนลูกๆ ของพระองค์ด้วยวิธีแปลกๆ เจ้าจะเห็น.";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ข้าจะส่งข้อความไปบอกพวกเขาว่าเจ้ามาเยี่ยมข้า ดังนั้น เจ้าสามารถกลับไปยังเขตศักดิ์สิทธิ์พรอนเทราได้แล้ว";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ลาก่อนนน";
+				close2;
+				savepoint "prt_fild03",361,255,1,1;
+				set job_acolyte_q,6;
+				end;
+			}
+			else {
+				mes "โอ้...";
+				mes "เจ้าเป็นคนหนึ่งที่";
+				mes "ผู้สมัคร Acolyte...?";
+				mes "มาดูกัน...";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ชื่อของเจ้า " + strcharinfo(0) + "?";
+				mes "ข้าไม่คิดว่าชื่อของเจ้า";
+				mes "อยู่ในรายการของข้า อืม...";
+				next;
+				mes "[บาทหลวง Rubalkabara]";
+				mes "ทำไมไม่กลับไปที่เขตศักดิ์สิทธิ์พรอนเทร่าแล้วตรวจสอบอีกครั้งล่ะ?";
+				close;
+			}
+		}
+		else {
+			mes "ฮะ? อะไรทำให้เจ้ามาที่นี่? นี่เป็นสถานที่ที่อันตรายมากสำหรับมือใหม่เช่นเจ้า!";
+			close;
+		}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_FatherRub";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "ทักทาย.";
+			next;
+			mes "[บาทหลวง Rubalkabara]";
+			mes "ยินดีต้อนรับสู่ส่วนลึก อย่าลังเลที่จะนั่งพิจารณาข้อความของพระเจ้าร่วมกับข้า สถานที่แห่งนี้สวยงาม แม้ว่าอันตรายจะมาพร้อมกับความรู้สึกสงบ...";
+			close;
+		}
+		else {
+			mes "Oh ho...";
+			mes "เจ้ามาที่ส่วนลึกที่นี่เพื่อฝึกฝนหรือเปล่า? หรือเจ้าเป็นแค่คนพเนจร?";
+			next;
+			mes "[บาทหลวง Rubalkabara]";
+			mes "เป็นใครก็ดูแลตัวเองด้วย สัตว์ประหลาดที่นี่แข็งแกร่งจนน่าตกใจ ซึ่งตรงกันข้ามกับรูปลักษณ์ที่น่ารักของพวกมัน";
+			close;
+		}
+	}
+}
+
+moc_fild07,41,355,4	script	Ascetic#2aco	95,{
+	mes "[เจ้าแม่ Mathilda]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 7) {
+			mes "ข้าจะส่งนกพิราบขนส่งไปยังเขตรักษาพันธุ์สัตว์ป่าพรอนเทรา เมื่อเจ้ากลับมา นักบวชน่าจะได้รับข้อความของข้าแล้ว";
+			next;
+			mes "[เจ้าแม่ Mathilda]";
+			mes "ข้าจะอธิษฐานต่อพระเจ้า และหวังว่าเจ้าจะกลายเป็น Acolyte เร็วๆ นี้.";
+			close;
+		}
+		if (job_acolyte_q != 0) {
+			if (job_acolyte_q == 3) {
+				mes "อา เจ้าต้องเป็นหนึ่งในผู้สมัคร Acolyte ข้ายินดีต้อนรับเจ้าอย่างจริงใจ";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "เจ้าชื่ออะไร " + strcharinfo(0) + "? มาดูกัน... อ่า เจ้าอยู่ในรายชื่อของข้า";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "ข้าจะส่งข้อความไปยัง Sanctuary เพื่อยืนยันว่าเจ้า, " + strcharinfo(0) + " มาเยี่ยมข้าและทำปลงอาบัติของเจ้าเสร็จแล้ว";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "กรุณากลับไปที่ Prontera Sanctuary และพูดคุยกับ Priest ที่รับผิดชอบ";
+				close2;
+				savepoint "moc_fild07",35,355,1,1;
+				set job_acolyte_q,7;
+				end;
+			}
+			else {
+				mes "อา...!";
+				mes "เจ้าจะต้องเป็นหนึ่ง";
+				mes "ของผู้สมัคร Acolyte";
+				mes "ข้ายินดีต้อนรับเจ้าอย่างจริงใจ.";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "ตอนนี้เจ้าชื่ออะไร?";
+				mes "" + strcharinfo(0) + "?มาดูกัน...";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "อืม...";
+				mes "ดูเหมือนชื่อของเจ้า";
+				mes "ไม่อยู่ในรายการของข้า...";
+				next;
+				mes "[เจ้าแม่ Mathilda]";
+				mes "บางทีเจ้าควรกลับไปที่เขตศักดิ์สิทธิ์พรอนเทราและตรวจสอบจุดหมายปลายทางสำหรับการปลงอาบัติอีกครั้ง";
+				close;
+			}
+		}
+		else {
+			mes "...";
+			close;
+		}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_MotherMart";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "สวัสดี~";
+			next;
+			mes "[เจ้าแม่ Mathilda]";
+			mes "การฝึกฝนของเจ้าเป็นยังไงบ้าง? ข้าหวังว่าเจ้าจะเพลิดเพลินกับการใช้ชีวิตในพระเจ้าของพระเจ้าอย่างแน่นอน";
+			close;
+		}
+		else {
+			mes "ขอให้พระเจ้า";
+			mes "สถิตย์กับท่าน...";
+			close;
+		}
+	}
+}
+
+prt_fild00,208,218,6	script	Ascetic#3aco	98,{
+	mes "[บาทหลวง Yosuke]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 8) {
+			mes "What?";
+			next;
+			mes "[บาทหลวง Yosuke]";
+			mes "มีธุระอะไรกับข้าอีกมั้ย! เจ้าทำไม่ได้! กลับไปที่โบสถ์  เดี๋ยวนี้!";
+			close;
+		}
+		if (job_acolyte_q != 0) {
+			if (job_acolyte_q == 4) {
+				mes "เฮ้.";
+				mes "ไม่ว่าเจ้าจะเป็นอะไรก็ตาม,";
+				mes "เจ้าดูเหมือนเป็น";
+				mes "ผู้สมัคร Acolyte";
+				mes "ถูกต้องไหม?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "ไม่เลวไม่เลว เจ้าทนต่อการพิจารณาคดีปลงอาบัติได้ค่อนข้างดี";
+				mes "แล้วเจ้าชื่ออะไร?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "" + strcharinfo(0) + ", huh?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "ตกลง. ข้าจะส่งข้อความไปยังโบสถ์ ว่าเจ้า, " + strcharinfo(0) + ", มาเยี่ยมข้า";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "ตอนนี้กลับไปที่โบสถ์ แล้วกลายเป็น Acolyte ซะ เจ้าหนู";
+				close2;
+				savepoint "prt_fild00",206,230,1,1;
+				set job_acolyte_q,8;
+				end;
+			}
+			else {
+				mes "เฮ้.";
+				mes "เจ้าดูเหมือนผู้สมัคร Acolyte ข้าถูกไหม?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "ไม่เลวเลย เจ้าเดินทางมาที่นี่จากพรอนเทราแล้ว แล้วเจ้าชื่ออะไรล่ะเด็กน้อย?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "" + strcharinfo(0) + ", ฮะ? ทำไมเจ้าถึงไม่อยู่ในรายชื่อของข้า?";
+				next;
+				mes "[บาทหลวง Yosuke]";
+				mes "เจ้าอาจทำผิดพลาด กลับไปที่โบสถ์ และตรวจสอบกับ Bishop.";
+				close;
+			}
+		}
+		else {
+			mes "เจ้า...";
+			mes "Novice.";
+			mes "มีบางอย่าง";
+			mes "เจ้าอยากบอกข้าไหม?";
+			close;
+		}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_FatherYos";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "เฮ้...";
+			next;
+			mes "[บาทหลวง Yosuke]";
+			mes "ถ้าต้องการเชิญมานั่งสมาธิกับข้าพเจ้าที่นี่และภาวนาถึงสัจธรรมอันยิ่งใหญ่ พระเจ้าของพระเจ้าเป็นแรงบันดาลใจอย่างแท้จริง...";
+			close;
+		}
+		else {
+			mes "เจ้ามีอะไรจะพูดไหม? เพราะน่าเสียดายสำหรับเจ้า";
+			mes "ข้าไม่ตอบกลับใดๆ";
+			close;
+		}
+	}
+}
+

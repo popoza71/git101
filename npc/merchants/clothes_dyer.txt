@@ -1,0 +1,177 @@
+//===== rAthena Script ======================================= 
+//= Clothes Dyer
+//===== By: ================================================== 
+//= Usnul
+//===== Current Version: ===================================== 
+//= 2.5
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= Clothes dyer with standard palletes
+//===== Additional Comments: ================================= 
+//= Fully working
+//= 2.1 Shortened some labels to make this script loading,
+//= Added Black+White Colors desc [Lupus]
+//= 2.1a added adv classes + baby class support [Lupus]
+//= 2.2 Spell checked. [Nexon]
+//= 2.3 Fixed dis $hit! [Poki#3]
+//= 2.4 Disabled cloth dyeing since it's not implemented
+//	   on official servers and cause your client to crash
+//	   [Playtester]
+//= 2.5 Optimized. [Euphy]
+//============================================================
+
+prt_in,285,168,2	script	Dyer Ginedin Rephere	55,{
+function Dyes;
+
+	set .@EnableDyes,1;	// Disable (set to 0) if palettes cause errors [see note v2.4]
+
+	set .n$,"[Dyer Ginedin Rephere]";
+	mes .n$;
+	mes "11... 12... อืม... ดี ฉันคิดว่าฉันจะสามารถเสร็จสิ้นก่อนงานปาร์ตี้คืนนี้ Oh! ฉันไม่ได้สังเกตว่าคุณอยู่ที่นี่!";
+	while(1) {
+		next;
+		mes .n$;
+		mes "ฉันจะช่วยคุณได้อย่างไร?";
+		next;
+		switch(select("~ ข้อมูล:~ ย้อมสีเสื้อผ้า:~ อัตราค่าบริการ:~ ^777777ยกเลิกสนทนา^000000")) {
+		case 1:
+			mes .n$;
+			mes "ชีวิตคือสีสัน เสื้อผ้า หน้าผม";
+			mes "มันสามารถทำให้คนดูดีขึ้นได้ โดยการแต่ง";
+			next;
+			mes .n$;
+			mes "ในขณะนี้แฟชั่นใหม่ๆได้เริ่มเข้ามาใน rune-midgarts แล้ว";
+			mes "รออะไรอยู่หล่ะ คุณไม่อยากจะสวยหรือไง";
+			next;
+			mes .n$;
+			mes "สำหรับโลกใบนี้ การแต่งตัวคือสิ่งสำคัญเลยทีเดียว";
+			mes "ผู้คนจะเหลี่ยวมองคนที่มีความโดดเด่น คุณอาจจะเป็นเช่นนั้นก็เป็นได้";
+			next;
+			mes .n$;
+			mes "คุณคงจะสนใจเกี่ยวกับ การย้อมสีแล้วสินะ";
+			next;
+			mes .n$;
+			mes "ฉันว่าชีวิตคุณจะมีสีสันจริงๆ หากได้ทำการย้อมสีผ้า เพื่อชีวิตที่สดใสมากขึ้น";
+			mes "คุณอาจจะมีความสุขกับมันได้มากขึ้น และดูโดดเด่น";
+			next;
+			mes .n$;
+			mes "ในการย้อมสีผ้านั่น มันอาจจะใช้เวลานานบ้าง แต่มันก็คุ้ม";
+			mes "ที่จะทำให้ท่านนั้นมีความสุขและดูโดดเด่น";
+			break;
+		case 2:
+			mes .n$;
+			if (!.@EnableDyes) {
+				mes "ขอโทษด้วย, ตอนนี้ฉันกำลังยุ่งอยู่...";
+				break;
+			}
+			mes "โอ้ ดูดีนิ ท่านสนใจในสีไหนหล่ะ";
+			next;
+			mes .n$;
+			mes "กรุณาเลือกสีย้อมผ้า";
+			mes "ที่เหมาะกับคุณ";
+			next;
+
+			// Dyes(<color value>,<dye number>{,...});
+			// Colors: [1]Orange, [2]Violet, [3]Red, [4]Black, [5]Green, [6]Blue, [7]White, [8]Yellow
+			switch(BaseJob) {
+			case Job_Novice:
+				if (Sex == SEX_MALE) Dyes(4,1,6,2,5,3); else Dyes(6,1,3,2,5,3,4,4);
+			case Job_Swordman:
+				if (Sex == SEX_MALE) Dyes(4,1,6,2,5,3); else Dyes(3,1,5,3,4,4);
+			case Job_Mage:
+				if (Sex == SEX_MALE) Dyes(3,1,2,2,1,3,7,4); else Dyes(3,1,2,2,7,3,4,4);
+			case Job_Archer:
+				if (Sex == SEX_MALE) Dyes(4,1,2,2,5,3); else Dyes(3,1,5,2,7,3,4,4);
+			case Job_Acolyte:
+				if (Sex == SEX_MALE) Dyes(6,1,3,2,7,3,4,4); else Dyes(3,1,5,3,4,4);
+			case Job_Merchant:
+				if (Sex == SEX_MALE) Dyes(4,1,6,2,5,3); else Dyes(2,1,5,3,4,4);
+			case Job_Thief:
+				if (Sex == SEX_MALE) Dyes(5,1,3,2,7,4); else Dyes(3,1,7,3,4,4);
+			case Job_Knight:
+			case Job_Crusader:
+				if (Sex == SEX_MALE) Dyes(2,1,3,3,4,4); else Dyes(6,1,7,3,4,4);
+			case Job_Priest:
+			case Job_Monk:
+				if (Sex == SEX_MALE) Dyes(6,1,5,2,3,3,7,4); else Dyes(3,1,5,2,7,3,4,4);
+			case Job_Wizard:
+			case Job_Sage:
+				if (Sex == SEX_MALE) Dyes(6,1,5,3,4,4); else Dyes(3,1,6,2,7,3,5,4);
+			case Job_Blacksmith:
+			case Job_Alchemist:
+				if (Sex == SEX_MALE) Dyes(4,4,5,2,7,3); else Dyes(3,1,5,2,2,3,4,4);
+			case Job_Hunter:
+			case Job_Bard:
+			case Job_Dancer:
+				if (Sex == SEX_MALE) Dyes(4,1,6,2,5,3); else Dyes(6,1,5,3,2,4);
+			case Job_Assassin:
+			case Job_Rogue:
+				if (Sex == SEX_MALE) Dyes(6,1); else Dyes(4,1,8,2,7,3);
+			case Job_Super_Novice:
+				if (Sex == SEX_MALE) Dyes(2,1,6,2,5,3,4,4); else Dyes(6,1,3,2,5,3,4,4);
+			default: 
+				mes "ขอโทษ,ฉันไม่เคยย้อมสีผ้าแบบนี้มาก่อน ลองใหม่อีกครั้ง";
+				close;
+			}
+		case 3:
+			mes .n$;
+			mes "แต่ละสีมีค่าใช้จ่าย 10,000z และ สีย้อมผ้า 1ea:";
+			mes " - ^FF4422Red^000000: Scarlet Dyestuffs";
+			mes " - ^D5A500Yellow^000000: Lemon Dyestuffs";
+			mes " - ^AA00AAViolet^000000: Violet Dyestuffs";
+			mes " - ^FF8800Orange^000000: Orange Dyestuffs";
+			mes " - ^4422FFBlue^000000: CobaltBlue Dyestuffs";
+			mes " - ^009500Green^000000: DarkGreen Dyestuffs";
+			mes " - Black: Black Dyestuffs";
+			mes " - White: White Dyestuffs";
+			break;
+		case 4:
+			goto L_End;
+		}
+	}
+
+L_End:
+	mes .n$;
+	mes "ทำตัวตามสบายเหมือนเป็นบ้านคุณเอง ถึงแม้ฉันจะไม่ได้มีเวลาสำหรับคุณ.";
+	close;
+
+function Dyes {
+	setarray .@DyeName$[0],"Default","Orange","Violet","Red","Black","Green","Blue","White","Yellow";
+	setarray .@DyeItems[0],0,980,981,975,983,979,978,982,976;
+	set .@menu$,"~ Default:";
+	for(set .@i,0; .@i<getargcount(); set .@i,.@i+2)
+		set .@menu$, .@menu$+"~ "+.@DyeName$[getarg(.@i)]+":";
+	set .@menu$, .@menu$+"~ ^777777ยกเลิก^000000";
+	set .@s, select(.@menu$)-1;
+	if (.@s == (getargcount()/2)+1) goto L_End;
+	mes .n$;
+	if (.@s == 0) {
+		mes "คุณสามารถเปลี่ยนสีของคุณเพื่อเริ่มต้นใหม่.";
+		mes "คุณพร้อมมั้ย...?";
+		next;
+		switch(select("~ ใช่,พร้อมแล้ว:~ เดี๋ยวก่อน...")) {
+		case 1:
+			mes .n$;
+			setlook 7,0;
+			mes "คุณได้ย้อมสีชุด คือ สี "+.@DyeName$[0]+".";
+			close;
+		case 2:
+			goto L_End;
+		}
+	}
+	if (!countitem(.@DyeItems[getarg((.@s-1)*2)])) {
+		mes "กรุณาตรวจสอบไอเท็มสีย้อมผ้าและค่าบริการของฉัน";
+		close;
+	}
+	if (Zeny < 10000) {
+		mes "คุณมีเงินไม่เพียงพอ โปรดตรวจสอบอีกครั้ง";
+		close;
+	}
+	delitem .@DyeItems[getarg((.@s-1)*2)],1;
+	set Zeny, Zeny-10000;
+	setlook 7, ((.@s)?(getarg((.@s-1)*2+1)):0);
+	mes "คุณได้ย้อมสีชุด คือ สี "+((.@s)?.@DyeName$[getarg((.@s-1)*2)]:.@DyeName$[0])+".";
+	close;
+}
+}

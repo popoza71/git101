@@ -1,0 +1,123 @@
+/*
+=================== TERMS OF SERVICES. ===================
+1. ALL RIGHT RESERVED RE-SELLER OR SHARE SCRIPT TO PUBLISH.
+2. BUT YOU RE-SELLER OR SHARE SCRIPT WITH OUT UNAUTHORIZRD
+   I WILL ALL CANCEL MY SUPPORT FOR YOU.
+3. MAINTENANCE SCRIPTS WILL BE FREE SERVICES.
+4. I WILL NOT KEEP ANY INFORMATIONS FROMS YOU SERVER THAT
+   YOU SEND FOR ME.
+5. I HOPE YOU WILL ALL ACCEPT TERMS OF SERVICES.
+==========================================================
+Script. Hourly Point																				 
+Create By. [PTY-Studio]
+Translator By. PTY Studio
+Bug Report. PUP KUAANAN [ FB ]																					 
+Contact Us. PUP KUAANAN [ FB ]																					 																				 
+==========================================================
+*/
+
+morocc,164,144,4	script	Guild Master	654,{
+	set .@npc$,"^FF0000[ Guild Master ]^000000";
+	mes .@npc$;
+	mes "ยินดีต้อนรับ ระบบจัดการกิลด์";
+	mes " ";
+	mes " ";
+	mes " ";
+	mes " ";
+	mes "มีอะไรให้ข้าช่วยเหลือหรือไม่ ?";
+	next;
+	switch(select("~ ซื้อเลเวลกิลด์","~ ยกเลิกการสนทนา")){
+	case 1:
+		if(!getcharid(2) && BaseLevel >= 99 && JobLevel >= 50) {
+			mes .@npc$;
+			mes "ข้าต้องการเฉพาะหัวกิลด์เท่านั้น";
+			mes "และเจ้าต้องมี Lv.99 & Job.50";
+			mes "ถึงจะสามารถใช้บริการกับได้น่ะ..";
+		close;
+		}
+		callfunc "uplvguild";
+	end;
+
+	case 2:
+	close;
+	
+	}
+
+OnInit:
+	// =============== Configure ==============================
+		set $@LVG_WAITINGROOM, 1;							// เปิดแสดงชื่อห้องบนหัว ( 0 = ปิด / 1 = เปิด )
+		set $@LVG_WAITINGROOM$, " ซื้อเลเวลกิลด์";					// ชื่อห้องบนหัว
+	// ========================================================
+	
+	sleep 1000;
+		if($@LVG_WAITINGROOM) waitingroom "" + $@LVG_WAITINGROOM$,0;
+end;
+}
+
+// ฟังชั่นการซื้อเลเวลกิล
+function	script	uplvguild	{
+	
+	set .@npc$,"^FF0000[ Guild Master ]^000000";
+	
+	mes .@npc$;
+	mes "ระบบจัดการซื้อ เลเวลกิดล์";
+	mes "- 15,000,000 Zeny";
+	mes "^FF0000จะได้รับเลเวลกิลด์ 10 / 1 ครั้ง^000000";
+	mes "- 50000 Cash Point";
+	mes "^0000FFจะได้รับเลเวลกิลด์ 20 / 1 ครั้ง^000000";
+	mes "กรุณาเลือกรายการที่ต้องการ ?";
+	next;
+	switch(select("~ จ่ายด้วย Zeny","~ จ่ายด้วย Cash Point","~ ยกเลิกการสนทนา")){
+		case 1:
+			.@guild_id = getcharid(2);
+			if ( .@guild_id == 0 ) {
+				mes .@npc$;
+				mes "ไม่พบข้อมูลกิลด์";
+				mes "กรุณาลองใหม่อีกครั้ง";
+			end;
+			}
+			if (getguildinfo(.@guild_id, 0) > 9) { 
+				mes .@npc$;
+				mes "ไม่สามารถเพิ่ม เลเวลกิลด์ให้ได้";
+				mes "กิลด์ของคุณ Lv.10 แล้ว";
+			end; 
+			}
+			if (Zeny < 15000000) { 
+				mes .@npc$; 
+				mes "ฉันต้องการเงิน 15,000,000 เซนี";
+				mes "สำหรับการอัพเลเวลกิลด์ ?";
+			end;
+			}
+			set zeny,zeny -15000000;
+			atcommand "@guildlvup 10";
+		end;
+		
+		case 2:
+			.@guild_id = getcharid(2);
+			if ( .@guild_id == 0 ) {
+				mes .@npc$;
+				mes "ไม่พบข้อมูลกิลด์";
+				mes "กรุณาลองใหม่อีกครั้ง";
+			end;
+			}
+			if (getguildinfo(.@guild_id, 0) > 19) { 
+				mes .@npc$;
+				mes "ไม่สามารถเพิ่ม เลเวลกิลด์ให้ได้";
+				mes "กิลด์ของคุณ Lv.20 แล้ว";
+			end;
+			}
+			if (#CASHPOINTS < 30000) {
+				mes .@npc$; 
+				mes "ฉันต้องการเงิน 30000 Cash Point";
+				mes "สำหรับการอัพเลเวลกิลด์ ?";
+			end;
+			}
+			set #CASHPOINTS,#CASHPOINTS - 30000;
+			atcommand "@guildlvup 20";
+		end;
+		
+		case 3:
+		end;
+	}
+end;
+}

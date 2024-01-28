@@ -1,0 +1,255 @@
+-	script	autopot_CONFIG_SETTING#1	-1,{
+	OnInit:
+	////////ตั่งค่า///////////
+	set $setdelay,50; // ค่าดีเลย์
+	///hp Potion
+	set $HPITEM_1,501; // โพชั่น hp
+	set $HPITEM_2,502; // โพชั่น hp
+	set $HPITEM_3,503; // โพชั่น hp
+	set $HPITEM_4,504; // โพชั่น hp
+	set $HPITEM_5,579; // โพชั่น hp
+	set $HPITEM_min,20; // เตือนเมื่อมี item ต่ำกว่ากี่อัน
+	///sp Potion
+	set $SPITEM_1,505; // โพชั่น sp
+	set $SPITEM_2,578; //  โพชั่น sp
+	set $SPITEM_min,20; // เตือนเมื่อมี item ต่ำกว่ากี่อัน
+	end;
+}
+prontera,0,0,4	script	auto_pot#2	-1,{
+	
+ONTEST:
+	
+	if(#AUTOPOT_START == 0)	{
+	
+	menu 
+		"^FF0000•^000000 สถานะ Auto Potion [ ^3399FFเปิด ^000000]",Auto_Pot_ON,
+		"^FF0000•^000000 ตั้งค่าไอเทม HP",SETHPPOT,
+		"^FF0000•^000000 ตั้งค่าไอเทม SP",SETSPPOT,
+		"^FF0000•^000000 ข้อมูลการตั้งค่าทั้งหมด",CONFIG_SETTING;
+	}else{
+	menu
+		"^FF0000•^000000 สถานะ Auto Potion [ ^FF0000ปิด^000000 ]",Auto_Pot_OFF,
+		"^FF0000•^000000 ตั้งค่าไอเทม HP",SETHPPOT,
+		"^FF0000•^000000 ตั้งค่าไอเทม SP",SETSPPOT,
+		"^FF0000•^000000 ข้อมูลการตั้งค่าทั้งหมด",CONFIG_SETTING;
+	}
+	
+	CONFIG_SETTING:
+		mes "รายละเอียดตั่งค่า HP Potion";
+		mes "-----------------------";
+		mes "โพชั่น : ^FF0000" + getitemname(#HPITEM_CHECK) + "^000000";
+		mes "เปอร์เซ็นเลือด : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+		mes "ดีเลย์ : ^FF0000"+$setdelay+"^000000";
+		mes "-----------------------";
+		next;
+		mes "รายละเอียดตั่งค่า SP Potion";
+		mes "-----------------------";
+		mes "โพชั่น : ^FF0000" + getitemname(#SPITEM_CHECK) + "^000000";
+		mes "เปอร์เซ็นเลือด :^FF0000 "+#SP_MIN_CEHCK+"^000000 %";
+		mes "ดีเลย์ : ^FF0000"+$setdelay+"^000000";
+		mes "-----------------------";	
+	end;
+
+	Auto_Pot_ON:
+	set #AUTOPOT_START,1;
+	sc_start SC_AUTOPOT,-1,0;
+	message strcharinfo(0), "[เปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+	addtimer $setdelay,strnpcinfo(3) + "::OnStart";
+	end;
+
+	Auto_Pot_OFF:
+	set #AUTOPOT_START,0;
+	sc_end SC_AUTOPOT;
+	message strcharinfo(0), "[ปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+	addtimer $setdelay,strnpcinfo(3) + "::OnStart";
+	end;
+
+	SETHPPOT:
+	mes "เลือก HP Potion";
+	message strcharinfo(0), "[ปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+	set @mode,1;
+	set #AUTOPOT_START,0;
+	sc_end SC_AUTOPOT;
+
+	menu
+	"^FF0000•^000000 " + getitemname($HPITEM_1) + "",hp1,
+	"^FF0000•^000000 " + getitemname($HPITEM_2) + "",hp2,
+	"^FF0000•^000000 " + getitemname($HPITEM_3) + "",hp3,
+	"^FF0000•^000000 " + getitemname($HPITEM_4) + "",hp4,
+	"^FF0000•^000000 " + getitemname($HPITEM_5) + "",hp5;
+	end;
+
+	hp1:
+	if(countitem($HPITEM_1) < 1){mes "คุณไม่มี ^FF0000" + getitemname($HPITEM_1) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($HPITEM_1) + "^000000";
+	set #HPITEM_CHECK,$HPITEM_1;
+	dispbottom "------------------ทำงานเมื่อเหลือ HP กี่ %------------------";
+	input #HP_MIN_CEHCK;
+	if(#HP_MIN_CEHCK == 0){dispbottom "Error";end;}
+	mes "เปอร์เซ็นการปั้ม HP : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,1;
+	goto ONTEST;
+	end;
+
+	hp2:
+	if(countitem($HPITEM_2) < 1){mes "คุณไม่มี ^FF0000" + getitemname($HPITEM_2) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($HPITEM_2) + "^000000";
+	set #HPITEM_CHECK,$HPITEM_2;
+	dispbottom "------------------ทำงานเมื่อเหลือ HP กี่ %------------------";
+	input #HP_MIN_CEHCK;
+	if(#HP_MIN_CEHCK == 0){goto ONTEST;}
+	mes "เปอร์เซ็นการปั้ม HP : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,1;
+	goto ONTEST;
+	end;
+
+	hp3:
+	if(countitem($HPITEM_3) < 1){mes "คุณไม่มี ^FF0000" + getitemname($HPITEM_3) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($HPITEM_3) + "^000000";
+	set #HPITEM_CHECK,$HPITEM_3;
+	dispbottom "------------------ทำงานเมื่อเหลือ HP กี่ %------------------";
+	input #HP_MIN_CEHCK;
+	if(#HP_MIN_CEHCK == 0){goto ONTEST;}
+	mes "เปอร์เซ็นการปั้ม HP : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,1;
+	goto ONTEST;
+	end;
+
+	hp4:
+	if(countitem($HPITEM_4) < 1){mes "คุณไม่มี ^FF0000" + getitemname($HPITEM_4) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($HPITEM_4) + "^000000";
+	set #HPITEM_CHECK,$HPITEM_4;
+	dispbottom "------------------ทำงานเมื่อเหลือ HP กี่ %------------------";
+	input #HP_MIN_CEHCK;
+	if(#HP_MIN_CEHCK == 0){goto ONTEST;}
+	mes "เปอร์เซ็นการปั้ม HP : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,1;
+	goto ONTEST;
+	end;
+
+	hp5:
+	if(countitem($HPITEM_5) < 1){mes "คุณไม่มี ^FF0000" + getitemname($HPITEM_5) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($HPITEM_5) + "^000000";
+	set #HPITEM_CHECK,$HPITEM_5;
+	dispbottom "------------------ทำงานเมื่อเหลือ HP กี่ %------------------";
+	input #HP_MIN_CEHCK;
+	if(#HP_MIN_CEHCK == 0){goto ONTEST;}
+	mes "เปอร์เซ็นการปั้ม HP : ^FF0000"+#HP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,1;
+	goto ONTEST;
+	end;
+
+	SETSPPOT:
+	if(#POTION_FIX == 0){
+		mes "^FF0000หมายเหตุ^000000 : กรุณาตั่งค่า HP Potion ก่อน"; 
+		end;
+	}
+	set @mode,2;
+	set #AUTOPOT_START,0;
+	sc_end SC_AUTOPOT;
+	mes "เลือก SP Potion";
+	message strcharinfo(0), "[ปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+	menu
+	"^FF0000•^000000 " + getitemname($SPITEM_1) + "",sp1,
+	"^FF0000•^000000 " + getitemname($SPITEM_2) + "",sp2;
+	end;
+
+	sp1:
+	if(countitem($SPITEM_1) < 1){mes "คุณไม่มี ^FF0000" + getitemname($SPITEM_1) + "^000000";end;}
+	mes "Potion : ^FF0000" + getitemname($SPITEM_1) + "^000000";
+	set #SPITEM_CHECK,$SPITEM_1;
+	dispbottom "------------------ทำงานเมื่อเหลือ SP กี่ %------------------";
+	input #SP_MIN_CEHCK;
+	if(#SP_MIN_CEHCK == 0){dispbottom "Error";end;}
+	mes "เปอร์เซ็นการปั้ม SP : ^FF0000"+#SP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,0;
+	goto ONTEST;
+	end;
+
+	sp2:
+	if(countitem($SPITEM_2) < 1){mes "คุณไม่มี ^FF0000" + getitemname($SPITEM_2) + "^000000";end;}
+	mes "เลือก SP Potion : ^FF0000" + getitemname($SPITEM_2) + "^000000";
+	set #SPITEM_CHECK,$SPITEM_2;
+	dispbottom "------------------ทำงานเมื่อเหลือ SP กี่ %------------------";
+	input #SP_MIN_CEHCK;
+	mes "เปอร์เซ็นการปั้ม SP : ^FF0000"+#SP_MIN_CEHCK+"^000000 %";
+	set #POTION_FIX,0;
+	goto ONTEST;
+	end;
+
+//ONTEST
+end;
+
+OnStart:
+	if(#AUTOPOT_START == 1) goto OnRunEventPot;
+end;
+	
+OnRunEventPot:
+
+if (!getstatus(SC_BERSERK) && !getstatus(SC_SATURDAYNIGHTFEVER) && !getstatus(SC_GRAVITATION) &&
+	    !getstatus(SC_TRICKDEAD) && !getstatus(SC_HIDING) && !getstatus(SC__SHADOWFORM) && !getstatus(SC__INVISIBILITY) &&
+	    !getstatus(SC__MANHOLE) && !getstatus(SC_KAGEHUMI) && !getstatus(SC_HEAT_BARREL_AFTER) &&
+		!getstatus(SC_STONE) && !getstatus(SC_FREEZE) && !getstatus(SC_STUN) && !getstatus(SC_SLEEP))
+		{
+
+			if(#AUTOPOT_START && Hp * 100 / MaxHp < #HP_MIN_CEHCK) {
+				if (countitem(#HPITEM_CHECK) < $HPITEM_min) {
+					dispbottom "ระบบ : ไอเทม " + getitemname(#HPITEM_CHECK) + " กำลังจะหมด !!";
+				}
+				
+			if (!countitem(#HPITEM_CHECK)) {
+					dispbottom "ระบบ : ไอเทม " + getitemname(#HPITEM_CHECK) + " หมดแล้ว";
+					set #AUTOPOT_START,0;
+					message strcharinfo(0), "[ปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+				end;
+			}
+				if (countitem(#HPITEM_CHECK)) {
+					delitem #HPITEM_CHECK,1;
+					consumeitem #HPITEM_CHECK;
+					if(#HPITEM_CHECK ==  504){specialeffect2 207;}
+					if(#HPITEM_CHECK ==  522){specialeffect2 7;}
+				}
+			}
+			if(#AUTOPOT_START && Sp * 100 / MaxSp < #SP_MIN_CEHCK) {
+				if (countitem(#SPITEM_CHECK) < $SPITEM_min) {
+					dispbottom "ระบบ : ไอเทม " + getitemname(#SPITEM_CHECK) + " กำลังจะหมด !!";
+				}
+				if (!countitem(#SPITEM_CHECK)) {
+					dispbottom "ระบบ : ไอเทม " + getitemname(#SPITEM_CHECK) + " หมดแล้ว";
+					set #AUTOPOT_START,0;
+					message strcharinfo(0), "[ปิด] ใช้งานระบบปั้มยาอัตโนมัติ";
+					end;
+				}
+				if (countitem(#SPITEM_CHECK)) {
+					delitem #SPITEM_CHECK,1;
+					consumeitem #SPITEM_CHECK;
+					if(#SPITEM_CHECK ==  526){specialeffect2 7;}
+					if(#SPITEM_CHECK ==  505){specialeffect2 208;}
+				}
+			}
+	}
+		addtimer $setdelay,strnpcinfo(3) + "::OnStart";
+end;	
+}
+
+-	script	check_point_login	-1,{
+	
+	OnClock0000:
+		addrid(0);
+		set #AUTOPOT_START,0;
+		sc_end SC_AUTOPOT;
+	end;
+	
+	OnPCLoginEvent:
+		deltimer strnpcinfo(3) + "::OnStart";
+		set #AUTOPOT_START,0;
+		sc_end SC_AUTOPOT;
+	end;
+		
+	OnPCDieEvent:
+		deltimer strnpcinfo(3) + "::OnStart";
+		set #AUTOPOT_START,0;
+		sc_end SC_AUTOPOT;
+	end;
+}
+

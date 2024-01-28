@@ -1,0 +1,34 @@
+// Jail Map
+sec_pri	mapflag	nobank
+
+// Guild Castles ==========
+aldeg_cas01	mapflag	nobank
+aldeg_cas02	mapflag	nobank
+aldeg_cas03	mapflag	nobank
+aldeg_cas04	mapflag	nobank
+aldeg_cas05	mapflag	nobank
+gefg_cas01	mapflag	nobank
+gefg_cas02	mapflag	nobank
+gefg_cas03	mapflag	nobank
+gefg_cas04	mapflag	nobank
+gefg_cas05	mapflag	nobank
+payg_cas01	mapflag	nobank
+payg_cas02	mapflag	nobank
+payg_cas03	mapflag	nobank
+payg_cas04	mapflag	nobank
+payg_cas05	mapflag	nobank
+prtg_cas01	mapflag	nobank
+prtg_cas02	mapflag	nobank
+prtg_cas03	mapflag	nobank
+prtg_cas04	mapflag	nobank
+prtg_cas05	mapflag	nobank
+schg_cas01	mapflag	nobank
+schg_cas02	mapflag	nobank
+schg_cas03	mapflag	nobank
+schg_cas04	mapflag	nobank
+schg_cas05	mapflag	nobank
+arug_cas01	mapflag	nobank
+arug_cas02	mapflag	nobank
+arug_cas03	mapflag	nobank
+arug_cas04	mapflag	nobank
+arug_cas05	mapflag	nobank
