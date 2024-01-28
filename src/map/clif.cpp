@@ -23087,6 +23087,9 @@ void clif_parse_barter_buy( int fd, map_session_data* sd ){
 }
 
 void clif_barter_extended_open( map_session_data& sd, struct npc_data& nd ){
+
+	int fd = sd.fd;
+
 #if PACKETVER_MAIN_NUM >= 20191120 || PACKETVER_RE_NUM >= 20191106 || PACKETVER_ZERO_NUM >= 20191127
 	if( nd.subtype != NPCTYPE_BARTER || !nd.u.barter.extended || sd.state.barter_extended_open ){
 		return;
@@ -23099,6 +23102,8 @@ void clif_barter_extended_open( map_session_data& sd, struct npc_data& nd ){
 	}
 
 	sd.state.barter_extended_open = true;
+		
+	clif_displaymessage(fd, msg_txt(&sd, 2236)); // Item creation success rate:
 
 	struct PACKET_ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO* p = (struct PACKET_ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO*)packet_buffer;
 
@@ -23132,6 +23137,11 @@ void clif_barter_extended_open( map_session_data& sd, struct npc_data& nd ){
 		p->items_count++;
 
 		item->currency_count = 0;
+
+		//show message with item name and success rate
+		char msg[CHAT_SIZE_MAX];
+		safesnprintf(msg, CHAT_SIZE_MAX, msg_txt(&sd, 2237), item_db.create_item_link(id).c_str(), (float)itemPair.second->successRate / 100); // %s success rate: %d%%
+		clif_displaymessage(fd, msg);
 
 		for( const auto& requirementPair : itemPair.second->requirements ){
 			// Needs dynamic calculation, because of variable currencies
@@ -23236,12 +23246,50 @@ void clif_parse_barter_extended_buy( int fd, map_session_data* sd ){
 				return;
 			}
 		}
-		s_barter_purchase purchase = {};
 
-		purchase.item = item;
-		purchase.amount = p->list[i].amount;
+		//random 1-10000 if < successRate add get item else delete all items
+		if ((rnd() % 10000) < item->successRate) {
+			s_barter_purchase purchase = {};
 
-		purchases.push_back( purchase );
+			purchase.item = item;
+			purchase.amount = p->list[i].amount;
+
+			purchases.push_back(purchase);
+		}
+		else {
+			//delete all item requirement and amount to fill
+			for (const auto& requirementPair : item->requirements) {
+				std::shared_ptr<s_npc_barter_requirement> requirement = requirementPair.second;
+
+				//delete all item requirement
+				for (int k = 0; k < requirement->amount; k++) {
+					int16 index = pc_search_inventory(sd, requirement->nameid);
+
+					if (index < 0) {
+						return;
+					}
+
+					pc_delitem(sd, index, 1, 0, 0, LOG_TYPE_OTHER);
+				}
+			}
+
+			std::shared_ptr<item_data> id = item_db.find(item->nameid);
+			char msg[CHAT_SIZE_MAX];
+			sprintf(msg, msg_txt(sd, 2239), item_db.create_item_link(id).c_str(), (float)item->successRate / 100); // %s success rate: %d%%
+			clif_messagecolor(&sd->bl, color_table[COLOR_RED], msg, false, SELF);
+
+			clif_npc_buy_result(sd, e_purchase_result::PURCHASE_FAIL_EXCHANGE_FAILED); // "Exchange failed."
+			return;
+
+		}
+
+
+//		s_barter_purchase purchase = {};
+//
+//		purchase.item = item;
+//		purchase.amount = p->list[i].amount;
+//
+//		purchases.push_back( purchase );
 	}
 
 	clif_npc_buy_result( sd, npc_barter_purchase( *sd, barter, purchases )  );

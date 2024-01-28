@@ -608,6 +608,28 @@ uint64 BarterDatabase::parseBodyNode( const ryml::NodeRef& node ){
 				}
 			}
 
+			//random 1-10000 if < successRate add get item else delete item requirement
+			if (this->nodeExists(itemNode, "SuccessRate")) {
+				uint16 successRate;
+
+				if (!this->asUInt16(itemNode, "SuccessRate", successRate)) {
+					return 0;
+				}
+
+				if (successRate > 10000) {
+					this->invalidWarning(itemNode["SuccessRate"], "barter_parseBodyNode: SuccessRate %hu is above 10000, capping...\n", successRate);
+					successRate = 10000;
+				}
+
+				item->successRate = successRate;
+			}
+			else {
+				if (!item_exists) {
+					item->successRate = 10000;
+				}
+			}
+
+
 			if( this->nodeExists( itemNode, "RequiredItems" ) ){
 				for( const ryml::NodeRef& requiredItemNode : itemNode["RequiredItems"] ){
 					uint16 requirement_index;

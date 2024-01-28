@@ -93,6 +93,10 @@ struct s_npc_barter_item{
 	bool stockLimited;
 	uint32 stock;
 	uint32 price;
+
+	//random 1-10000 if < successRate add get item else delete item requirement
+	uint16 successRate;
+
 	std::map<uint16, std::shared_ptr<s_npc_barter_requirement>> requirements;
 };
 
