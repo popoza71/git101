@@ -27141,6 +27141,18 @@ BUILDIN_FUNC(autoattack_status)
 	return SCRIPT_CMD_SUCCESS;
 }
 
+BUILDIN_FUNC(recal_status){
+	map_session_data *sd;
+
+	if (!script_rid2sd(sd)) {
+		script_pushint(st,0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	status_calc_pc(sd,SCO_FORCE);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 
 
 #include <custom/script.inc>
@@ -28061,6 +28073,7 @@ struct script_function buildin_func[] = {
 	BUILDIN_DEF(barter_add, "svi*"),
 	BUILDIN_DEF2(barter_add, "barter_add_ex", "svii*"),
 
+	BUILDIN_DEF(recal_status, ""),
 
 #include <custom/script_def.inc>
 

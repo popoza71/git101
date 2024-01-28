@@ -47,6 +47,8 @@ enum e_regen {
 	RGN_SSP  = 0x08,
 };
 
+std::vector<int16> member_rank_level;
+
 static struct eri *sc_data_ers; /// For sc_data entries
 static struct status_data dummy_status;
 
@@ -3756,6 +3758,8 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 		pet_delautobonus(*sd, sd->pd->autobonus2, true);
 		pet_delautobonus(*sd, sd->pd->autobonus3, true);
 	}
+
+	member_buff(sd);
 
 	// Parse equipment
 	//for (i = 0; i < EQI_MAX; i++) {
@@ -15978,6 +15982,209 @@ void StatusDatabase::loadingFinished(){
 
 StatusDatabase status_db;
 
+
+const std::string MemberRankDatabase::getDefaultLocation() {
+	return std::string(db_path) + "/custom/member_rank.yml";
+}
+
+/**
+ * Reads and parses an entry from the member_rank.
+ * @param node: YAML node containing the entry.
+ * @return count of successfully parsed rows
+ */
+uint64 MemberRankDatabase::parseBodyNode(const ryml::NodeRef &node){
+
+	if (!this->nodesExist(node, {"Level","Point"}))
+		return 0;
+
+	int16 level;
+
+	if (!this->asInt16(node, "Level", level))
+		return 0;
+
+	std::shared_ptr<s_member_rank> MemberRank = this->find(level);
+	bool exists = MemberRank != nullptr;
+
+	if (!exists) {
+		if (!this->nodesExist(node, {"Level","Point"}))
+			return 0;
+
+		MemberRank = std::make_shared<s_member_rank>();
+		MemberRank->level = level;
+	}
+
+	if (this->nodeExists(node, "Point")) {
+		int64 point;
+
+		if (!this->asInt64(node, "Point", point))
+			return 0;
+
+		if (point < 0) {
+			this->invalidWarning(node["Point"], "Point %d is out of bounds, defaulting to 0.\n", point);
+			point = 0;
+		}
+
+		MemberRank->point = point;
+	} else {
+		if (!exists)
+			MemberRank->point = 0;
+	}
+
+	if (this->nodeExists(node, "Icon")) {
+		std::string icon_name;
+
+		if (!this->asString(node, "Icon", icon_name))
+			return 0;
+
+		int64 constant;
+
+		if (!script_get_constant(icon_name.c_str(), &constant)) {
+			this->invalidWarning(node["Icon"], "Icon %s is invalid, defaulting to EFST_BLANK.\n", icon_name.c_str());
+			constant = EFST_BLANK;
+		}
+
+		if (constant < EFST_BLANK || constant >= EFST_MAX) {
+			this->invalidWarning(node["Icon"], "Icon %s is out of bounds, defaulting to EFST_BLANK.\n", icon_name.c_str());
+			constant = EFST_BLANK;
+		}
+
+		MemberRank->icon = static_cast<efst_type>(constant);
+	} else {
+		if (!exists)
+			MemberRank->icon = EFST_BLANK;
+	}
+
+	if (this->nodeExists(node, "Script")) {
+		std::string script;
+
+		if (!this->asString(node, "Script", script))
+			return 0;
+
+		if (MemberRank->script) {
+			script_free_code(MemberRank->script);
+			MemberRank->script = nullptr;
+		}
+
+		MemberRank->script = parse_script(script.c_str(), this->getCurrentFile().c_str(), this->getLineNumber(node["Script"]), SCRIPT_IGNORE_EXTERNAL_BRACKETS);
+	} else {
+		if (!exists)
+			MemberRank->script = nullptr;
+	}
+
+	if (!exists){
+		this->put(MemberRank->level, MemberRank);
+		member_rank_level.push_back(MemberRank->level);
+	}
+
+	return 1;
+}
+
+MemberRankDatabase member_rank_db;
+
+void MemberRankDatabase::loadingFinished() {
+
+	// sort by level
+	std::sort(member_rank_level.begin(), member_rank_level.end());
+
+	TypesafeYamlDatabase::loadingFinished();
+}
+
+static void clean_old_bonus()
+{
+	struct s_mapiterator* iter;
+	map_session_data* sd;
+
+	iter = mapit_geteachpc();
+	for( sd = (map_session_data*)mapit_first(iter); mapit_exists(iter); sd = (map_session_data*)mapit_next(iter) ) {
+		member_remove_old_effect(sd);
+	}
+
+	mapit_free(iter);
+}
+
+static void apply_bouns()
+{
+	struct s_mapiterator* iter;
+	map_session_data* sd;
+
+	iter = mapit_geteachpc();
+	for( sd = (map_session_data*)mapit_first(iter); mapit_exists(iter); sd = (map_session_data*)mapit_next(iter) ) {
+		status_calc_pc(sd,SCO_NONE);
+	}
+
+	mapit_free(iter);
+}
+
+void member_buff(map_session_data* sd){
+
+	if (sd == nullptr)
+		return;
+
+	SqlStmt *check;
+	check = SqlStmt_Malloc(mmysql_handle);
+	int result = 0;
+	int amount = 0;
+	int level = 0;
+
+	if (SQL_ERROR == SqlStmt_Prepare(check, "SELECT `member_point` FROM `member_rank` WHERE `account_id`= %d", sd->status.account_id) || SqlStmt_Execute(check)) {
+		SqlStmt_ShowDebug(check);
+		SqlStmt_Free(check);
+		return;
+	}
+
+	SqlStmt_BindColumn(check, 0, SQLDT_INT, &result, 0, NULL, NULL);
+
+	while( SQL_SUCCESS == SqlStmt_NextRow(check) )
+		amount = result;
+
+	SqlStmt_Free(check);
+
+	for(int i = 0; i < member_rank_db.size(); i++){
+		std::shared_ptr<s_member_rank> MemberBuff = member_rank_db.find(member_rank_level[i]);
+
+		if(MemberBuff == nullptr)
+			continue;
+
+		if(amount >= MemberBuff->point)
+			level = MemberBuff->level;
+
+		if(MemberBuff->icon != EFST_BLANK)
+			clif_status_load(&sd->bl, MemberBuff->icon, 0);
+	}
+
+	if(!level)
+		return;
+
+	std::shared_ptr<s_member_rank> MemberBuff = member_rank_db.find(level);
+
+	if(MemberBuff == nullptr)
+		return;
+
+	if(MemberBuff->icon != EFST_BLANK)
+		clif_status_load(&sd->bl, MemberBuff->icon, 1);
+
+	if(MemberBuff->script)
+		run_script(MemberBuff->script, 0, sd->bl.id, 0);
+}
+
+void member_remove_old_effect(map_session_data* sd) {
+
+	if (sd == nullptr)
+		return;
+
+	for(const auto& entry : member_rank_db){
+		std::shared_ptr<s_member_rank> clean_bonus = entry.second;
+
+		if(clean_bonus == nullptr)
+			continue;
+
+		if(clean_bonus->icon != EFST_BLANK)
+			clif_status_load(&sd->bl, clean_bonus->icon, 0);
+	}
+}
+
+
+
 /**
  * Sets defaults in tables and starts read db functions
  * sv_readdb reads the file, outputting the information line-by-line to
@@ -15995,6 +16202,11 @@ void status_readdb( bool reload ){
 		"/" DBIMPORT,
 		//add other path here
 	};
+
+	if(reload){
+		member_rank_level = {};
+	}
+
 
 	// read databases
 	// path,filename,separator,mincol,maxcol,maxrow,func_parsor
@@ -16020,17 +16232,21 @@ void status_readdb( bool reload ){
 	}
 
 	if( reload ){
+		clean_old_bonus();
 		size_fix_db.reload();
 		refine_db.reload();
 		status_db.reload();
 		enchantgrade_db.reload();
+		member_rank_db.reload();
 	}else{
 		size_fix_db.load();
 		refine_db.load();
 		status_db.load();
 		enchantgrade_db.load();
+		member_rank_db.load();
 	}
 	elemental_attribute_db.load();
+	apply_bouns();
 }
 
 /**
@@ -16057,4 +16273,6 @@ void do_final_status(void) {
 	refine_db.clear();
 	status_db.clear();
 	elemental_attribute_db.clear();
+	member_rank_db.clear();
+	member_rank_level = {};
 }

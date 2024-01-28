@@ -1,8 +1,19 @@
 function	script	F_Memeber	{
 
-	.@member_point = getarg(0);
+	.@get_point = getarg(0);
 
-	dispbottom "[Member] ท่านได้รับ " + .@member_point + " แต้ม Member";
+	query_sql ("SELECT `account_id`,`member_point` FROM `member_rank` WHERE `account_id` = '"+getcharid(3)+"';", .@acid, .@point);
+
+	// update
+	if(.@acid){
+		query_sql ("UPDATE `member_rank` SET `member_point` = `member_point` + '"+.@get_point+"' WHERE `account_id` = '"+getcharid(3)+"';");
+	}else{
+		query_sql ("INSERT INTO `member_rank` (`account_id`,`member_point`) VALUES ('"+getcharid(3)+"','"+.@get_point+"');");
+	}
+
+	.@total_point = .@point + .@get_point;
+
+	dispbottom "[Member] ท่านได้รับ " + .@get_point + " แต้ม Member, ท่านมี Member Point ทั้งหมด " + .@total_point + " แต้ม";
 	recal_status();
 	end;
 }
