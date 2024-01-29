@@ -9,11 +9,11 @@ Header:
   Version: 1
 
 Body:
-  - Combos:
-      - Job:
-          - Swordman
-          - Archer
-          - Merchant
-    LevelNeed: 99
-    Script: |
-      bonus bStr,999;
+#  - Combos:
+#      - Job:
+#          - Swordman
+#          - Archer
+#          - Merchant
+#    LevelNeed: 99
+#    Script: |
+#      bonus bStr,999;

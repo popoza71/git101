@@ -3759,6 +3759,57 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 		pet_delautobonus(*sd, sd->pd->autobonus3, true);
 	}
 
+
+	std::vector<int> char_jobid = {};
+	if(sd->char_bonus.size()){
+		for(const auto &char_data : sd->char_bonus) {
+			for(const auto &bonus : char_bonus_db) {
+				if(bonus.second->jobid == char_data.jobid && char_data.level >= bonus.second->level) {
+					clif_status_load(&sd->bl, bonus.second->icon, 0);
+
+					if(util::vector_exists(char_jobid, bonus.second->jobid))
+						continue;
+
+					if(bonus.second->icon != EFST_BLANK)
+						clif_status_load(&sd->bl, bonus.second->icon, 1);
+
+					char_jobid.push_back(bonus.second->jobid);
+
+					if(bonus.second->script){
+						run_script(bonus.second->script, 0, sd->bl.id,0);
+						if (!calculating)
+							return 1;
+					}
+				}
+			}
+		}
+	}
+
+	// char bonus combo
+	if(sd->char_bonus.size()){
+		for(const auto &combos : char_bonus_combo_db) {
+			int bonus_check = 0;
+			for(const auto &job_id : combos.second->jobs) {
+				for(const auto &char_data : sd->char_bonus) {
+					if(job_id == char_data.jobid && char_data.level >= combos.second->level) {
+						bonus_check++;
+					}
+					if(bonus_check == combos.second->jobs.size())
+						break;
+				}
+
+				if(bonus_check == combos.second->jobs.size()){
+					if(combos.second->script){
+						run_script(combos.second->script, 0, sd->bl.id,0);
+						if (!calculating)
+							return 1;
+					}
+				}
+			}
+		}
+	}
+
+
 	member_buff(sd);
 
 	// Parse equipment
@@ -15983,6 +16034,297 @@ void StatusDatabase::loadingFinished(){
 StatusDatabase status_db;
 
 
+const std::string CharBonusDatabase::getDefaultLocation() {
+	return std::string(db_path) + "/custom/char_bonus.yml";
+}
+
+/**
+ * Reads and parses an entry from the char_bonus.
+ * @param node: YAML node containing the entry.
+ * @return count of successfully parsed rows
+ */
+uint64 CharBonusDatabase::parseBodyNode(const ryml::NodeRef &node){
+
+	if (!this->nodesExist(node, {"Job","LevelNeed","BonusScript"}))
+		return 0;
+
+	std::string jobname;
+
+	if (!this->asString(node, "Job", jobname))
+		return 0;
+
+	int64 constant;
+
+	if( !script_get_constant(( "JOB_"+jobname).c_str(),&constant)){
+		this->invalidWarning( node["Job"], "Unknown \"%s\" Job.\n",jobname.c_str());
+		return 0;
+	}
+
+	std::shared_ptr<s_char_bonus> char_bonus = this->find(constant);
+	bool exists = char_bonus != nullptr;
+
+	if (!exists) {
+
+		if (!this->nodesExist(node, {"Job"}))
+			return 0;
+
+		char_bonus = std::make_shared<s_char_bonus>();
+		char_bonus->jobid = constant;
+	}
+
+	if (this->nodeExists(node, "LevelNeed")) {
+		int16 level;
+
+		if (!this->asInt16(node, "LevelNeed", level))
+			return 0;
+
+		if(level < 0 || level > MAX_LEVEL){
+			this->invalidWarning(node["LevelNeed"], "LevelNeed %d is out of bounds.\n", level);
+			return 0;
+		}
+
+		char_bonus->level = level;
+	}else{
+		char_bonus->level = 0;
+	}
+
+	if (this->nodeExists(node, "Icon")) {
+		std::string icon_name;
+
+		if (!this->asString(node, "Icon", icon_name))
+			return 0;
+
+		int64 constant;
+
+		if (!script_get_constant(icon_name.c_str(), &constant)) {
+			this->invalidWarning(node["Icon"], "Icon %s is invalid, defaulting to EFST_BLANK.\n", icon_name.c_str());
+			constant = EFST_BLANK;
+		}
+
+		if (constant < EFST_BLANK || constant >= EFST_MAX) {
+			this->invalidWarning(node["Icon"], "Icon %s is out of bounds, defaulting to EFST_BLANK.\n", icon_name.c_str());
+			constant = EFST_BLANK;
+		}
+
+		char_bonus->icon = static_cast<efst_type>(constant);
+	} else {
+		if (!exists)
+			char_bonus->icon = EFST_BLANK;
+	}
+
+	if (this->nodeExists(node, "BonusScript")) {
+		std::string script;
+
+		if (!this->asString(node, "BonusScript", script))
+			return 0;
+
+		if (char_bonus->script) {
+			script_free_code(char_bonus->script);
+			char_bonus->script = nullptr;
+		}
+
+		char_bonus->script = parse_script(script.c_str(), this->getCurrentFile().c_str(), this->getLineNumber(node["BonusScript"]), SCRIPT_IGNORE_EXTERNAL_BRACKETS);
+	} else {
+		if (!exists)
+			char_bonus->script = nullptr;
+	}
+
+	if (!exists) {
+		this->put(char_bonus->jobid, char_bonus);
+	}
+
+	return 1;
+}
+
+CharBonusDatabase char_bonus_db;
+
+const std::string CharBonusComboDatabase::getDefaultLocation() {
+	return std::string(db_path) + "/custom/char_bonus_combos.yml";
+}
+
+uint16 CharBonusComboDatabase::find_combo_id( const std::vector<int>& jobs ){
+	for (const auto &it : *this) {
+		if (it.second->jobs == jobs) {
+			return it.first;
+		}
+	}
+	return 0;
+}
+
+/**
+ * Reads and parses an entry from the item_combos.
+ * @param node: YAML node containing the entry.
+ * @return count of successfully parsed rows
+ */
+uint64 CharBonusComboDatabase::parseBodyNode(const ryml::NodeRef& node) {
+	std::vector<std::vector<int>> combos_list;
+
+	if( !this->nodesExist( node, { "Combos" } ) ){
+		return 0;
+	}
+
+	const ryml::NodeRef& combosNode = node["Combos"];
+
+	for (const auto& comboit : combosNode) {
+		static const std::string NodeName = "Job";
+
+		if (!this->nodesExist(comboit, { NodeName })) {
+			return 0;
+		}
+
+		const ryml::NodeRef& comboNode = comboit["Job"];
+
+		if (!comboNode.is_seq()) {
+			this->invalidWarning(comboNode, "%s should be a sequence.\n", NodeName.c_str());
+			return 0;
+		}
+
+		std::vector<int> jobs = {};
+
+		for (const auto it : comboNode) {
+			std::string job_name;
+			c4::from_chars(it.val(), &job_name);
+
+			int64 job_constant;
+
+			if( !script_get_constant(( "JOB_"+job_name).c_str(),&job_constant)){
+				this->invalidWarning(comboNode["Jobs"], "Unknown \"%s\" Job.\n",job_name.c_str());
+				return 0;
+			}
+
+			jobs.push_back(job_constant);
+		}
+
+		if (jobs.empty()) {
+			this->invalidWarning(comboNode, "Empty combo, skipping.\n");
+			return 0;
+		}
+
+		if (jobs.size() < 2) {
+			this->invalidWarning(comboNode, "Not enough jobs for a combo, skipping.\n");
+			return 0;
+		}
+		combos_list.push_back(jobs);
+	}
+
+	if (combos_list.empty()) {
+		this->invalidWarning(combosNode, "No combos defined, skipping.\n");
+		return 0;
+	}
+
+	if (this->nodeExists(node, "Clear")) {
+		bool clear = false;
+
+		if (!this->asBool(node, "Clear", clear))
+			return 0;
+
+		// Remove the combo (if exists)
+		if (clear) {
+			for (const auto& combosit : combos_list) {
+				uint16 id = this->find_combo_id(combosit);
+
+				if (id == 0) {
+					this->invalidWarning(node["Clear"], "Unable to clear the combo.\n");
+					return 0;
+				}
+
+				this->erase(id);
+			}
+
+			return 1;
+		}
+	}
+
+	uint64 count = 0;
+
+	for (const auto &combosit : combos_list) {
+		// Find the id when the combo exists
+		uint16 id = this->find_combo_id(combosit);
+		std::shared_ptr<s_char_bonus_combo> col_combo = this->find(id);
+		bool exists = col_combo != nullptr;
+
+		if (!exists) {
+			col_combo = std::make_shared<s_char_bonus_combo>();
+
+			col_combo->jobs.insert(col_combo->jobs.begin(), combosit.begin(), combosit.end());
+			col_combo->id = ++this->combo_num;
+		}
+
+		if (this->nodeExists(node, "Script")) {
+			std::string script;
+
+			if (!this->asString(node, "Script", script))
+				return 0;
+
+			if (exists) {
+				script_free_code(col_combo->script);
+				col_combo->script = nullptr;
+			}
+			col_combo->script = parse_script(script.c_str(), this->getCurrentFile().c_str(), this->getLineNumber(node["Script"]), SCRIPT_IGNORE_EXTERNAL_BRACKETS);
+		} else {
+			if (!exists) {
+				col_combo->script = nullptr;
+			}
+		}
+
+		if( this->nodeExists( node, "LevelNeed" ) ){
+			uint32 level;
+
+			if( !this->asUInt32(node, "LevelNeed", level ) ){
+				return 0;
+			}
+
+			if( level < 0){
+				this->invalidWarning( node["LevelNeed"], "LevelNeed %d is out of bounds.\n", level );
+				return 0;
+			}
+
+			col_combo->level = level;
+		}else{
+			col_combo->level = 1;
+		}		
+
+		if (!exists)
+			this->put( col_combo->id, col_combo );
+
+		count++;
+	}
+
+	return count;
+}
+
+CharBonusComboDatabase char_bonus_combo_db;
+
+static void clean_old_char_bonus()
+{
+	struct s_mapiterator* iter;
+	map_session_data* sd;
+
+	iter = mapit_geteachpc();
+	for( sd = (map_session_data*)mapit_first(iter); mapit_exists(iter); sd = (map_session_data*)mapit_next(iter) ) {
+		pc_remove_char_bonus(sd);
+	}
+
+	mapit_free(iter);
+}
+
+static void apply_char_bouns()
+{
+	struct s_mapiterator* iter;
+	map_session_data* sd;
+
+	iter = mapit_geteachpc();
+	for( sd = (map_session_data*)mapit_first(iter); mapit_exists(iter); sd = (map_session_data*)mapit_next(iter) ) {
+		status_calc_pc(sd,SCO_NONE);
+	}
+
+	mapit_free(iter);
+}
+
+
+
+
+
 const std::string MemberRankDatabase::getDefaultLocation() {
 	return std::string(db_path) + "/custom/member_rank.yml";
 }
@@ -16232,21 +16574,27 @@ void status_readdb( bool reload ){
 	}
 
 	if( reload ){
+		clean_old_char_bonus();
 		clean_old_bonus();
 		size_fix_db.reload();
 		refine_db.reload();
 		status_db.reload();
 		enchantgrade_db.reload();
 		member_rank_db.reload();
+		char_bonus_db.reload();
+		char_bonus_combo_db.reload();
 	}else{
 		size_fix_db.load();
 		refine_db.load();
 		status_db.load();
 		enchantgrade_db.load();
 		member_rank_db.load();
+		char_bonus_db.load();
+		char_bonus_combo_db.load();
 	}
 	elemental_attribute_db.load();
 	apply_bouns();
+	apply_char_bouns();
 }
 
 /**
@@ -16275,4 +16623,6 @@ void do_final_status(void) {
 	elemental_attribute_db.clear();
 	member_rank_db.clear();
 	member_rank_level = {};
+	char_bonus_db.clear();
+	char_bonus_combo_db.clear();
 }

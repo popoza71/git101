@@ -10773,6 +10773,8 @@ static const struct _battle_data {
 	{ "feature.goldpc_max_points",          &battle_config.feature_goldpc_max_points,     300,      0,    300,				},
 	{ "feature.goldpc_vip",                 &battle_config.feature_goldpc_vip,              1,      0,      1,				},
 
+	{ "char_bonus_debug",					& battle_config.char_bonus_debug,				0,		0,		1,				},
+
 
 #include <custom/battle_config_init.inc>
 };

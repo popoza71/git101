@@ -772,6 +772,8 @@ struct Battle_Config
 	int feature_goldpc_max_points;
 	int feature_goldpc_vip;
 
+	int char_bonus_debug;
+
 #include <custom/battle_config_struct.inc>
 };
 

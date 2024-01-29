@@ -9,12 +9,48 @@ Header:
   Version: 1
 
 Body:
-#  - Job: Swordman
-#    LevelNeed: 99
-#    Icon: EFST_PROVOKE
-#    BonusScript: |
-#      bonus bStr,50;
-#      
+  - Job: Novice
+    LevelNeed: 99
+    Icon: EFST_MAX_NOV
+    BonusScript: |
+      bonus bAllStats,10;
+
+  - Job: Swordman
+    LevelNeed: 99
+    Icon: EFST_MAX_SWORD
+    BonusScript: |
+      bonus bStr,10;
+
+  - Job: Acolyte
+    LevelNeed: 99
+    Icon: EFST_MAX_ACO
+    BonusScript: |
+      bonus bInt,10;
+
+  - Job: Mage
+    LevelNeed: 99
+    Icon: EFST_MAX_MAGE
+    BonusScript: |
+      bonus bInt,100;
+
+  - Job: Archer
+    LevelNeed: 99
+    Icon: EFST_MAX_ARCHER
+    BonusScript: |
+      bonus bDex,10;
+
+  - Job: Thief
+    LevelNeed: 99
+    Icon: EFST_MAX_THIEF
+    BonusScript: |
+      bonus bAgi,10;
+
+  - Job: Merchant
+    LevelNeed: 99
+    Icon: EFST_MAX_MER
+    BonusScript: |
+      bonus bLuk,10;
+      
 #  - Job: All
 #    LevelNeed: 99
 #    Icon: EFST_ENDURE

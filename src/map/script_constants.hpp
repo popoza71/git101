@@ -1936,6 +1936,13 @@
 	export_constant(SC_MEMBER_LV9);
 	export_constant(SC_MEMBER_LV10);
 
+	export_constant(SC_MAX_NOV);
+	export_constant(SC_MAX_SWORD);
+	export_constant(SC_MAX_ACO);
+	export_constant(SC_MAX_MAGE);
+	export_constant(SC_MAX_ARCHER);
+	export_constant(SC_MAX_THIEF);
+	export_constant(SC_MAX_MER);
 
 
 #ifdef RENEWAL
@@ -4224,6 +4231,14 @@
 	export_constant(EFST_MEMBER_LV8);
 	export_constant(EFST_MEMBER_LV9);
 	export_constant(EFST_MEMBER_LV10);
+
+	export_constant(EFST_MAX_NOV);
+	export_constant(EFST_MAX_SWORD);
+	export_constant(EFST_MAX_ACO);
+	export_constant(EFST_MAX_MAGE);
+	export_constant(EFST_MAX_ARCHER);
+	export_constant(EFST_MAX_THIEF);
+	export_constant(EFST_MAX_MER);
 
 
 /// @APIHOOK_END

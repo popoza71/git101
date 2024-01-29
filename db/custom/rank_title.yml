@@ -34,6 +34,12 @@ Body:
     Script: |
       bonus bDex,20;
 
+  - Id: 1105
+    RankName: Commander
+    EXP: 200000
+    Script: |
+      bonus bLuk,10;
+
 	# - Id: 1101
   #   RankName: AAAA
   #   EXP: 1000

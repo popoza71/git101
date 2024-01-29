@@ -2323,6 +2323,42 @@ TIMER_FUNC(pc_goldpc_update) {
 }
 
 
+void load_char_bonus_data(map_session_data &sd) {
+
+    sd.char_bonus.clear();
+    struct s_char_data char_data = {};
+
+    SqlStmt *sql_data = SqlStmt_Malloc(mmysql_handle);
+
+    if (SQL_ERROR == SqlStmt_Prepare(sql_data, "SELECT `char_id`,`class`,`base_level` FROM `char` WHERE `account_id`= %d", sd.status.account_id) || SqlStmt_Execute(sql_data)) {
+        SqlStmt_ShowDebug(sql_data);
+        SqlStmt_Free(sql_data);
+        return;
+    }
+
+    SqlStmt_BindColumn(sql_data, 0, SQLDT_INT, &char_data.charid, 0, NULL, NULL);
+    SqlStmt_BindColumn(sql_data, 1, SQLDT_INT, &char_data.jobid, 0, NULL, NULL);
+    SqlStmt_BindColumn(sql_data, 2, SQLDT_INT, &char_data.level, 0, NULL, NULL);
+
+    int count = SqlStmt_NumRows(sql_data);
+
+    for(int i = 0; i < count && SQL_SUCCESS == SqlStmt_NextRow(sql_data); i++) {
+        sd.char_bonus.push_back(char_data);
+    }
+
+    if(battle_config.char_bonus_debug){
+        ShowDebug("Char Bonus: Account ID: %d | Count: %d\n", sd.status.account_id, sd.char_bonus.size());
+        if(sd.char_bonus.size()){
+            for(const auto &cdata : sd.char_bonus){
+                ShowDebug("Char Bonus: Char ID: %d | Class: %d | Level: %d\n", cdata.charid, cdata.jobid, cdata.level);
+            }
+        }
+    }
+
+    SqlStmt_Free(sql_data);
+}
+
+
 /*==========================================
  * Invoked once after the char/account/account2 registry variables are received. [Skotlex]
  * We didn't receive item information at this point so DO NOT attempt to do item operations here.
@@ -2484,6 +2520,8 @@ void pc_reg_received(map_session_data *sd)
 		sd->achievement_data.achievements = NULL;
 		intif_request_achievements(sd->status.char_id);
 	}
+
+	load_char_bonus_data(*sd); // Load bonus data
 
 	if (sd->state.connect_new == 0 && sd->fd) { //Character already loaded map! Gotta trigger LoadEndAck manually.
 		sd->state.connect_new = 1;
@@ -8162,6 +8200,16 @@ int pc_checkbaselevelup(map_session_data *sd) {
 
 	if (battle_config.pet_lv_rate && sd->pd)	//<Skotlex> update pet's level
 		status_calc_pet(sd->pd,SCO_NONE);
+
+	if(sd->char_bonus.size()){
+		for(int i=0;i<sd->char_bonus.size();i++){
+			if(sd->char_bonus[i].charid == sd->status.char_id){
+				sd->char_bonus[i].level = sd->status.base_level;
+				break;
+			}
+		}
+	}
+
 
 	clif_updatestatus(sd,SP_STATUSPOINT);
 	clif_updatestatus(sd,SP_TRAITPOINT);
@@ -15996,6 +16044,16 @@ uint64 CaptchaDatabase::parseBodyNode(const ryml::NodeRef &node) {
 
 	return 1;
 }
+
+
+void pc_remove_char_bonus(map_session_data *sd)
+{
+	nullpo_retv(sd);
+	for(const auto &bonus : char_bonus_db) {
+		clif_status_load(&sd->bl, bonus.second->icon, 0);
+	}
+}
+
 
 /*==========================================
  * pc Init/Terminate
