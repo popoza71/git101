@@ -2,9 +2,10 @@ function	script	F_RANK	{
 
 	get_currect_rank_data();
 	.npcname$ = "[^FF0000•^000000 ^2f00ffStatus Book^000000 ^FF0000•^000000]";
+	
 
 	mes .npcname$;
-	mes "Rank EXP : ^0800ff" + RANKTITLE_EXP + "^000000";
+	mes "EXP : ^ed00ed" + RANKTITLE_EXP + "^000000";
 	if(@ranktitle_high_name$ != "")
 		mes "Rank สูงสุดของท่าน : ^0800ff" + @ranktitle_high_name$ + "^000000";
 	else
@@ -203,17 +204,10 @@ OnBuyItem:
 	pc_exchange_count += .@sum;
 
 	rank_title_exchange(.@total_cost);
-	
-	
-		if(RANKTITLE_EXP < 1000){
-		dispbottom "[ ระบบ ] : ท่านไม่เหลือฉายาอีกแล้ว ท่านกำลังถูกบังคับให้ออกจากเกมส์";
-		sleep2 3000;
-		atcommand "@kick "+strcharinfo(0);
-	}
-
-	
+	recal_status();
 	end;
 }
+
 
 
 function	script	F_EXP_COST	{

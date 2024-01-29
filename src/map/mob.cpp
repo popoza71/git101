@@ -2880,6 +2880,10 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 				continue;
 			}
 
+			// mob no card
+			if(it->type == IT_CARD && util::vector_exists(mobs_no_card, md->mob_id))
+				continue;
+
 			ditem = mob_setdropitem(&md->db->dropitem[i], 1, md->mob_id);
 
 			//A Rare Drop Global Announce by Lupus

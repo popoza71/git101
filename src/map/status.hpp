@@ -28,7 +28,7 @@ struct npc_data;
 class status_change;
 
 extern std::vector<int16> member_rank_level;
-
+extern std::vector<int> mobs_no_card;
 
 /**
  * Max Refine available to your server

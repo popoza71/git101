@@ -30,13 +30,13 @@ Body:
 
   - Id: 1104
     RankName: Novice
-    EXP: 99999
+    EXP: 5000
     Script: |
       bonus bDex,20;
 
   - Id: 1105
     RankName: Commander
-    EXP: 200000
+    EXP: 10000
     Script: |
       bonus bLuk,10;
 

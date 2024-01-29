@@ -58,6 +58,8 @@ int current_equip_card_id; /// To prevent card-stacking (from jA) [Skotlex]
 // We need it for new cards 15 Feb 2005, to check if the combo cards are insrerted into the CURRENT weapon only to avoid cards exploits
 short current_equip_opt_index; /// Contains random option index of an equipped item. [Secret]
 
+std::vector<int> mobs_no_card;
+
 uint16 SCDisabled[SC_MAX]; ///< List of disabled SC on map zones. [Cydh]
 
 static unsigned short status_calc_str(struct block_list *,status_change *,int);
@@ -16034,6 +16036,30 @@ void StatusDatabase::loadingFinished(){
 StatusDatabase status_db;
 
 
+
+/**
+ */
+static bool status_readdb_mob_no_card(char* fields[], int columns, int current)
+{
+	int mobid;
+
+	mobid = atoi(fields[0]);
+
+	if(!mob_db.find(mobid)){
+		ShowError("status_readdb_mob_no_card: Invalid mob id %d.\n", mobid);
+		return false;
+	}
+
+	if(util::vector_exists(mobs_no_card, mobid))
+		return true;
+
+	mobs_no_card.push_back(mobid);
+	return true;
+}
+
+
+
+
 const std::string CharBonusDatabase::getDefaultLocation() {
 	return std::string(db_path) + "/custom/char_bonus.yml";
 }
@@ -16549,6 +16575,10 @@ void status_readdb( bool reload ){
 		member_rank_level = {};
 	}
 
+	if( reload ){
+		mobs_no_card = {};
+	}
+
 
 	// read databases
 	// path,filename,separator,mincol,maxcol,maxrow,func_parsor
@@ -16568,6 +16598,8 @@ void status_readdb( bool reload ){
 		}
 
 		sv_readdb(dbsubpath1, "status_disabled.txt", ',', 2, 2, -1, &status_readdb_status_disabled, i > 0);
+		sv_readdb(dbsubpath1, "custom/mobs_no_card.txt", ',', 1, 1, -1, &status_readdb_mob_no_card, i > 0);
+
 
 		aFree(dbsubpath1);
 		aFree(dbsubpath2);
@@ -16625,4 +16657,5 @@ void do_final_status(void) {
 	member_rank_level = {};
 	char_bonus_db.clear();
 	char_bonus_combo_db.clear();
+	mobs_no_card = {};
 }

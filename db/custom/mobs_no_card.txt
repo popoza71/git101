@@ -1,0 +1,7 @@
+//===== Mobs No Card List Configulation Files =======================================
+//  Whispering Rain
+//= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+// Structure of Database:
+// mobid
+//= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+//1004 //hornet
