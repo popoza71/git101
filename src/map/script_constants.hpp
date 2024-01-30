@@ -1925,25 +1925,6 @@
 	export_constant(SC_AUTOAI);
 	export_constant(SC_AUTOPOT);
 
-	export_constant(SC_MEMBER_LV1);
-	export_constant(SC_MEMBER_LV2);
-	export_constant(SC_MEMBER_LV3);
-	export_constant(SC_MEMBER_LV4);
-	export_constant(SC_MEMBER_LV5);
-	export_constant(SC_MEMBER_LV6);
-	export_constant(SC_MEMBER_LV7);
-	export_constant(SC_MEMBER_LV8);
-	export_constant(SC_MEMBER_LV9);
-	export_constant(SC_MEMBER_LV10);
-
-	export_constant(SC_MAX_NOV);
-	export_constant(SC_MAX_SWORD);
-	export_constant(SC_MAX_ACO);
-	export_constant(SC_MAX_MAGE);
-	export_constant(SC_MAX_ARCHER);
-	export_constant(SC_MAX_THIEF);
-	export_constant(SC_MAX_MER);
-
 
 #ifdef RENEWAL
 	export_constant(SC_EXTREMITYFIST2);

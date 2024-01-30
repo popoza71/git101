@@ -1313,25 +1313,6 @@ enum sc_type : int16 {
 	SC_AUTOAI, // AutoAI
 	SC_AUTOPOT, // AutoPot
 
-	SC_MEMBER_LV1,
-	SC_MEMBER_LV2,
-	SC_MEMBER_LV3,
-	SC_MEMBER_LV4,
-	SC_MEMBER_LV5,
-	SC_MEMBER_LV6,
-	SC_MEMBER_LV7,
-	SC_MEMBER_LV8,
-	SC_MEMBER_LV9,
-	SC_MEMBER_LV10,
-
-	SC_MAX_NOV,
-	SC_MAX_SWORD,
-	SC_MAX_ACO,
-	SC_MAX_MAGE,
-	SC_MAX_ARCHER,
-	SC_MAX_THIEF,
-	SC_MAX_MER,
-
 #ifdef RENEWAL
 	SC_EXTREMITYFIST2, //! NOTE: This SC should be right before SC_MAX, so it doesn't disturb if RENEWAL is disabled
 #endif
