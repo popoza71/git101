@@ -20508,6 +20508,7 @@ void clif_parse_change_title(int fd, map_session_data *sd)
 	int title_id;
 
 	nullpo_retv(sd);
+	return;
 
 	title_id = RFIFOL(fd, 2);
 

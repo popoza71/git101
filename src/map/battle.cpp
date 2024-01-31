@@ -10775,6 +10775,14 @@ static const struct _battle_data {
 
 	{ "char_bonus_debug",					& battle_config.char_bonus_debug,				0,		0,		1,				},
 
+	//ranktitle
+	{ "rank_title_system",					&battle_config.rank_title_system,				0,      0,      1,              },
+	{ "rank_title_gvg",						&battle_config.rank_title_gvg,					0,      0,      1,              },
+	{ "rank_title_min_lv",					&battle_config.rank_title_min_lv,			    1,      0,      9999,           },
+	{ "rank_title_effect",					&battle_config.rank_title_effect,				0,      0,      INT_MAX,		},
+	{ "rank_enchance_max",					&battle_config.rank_enchance_max,				1,      1,      INT_MAX,		},
+	{ "rank_max_exp",						&battle_config.rank_max_exp,					0,      0,      INT_MAX,		},
+
 
 #include <custom/battle_config_init.inc>
 };

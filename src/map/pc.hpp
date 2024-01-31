@@ -75,6 +75,23 @@ class MapGuild;
 #define GOLDPC_SECONDS_VAR "Goldpc_Seconds"
 #endif
 
+//ranktitle
+#define RANKTITLE_VAR "RANKTITLE_ID"
+#define RANKTITLE_EXP_VAR "RANKTITLE_EXP"
+#define RANKTITLE_PERCENT_VAR "RANKTITLE_PERCENT"
+#define RANKTITLE_HIGH_ID_VAR "RANKTITLE_HIGH_ID"
+#define RANKTITLE_ENCHANCE_VAR "RANKTITLE_ENCHANCE"
+#define RANKTITLE_PC_ID_VAR "@ranktitle_id"
+#define RANKTITLE_PC_NAME_VAR "@ranktitle_name$"
+#define RANKTITLE_CURRENT1_ID_VAR "@ranktitle_current1_id"
+#define RANKTITLE_CURRENT1_NAME_VAR "@ranktitle_current1_name$"
+#define RANKTITLE_CURRENT2_ID_VAR "@ranktitle_current2_id"
+#define RANKTITLE_CURRENT2_NAME_VAR "@ranktitle_current2_name$"
+#define RANKTITLE_NEXT_EXP_VAR "@ranktitle_next_exp"
+#define RANKTITLE_NEXT_NAME_VAR "@ranktitle_next_name$"
+#define RANKTITLE_HIGH_NAME_VAR "@ranktitle_high_name$"
+#define RANKTITLE_C_VAR "RANKTITLE_N_VAR"
+
 //Total number of classes (for data storage)
 #define CLASS_COUNT (JOB_MAX - JOB_NOVICE_HIGH + JOB_MAX_BASIC)
 

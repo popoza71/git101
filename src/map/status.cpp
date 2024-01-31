@@ -51,6 +51,8 @@ std::vector<int16> member_rank_level;
 
 static struct eri *sc_data_ers; /// For sc_data entries
 static struct status_data dummy_status;
+std::vector<int> sort_rank_title_list;
+
 
 short current_equip_item_index; /// Contains inventory index of an equipped item. To pass it into the EQUP_SCRIPT [Lupus]
 unsigned int current_equip_combo_pos; /// For combo items we need to save the position of all involved items here
@@ -3811,8 +3813,40 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 		}
 	}
 
-
 	member_buff(sd);
+
+	if (battle_config.rank_title_system) {
+		uint16 title_slot_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
+		uint16 title_slot_2 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 1));
+
+		struct map_data *rank_map = map_getmapdata(sd->bl.m);
+
+		std::vector<uint16> title_slots;
+
+		if (title_slot_1)
+			title_slots.push_back(title_slot_1);
+
+		if (title_slot_2)
+			title_slots.push_back(title_slot_2);
+
+		if(title_slots.size()){
+			for(const auto& title_id : title_slots){
+				std::shared_ptr<s_rank_title> rank_title = rank_title_db.find(title_id);
+
+				if (rank_title && rank_title->script != nullptr ){
+					if(!battle_config.rank_title_gvg && !mapdata_flag_vs(rank_map)){
+						run_script(rank_title->script, 0, sd->bl.id, 0);
+						if (!calculating) // Abort, run_script retriggered this. [Skotlex]
+							return 1;
+					}else if (battle_config.rank_title_gvg){
+						run_script(rank_title->script, 0, sd->bl.id, 0);
+						if (!calculating) // Abort, run_script retriggered this. [Skotlex]
+							return 1;
+					}
+				}
+			}
+		}
+	}
 
 	// Parse equipment
 	//for (i = 0; i < EQI_MAX; i++) {
@@ -16551,6 +16585,96 @@ void member_remove_old_effect(map_session_data* sd) {
 	}
 }
 
+const std::string RankTitleDatabase::getDefaultLocation() {
+	return std::string(db_path) + "/custom/rank_title.yml";
+}
+
+/**
+ * Reads and parses an entry from the rank_title
+ * @param node: YAML node containing the entry.
+ * @return count of successfully parsed rows
+ */
+uint64 RankTitleDatabase::parseBodyNode(const ryml::NodeRef& node) {
+
+	if (!this->nodesExist(node, { "Id", "RankName", "EXP" }))
+		return 0;
+
+		uint16 Id;
+
+	if (!this->asUInt16(node, "Id", Id))
+		return 0;
+
+	std::shared_ptr<s_rank_title> RankTitle = this->find(Id);
+	bool exists = RankTitle != nullptr;
+
+	if (!exists) {
+		if (!this->nodesExist(node, { "Id", "RankName", "EXP" }))
+			return 0;
+
+		RankTitle = std::make_shared<s_rank_title>();
+		RankTitle->title_id = Id;
+	}
+
+	if (this->nodeExists(node, "RankName")) {
+		std::string rank_name;
+
+		if (!this->asString(node, "RankName", rank_name))
+			return 0;
+
+		if (rank_name.length() > 50) {
+			this->invalidWarning(node["RankName"], "RankName \"%s\" exceeds maximum of %d characters, capping...\n", rank_name.c_str(), 50 - 1);
+		}
+
+        RankTitle->title_name = rank_name;
+	}
+
+	if (this->nodeExists(node, "EXP")) {
+		uint64 exp;
+
+		if (!this->asUInt64(node, "EXP", exp))
+			return 0;
+
+		RankTitle->exp = exp;
+	}
+
+    if (this->nodeExists(node, "Script")) {
+		std::string script;
+
+		if (!this->asString(node, "Script", script))
+			return 0;
+
+		if (exists && RankTitle->script) {
+			script_free_code(RankTitle->script);
+			RankTitle->script = nullptr;
+		}
+
+		RankTitle->script = parse_script(script.c_str(), this->getCurrentFile().c_str(), this->getLineNumber(node["Script"]), SCRIPT_IGNORE_EXTERNAL_BRACKETS);
+	} else {
+		if (!exists)
+			RankTitle->script = nullptr;
+	}
+
+	if( !exists ){
+		this->put( RankTitle->title_id , RankTitle );
+	}
+	return 1;
+}
+
+RankTitleDatabase rank_title_db;
+
+void RankTitleDatabase::loadingFinished() {
+
+	sort_rank_title_list = {};
+
+	for (const auto &entry : *this) {
+		sort_rank_title_list.push_back(entry.second->title_id);
+	}
+
+	std::sort(sort_rank_title_list.begin(), sort_rank_title_list.end());
+
+	TypesafeYamlDatabase::loadingFinished();
+}
+
 
 
 /**
@@ -16615,6 +16739,7 @@ void status_readdb( bool reload ){
 		member_rank_db.reload();
 		char_bonus_db.reload();
 		char_bonus_combo_db.reload();
+		rank_title_db.reload();
 	}else{
 		size_fix_db.load();
 		refine_db.load();
@@ -16623,6 +16748,7 @@ void status_readdb( bool reload ){
 		member_rank_db.load();
 		char_bonus_db.load();
 		char_bonus_combo_db.load();
+		rank_title_db.load();
 	}
 	elemental_attribute_db.load();
 	apply_bouns();
@@ -16658,4 +16784,5 @@ void do_final_status(void) {
 	char_bonus_db.clear();
 	char_bonus_combo_db.clear();
 	mobs_no_card = {};
+	rank_title_db.clear();
 }

@@ -2,7 +2,6 @@ function	script	F_RANK	{
 
 	get_currect_rank_data();
 	.npcname$ = "[^FF0000•^000000 ^2f00ffStatus Book^000000 ^FF0000•^000000]";
-	
 
 	mes .npcname$;
 	mes "EXP : ^ed00ed" + RANKTITLE_EXP + "^000000";
@@ -204,9 +203,9 @@ OnBuyItem:
 	pc_exchange_count += .@sum;
 
 	rank_title_exchange(.@total_cost);
-	recal_status();
 	end;
 }
+
 
 
 
@@ -216,11 +215,11 @@ function	script	F_EXP_COST	{
 
 	// กำหนดราคา EXP ต่อขวด
 	switch(.@itemid){
-		case 41023:
-			return 1000;
-		case 41024:
-			return 5000;
 		case 41025:
+			return 1000;
+		case 41026:
+			return 5000;
+		case 41027:
 			return 10000;
 		default:
 			return 0;
@@ -229,4 +228,4 @@ function	script	F_EXP_COST	{
 }
 
 // กำหนดของที่จะขาย
--	shop	status_shop	-1,41023:-1,41024:-1,41025:-1
+-	shop	status_shop	-1,41025:-1,41026:-1,41027:-1

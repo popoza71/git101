@@ -1,0 +1,25 @@
+###########################################################################
+#
+# Whispering Rain
+#
+###########################################################################
+
+Header:
+  Type: REFINE_PASS_DB
+  Version: 1
+
+Body:
+  - RefineLevel: 5
+    Icon: EFST_REFINE_PASS_LVL_5
+    Script: |
+      .@val = refinepasscount();
+      bonus bStr,.@val;
+
+  - RefineLevel: 6
+    Icon: EFST_REFINE_PASS_LVL_6
+    Script: |
+      .@val = refinepasscount();
+      if(.@val == 2){bonus bStr,1;}
+      if(.@val == 3){bonus bAgi,1;}
+      if(.@val == 4){bonus bLuk,2;}
+      if(.@val == 5){bonus bMaxHP,1000;}

@@ -12,25 +12,25 @@ Body:
 
   - Id: 1101
     RankName: Child
-    EXP: 1000
+    EXP: 2000
     Script: |
       bonus bStr,10;
 
   - Id: 1102
     RankName: Adult
-    EXP: 2000
+    EXP: 4000
     Script: |
       bonus bStr,20;
 
   - Id: 1103
     RankName: Rookie
-    EXP: 3000
+    EXP: 6000
     Script: |
       bonus bDex,10;
 
   - Id: 1104
     RankName: Novice
-    EXP: 5000
+    EXP: 8000
     Script: |
       bonus bDex,20;
 

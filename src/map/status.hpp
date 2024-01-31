@@ -3653,6 +3653,37 @@ void member_buff(map_session_data* sd);
 void member_remove_old_effect(map_session_data* sd);
 
 
+//ranktitle
+extern std::vector<int> sort_rank_title_list;
+
+struct s_rank_title {
+	uint16 title_id;
+	int64 exp;
+    std::string title_name;
+	struct script_code *script;	//Default script for everything.
+
+	~s_rank_title() {
+		if (this->script){
+			script_free_code(this->script);
+			this->script = nullptr;
+		}
+	}
+};
+
+class RankTitleDatabase : public TypesafeYamlDatabase<uint16, s_rank_title> {
+public:
+	RankTitleDatabase() : TypesafeYamlDatabase( "RANK_TITLE_DB", 1 ){
+
+	}
+
+	const std::string getDefaultLocation();
+	uint64 parseBodyNode(const ryml::NodeRef& node);
+	void loadingFinished() override;
+};
+
+extern RankTitleDatabase rank_title_db;
+
+
 
 
 #endif /* STATUS_HPP */

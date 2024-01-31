@@ -27153,6 +27153,294 @@ BUILDIN_FUNC(recal_status){
 	return SCRIPT_CMD_SUCCESS;
 }
 
+BUILDIN_FUNC(get_rank_data)
+{
+	map_session_data *sd;
+
+	if (!script_charid2sd(2,sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int highest_id = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0));
+	int currect_rank_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
+	int currect_rank_2 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 1));
+
+	if(highest_id == 0){
+		script_pushint(st,0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_cleararray_pc(sd,RANKTITLE_PC_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_PC_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_C_VAR);
+
+	std::vector<int> rank_lists = {};
+
+	for(const auto &entry : sort_rank_title_list){
+
+		if(currect_rank_2 && entry == currect_rank_2)
+			continue;
+
+		if(entry > highest_id)
+			break;
+
+		rank_lists.push_back(entry);
+	}
+
+	for(int i = 0; i < rank_lists.size() ; i++){
+		std::shared_ptr<s_rank_title> rank_data = rank_title_db.find(rank_lists[i]);
+		if(rank_data){
+			pc_setreg(sd,reference_uid(add_str(RANKTITLE_PC_ID_VAR), i), rank_data->title_id);
+			pc_setregstr(sd,reference_uid(add_str(RANKTITLE_PC_NAME_VAR), i), rank_data->title_name.c_str());
+		}
+	}
+
+	std::shared_ptr<s_rank_title> crank1_data = rank_title_db.find(currect_rank_1);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT1_ID_VAR), 0),(crank1_data ? crank1_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT1_NAME_VAR), 0),(crank1_data ? crank1_data->title_name.c_str() : ""));
+	std::shared_ptr<s_rank_title> crank2_data = rank_title_db.find(currect_rank_2);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT2_ID_VAR), 0),(crank2_data ? crank2_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT2_NAME_VAR), 0),(crank2_data ? crank2_data->title_name.c_str() : ""));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(get_rank_echance_data)
+{
+	map_session_data *sd;
+
+	if (!script_charid2sd(2,sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int highest_id = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0));
+	int currect_rank_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
+	int currect_rank_2 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 1));
+
+	if(!highest_id){
+		script_pushint(st,0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_cleararray_pc(sd,RANKTITLE_PC_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_PC_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_C_VAR);
+
+	std::vector<int> rank_lists = {};
+
+	for(const auto &entry : sort_rank_title_list){
+
+		if(entry == currect_rank_1)
+			continue;
+
+		if(entry > highest_id)
+			break;
+
+		rank_lists.push_back(entry);
+	}
+
+	for(int i = 0; i < rank_lists.size() ; i++){
+		std::shared_ptr<s_rank_title> rank_data = rank_title_db.find(rank_lists[i]);
+		if(rank_data){
+			pc_setreg(sd,reference_uid(add_str(RANKTITLE_PC_ID_VAR), i), rank_data->title_id);
+			pc_setregstr(sd,reference_uid(add_str(RANKTITLE_PC_NAME_VAR), i), rank_data->title_name.c_str());
+		}
+	}
+
+	std::shared_ptr<s_rank_title> crank1_data = rank_title_db.find(currect_rank_1);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT1_ID_VAR), 0),(crank1_data ? crank1_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT1_NAME_VAR), 0),(crank1_data ? crank1_data->title_name.c_str() : ""));
+	std::shared_ptr<s_rank_title> crank2_data = rank_title_db.find(currect_rank_2);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT2_ID_VAR), 0),(crank2_data ? crank2_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT2_NAME_VAR), 0),(crank2_data ? crank2_data->title_name.c_str() : ""));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+bool ranktitle_enchance(map_session_data *sd,int rank_title,int enchance)
+{
+	nullpo_retr(false,sd);
+
+	std::shared_ptr<s_rank_title> rank_data = rank_title_db.find(rank_title);
+
+	if(!rank_title)
+		return false;
+
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 1), rank_title);
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_ENCHANCE_VAR), 0), enchance+1);
+
+	char msg[CHAT_SIZE_MAX];
+	sprintf (msg, msg_txt(NULL,1542), rank_data->title_name.c_str());
+	clif_messagecolor(&sd->bl, color_table[COLOR_CYAN], msg, false, SELF);
+	status_calc_pc(sd,SCO_NONE);
+	return true;
+}
+
+BUILDIN_FUNC(rank_status_enchance) {
+	map_session_data *sd;
+
+	if (!script_mapid2sd(3, sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int title_id = script_getnum(st, 2);
+
+	int enchance = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_ENCHANCE_VAR), 0));
+
+	if(enchance>=battle_config.rank_enchance_max){
+		script_pushint(st,2);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	bool result = ranktitle_enchance(sd,title_id,enchance);
+
+	if(!result){
+		script_pushint(st,0);
+		return SCRIPT_CMD_FAILURE;
+	}
+
+	script_pushint(st,1);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(get_currect_rank_data) {
+	map_session_data *sd;
+
+	if (!script_mapid2sd(2, sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int highest_id = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0));
+	int currect_rank_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
+	int currect_rank_2 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 1));
+
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_NEXT_EXP_VAR);
+	script_cleararray_pc(sd,RANKTITLE_NEXT_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_HIGH_NAME_VAR);
+
+	std::shared_ptr<s_rank_title> crank1_data = rank_title_db.find(currect_rank_1);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT1_ID_VAR), 0),(crank1_data ? crank1_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT1_NAME_VAR), 0),(crank1_data ? crank1_data->title_name.c_str() : ""));
+	std::shared_ptr<s_rank_title> crank2_data = rank_title_db.find(currect_rank_2);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_CURRENT2_ID_VAR), 0),(crank2_data ? crank2_data->title_id : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_CURRENT2_NAME_VAR), 0),(crank2_data ? crank2_data->title_name.c_str() : ""));
+	std::shared_ptr<s_rank_title> next_rank = rank_title_db.find(currect_rank_1+1);
+	pc_setreg(sd,reference_uid(add_str(RANKTITLE_NEXT_EXP_VAR), 0),(next_rank ? next_rank->exp : 0));
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_NEXT_NAME_VAR), 0),(next_rank ? next_rank->title_name.c_str() : ""));
+	std::shared_ptr<s_rank_title> high_rank = rank_title_db.find(highest_id);
+	pc_setregstr(sd,reference_uid(add_str(RANKTITLE_HIGH_NAME_VAR), 0),(high_rank ? high_rank->title_name.c_str() : ""));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+void rank_title_exchange(map_session_data *sd,t_exp exchange_exp)
+{
+	nullpo_retv(sd);
+
+	int currect_rank_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
+	int highest_id = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0));
+	t_exp currect_exp = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_EXP_VAR), 0));
+	currect_exp -= exchange_exp;
+
+	std::shared_ptr<s_rank_title> rank_data = rank_title_db.find(highest_id);
+
+	int down_rank_amount = 0;
+
+	for(int i = sort_rank_title_list[0]; i < highest_id; i++){
+		std::shared_ptr<s_rank_title> down_rank = rank_title_db.find(i);
+		if(down_rank){
+			if(currect_exp >= down_rank->exp){
+				down_rank_amount = i;
+			}
+		}
+	}
+
+	std::shared_ptr<s_rank_title> rank_lower = {};
+
+	if(down_rank_amount)
+		rank_lower = rank_title_db.find(down_rank_amount);
+
+	char msg[CHAT_SIZE_MAX];
+	sprintf (msg, msg_txt(NULL,1544),exchange_exp,currect_exp);
+	clif_messagecolor(&sd->bl, color_table[COLOR_CYAN], msg, false, SELF);
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_EXP_VAR), 0), currect_exp);
+
+	if(rank_lower == nullptr){
+		pc_setregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 0), 0);
+		pc_setregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0), 0);
+		pc_setregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0), 0);
+		sd->status.title_id = 0;
+	}
+
+	if(rank_lower){
+		if(currect_rank_1>rank_lower->title_id){
+			pc_setregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 0), rank_lower->title_id);
+			pc_setregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0), rank_lower->title_id);
+			sd->status.title_id = rank_lower->title_id;
+		}
+
+		char derank_msg[CHAT_SIZE_MAX];
+		sprintf (derank_msg, msg_txt(NULL,1545),rank_data->title_name.c_str(),rank_lower->title_name.c_str());
+		clif_messagecolor(&sd->bl, color_table[COLOR_CYAN], derank_msg, false, SELF);
+		pc_setregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0), rank_lower->title_id);
+	}
+
+	script_cleararray_pc(sd,RANKTITLE_C_VAR);
+	script_cleararray_pc(sd,RANKTITLE_PC_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_PC_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT1_NAME_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_ID_VAR);
+	script_cleararray_pc(sd,RANKTITLE_CURRENT2_NAME_VAR);
+
+	clif_name_area(&sd->bl);
+	status_calc_pc(sd,SCO_NONE);
+}
+
+BUILDIN_FUNC(rank_title_exchange) {
+	map_session_data *sd;
+
+	if (!script_mapid2sd(3, sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int exchange_exp = script_getnum(st, 2);
+
+	rank_title_exchange(sd, exchange_exp);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(rank_enchance_reset) {
+	map_session_data *sd;
+
+	if (!script_mapid2sd(2, sd))
+		return SCRIPT_CMD_FAILURE;
+
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 1), 0);
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_ENCHANCE_VAR), 0), 0);
+	status_calc_pc(sd,SCO_NONE);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(rank_status_change) {
+	map_session_data *sd;
+
+	if (!script_mapid2sd(3, sd))
+		return SCRIPT_CMD_FAILURE;
+
+	int title_id = script_getnum(st, 2);
+
+	pc_setregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0), title_id);
+	sd->status.title_id = title_id;
+	clif_name_area(&sd->bl);
+	status_calc_pc(sd,SCO_NONE);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 
 
 #include <custom/script.inc>
@@ -28074,6 +28362,14 @@ struct script_function buildin_func[] = {
 	BUILDIN_DEF2(barter_add, "barter_add_ex", "svii*"),
 
 	BUILDIN_DEF(recal_status, ""),
+
+	BUILDIN_DEF(get_rank_data, ""),
+	BUILDIN_DEF(get_rank_echance_data, ""),
+	BUILDIN_DEF(rank_status_enchance, "i"),
+	BUILDIN_DEF(get_currect_rank_data, ""),
+	BUILDIN_DEF(rank_title_exchange, "i"),
+	BUILDIN_DEF(rank_enchance_reset, ""),
+	BUILDIN_DEF(rank_status_change, "i"),
 
 #include <custom/script_def.inc>
 

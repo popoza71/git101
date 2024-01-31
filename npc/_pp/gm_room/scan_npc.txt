@@ -1,0 +1,33 @@
+-	script	F_SCAN_NPC	-1,{
+	end;
+
+OnScanCommand:
+
+	.@range = 0;
+
+	if (getarraysize(.@atcmd_parameters$))
+		.@range = .@atcmd_parameters$[0];
+
+	getmapxy(.@map$, .@x, .@y, BL_PC);
+
+
+	if(.@range == 0)
+		getmapunits(BL_NPC,.@map$,.@npc_ids[0]);
+	else
+		getareaunits(BL_NPC,.@map$,.@x-.@range,.@y-.@range,.@x+.@range,.@y+.@range,.@npc_ids[0]);
+
+	.@size = getarraysize(.@npc_ids);
+
+	for(.@i=0;.@i<.@size;.@i++)
+	{
+		getunitdata(.@npc_ids[.@i],.@NPCDATA);
+		.@npc_name$ = getunitname(.@npc_ids[.@i]);
+
+		dispbottom "[ "+(.@i+1)+" ] "+.@npc_name$  + " | X: "+.@NPCDATA[UNPC_X] + " | Y: "+.@NPCDATA[UNPC_Y];
+	}
+	end;
+
+Oninit:
+	bindatcmd "@scan",""+strnpcinfo(0)+"::OnScanCommand",99,99;
+	end;
+}

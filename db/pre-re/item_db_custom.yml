@@ -26874,84 +26874,71 @@ Body:
     Weight: 0
     Script: |
       addtimer 100,"auto_pot#2::ONTEST";
-  - Id: 41021
-    AegisName: Premium_Box_
-    Name: Premium Service Box
-    Type: Usable
-    Weight: 10
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-    Script: |
-      .@time_day = 60;
-      .@time_tick = 60000;
-      rentitem 23165,.@time_day;
-      #PREMIUM_SERVICE_TIME = gettimetick(2)+.@time_day;
-      sc_start SC_AID_PERIOD_ADDSTOREITEMCOUNT,.@time_tick,300;
-      sc_start SC_AID_PERIOD_RECEIVEITEM_2ND,.@time_tick,100;
-      sc_start SC_AID_PERIOD_PLUSEXP_2ND,.@time_tick,20;
-      sc_start SC_AID_PERIOD_PLUSJOBEXP_2ND,.@time_tick,20;
 ######################################################################
 ######################################################################
   - Id: 41022
-    AegisName: Rank_1000
-    Name: Rank 1000
+    AegisName: Member_Point_1K
+    Name: Member Point 1K
     Type: Usable
-    Weight: 0
     Script: |
       callfunc("F_Memeber",1000);
-#  - Id: 41023
-#    AegisName: EXP_VIAL_1K
-#    Name: Exp vial 1K
-#    Type: Usable
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      getexp 1000,0;
-#  - Id: 41024
-#    AegisName: EXP_VIAL_5K
-#    Name: Exp vial 5K
-#    Type: Usable
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      getexp 5000,0;
-#  - Id: 41025
-#    AegisName: EXP_VIAL_10K
-#    Name: Exp vial 10K
-#    Type: Usable
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      getexp 10000,0;
-#  - Id: 41026
-#    AegisName: call_rank
-#    Name: call rank
-#    Type: Delayconsume
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      callfunc("F_RANK");
-#  - Id: 41027
-#    AegisName: ENCHANCE_RANK
-#    Name: ENCHANCE RANK
-#    Type: Usable
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      callfunc("F_ENCHANCE_RANK", 501);
-#  - Id: 41028
-#    AegisName: ENCHANCE_Reset
-#    Name: Enchance Reset
-#    Type: Usable
-#    Buy: 1
-#    Weight: 1
-#    Script: |
-#      rank_enchance_reset();
+  - Id: 41023
+    AegisName: Member_Point_5K
+    Name: Member Point 5K
+    Type: Usable
+    Script: |
+      callfunc("F_Memeber",5000);
+  - Id: 41024
+    AegisName: Member_Point_10K
+    Name: Member Point 10K
+    Type: Usable
+    Script: |
+      callfunc("F_Memeber",10000);
+  - Id: 41025
+    AegisName: EXP_VIAL_1K
+    Name: Exp vial 1K
+    Type: Usable
+    Buy: 1
+    Weight: 1
+    Script: |
+      getexp 1000,0;
+  - Id: 41026
+    AegisName: EXP_VIAL_5K
+    Name: Exp vial 5K
+    Type: Usable
+    Buy: 1
+    Weight: 1
+    Script: |
+      getexp 5000,0;
+  - Id: 41027
+    AegisName: EXP_VIAL_10K
+    Name: Exp vial 10K
+    Type: Usable
+    Buy: 1
+    Weight: 1
+    Script: |
+      getexp 10000,0;
+  - Id: 41028
+    AegisName: Rank_Title_Book
+    Name: Rank Title Book
+    Type: Delayconsume
+    Buy: 1
+    Weight: 1
+    Script: |
+      callfunc("F_RANK");
+  - Id: 41029
+    AegisName: ENCHANCE_RANK
+    Name: ENCHANCE RANK
+    Type: Usable
+    Buy: 1
+    Weight: 1
+    Script: |
+      callfunc("F_ENCHANCE_RANK", 501);
+  - Id: 41030
+    AegisName: ENCHANCE_RESET
+    Name: Enchance Reset
+    Type: Usable
+    Buy: 1
+    Weight: 1
+    Script: |
+      rank_enchance_reset();

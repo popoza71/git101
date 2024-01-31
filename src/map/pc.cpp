@@ -8417,6 +8417,76 @@ void pc_gainexp_disp(map_session_data *sd, t_exp base_exp, t_exp next_base_exp, 
 }
 
 /**
+ **/
+t_exp pc_ranktitle_exp(map_session_data *sd,t_exp exp)
+{
+	nullpo_retr(exp,sd);
+
+	int rank_title = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 0));
+	int rank_index = 0;
+	t_exp rank_exp = 0;
+	t_exp current_rank_exp = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_EXP_VAR), 0));
+	t_exp next_exp = 0;
+	int percent = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_PERCENT_VAR), 0));
+	char msg[CHAT_SIZE_MAX];
+	std::shared_ptr<s_rank_title> currect_rank = {};
+	std::shared_ptr<s_rank_title> next_rank = {};
+
+	if(rank_title>=sort_rank_title_list[0])
+		currect_rank = rank_title_db.find(rank_title);
+
+	if(percent && sd->status.base_level >= battle_config.rank_title_min_lv){
+		rank_exp = exp * percent / 100;
+
+		if(battle_config.rank_max_exp)
+			rank_exp = u64min(rank_exp,battle_config.rank_max_exp);
+
+		if(rank_exp){
+			exp -= rank_exp;
+
+			if(!rank_title)
+				next_rank = rank_title_db.find(sort_rank_title_list[0]);
+			else
+				next_rank = rank_title_db.find(rank_title+1);
+
+			current_rank_exp += rank_exp;
+
+			if(next_rank){
+				sprintf (msg, msg_txt(NULL,1541), rank_exp,current_rank_exp,next_rank->exp);
+				clif_messagecolor(&sd->bl, color_table[COLOR_CYAN], msg, false, SELF);
+				pc_setregistry(sd, reference_uid(add_str(RANKTITLE_EXP_VAR), 0), current_rank_exp);
+
+				for(const auto &rank_title_data : rank_title_db){
+					if(rank_title < rank_title_data.second->title_id && current_rank_exp >= rank_title_data.second->exp){
+						rank_index = rank_title_data.second->title_id;
+					}
+				}
+
+				// update title id
+				if(rank_index){
+					pc_setregistry(sd, reference_uid(add_str(RANKTITLE_VAR), 0), rank_index);
+					pc_setregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0), rank_index);
+					pc_setregistry(sd, reference_uid(add_str(RANKTITLE_HIGH_ID_VAR), 0), rank_index);
+					status_calc_pc(sd,SCO_NONE);
+					clif_specialeffect(&sd->bl, battle_config.rank_title_effect, AREA);
+					sd->status.title_id = rank_index;
+					clif_name_area(&sd->bl);
+					char msg[CHAT_SIZE_MAX];
+					if(currect_rank)
+						sprintf (msg, msg_txt(NULL,1543),currect_rank->title_name.c_str(),next_rank->title_name.c_str());
+					else
+						sprintf (msg, msg_txt(NULL,1546),next_rank->title_name.c_str());
+					clif_messagecolor(&sd->bl, color_table[COLOR_CYAN], msg, false, SELF);
+				}
+			}
+			return exp;
+		}
+	}
+	return 0;
+}
+
+
+/**
  * Give Base or Job EXP to player, then calculate remaining exp for next lvl
  * @param sd Player
  * @param src EXP source
@@ -8446,6 +8516,11 @@ void pc_gainexp(map_session_data *sd, struct block_list *src, t_exp base_exp, t_
 		if (sd->status.guild_id>0)
 			base_exp -= guild_payexp(sd,base_exp);
 	}
+
+	if(battle_config.rank_title_system){
+		base_exp -= pc_ranktitle_exp(sd,base_exp);
+	}
+
 
 	flag = ((base_exp) ? 1 : 0) |
 		((job_exp) ? 2 : 0) |

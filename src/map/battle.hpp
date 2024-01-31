@@ -774,6 +774,14 @@ struct Battle_Config
 
 	int char_bonus_debug;
 
+	//ranktitle
+	int rank_title_system;
+	int rank_title_gvg;
+	int rank_title_min_lv;
+	int rank_title_effect;
+	int rank_enchance_max;
+	int rank_max_exp;
+
 #include <custom/battle_config_struct.inc>
 };
 
