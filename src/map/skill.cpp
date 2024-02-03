@@ -9198,6 +9198,12 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	case ALL_ODINS_RECALL:
 		if(sd)
 		{
+
+			if(!battle_config.pkpass_enable_teleport && sd->sc.getSCE(SC_PKPASS_ATK)){
+				clif_showscript(&sd->bl, msg_txt(NULL,1708), AREA);
+				break;
+			}
+
 			if (map_getmapflag(bl->m, MF_NOTELEPORT) && skill_lv <= 2) {
 				clif_skill_teleportmessage(sd,0);
 				break;

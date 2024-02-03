@@ -38,8 +38,10 @@ if(select("^D75DF1รับบัพ^000000 ( ^10D513รับบัพฟรี^000000 ) :^B6AFB8ยกเลิก") == 
 		sc_end SC_HALLUCINATION;
 		sc_end SC_ORCISH;
 		sc_end SC_DONTFORGETME;
-		sc_end SC_ITEMBOOST;
-		sc_end SC_ITEMBOOST_CARD;
+		//sc_end SC_ITEMBOOST;
+		//sc_end SC_ITEMBOOST_CARD;
+		//sc_end SC_PKPASS_ATK;
+		//sc_end SC_PKPASS_DEF;
 		atcommand "@identifyall";
 		//----------------เอฟเฟค------------------------
 		specialeffect2 37;

@@ -94,6 +94,8 @@ struct fame_list smith_fame_list[MAX_FAME_LIST];
 struct fame_list chemist_fame_list[MAX_FAME_LIST];
 struct fame_list taekwon_fame_list[MAX_FAME_LIST];
 
+std::vector<uint16> pk_pass_maps;
+
 const std::string AttendanceDatabase::getDefaultLocation(){
 	return std::string(db_path) + "/attendance.yml";
 }
@@ -4483,6 +4485,9 @@ void pc_bonus(map_session_data *sd,int type,int val)
 			if(sd->state.lr_flag != 2)
 				sd->bonus.itemsphealrate2 += val;
 			break;
+		case SP_PKPASS_DEFENSE:
+			sd->special_state.pkpass_defense = 1;
+			break;			
 		default:
 			if (current_equip_combo_pos > 0) {
 				ShowWarning("pc_bonus: unknown bonus type %d %d in a combo with item #%u\n", type, val, sd->inventory_data[pc_checkequip( sd, current_equip_combo_pos )]->nameid);
@@ -9731,6 +9736,29 @@ static TIMER_FUNC(pc_respawn_timer){
 	return 0;
 }
 
+TIMER_FUNC(pc_revenge_time){
+	struct map_session_data *sd = map_id2sd(id);
+	int char_id = (int)data;
+
+	if(sd != NULL)
+	{
+		if(util::vector_exists(sd->pk_pass_attacker_list, char_id))
+			util::vector_erase_if_exists(sd->pk_pass_attacker_list, char_id);
+		else
+			return 0;
+
+		if (!sd->pk_pass_attacker_list.size())
+			return 0;
+
+		const char *p = map_charid2nick(char_id);
+		char result_msg[CHAT_SIZE_MAX];
+		sprintf(result_msg,msg_txt(NULL,1701),p);
+		clif_messagecolor(&sd->bl, color_table[COLOR_DEFAULT], result_msg, true, SELF);
+	}
+	return 0;
+}
+
+
 /*==========================================
  * Invoked when a player has received damage
  *------------------------------------------*/
@@ -9743,6 +9771,23 @@ void pc_damage(map_session_data *sd,struct block_list *src,unsigned int hp, unsi
 
 	if (!src)
 		return;
+
+	if (src->type == BL_PC){
+		struct map_session_data *ssd = BL_CAST(BL_PC,src);
+		
+		if(ssd && ssd->sc.getSCE(SC_PKPASS_ATK)){
+			int delay = battle_config.pkpass_revenge_time * 60000;
+
+			if(!util::vector_exists(sd->pk_pass_attacker_list, ssd->status.char_id)){
+				sd->pk_pass_attacker_list.push_back(ssd->status.char_id);
+				clif_map_property(&sd->bl, MAPPROPERTY_FREEPVPZONE,SELF);
+				add_timer(gettick() + delay,pc_revenge_time,sd->bl.id,(intptr_t)ssd->status.char_id);
+				char result_msg[CHAT_SIZE_MAX];
+				sprintf(result_msg,msg_txt(NULL,1714),ssd->status.name,sd->status.name);
+			}
+		}
+	}
+
 
 	if( pc_issit(sd) ) {
 		pc_setstand(sd, true);
@@ -9930,6 +9975,7 @@ int pc_dead(map_session_data *sd,struct block_list *src)
 	pc_setdead(sd);
 
 	clif_party_dead( *sd );
+	dispell_pk_dead(sd);
 
 	pc_setparam(sd, SP_PCDIECOUNTER, sd->die_counter+1);
 	pc_setparam(sd, SP_KILLERRID, src?src->id:0);
@@ -9992,6 +10038,18 @@ int pc_dead(map_session_data *sd,struct block_list *src)
 		map_session_data *ssd = (map_session_data *)src;
 		pc_setparam(ssd, SP_KILLEDRID, sd->bl.id);
 		npc_script_event(ssd, NPCE_KILLPC);
+
+		if(ssd->sc.getSCE(SC_PKPASS_ATK)){
+			char res_msg[CHAT_SIZE_MAX];
+			sprintf(res_msg,msg_txt(NULL,1703),ssd->status.name,sd->status.name);
+			const char *intres_msg = &res_msg[0];
+			intif_broadcast2(intres_msg, (int)strlen(intres_msg)+1, 0xff0000, 400, 12, 0, 0);	
+		}else if(ssd->pk_pass_attacker_list.size()){
+			char result_msg[CHAT_SIZE_MAX];
+			sprintf(result_msg,msg_txt(NULL,1709),ssd->status.name,sd->status.name);
+			const char *intres_msg = &result_msg[0];
+			intif_broadcast2(intres_msg, (int)strlen(intres_msg)+1, 0xff0000, 400, 12, 0, 0);
+		}
 
 		if (battle_config.pk_mode&2) {
 			ssd->status.manner -= 5;
@@ -14540,6 +14598,34 @@ void PlayerStatPointDatabase::loadingFinished(){
 	TypesafeCachedYamlDatabase::loadingFinished();
 }
 
+/**
+* Read pkpass_control.txt
+**/
+static bool pc_readdb_pkass_map(char* fields[], int columns, int current)
+{
+	t_itemid nameid;
+
+	std::string map_name = fields[0];
+
+	// lower case map name
+	util::tolower(map_name);
+
+	// check if map exists
+	if(mapindex_name2id(map_name.c_str()) == 0){
+		ShowError("pkpass_control: Invalid map %s specified.\n", map_name.c_str());
+		return false;
+	}
+
+	uint16 map_index = map_mapname2mapid(map_name.c_str());
+
+	if(util::vector_exists(pk_pass_maps, map_index))
+		return true;
+
+	pk_pass_maps.push_back(map_index);
+	return true;
+}
+
+
 /*==========================================
  * pc DB reading.
  * job_stats.yml	- Job values
@@ -14580,6 +14666,7 @@ void pc_readdb(void) {
 		}
 
 		sv_readdb(dbsubpath2, "job_noenter_map.txt", ',', 3, 3, CLASS_COUNT, &pc_readdb_job_noenter_map, i > 0);
+		sv_readdb(dbsubpath1, "custom/pkpass_control.txt", ',', 1, 1, CLASS_COUNT, &pc_readdb_pkass_map, i > 0);
 		aFree(dbsubpath1);
 		aFree(dbsubpath2);
 	}
@@ -16205,4 +16292,64 @@ void do_init_pc(void) {
 	ers_chunk_size(pc_sc_display_ers, 150);
 	ers_chunk_size(num_reg_ers, 300);
 	ers_chunk_size(str_reg_ers, 50);
+}
+
+
+bool pkpass_forbidden_flag(int16 mapid){
+	if(map_getmapflag(mapid, MF_PVP)
+	|| map_getmapflag(mapid, MF_PVP_NOPARTY)
+	|| map_getmapflag(mapid, MF_PVP_NOGUILD)
+	|| map_getmapflag(mapid, MF_PVP_NIGHTMAREDROP)
+	|| map_getmapflag(mapid, MF_PVP_NOCALCRANK)
+	|| map_getmapflag(mapid, MF_GVG)
+	|| map_getmapflag(mapid, MF_GVG_NOPARTY)
+	|| map_getmapflag(mapid, MF_GVG_CASTLE)
+	|| map_getmapflag(mapid, MF_GVG_DUNGEON)
+	|| map_getmapflag(mapid, MF_GVG_TE)
+	|| map_getmapflag(mapid, MF_GVG_TE_CASTLE))
+		return true;
+	
+	return false;
+}
+
+void dispell_pk_attack(struct map_session_data* sd) {
+	nullpo_retv(sd);
+
+	status_change_end(&sd->bl, (sc_type)SC_PKPASS_ATK, INVALID_TIMER);
+	clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,false);
+	util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_atk_effect);
+	clif_showscript(&sd->bl, msg_txt(NULL,1712), SELF);
+	clif_hat_effects(sd,&sd->bl,AREA);
+}
+
+void dispell_pk_defense(struct map_session_data* sd) {
+	nullpo_retv(sd);
+
+	status_change_end(&sd->bl, (sc_type)SC_PKPASS_DEF, INVALID_TIMER);
+	clif_hat_effect_single(sd,battle_config.pkpass_def_effect,false);
+	util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_def_effect);
+	clif_showscript(&sd->bl, msg_txt(NULL,1713), SELF);
+	clif_hat_effects(sd,&sd->bl,AREA);
+}
+
+void dispell_pk_dead(struct map_session_data* sd){
+	nullpo_retv(sd);
+
+	if(sd->sc.getSCE(SC_PKPASS_ATK)){
+		clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,false);
+		util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_atk_effect);
+		clif_hat_effects(sd,&sd->bl,AREA);
+	}
+}
+
+void pkpass_function(struct map_session_data* sd){
+	nullpo_retv(sd);
+
+	bool map_check = pkpass_forbidden_flag(sd->bl.m);
+
+	if(sd && sd->sc.getSCE(SC_PKPASS_ATK) && !util::vector_exists(pk_pass_maps,sd->bl.m)){
+		dispell_pk_attack(sd);
+	}else if(sd && sd->sc.getSCE(SC_PKPASS_DEF) && map_check){
+		dispell_pk_defense(sd);
+	}
 }

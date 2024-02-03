@@ -3814,6 +3814,7 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	}
 
 	member_buff(sd);
+	pkpass_function(sd);
 
 	if (battle_config.rank_title_system) {
 		uint16 title_slot_1 = pc_readregistry(sd, reference_uid(add_str(RANKTITLE_C_VAR), 0));
@@ -10591,6 +10592,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 				if (sce->val2 > val2)
 					return 0;
 				break;
+			case SC_PKPASS_ATK:
+			case SC_PKPASS_DEF:
 			case SC_GOSPEL:
 				 // Must not override a casting gospel char.
 				if(sce->val4 == BCT_SELF)

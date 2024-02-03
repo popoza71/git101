@@ -27443,6 +27443,126 @@ BUILDIN_FUNC(rank_status_change) {
 
 
 
+
+TIMER_FUNC(pkpass_atkeff_dis){
+	map_session_data *sd = map_id2sd(id);
+
+	if(sd){
+		clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,false);
+		util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_atk_effect);
+	}
+
+	return 0;
+}
+
+TIMER_FUNC(pkpass_defeff_dis){
+	map_session_data *sd = map_id2sd(id);
+
+	if(sd){
+		clif_hat_effect_single(sd,battle_config.pkpass_def_effect,false);
+		util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_def_effect);
+	}
+
+	return 0;
+}
+
+void clear_pkass(map_session_data *sd){
+
+	if(sd){
+		sd->pk_pass_attacker_list.clear();
+		clif_map_property(&sd->bl,MAPPROPERTY_NOTHING,SELF);
+	}
+}
+
+/*==========================================
+ * enable PK PASS mode
+ *------------------------------------------*/
+BUILDIN_FUNC(pkpass)
+{
+	map_session_data *sd;
+	const char *mode;
+	int duration;
+
+	if( !script_rid2sd(sd) )
+		return SCRIPT_CMD_FAILURE;
+
+	mode = script_getstr(st,2);
+	duration = script_getnum(st,3);
+
+	if(!util::vector_exists(pk_pass_maps,sd->bl.m)){
+
+		struct item it;
+		memset(&it,0,sizeof(it));
+		it.identify = 1;
+		it.bound = BOUND_NONE;
+
+		if (strcmp(mode, "atk") == 0){
+			it.nameid = battle_config.pkpass_attack_itemid;
+			clif_showscript(&sd->bl, msg_txt(NULL,1707), AREA);
+			pc_additem(sd, &it, 1, LOG_TYPE_SCRIPT);
+			return SCRIPT_CMD_SUCCESS;
+		}
+	}
+	
+	int64 true_duration = duration*60000;
+	
+	if (strcmp(mode, "atk") == 0){
+		status_change_end(&sd->bl, SC_PKPASS_DEF, INVALID_TIMER);
+		status_change_start(NULL, &sd->bl, SC_PKPASS_ATK, 10000, 1, 0, 0, 0, (duration*60000), SCSTART_NOAVOID);
+		clif_map_property(&sd->bl, MAPPROPERTY_FREEPVPZONE,SELF);
+		clif_showscript(&sd->bl, msg_txt(NULL,1704), AREA);
+		sd->hatEffects.push_back(battle_config.pkpass_atk_effect);
+		util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_def_effect);
+		clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,true);
+		clif_hat_effect_single(sd,battle_config.pkpass_def_effect,false);
+		clif_hat_effects(sd,&sd->bl,AREA);
+		add_timer(gettick() + true_duration,pkpass_atkeff_dis,sd->bl.id,0);
+	}else if(strcmp(mode, "def") == 0){
+		clear_pkass(sd);
+		status_change_end(&sd->bl, SC_PKPASS_ATK, INVALID_TIMER);
+		status_change_start(NULL, &sd->bl, SC_PKPASS_DEF, 10000, 1, 0, 0, 0, (duration*60000), SCSTART_NOAVOID);
+		sd->hatEffects.push_back(battle_config.pkpass_def_effect);
+		util::vector_erase_if_exists(sd->hatEffects,battle_config.pkpass_atk_effect);
+		clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,false);
+		clif_hat_effect_single(sd,battle_config.pkpass_def_effect,true);
+		clif_hat_effects(sd,&sd->bl,AREA);
+		add_timer(gettick() + true_duration,pkpass_defeff_dis,sd->bl.id,0);
+	}
+
+	return SCRIPT_CMD_SUCCESS;
+}
+
+/*==========================================
+ * disable PK PASS mode
+ *------------------------------------------*/
+BUILDIN_FUNC(pkpass_end)
+{
+	TBL_PC *sd;
+	const char *mode;
+
+	if( !script_rid2sd(sd) )
+		return SCRIPT_CMD_FAILURE;
+	
+	mode = script_getstr(st,2);
+	
+	if (strcmp(mode, "atk")){
+		status_change_end(&sd->bl, (sc_type)SC_PKPASS_ATK, INVALID_TIMER);
+		clif_hat_effect_single(sd,battle_config.pkpass_atk_effect,false);
+		clif_map_property(&sd->bl,MAPPROPERTY_NOTHING,SELF);
+		clif_showscript(&sd->bl, msg_txt(NULL,1710), AREA);
+		clif_hat_effects(sd,&sd->bl,AREA);
+	}else if(strcmp(mode, "def")){
+		status_change_end(&sd->bl, (sc_type)SC_PKPASS_DEF, INVALID_TIMER);
+		clif_hat_effect_single(sd,battle_config.pkpass_def_effect,false);
+		clif_showscript(&sd->bl, msg_txt(NULL,1711), AREA);
+		clif_hat_effects(sd,&sd->bl,AREA);
+	}
+	
+	return SCRIPT_CMD_SUCCESS;
+}
+
+
+
 #include <custom/script.inc>
 
 // declarations that were supposed to be exported from npc_chat.cpp
@@ -28370,6 +28490,9 @@ struct script_function buildin_func[] = {
 	BUILDIN_DEF(rank_title_exchange, "i"),
 	BUILDIN_DEF(rank_enchance_reset, ""),
 	BUILDIN_DEF(rank_status_change, "i"),
+
+	BUILDIN_DEF(pkpass, "si"),
+	BUILDIN_DEF(pkpass_end, "s"),
 
 #include <custom/script_def.inc>
 

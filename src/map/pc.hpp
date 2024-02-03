@@ -35,6 +35,10 @@ enum sc_type : int16;
 
 class MapGuild;
 
+//vector pk_pass_maps
+extern std::vector<uint16> pk_pass_maps;
+
+
 #define MAX_PC_BONUS 50 /// Max bonus, usually used by item bonus
 #define MAX_PC_FEELHATE 3 /// Max feel hate info
 #define DAMAGELOG_SIZE_PC 100	/// Damage log
@@ -513,6 +517,7 @@ public:
 		unsigned int bonus_coma : 1;
 		unsigned int no_mado_fuel : 1; // Disable Magic_Gear_Fuel consumption [Secret]
 		unsigned int no_walk_delay : 1;
+		unsigned int pkpass_defense : 1;
 	} special_state;
 	uint32 login_id1, login_id2;
 	uint64 class_;	//This is the internal job ID used by the map server to simplify comparisons/queries/etc. [Skotlex]
@@ -1008,7 +1013,7 @@ public:
 	std::vector<uint32> party_booking_requests;
 
 	int goldpc_tid; //goldpc
-
+	std::vector<int64> pk_pass_attacker_list; ///< PK Pass Attacker
 };
 
 extern struct eri *pc_sc_display_ers; /// Player's SC display table
@@ -1823,6 +1828,11 @@ void pc_reputation_generate();
 #endif
 
 TIMER_FUNC(pc_goldpc_update); //goldpc
+
+void pkpass_function(map_session_data* sd);
+void dispell_pk_attack(map_session_data* sd);
+void dispell_pk_defense(map_session_data* sd);
+void dispell_pk_dead(map_session_data* sd);
 
 
 #endif /* PC_HPP */

@@ -6925,11 +6925,11 @@ void clif_map_property(struct block_list *bl, enum map_property property, enum s
 	struct map_data *mapdata = map_getmapdata(bl->m);
 	map_session_data *sd = BL_CAST(BL_PC, bl);
 
-	WBUFL(buf,4) = ((mapdata->getMapFlag(MF_PVP) || (sd && sd->duel_group > 0))<<0)| // PARTY - Show attack cursor on non-party members (PvP)
+	WBUFL(buf, 4) = ((mapdata->getMapFlag(MF_PVP) || (sd && sd->duel_group > 0) || (sd && sd->sc.getSCE(SC_PKPASS_ATK)) || (sd && sd->pk_pass_attacker_list.size())) << 0) | // PARTY - Show attack cursor on non-party members (PvP)
 		((mapdata->getMapFlag(MF_BATTLEGROUND) || mapdata_flag_gvg2(mapdata))<<1)|// GUILD - Show attack cursor on non-guild members (GvG)
 		((mapdata->getMapFlag(MF_BATTLEGROUND) || mapdata_flag_gvg2(mapdata))<<2)|// SIEGE - Show emblem over characters heads when in GvG (WoE castle)
 		((mapdata->getMapFlag(MF_FORCEMINEFFECT) || mapdata_flag_gvg2(mapdata))<<3)| // USE_SIMPLE_EFFECT - Forces simpler skill effects, like /mineffect command
-		((mapdata->getMapFlag(MF_NOLOCKON) || mapdata_flag_vs(mapdata) || (sd && sd->duel_group > 0))<<4)| // DISABLE_LOCKON - Only allow attacks on other players with shift key or /ns active
+		((mapdata->getMapFlag(MF_NOLOCKON) || mapdata_flag_vs(mapdata) || (sd && sd->duel_group > 0) || (sd && sd->sc.getSCE(SC_PKPASS_ATK)) || (sd && sd->pk_pass_attacker_list.size())) << 4) | // DISABLE_LOCKON - Only allow attacks on other players with shift key or /ns active
 		((mapdata->getMapFlag(MF_PVP))<<5)| // COUNT_PK - Show the PvP counter
 		((mapdata->getMapFlag(MF_PARTYLOCK))<<6)| // NO_PARTY_FORMATION - Prevents party creation/modification (Might be used for instance dungeons)
 		((mapdata->getMapFlag(MF_BATTLEGROUND))<<7)| // BATTLEFIELD - Unknown (Does something for battlegrounds areas)

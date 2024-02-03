@@ -26942,3 +26942,25 @@ Body:
     Weight: 1
     Script: |
       rank_enchance_reset();
+  - Id: 41031
+    AegisName: PkPass_Attack
+    Name: PK Attack
+    Type: Cash
+    Delay:
+      Duration: 0 # << cooldown 30นาที
+    Trade:
+      NoDrop: true
+      NoSell: true
+    Script: |
+      pkpass("atk",10);
+  - Id: 41032
+    AegisName: PkPass_Defense
+    Name: PK Defense
+    Type: Cash
+    Delay:
+      Duration: 0 # << cooldown 30นาที
+    Trade:
+      NoDrop: true
+      NoSell: true
+    Script: |
+      pkpass("def",10);

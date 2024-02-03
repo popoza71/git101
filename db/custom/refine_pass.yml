@@ -9,17 +9,40 @@ Header:
   Version: 1
 
 Body:
+#  - RefineLevel: 5
+#    Icon: EFST_MAX_MER
+#    Script: |
+#      .@val = refinepasscount();
+#      bonus bStr,.@val;
+#
+#  - RefineLevel: 6
+#    Icon: EFST_REFINE_PASS_LVL_6
+#    Script: |
+#      .@val = refinepasscount();
+#      if(.@val == 2){bonus bStr,1;}
+#      if(.@val == 3){bonus bAgi,1;}
+#      if(.@val == 4){bonus bLuk,2;}
+#      if(.@val == 5){bonus bMaxHP,1000;}
+
+  - RefineLevel: 1
+    Icon: EFST_REFINE_PASS_LVL_1
+  - RefineLevel: 2
+    Icon: EFST_REFINE_PASS_LVL_2
+  - RefineLevel: 3
+    Icon: EFST_REFINE_PASS_LVL_3
+  - RefineLevel: 4
+    Icon: EFST_REFINE_PASS_LVL_4
   - RefineLevel: 5
     Icon: EFST_REFINE_PASS_LVL_5
-    Script: |
-      .@val = refinepasscount();
-      bonus bStr,.@val;
-
   - RefineLevel: 6
     Icon: EFST_REFINE_PASS_LVL_6
+  - RefineLevel: 7
+    Icon: EFST_REFINE_PASS_LVL_7
+  - RefineLevel: 8
+    Icon: EFST_REFINE_PASS_LVL_8
+  - RefineLevel: 9
+    Icon: EFST_REFINE_PASS_LVL_9
+  - RefineLevel: 10
+    Icon: EFST_REFINE_PASS_LVL_10
     Script: |
-      .@val = refinepasscount();
-      if(.@val == 2){bonus bStr,1;}
-      if(.@val == 3){bonus bAgi,1;}
-      if(.@val == 4){bonus bLuk,2;}
-      if(.@val == 5){bonus bMaxHP,1000;}
+      bonus bStr,20;

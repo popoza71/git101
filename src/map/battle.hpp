@@ -782,6 +782,20 @@ struct Battle_Config
 	int rank_enchance_max;
 	int rank_max_exp;
 
+	// PK pass
+	int pkpass_attack_itemid;
+	int pkpass_level_range;
+	int pkpass_revenge_time;
+	int pkpass_enable_teleport;
+	int pkpass_atk_effect;
+	int pkpass_def_effect;
+	int pkpass_short_damage_rate;
+	int pkpass_long_damage_rate;
+	int pkpass_weapon_damage_rate;
+	int pkpass_magic_damage_rate;
+	int pkpass_misc_damage_rate;	
+
+
 #include <custom/battle_config_struct.inc>
 };
 

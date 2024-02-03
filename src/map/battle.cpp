@@ -16,6 +16,7 @@
 #include <common/strlib.hpp>
 #include <common/timer.hpp>
 #include <common/utils.hpp>
+#include <common/utilities.hpp>
 
 #include "atcommand.hpp"
 #include "battleground.hpp"
@@ -33,6 +34,8 @@
 #include "pc.hpp"
 #include "pc_groups.hpp"
 #include "pet.hpp"
+
+using namespace rathena;
 
 struct Battle_Config battle_config;
 static struct eri *delay_damage_ers; //For battle delay damage structures.
@@ -8766,6 +8769,35 @@ void battle_vanish_damage(map_session_data *sd, struct block_list *target, int f
 		status_percent_damage(&sd->bl, target, -vanish_hp, -vanish_sp, false); // Damage HP/SP applied once
 }
 
+
+static int64 pkpass_damage_control(struct block_list *src,struct block_list *dst,int attack_type, int64 damage, int damage_flag)
+{
+	int64 final_damage = damage;
+
+	if(src->type != BL_PC && dst->type != BL_PC)
+		return final_damage;
+
+	map_session_data *sd = BL_CAST(BL_PC, src);
+
+	if(sd && (sd->sc.getSCE(SC_PKPASS_ATK) || sd->pk_pass_attacker_list.size())){
+		if(damage_flag&BF_SKILL){
+			if(damage_flag&BF_WEAPON)
+				final_damage = damage * battle_config.pkpass_weapon_damage_rate / 100;
+			if(damage_flag&BF_MAGIC)
+				final_damage = damage * battle_config.pkpass_magic_damage_rate / 100;
+			if(attack_type&BF_MISC)
+				final_damage = damage * battle_config.pkpass_misc_damage_rate / 100;
+		}else{
+			if(damage_flag&BF_SHORT)
+				final_damage = damage * battle_config.pkpass_short_damage_rate / 100;
+			if(damage_flag&BF_LONG)
+				final_damage = damage * battle_config.pkpass_long_damage_rate / 100;
+		}
+	}
+
+	return final_damage;
+}
+
 /*==========================================
  * Battle main entry, from skill_attack
  *------------------------------------------
@@ -9867,15 +9899,39 @@ int battle_check_target( struct block_list *src, struct block_list *target,int f
 	switch( t_bl->type ) { //Checks on target master
 		case BL_PC: {
 			map_session_data *sd;
+			map_session_data* src_sd;
 			status_change *sc = NULL;
+			status_change* s_sc = NULL;
 
 			if( t_bl == s_bl )
 				break;
 
 			sd = BL_CAST(BL_PC, t_bl);
+			src_sd = BL_CAST(BL_PC, s_bl);
 			sc = status_get_sc(t_bl);
+			s_sc = status_get_sc(s_bl);
 
-			if( ((sd->state.block_action & PCBLOCK_IMMUNE) || (sc->getSCE(SC_KINGS_GRACE) && s_bl->type != BL_PC)) && flag&BCT_ENEMY )
+
+
+			if( sc && (sc->getSCE(SC_PKPASS_DEF)||sd->special_state.pkpass_defense) && s_bl->type == BL_PC && (s_sc && s_sc->getSCE(SC_PKPASS_ATK)))
+				return 0;
+			if (sc && (!sc->getSCE(SC_PKPASS_DEF)||!sd->special_state.pkpass_defense) && s_bl->type == BL_PC && (s_sc && s_sc->getSCE(SC_PKPASS_ATK))){
+				if(src_sd->status.party_id && sd->status.party_id && src_sd->status.party_id == sd->status.party_id){
+					return 0;
+				}else if(battle_config.pkpass_level_range && abs((int)src_sd->status.base_level - (int)sd->status.base_level) > battle_config.pkpass_level_range){
+					return 0;
+				}else{
+					state |= BCT_ENEMY; 
+					return 1;
+				}
+			}
+			if(src_sd && sd && util::vector_exists(src_sd->pk_pass_attacker_list,sd->status.char_id)){
+				state |= BCT_ENEMY; 
+				return 1;
+			}
+
+
+			if (((sd->state.block_action & PCBLOCK_IMMUNE) || (sc->getSCE(SC_KINGS_GRACE) && s_bl->type != BL_PC)) && flag & BCT_ENEMY)
 				return 0; // Global immunity only to Attacks
 			if( sd->status.karma && s_bl->type == BL_PC && ((TBL_PC*)s_bl)->status.karma )
 				state |= BCT_ENEMY; // Characters with bad karma may fight amongst them
@@ -10783,6 +10839,18 @@ static const struct _battle_data {
 	{ "rank_enchance_max",					&battle_config.rank_enchance_max,				1,      1,      INT_MAX,		},
 	{ "rank_max_exp",						&battle_config.rank_max_exp,					0,      0,      INT_MAX,		},
 
+	// PK pass
+	{ "pkpass_attack_itemid",				&battle_config.pkpass_attack_itemid,			501,	0,      INT_MAX,		},
+	{ "pkpass_level_range",					&battle_config.pkpass_level_range,				10,     0,      500,            },
+	{ "pkpass_revenge_time",				&battle_config.pkpass_revenge_time,				1,  	0,      INT_MAX,        },
+	{ "pkpass_enable_teleport",				&battle_config.pkpass_enable_teleport,			1,  	0,      INT_MAX,        },
+	{ "pkpass_atk_effect",					&battle_config.pkpass_atk_effect,				0,  	0,      INT_MAX,        },
+	{ "pkpass_def_effect",					&battle_config.pkpass_def_effect,				0,  	0,      INT_MAX,        },
+	{ "pkpass_short_damage_rate",      		&battle_config.pkpass_short_damage_rate,		100,    0,      UINT16_MAX,     },
+	{ "pkpass_long_damage_rate",       		&battle_config.pkpass_long_damage_rate,			100,    0,      UINT16_MAX,     },
+	{ "pkpass_weapon_damage_rate",     		&battle_config.pkpass_weapon_damage_rate,		100,    0,      UINT16_MAX,     },
+	{ "pkpass_magic_damage_rate",      		&battle_config.pkpass_magic_damage_rate,		100,    0,      UINT16_MAX,     },
+	{ "pkpass_misc_damage_rate",       		&battle_config.pkpass_misc_damage_rate,			100,    0,      UINT16_MAX,     },
 
 #include <custom/battle_config_init.inc>
 };
