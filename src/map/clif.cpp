@@ -11060,6 +11060,9 @@ void clif_parse_LoadEndAck(int fd,map_session_data *sd)
 			//Login Event
 			npc_script_event(sd, NPCE_LOGIN);
 
+			//Collection Event
+			pc_collection_load(*sd);
+
 #ifdef VIP_ENABLE
 			// force VIP reset on login
 			status_change_end(&sd->bl, SC_VIPSTATE, INVALID_TIMER);
@@ -20595,24 +20598,29 @@ void roulette_generate_bonus( map_session_data& sd ){
 /// 0A1A <result>.B <serial>.L <stage>.B <price index>.B <additional item id>.W <gold>.L <silver>.L <bronze>.L (ZC_ACK_OPEN_ROULETTE)
 void clif_roulette_open( map_session_data* sd ){
 	nullpo_retv( sd );
+//open npc name Collection_Script
+	npc_event_do_id("Collection_Script::OnLabel", sd->status.account_id);
+	
 
-	roulette_generate_bonus( *sd );
 
-	struct packet_roulette_open_ack p;
-
-	p.PacketType = 0xa1a;
-	p.Result = 0; // result
-	p.Serial = 0; // serial
-	p.Step = (sd->roulette.claimPrize) ? sd->roulette.stage - 1 : 0;
-	p.Idx = (sd->roulette.claimPrize) ? sd->roulette.prizeIdx : -1;
-	p.AdditionItemID = sd->roulette.bonusItemID;
-	p.GoldPoint = sd->roulette_point.gold;
-	p.SilverPoint = sd->roulette_point.silver;
-	p.BronzePoint = sd->roulette_point.bronze;
-
-	sd->state.roulette_open = true;
-
-	clif_send( &p, sizeof( p ), &sd->bl, SELF );
+//disable roulette
+//	roulette_generate_bonus( *sd );
+//
+//	struct packet_roulette_open_ack p;
+//
+//	p.PacketType = 0xa1a;
+//	p.Result = 0; // result
+//	p.Serial = 0; // serial
+//	p.Step = (sd->roulette.claimPrize) ? sd->roulette.stage - 1 : 0;
+//	p.Idx = (sd->roulette.claimPrize) ? sd->roulette.prizeIdx : -1;
+//	p.AdditionItemID = sd->roulette.bonusItemID;
+//	p.GoldPoint = sd->roulette_point.gold;
+//	p.SilverPoint = sd->roulette_point.silver;
+//	p.BronzePoint = sd->roulette_point.bronze;
+//
+//	sd->state.roulette_open = true;
+//
+//	clif_send( &p, sizeof( p ), &sd->bl, SELF );
 }
 
 /// Request to open the roulette window

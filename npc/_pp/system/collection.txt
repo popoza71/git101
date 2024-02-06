@@ -1,0 +1,10 @@
+prontera,157,181,4	script	Collection_example	-1,{
+	openstorage2 1,STOR_MODE_GET|STOR_MODE_PUT;
+	end;
+}
+
+-	script	Collection_Script	-1,{
+OnLabel:
+	openstorage2 1,STOR_MODE_GET|STOR_MODE_PUT;
+	end;
+}

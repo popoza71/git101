@@ -89,6 +89,44 @@ Header:
   Version: 3
 
 Body:
+  - Id: 671
+    AegisName: Gold_Coin
+    Name: Gold Coin
+    Type: Usable
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      RouletteGold++;
+  - Id: 673
+    AegisName: Copper_Coin
+    Name: Bronze Coin
+    Type: Usable
+    Buy: 100
+    Weight: 40
+    Script: |
+      RouletteBronze++;
+  - Id: 675
+    AegisName: Silver_Coin
+    Name: Silver Coin
+    Type: Usable
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      RouletteSilver++;
   - Id: 6417
     AegisName: Silvervine
     Name: Silvervine Fruit
@@ -298,3 +336,21 @@ Body:
       NoAuction: true
     Script: |
       duplicate_dynamic "Kafra Employee#kf";
+  - Id: 22869
+    AegisName: LuckyRouletteTickets
+    Name: Lucky Roulette Ticket
+    Type: Usable
+    Buy: 10
+    Weight: 100
+    EquipLevelMin: 50
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      RouletteBronze++;

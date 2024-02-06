@@ -203,6 +203,34 @@ static enum e_storage_add storage_canAddItem(struct s_storage *stor, int idx, st
 	if (!stor->state.put)
 		return STORAGE_ADD_NOACCESS;
 
+	if (stor->stor_id == COLLECTION_STORAGE) {
+		std::shared_ptr<item_data> data = item_db.find(items[idx].nameid);
+		map_session_data *sd = map_id2sd(stor->id);
+		char output[128];
+		int i;
+
+		if (!data || !sd) {
+			return STORAGE_ADD_INVALID;
+		}
+
+		if (!data->flag.collection) {
+			sprintf(output, msg_txt(sd, 1752), item_db.create_item_link(data).c_str());
+			clif_messagecolor(&sd->bl, color_table[COLOR_RED], output, false, SELF);
+			sd->state.collection_flag |= PCCOLLECTION_RELOAD;
+			return STORAGE_ADD_INVALID;
+		}
+
+		ARR_FIND(0, stor->max_amount, i, stor->u.items_storage[i].nameid == data->nameid);
+
+		if (i < stor->max_amount) {
+			sprintf(output, msg_txt(sd, 1753), item_db.create_item_link(data).c_str());
+			clif_messagecolor(&sd->bl, color_table[COLOR_RED], output, false, SELF);
+			sd->state.collection_flag |= PCCOLLECTION_RELOAD;
+			return STORAGE_ADD_INVALID;
+		}
+	}
+
+
 	return STORAGE_ADD_OK;
 }
 
@@ -293,6 +321,11 @@ static int storage_additem(map_session_data* sd, struct s_storage *stor, struct 
 	clif_storageitemadded(sd,&stor->u.items_storage[i],i,amount);
 	clif_updatestorageamount(sd, stor->amount, stor->max_amount);
 
+	// add item to collection
+	if (stor->stor_id == COLLECTION_STORAGE) {
+		sd->state.collection_flag |= PCCOLLECTION_RECAL;
+	}
+
 	return 0;
 }
 
@@ -312,6 +345,11 @@ int storage_delitem(map_session_data* sd, struct s_storage *stor, int index, int
 	stor->dirty = true;
 
 	if( stor->u.items_storage[index].amount == 0 ) {
+
+		// remove item form collection
+		if (stor->stor_id == COLLECTION_STORAGE) {
+			sd->state.collection_flag |= PCCOLLECTION_RECAL;
+		}
 		memset(&stor->u.items_storage[index],0,sizeof(stor->u.items_storage[0]));
 		stor->amount--;
 		if( sd->state.storage_flag == 1 || sd->state.storage_flag == 3 )
@@ -1147,7 +1185,7 @@ bool storage_premiumStorage_load(map_session_data *sd, uint8 num, uint8 mode) {
 		return 0;
 	}
 
-	if (sd->premiumStorage.stor_id != num)
+	if (sd->premiumStorage.stor_id != num || sd->state.collection_flag&PCCOLLECTION_LOAD)
 		return intif_storage_request(sd, TABLE_STORAGE, num, mode);
 	else {
 		sd->premiumStorage.state.put = (mode&STOR_MODE_PUT) ? 1 : 0;
@@ -1187,6 +1225,11 @@ void storage_premiumStorage_close(map_session_data *sd) {
 		sd->state.storage_flag = 0;
 		clif_storageclose( sd );
 	}
+
+	if (sd->state.collection_flag&(PCCOLLECTION_RELOAD|PCCOLLECTION_RECAL)) {
+		pc_collection_update(&sd->premiumStorage, *sd);
+	}
+
 }
 
 /**
