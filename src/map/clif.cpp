@@ -20598,10 +20598,10 @@ void roulette_generate_bonus( map_session_data& sd ){
 /// 0A1A <result>.B <serial>.L <stage>.B <price index>.B <additional item id>.W <gold>.L <silver>.L <bronze>.L (ZC_ACK_OPEN_ROULETTE)
 void clif_roulette_open( map_session_data* sd ){
 	nullpo_retv( sd );
+
 //open npc name Collection_Script
 	npc_event_do_id("Collection_Script::OnLabel", sd->status.account_id);
 	
-
 
 //disable roulette
 //	roulette_generate_bonus( *sd );

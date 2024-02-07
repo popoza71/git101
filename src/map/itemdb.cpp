@@ -3813,35 +3813,35 @@ bool itemdb_parse_roulette_db(void)
 	// free the query result
 	Sql_FreeResult(mmysql_handle);
 
-	for (i = 0; i < MAX_ROULETTE_LEVEL; i++) {
-		int limit = MAX_ROULETTE_COLUMNS - i;
-
-		if (rd.items[i] == limit)
-			continue;
-
-		if (rd.items[i] > limit) {
-			ShowWarning("itemdb_parse_roulette_db: level %d has %d items, only %d supported, capping...\n", i + 1, rd.items[i], limit);
-			rd.items[i] = limit;
-			continue;
-		}
-
-		/** this scenario = rd.items[i] < limit **/
-		ShowWarning("itemdb_parse_roulette_db: Level %d has %d items, %d are required. Filling with Apples...\n", i + 1, rd.items[i], limit);
-
-		rd.items[i] = limit;
-		RECREATE(rd.nameid[i], t_itemid, rd.items[i]);
-		RECREATE(rd.qty[i], unsigned short, rd.items[i]);
-		RECREATE(rd.flag[i], int, rd.items[i]);
-
-		for (j = 0; j < MAX_ROULETTE_COLUMNS - i; j++) {
-			if (rd.qty[i][j])
-				continue;
-
-			rd.nameid[i][j] = ITEMID_APPLE;
-			rd.qty[i][j] = 1;
-			rd.flag[i][j] = 0;
-		}
-	}
+//	for (i = 0; i < MAX_ROULETTE_LEVEL; i++) {
+//		int limit = MAX_ROULETTE_COLUMNS - i;
+//
+//		if (rd.items[i] == limit)
+//			continue;
+//
+//		if (rd.items[i] > limit) {
+//			ShowWarning("itemdb_parse_roulette_db: level %d has %d items, only %d supported, capping...\n", i + 1, rd.items[i], limit);
+//			rd.items[i] = limit;
+//			continue;
+//		}
+//
+//		/** this scenario = rd.items[i] < limit **/
+//		ShowWarning("itemdb_parse_roulette_db: Level %d has %d items, %d are required. Filling with Apples...\n", i + 1, rd.items[i], limit);
+//
+//		rd.items[i] = limit;
+//		RECREATE(rd.nameid[i], t_itemid, rd.items[i]);
+//		RECREATE(rd.qty[i], unsigned short, rd.items[i]);
+//		RECREATE(rd.flag[i], int, rd.items[i]);
+//
+//		for (j = 0; j < MAX_ROULETTE_COLUMNS - i; j++) {
+//			if (rd.qty[i][j])
+//				continue;
+//
+//			rd.nameid[i][j] = ITEMID_APPLE;
+//			rd.qty[i][j] = 1;
+//			rd.flag[i][j] = 0;
+//		}
+//	}
 
 	ShowStatus("Done reading '" CL_WHITE "%u" CL_RESET "' entries in '" CL_WHITE "%s" CL_RESET "'.\n", count, roulette_table);
 
