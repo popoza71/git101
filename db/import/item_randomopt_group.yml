@@ -44,3 +44,140 @@
 Header:
   Type: RANDOM_OPTION_GROUP
   Version: 1
+
+Body:
+  - Id: 105
+    Group: Group_Helm_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 3000
+  - Id: 106
+    Group: Group_Helm_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 3000
+  - Id: 107
+    Group: Group_Helm_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 3000

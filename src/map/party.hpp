@@ -5,6 +5,8 @@
 #define PARTY_HPP
 
 #include <stdarg.h>
+#include <common/database.hpp>
+
 
 #include <common/mmo.hpp> // struct party
 
@@ -33,6 +35,7 @@ struct party_data {
 		unsigned snovice :1; //There's a Super Novice
 		unsigned tk : 1; //There's a taekwon
 	} state;
+	bool recal;
 };
 
 struct party_booking_detail {
@@ -54,6 +57,28 @@ struct s_party_booking_requirement{
 };
 
 extern int party_create_byscript;
+
+// Party Bonus
+struct s_party_job_bonus {
+	uint16 id;
+	uint16 job_id;
+	enum efst_type icon;
+	struct script_code *script;
+};
+
+class PartyJobBonusDatabase : public TypesafeCachedYamlDatabase<uint16, s_party_job_bonus> {
+public:
+	PartyJobBonusDatabase() : TypesafeCachedYamlDatabase("PARTY_JOB_BONUS_DB", 1) {
+
+	}
+	const std::string getDefaultLocation() override;
+	uint64 parseBodyNode(const ryml::NodeRef& node) override;
+	void loadingFinished() {}
+};
+extern PartyJobBonusDatabase PartyJobBonusDb;
+void partybonusdb_reload(void);
+int party_job_bonus_check_job(struct party_data *p, uint16 job_id, map_session_data *sd);
+
 
 void do_init_party(void);
 void do_final_party(void);

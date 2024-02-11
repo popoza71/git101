@@ -1024,6 +1024,9 @@ public:
 	s_macro_detect macro_detect;
 
 	std::vector<uint32> party_booking_requests;
+	
+	// Party Bonus
+	bool force_remove_party_ef;
 
 	std::vector<t_itemid> collection_list;
 	int goldpc_tid; //goldpc

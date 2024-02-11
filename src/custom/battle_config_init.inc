@@ -11,3 +11,5 @@
  *	 { "name", &battle_config.<variable name>, <default value>, <minimum value>, <maximum value> },
  **/
 
+{ "party_bonus_system_enable",		&battle_config.party_bonus_system_enable,		0,	0,	1,			},
+{ "party_bonus_same_map_minimum",	&battle_config.party_bonus_same_map_minimum,	1,	0,	MAX_PARTY,	},

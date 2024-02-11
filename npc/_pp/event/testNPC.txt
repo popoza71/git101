@@ -1,0 +1,9 @@
+prontera,38,146,5	script	Lily Blanc prontera	-1,{
+OnInit:
+    setunitdata getnpcid(0), UNPC_CLASS, JOB_ASSASSIN;
+    setunitdata getnpcid(0), UNPC_SEX, SEX_FEMALE;
+    setunitdata getnpcid(0), UNPC_HAIRCOLOR, 6;
+    setunitdata getnpcid(0), UNPC_HAIRSTYLE, 22;
+    setunitdata getnpcid(0), UNPC_HEADTOP, 455;
+end;
+}

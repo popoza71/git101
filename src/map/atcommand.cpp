@@ -4361,6 +4361,9 @@ ACMD_FUNC(reload) {
 	}else if( strstr( command, "barterdb" ) || strncmp( message, "barterdb", 4 ) == 0 ){
 		barter_db.reload();
 		clif_displaymessage(fd, msg_txt(sd, 830)); // Barter database has been reloaded.
+	}else if( strstr( command, "partybonusdb" ) ){
+		PartyJobBonusDb.reload();
+		clif_displaymessage(fd, "Party Bonus database has been reloaded.");
 	}
 
 	return 0;
@@ -11963,6 +11966,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF2("reloadachievementdb",reload),
 		ACMD_DEF2("reloadattendancedb",reload),
 		ACMD_DEF2("reloadbarterdb",reload),
+		ACMD_DEF2("reloadpartybonusdb", reload),
 		ACMD_DEF(partysharelvl),
 		ACMD_DEF(mapinfo),
 		ACMD_DEF(dye),

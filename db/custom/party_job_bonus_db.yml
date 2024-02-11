@@ -1,0 +1,41 @@
+
+Header:
+  Type: PARTY_JOB_BONUS_DB
+  Version: 1
+
+Body:
+#  - Id: 1
+#    Job: All
+#    Icon: EFST_PJ_ALL
+#    Script: |
+#        bonus bAllStats,100;
+  - Id: 2
+    Job: Swordman
+    Icon: EFST_PJ_SWORDMAN
+    Script: |
+        bonus bStr,1;
+  - Id: 3
+    Job: Mage
+    Icon: EFST_PJ_MAGE
+    Script: |
+        bonus bInt,1;
+  - Id: 4
+    Job: Acolyte
+    Icon: EFST_PJ_ACOLYTE
+    Script: |
+        bonus bVit,1;
+  - Id: 5
+    Job: Archer
+    Icon: EFST_PJ_ARCHER
+    Script: |
+        bonus bDex,1;
+  - Id: 6
+    Job: Merchant
+    Icon: EFST_PJ_MERCHANT
+    Script: |
+        bonus bDex,100;
+  - Id: 7
+    Job: Thief
+    Icon: EFST_PJ_THIEF
+    Script: |
+        bonus bAgi,1;

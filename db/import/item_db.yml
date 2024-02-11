@@ -89,58 +89,6 @@ Header:
   Version: 3
 
 Body:
-  - Id: 5967
-    AegisName: FlyingGalapago
-    Name: Flying Galapago
-    Type: Armor
-    Buy: 20
-    View: 1358
-    Locations:
-      Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 70
-    Script: |
-      set .@bblvl,max(getskilllv("HT_BLITZBEAT"),1);
-      set .@luk,min(readparam(bLuk),120);
-      bonus bAgi,1;
-      bonus3 bAutoSpell,"HT_BLITZBEAT",.@bblvl,50 + (.@luk / 3) + (.@bblvl * 2);
-      bonus2 bSkillAtk,"HT_BLITZBEAT",getskilllv("HT_STEELCROW") * 40;
-  - Id: 18858
-    AegisName: Pink_Angeling_Bubble
-    Name: Pink Angeling Bubble
-    Type: Armor
-    View: 975
-    Buy: 10
-    Defense: 5
-    Locations:
-      Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    Script: |
-      bonus bMaxHP,300;
-      bonus bAspd,1;
-      bonus3 bAutoSpell,"PR_LEXDIVINA",5,15;
-  - Id: 25231
-    AegisName: Suspicious_Bottle
-    Name: Suspicious Bottle
-    Type: Etc
-    Buy: 1000
-    Weight: 10
-  - Id: 25232
-    AegisName: Cheap_Lubricant
-    Name: Cheap Lubricant
-    Type: Etc
-    Buy: 1000
-    Weight: 10
-  - Id: 25233
-    AegisName: Wad_Of_Cotton
-    Name: Cotton Tufts
-    Type: Etc
-    Buy: 1000
-    Weight: 10
-  - Id: 25377
-    AegisName: High_Class_Pet_food
-    Name: Luxurious Pet Food
-    Type: Etc
-    Buy: 10000
-    Weight: 10
+###########################################################################
+#   Rework Card
+###########################################################################

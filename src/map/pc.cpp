@@ -7073,6 +7073,13 @@ enum e_setpos pc_setpos(map_session_data* sd, unsigned short mapindex, int x, in
 	sd->bl.x = sd->ud.to_x = x;
 	sd->bl.y = sd->ud.to_y = y;
 
+	
+	// Party Bonus
+	if( battle_config.party_bonus_system_enable && sd->status.party_id){
+		struct party_data *p = party_search(sd->status.party_id);
+		if( p )	p->recal = true;
+	}
+
 	if( sd->status.guild_id > 0 && mapdata->getMapFlag(MF_GVG_CASTLE) )
 	{	// Increased guild castle regen [Valaris]
 		std::shared_ptr<guild_castle> gc = castle_db.mapindex2gc(sd->mapindex);
@@ -11236,6 +11243,9 @@ bool pc_jobchange(map_session_data *sd,int job, char upper)
 			if( i < MAX_PARTY ){
 				p->party.member[i].class_ = sd->status.class_;
 				clif_party_job_and_level( *sd );
+				// Party Bonus
+				if( battle_config.party_bonus_system_enable )	p->recal = true;
+
 			}
 		}
 	}
