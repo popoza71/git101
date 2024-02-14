@@ -822,8 +822,8 @@ Body:
         Rate: 500
       - Item: Wind_Scroll_1_3
         Rate: 100
-      - Item: Creamy_Card
-        Rate: 1
+#      - Item: Creamy_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1019
     AegisName: PECOPECO
@@ -4423,7 +4423,10 @@ Body:
         Rate: 10
       - Item: Mementos
         Rate: 550
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 105
+#add edit
+      - Item: Oridecon_Stone
         Rate: 105
       - Item: Sacred_Masque
         Rate: 4365
@@ -4558,7 +4561,10 @@ Body:
     Drops:
       - Item: Evil_Horn
         Rate: 500
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 63
+#add edit
+      - Item: Oridecon_Stone
         Rate: 63
       - Item: Halberd_
         Rate: 2
@@ -4927,7 +4933,10 @@ Body:
         Rate: 5335
       - Item: Petite_DiablOfs_Wing
         Rate: 400
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 2
+#add edit
+      - Item: Oridecon_Stone
         Rate: 2
       - Item: Partizan_
         Rate: 2
@@ -5915,7 +5924,10 @@ Body:
         Rate: 9000
       - Item: Zargon
         Rate: 900
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 31
+#add edit
+      - Item: Elunium_Stone
         Rate: 31
       - Item: Tights_
         Rate: 5
@@ -5965,7 +5977,10 @@ Body:
         Rate: 1000
       - Item: Katar_Of_Piercing_Wind
         Rate: 1
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 100
+#add edit
+      - Item: Oridecon_Stone
         Rate: 100
       - Item: Ghost_Scroll_1_5
         Rate: 100
@@ -6004,7 +6019,10 @@ Body:
     Drops:
       - Item: Skel_Bone
         Rate: 8000
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 191
+#add edit
+      - Item: Elunium_Stone
         Rate: 191
       - Item: Bone_Helm
         Rate: 1
@@ -6297,8 +6315,8 @@ Body:
         Rate: 40
       - Item: Yellow_Herb
         Rate: 400
-      - Item: High_end_Cooking_Kits
-        Rate: 5
+#      - Item: High_end_Cooking_Kits
+#        Rate: 5
       - Item: Magnolia_Card
         Rate: 1
         StealProtected: true
@@ -7119,8 +7137,11 @@ Body:
         Rate: 5335
       - Item: Dragon_Train
         Rate: 300
-      - Item: Elunium
-        Rate: 61
+#      - Item: Elunium
+#        Rate: 61
+#add edit
+      - Item: Elunium_Stone
+        Rate: 31
       - Item: White_Herb
         Rate: 1000
       - Item: Khukri
@@ -7453,7 +7474,10 @@ Body:
     DamageMotion: 420
     Ai: 09
     Drops:
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 106
+#add edit
+      - Item: Elunium_Stone
         Rate: 106
       - Item: Iron_Cane
         Rate: 1
@@ -8541,8 +8565,8 @@ Body:
         Rate: 2500
       - Item: Arrow_Of_Wind
         Rate: 2500
-      - Item: Orc_Archer_Bow
-        Rate: 2
+#      - Item: Orc_Archer_Bow
+#        Rate: 2
       - Item: Red_Herb
         Rate: 1400
       - Item: White_Herb
@@ -8595,8 +8619,8 @@ Body:
         Rate: 400
       - Item: Loard_Circlet
         Rate: 400
-      - Item: Doom_Slayer_
-        Rate: 400
+#      - Item: Doom_Slayer_
+#        Rate: 400
       - Item: Old_Violet_Box
         Rate: 1000
       - Item: Elunium
@@ -8736,7 +8760,10 @@ Body:
         Rate: 1500
       - Item: Spectacles
         Rate: 1300
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 105
+#add edit
+      - Item: Oridecon_Stone
         Rate: 105
       - Item: Key_Of_Clock_Tower
         Rate: 20
@@ -8927,7 +8954,10 @@ Body:
         Rate: 3500
       - Item: Cuffs
         Rate: 39
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 112
+#add edit
+      - Item: Elunium_Stone
         Rate: 112
       - Item: Zombie_Prisoner_Card
         Rate: 1
@@ -9114,7 +9144,10 @@ Body:
         Rate: 30
       - Item: Frozen_Heart
         Rate: 10
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 100
+#add edit
+      - Item: Oridecon_Stone
         Rate: 100
       - Item: Izidor
         Rate: 30
@@ -9156,7 +9189,10 @@ Body:
         Rate: 4
       - Item: White_Herb
         Rate: 1800
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 150
+#add edit
+      - Item: Oridecon_Stone
         Rate: 150
       - Item: Electric_Wire
         Rate: 100
@@ -9206,7 +9242,10 @@ Body:
         Rate: 2
       - Item: Steel
         Rate: 120
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 243
+#add edit
+      - Item: Oridecon_Stone
         Rate: 243
       - Item: Mysteltainn_Card
         Rate: 1
@@ -9255,7 +9294,10 @@ Body:
         Rate: 40
       - Item: Steel
         Rate: 120
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 189
+#add edit
+      - Item: Oridecon_Stone
         Rate: 189
       - Item: Tirfing_Card
         Rate: 1
@@ -9303,7 +9345,10 @@ Body:
         Rate: 40
       - Item: Steel
         Rate: 120
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 145
+#add edit
+      - Item: Oridecon_Stone
         Rate: 145
       - Item: Executioner_Card
         Rate: 1
@@ -9349,7 +9394,10 @@ Body:
         Rate: 5335
       - Item: Brooch_
         Rate: 1
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 134
+#add edit
+      - Item: Oridecon_Stone
         Rate: 134
       - Item: Anolian_Card
         Rate: 1
@@ -9443,7 +9491,10 @@ Body:
         Rate: 5
       - Item: Leaf_Of_Yggdrasil
         Rate: 650
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 217
+#add edit
+      - Item: Oridecon_Stone
         Rate: 217
       - Item: Muramasa
         Rate: 1
@@ -9490,7 +9541,10 @@ Body:
         Rate: 250
       - Item: Blue_Herb
         Rate: 70
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 95
+#add edit
+      - Item: Oridecon_Stone
         Rate: 95
       - Item: Cramp_Card
         Rate: 1
@@ -9718,7 +9772,10 @@ Body:
         Rate: 5335
       - Item: Yoyo_Tail
         Rate: 7000
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 53
+#add edit
+      - Item: Elunium_Stone
         Rate: 53
       - Item: Banana
         Rate: 5000
@@ -9864,9 +9921,15 @@ Body:
         Rate: 25
       - Item: Broad_Sword_
         Rate: 1
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 369
+#add edit
+      - Item: Elunium_Stone
         Rate: 369
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 259
+#add edit
+      - Item: Oridecon_Stone
         Rate: 259
       - Item: Knight_Of_Abyss_Card
         Rate: 1
@@ -10395,8 +10458,8 @@ Body:
         Rate: 4
       - Item: Flower
         Rate: 800
-      - Item: Creamy_Card
-        Rate: 1
+#      - Item: Creamy_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1232
     AegisName: META_PECOPECO_EGG
@@ -10955,7 +11018,10 @@ Body:
         Rate: 5335
       - Item: Zargon
         Rate: 900
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 31
+#add edit
+      - Item: Elunium_Stone
         Rate: 31
       - Item: Tights_
         Rate: 5
@@ -11493,8 +11559,8 @@ Body:
         Rate: 250
       - Item: Elunium_Stone
         Rate: 180
-      - Item: Elunium
-        Rate: 37
+#      - Item: Elunium
+#        Rate: 37
       - Item: Neraid_Card
         Rate: 1
         StealProtected: true
@@ -12085,7 +12151,10 @@ Body:
         Rate: 1
       - Item: Pole_Axe
         Rate: 2
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 433
+#add edit
+      - Item: Elunium_Stone
         Rate: 433
       - Item: Bloody_Knight_Card
         Rate: 1
@@ -12131,7 +12200,10 @@ Body:
         Rate: 30
       - Item: Underground_Key
         Rate: 30
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 163
+#add edit
+      - Item: Elunium_Stone
         Rate: 163
       - Item: Clock_Card
         Rate: 1
@@ -12321,10 +12393,10 @@ Body:
         Rate: 1
       - Item: Wedding_Veil
         Rate: 1
-      - Item: High_end_Cooking_Kits
-        Rate: 10
-      - Item: Cookbook06
-        Rate: 3
+#      - Item: High_end_Cooking_Kits
+#        Rate: 10
+#      - Item: Cookbook06
+#        Rate: 3
       - Item: Wedding_Dress
         Rate: 1
       - Item: Orc_Lady_Card
@@ -12365,8 +12437,8 @@ Body:
         Rate: 1000
       - Item: Old_Violet_Box
         Rate: 1
-      - Item: Elunium
-        Rate: 61
+#      - Item: Elunium
+#        Rate: 61
       - Item: Elunium_Stone
         Rate: 207
       - Item: Megalith_Card
@@ -12413,8 +12485,8 @@ Body:
         Rate: 30
       - Item: Pair_Of_Red_Ribbon
         Rate: 1
-      - Item: Imperial_Cooking_Kits
-        Rate: 10
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 10
       - Item: Holy_Scroll_1_5
         Rate: 100
       - Item: Alice_Card
@@ -12462,7 +12534,10 @@ Body:
         Rate: 2000
       - Item: Arbalest_
         Rate: 3
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 106
+#add edit
+      - Item: Elunium_Stone
         Rate: 106
       - Item: Raydric_Archer_Card
         Rate: 1
@@ -12555,8 +12630,8 @@ Body:
         Rate: 30
       - Item: Elunium_Stone
         Rate: 250
-      - Item: Elunium
-        Rate: 163
+#      - Item: Elunium
+#        Rate: 163
       - Item: Stalactic_Golem_Card
         Rate: 1
         StealProtected: true
@@ -13014,8 +13089,8 @@ Body:
         Rate: 150
       - Item: Queen's_Hair_Ornament
         Rate: 1
-      - Item: Cookbook10
-        Rate: 2
+#      - Item: Cookbook10
+#        Rate: 2
       - Item: Maya_Puple_Card
         Rate: 1
         StealProtected: true
@@ -13877,9 +13952,15 @@ Body:
         Rate: 150
       - Item: Punisher
         Rate: 5
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 600
+#add edit
+      - Item: Elunium_Stone
         Rate: 600
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 800
+#add edit
+      - Item: Oridecon_Stone
         Rate: 800
       - Item: Gold
         Rate: 6
@@ -14018,7 +14099,10 @@ Body:
         Rate: 4
       - Item: Lemon
         Rate: 300
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 16
+#add edit
+      - Item: Oridecon_Stone
         Rate: 16
       - Item: White_Herb
         Rate: 1850
@@ -15926,7 +16010,10 @@ Body:
         Rate: 2400
       - Item: Wheel
         Rate: 2200
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 5
+#add edit
+      - Item: Elunium_Stone
         Rate: 5
       - Item: Destroyer_
         Rate: 1
@@ -17038,8 +17125,8 @@ Body:
     Drops:
       - Item: Golden_Hair
         Rate: 6305
-      - Item: High_end_Cooking_Kits
-        Rate: 50
+#      - Item: High_end_Cooking_Kits
+#        Rate: 50
       - Item: Stuffed_Doll
         Rate: 1200
       - Item: Base_Guitar
@@ -17136,7 +17223,10 @@ Body:
         Rate: 1000
       - Item: Steel
         Rate: 450
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 1
+#add edit
+      - Item: Oridecon_Stone
         Rate: 1
       - Item: Zargon
         Rate: 2500
@@ -17632,8 +17722,8 @@ Body:
         Rate: 1550
       - Item: Star_Crumb
         Rate: 1250
-      - Item: High_end_Cooking_Kits
-        Rate: 10
+#      - Item: High_end_Cooking_Kits
+#        Rate: 10
       - Item: Hakujin
         Rate: 5
       - Item: Mandolin_
@@ -17683,8 +17773,8 @@ Body:
         Rate: 150
       - Item: Huuma_Giant_Wheel_
         Rate: 5
-      - Item: Imperial_Cooking_Kits
-        Rate: 20
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 20
       - Item: Earth_Scroll_1_5
         Rate: 100
       - Item: Tengu_Card
@@ -18070,7 +18160,10 @@ Body:
         Rate: 3977
       - Item: Soft_Silk_Cloth
         Rate: 1380
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
       - Item: Mandolin_
         Rate: 4
@@ -20683,7 +20776,10 @@ Body:
         Rate: 3000
       - Item: Bat_Cage
         Rate: 5044
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 100
+#add edit
+      - Item: Elunium_Stone
         Rate: 100
       - Item: Loki's_Whispers
         Rate: 1
@@ -20778,7 +20874,10 @@ Body:
         Rate: 2000
       - Item: Mr_Scream
         Rate: 50
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 100
+#add edit
+      - Item: Oridecon_Stone
         Rate: 100
       - Item: Mama's_Knife
         Rate: 3
@@ -21013,7 +21112,10 @@ Body:
         Rate: 3880
       - Item: Amulet
         Rate: 100
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
       - Item: Boots_
         Rate: 1
@@ -24113,7 +24215,10 @@ Body:
         Rate: 500
       - Item: Emperium
         Rate: 2
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 80
+#add edit
+      - Item: Oridecon_Stone
         Rate: 80
       - Item: Emveretarcon
         Rate: 800
@@ -24160,7 +24265,10 @@ Body:
         Rate: 500
       - Item: Coal
         Rate: 500
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 50
+#add edit
+      - Item: Elunium_Stone
         Rate: 50
       - Item: Steel
         Rate: 500
@@ -24482,7 +24590,10 @@ Body:
         Rate: 50
       - Item: Cursed_Lucky_Brooch
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 100
+#add edit
+      - Item: Elunium_Stone
         Rate: 100
       - Item: Teddy_Bear_Card
         Rate: 1
@@ -24531,10 +24642,10 @@ Body:
     Drops:
       - Item: Wheel
         Rate: 6000
-      - Item: House_Auger
-        Rate: 10
-      - Item: House_Auger_
-        Rate: 1
+#      - Item: House_Auger
+#        Rate: 10
+#      - Item: House_Auger_
+#        Rate: 1
       - Item: Old_Violet_Box
         Rate: 1000
       - Item: Headlamp
@@ -24905,8 +25016,8 @@ Body:
         Rate: 100
       - Item: Boots_
         Rate: 1
-      - Item: Bloody_Roar
-        Rate: 1
+#      - Item: Bloody_Roar
+#        Rate: 1
       - Item: Old_Blue_Box
         Rate: 2
       - Item: Gremlin_Card
@@ -24948,7 +25059,10 @@ Body:
         Rate: 100
       - Item: Rough_Wind
         Rate: 100
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
       - Item: Old_Blue_Box
         Rate: 2
@@ -25550,16 +25664,16 @@ Body:
     Drops:
       - Item: Moonlight_Sword
         Rate: 1500
-      - Item: House_Auger
-        Rate: 1500
+#      - Item: House_Auger
+#        Rate: 1500
       - Item: Glittering_Clothes
         Rate: 9000
       - Item: Exercise
         Rate: 3500
       - Item: Assasin_Dagger
         Rate: 3500
-      - Item: Bloody_Roar
-        Rate: 3500
+#      - Item: Bloody_Roar
+#        Rate: 3500
       - Item: Ginnungagap
         Rate: 3500
       - Item: B_Eremes_Card
@@ -25723,8 +25837,8 @@ Body:
       - Item: Luna_Bow
         Rate: 2000
     Drops:
-      - Item: Combat_Knife
-        Rate: 3500
+#      - Item: Combat_Knife
+#        Rate: 3500
       - Item: Sucsamad
         Rate: 3500
       - Item: Old_Violet_Box
@@ -26470,9 +26584,15 @@ Body:
         Rate: 5000
       - Item: Steel
         Rate: 500
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 200
+#add edit
+      - Item: Oridecon_Stone
         Rate: 200
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 200
+#add edit
+      - Item: Elunium_Stone
         Rate: 200
       - Item: Gate_Keeper
         Rate: 5
@@ -26552,10 +26672,13 @@ Body:
         Rate: 300
       - Item: Dusk
         Rate: 5
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
-      - Item: Imperial_Cooking_Kits
-        Rate: 50
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 50
       - Item: Dimik_Card
         Rate: 1
         StealProtected: true
@@ -26599,10 +26722,13 @@ Body:
         Rate: 300
       - Item: Thunder_P_
         Rate: 10
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
-      - Item: Imperial_Cooking_Kits
-        Rate: 50
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 50
       - Item: Dimik_Card
         Rate: 1
         StealProtected: true
@@ -26646,10 +26772,13 @@ Body:
         Rate: 300
       - Item: Hyper_Changer
         Rate: 10
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
-      - Item: Imperial_Cooking_Kits
-        Rate: 50
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 50
       - Item: Dimik_Card
         Rate: 1
         StealProtected: true
@@ -26693,10 +26822,13 @@ Body:
         Rate: 300
       - Item: Hyper_Changer
         Rate: 10
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
-      - Item: Imperial_Cooking_Kits
-        Rate: 50
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 50
       - Item: Dimik_Card
         Rate: 1
         StealProtected: true
@@ -26802,10 +26934,13 @@ Body:
         Rate: 300
       - Item: Drifter
         Rate: 5
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
-      - Item: High_end_Cooking_Kits
-        Rate: 100
+#      - Item: High_end_Cooking_Kits
+#        Rate: 100
       - Item: Venatu_Card
         Rate: 1
         StealProtected: true
@@ -26849,10 +26984,13 @@ Body:
         Rate: 300
       - Item: Long_Barrel_
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
-      - Item: High_end_Cooking_Kits
-        Rate: 100
+#      - Item: High_end_Cooking_Kits
+#        Rate: 100
       - Item: Venatu_Card
         Rate: 1
         StealProtected: true
@@ -26896,10 +27034,13 @@ Body:
         Rate: 300
       - Item: Hyper_Changer
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
-      - Item: High_end_Cooking_Kits
-        Rate: 100
+#      - Item: High_end_Cooking_Kits
+#        Rate: 100
       - Item: Venatu_Card
         Rate: 1
         StealProtected: true
@@ -26943,10 +27084,13 @@ Body:
         Rate: 300
       - Item: Hyper_Changer
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
-      - Item: High_end_Cooking_Kits
-        Rate: 100
+#      - Item: High_end_Cooking_Kits
+#        Rate: 100
       - Item: Venatu_Card
         Rate: 1
         StealProtected: true
@@ -27323,17 +27467,17 @@ Body:
     MvpDrops:
       - Item: Old_Violet_Box
         Rate: 5500
-      - Item: Dex_Dish10
-        Rate: 5000
+#      - Item: Dex_Dish10
+#        Rate: 5000
       - Item: Crystal_Jewel__
         Rate: 2000
     Drops:
-      - Item: Agi_Dish10
-        Rate: 5000
+#      - Item: Agi_Dish10
+#        Rate: 5000
       - Item: Tropical_Banana
         Rate: 4000
-      - Item: Fantastic_Cooking_Kits
-        Rate: 1000
+#      - Item: Fantastic_Cooking_Kits
+#        Rate: 1000
       - Item: Banana_Hat
         Rate: 1000
       - Item: Elunium
@@ -28697,8 +28841,8 @@ Body:
         Rate: 5000
       - Item: Scale_Of_Red_Dragon
         Rate: 3589
-      - Item: Int_Dish10
-        Rate: 1000
+#      - Item: Int_Dish10
+#        Rate: 1000
       - Item: Pole_Axe
         Rate: 100
       - Item: Gemmed_Crown
@@ -28747,8 +28891,8 @@ Body:
         Rate: 500
       - Item: Morrigane's_Helm
         Rate: 500
-      - Item: Vit_Dish10
-        Rate: 300
+#      - Item: Vit_Dish10
+#        Rate: 300
       - Item: Fricca_Circlet
         Rate: 500
       - Item: Hydro_Card
@@ -28778,7 +28922,10 @@ Body:
     AttackMotion: 1
     DamageMotion: 1
     Drops:
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 5
+#add edit
+      - Item: Elunium_Stone
         Rate: 5
       - Item: Piece_Of_Egg_Shell
         Rate: 100
@@ -29214,7 +29361,10 @@ Body:
         Rate: 500
       - Item: Drill_Katar
         Rate: 5
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
       - Item: Vali's_Manteau
         Rate: 20
@@ -29263,7 +29413,10 @@ Body:
         Rate: 500
       - Item: Claw_
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
       - Item: Curved_Sword
         Rate: 15
@@ -29308,8 +29461,8 @@ Body:
         Rate: 10
       - Item: Alice's_Apron
         Rate: 5
-      - Item: Imperial_Cooking_Kits
-        Rate: 50
+#      - Item: Imperial_Cooking_Kits
+#        Rate: 50
       - Item: Sway_Apron
         Rate: 1
       - Item: Orleans_Server
@@ -29734,12 +29887,12 @@ Body:
     Drops:
       - Item: Valhalla_Flower
         Rate: 5000
-      - Item: Valkyrie_Armor
-        Rate: 1600
-      - Item: Valkyrie_Manteau
-        Rate: 3000
-      - Item: Valkyrie_Shoes
-        Rate: 3000
+#      - Item: Valkyrie_Armor
+#        Rate: 1600
+#      - Item: Valkyrie_Manteau
+#        Rate: 3000
+#      - Item: Valkyrie_Shoes
+#        Rate: 3000
       - Item: Helm_
         Rate: 5000
       - Item: Bloody_Edge
@@ -30228,8 +30381,8 @@ Body:
         Rate: 500
       - Item: Old_Violet_Box
         Rate: 100
-      - Item: Valkyrja's_Shield
-        Rate: 500
+#      - Item: Valkyrja's_Shield
+#        Rate: 500
   - Id: 1766
     AegisName: EM_ANGELING
     Name: Angeling
@@ -30625,7 +30778,10 @@ Body:
         Rate: 1000
       - Item: Will_Of_Darkness
         Rate: 1000
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 20
+#add edit
+      - Item: Elunium_Stone
         Rate: 20
       - Item: Starsand_Of_Witch
         Rate: 4000
@@ -30760,9 +30916,15 @@ Body:
         Rate: 3000
       - Item: Frozen_Rose
         Rate: 100
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 10
+#add edit
+      - Item: Oridecon_Stone
         Rate: 10
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 30
+#add edit
+      - Item: Elunium_Stone
         Rate: 30
       - Item: Mistic_Frozen
         Rate: 100
@@ -30804,7 +30966,10 @@ Body:
         Rate: 3000
       - Item: Ice_Piece
         Rate: 3000
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 20
+#add edit
+      - Item: Elunium_Stone
         Rate: 20
       - Item: Frozen_Bow
         Rate: 1
@@ -32055,8 +32220,8 @@ Body:
         Rate: 500
       - Item: Pole_Axe
         Rate: 500
-      - Item: Int_Dish10
-        Rate: 1500
+#      - Item: Int_Dish10
+#        Rate: 1500
       - Item: Treasure_Box
         Rate: 5500
   - Id: 1814
@@ -32191,12 +32356,12 @@ Body:
         Rate: 500
       - Item: Wizardy_Staff
         Rate: 500
-      - Item: Bloody_Roar
-        Rate: 500
-      - Item: Int_Dish10
-        Rate: 1500
-      - Item: Luk_Dish10
-        Rate: 1500
+#      - Item: Bloody_Roar
+#        Rate: 500
+#      - Item: Int_Dish10
+#        Rate: 1500
+#      - Item: Luk_Dish10
+#        Rate: 1500
   - Id: 1818
     AegisName: EVENT_ALARM
     Name: Alarm
@@ -32554,8 +32719,8 @@ Body:
     Drops:
       - Item: Broken_Armor_Piece
         Rate: 3000
-      - Item: Doom_Slayer
-        Rate: 30
+#      - Item: Doom_Slayer
+#        Rate: 30
       - Item: Claymore
         Rate: 50
       - Item: Zweihander
@@ -33582,8 +33747,8 @@ Body:
         Rate: 40
       - Item: Leche_Flan
         Rate: 400
-      - Item: High_end_Cooking_Kits
-        Rate: 5
+#      - Item: High_end_Cooking_Kits
+#        Rate: 5
       - Item: Magnolia_Card
         Rate: 1
         StealProtected: true
@@ -33798,7 +33963,10 @@ Body:
         Rate: 5335
       - Item: Yoyo_Tail
         Rate: 7000
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 53
+#add edit
+      - Item: Elunium_Stone
         Rate: 53
       - Item: Banana
         Rate: 5000
@@ -34767,8 +34935,8 @@ Body:
         Rate: 4000
       - Item: Ring_
         Rate: 200
-      - Item: Int_Dish10
-        Rate: 1000
+#      - Item: Int_Dish10
+#        Rate: 1000
       - Item: Ixion_Wing
         Rate: 100
       - Item: Pole_Axe
@@ -37542,7 +37710,10 @@ Body:
         Rate: 100
       - Item: Rough_Wind
         Rate: 100
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 10
+#add edit
+      - Item: Elunium_Stone
         Rate: 10
       - Item: Chameleon_Armor
         Rate: 10
@@ -37586,7 +37757,10 @@ Body:
         Rate: 500
       - Item: Elemental_Sword
         Rate: 5
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 80
+#add edit
+      - Item: Oridecon_Stone
         Rate: 80
       - Item: Emveretarcon
         Rate: 800
@@ -37681,7 +37855,10 @@ Body:
         Rate: 2200
       - Item: Manteau_
         Rate: 20
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 5
+#add edit
+      - Item: Elunium_Stone
         Rate: 5
       - Item: Life_Link
         Rate: 1
@@ -37723,9 +37900,15 @@ Body:
         Rate: 5000
       - Item: Steel
         Rate: 500
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 200
+#add edit
+      - Item: Oridecon_Stone
         Rate: 200
-      - Item: Elunium
+#      - Item: Elunium
+#        Rate: 200
+#add edit
+      - Item: Elunium_Stone
         Rate: 200
       - Item: Gate_Keeper
         Rate: 5
@@ -39538,8 +39721,8 @@ Body:
         Rate: 2000
       - Item: Mushroom
         Rate: 3000
-      - Item: Outdoor_Cooking_Kits
-        Rate: 500
+#      - Item: Outdoor_Cooking_Kits
+#        Rate: 500
       - Item: Green_Herb
         Rate: 5000
       - Item: Piece_Of_Egg_Shell

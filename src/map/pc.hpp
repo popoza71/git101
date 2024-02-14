@@ -1025,6 +1025,9 @@ public:
 
 	std::vector<uint32> party_booking_requests;
 	
+	// Refine Pass
+	uint16 refine_pass_level;
+	
 	// Party Bonus
 	bool force_remove_party_ef;
 

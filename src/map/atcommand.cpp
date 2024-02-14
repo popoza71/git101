@@ -4364,6 +4364,9 @@ ACMD_FUNC(reload) {
 	}else if( strstr( command, "partybonusdb" ) ){
 		PartyJobBonusDb.reload();
 		clif_displaymessage(fd, "Party Bonus database has been reloaded.");
+	}else if( strstr( command, "refinepassdb" ) ){
+		RefinePassBonusDb.reload();
+		clif_displaymessage(fd, "Refine Pass database has been reloaded.");
 	}
 
 	return 0;
@@ -11967,6 +11970,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF2("reloadattendancedb",reload),
 		ACMD_DEF2("reloadbarterdb",reload),
 		ACMD_DEF2("reloadpartybonusdb", reload),
+		ACMD_DEF2("reloadrefinepassdb", reload),
 		ACMD_DEF(partysharelvl),
 		ACMD_DEF(mapinfo),
 		ACMD_DEF(dye),

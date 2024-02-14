@@ -3624,6 +3624,9 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	int i, skill, refinedef = 0;
 	short index = -1;
 
+	uint16 minimum_refine_pass = 10;	// Refine Pass
+	uint16 equip_count = 0;	// Refine Pass
+
 	if (++calculating > 10) // Too many recursive calls!
 		return -1;
 
@@ -3926,6 +3929,15 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 		if (sd->inventory.u.items_inventory[index].refine > MAX_REFINE)
 			sd->inventory.u.items_inventory[index].refine = MAX_REFINE;
 
+		
+		// Refine Pass
+		if( battle_config.refine_pass_system_enable ){
+			if( i == EQI_SHOES || i == EQI_GARMENT || i == EQI_HEAD_TOP || i == EQI_ARMOR || i == EQI_HAND_R ){
+				equip_count += 1;
+				minimum_refine_pass = min(sd->inventory.u.items_inventory[index].refine,minimum_refine_pass);
+			}
+		}
+
 		std::shared_ptr<s_refine_level_info> info = refine_db.findCurrentLevelInfo( *sd->inventory_data[index], sd->inventory.u.items_inventory[index] );
 #ifdef RENEWAL
 		std::shared_ptr<s_enchantgradelevel> enchantgrade_info = nullptr;
@@ -4049,6 +4061,24 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 				return 1;
 		}
 	}
+
+	
+	// Refine Pass
+	if( battle_config.refine_pass_system_enable && sd ){
+		if(sd->refine_pass_level != minimum_refine_pass || equip_count < 5){
+			if( RefinePassBonusDb.exists(sd->refine_pass_level) ){
+				auto RefineDataOld = RefinePassBonusDb.find(sd->refine_pass_level);
+				clif_status_change(&sd->bl, RefineDataOld->icon, 0, 0, 0, 0, 0);
+			}
+		}
+		sd->refine_pass_level = minimum_refine_pass;
+		if( RefinePassBonusDb.exists(sd->refine_pass_level) && equip_count == 5 ){
+			auto RefineDataNew = RefinePassBonusDb.find(sd->refine_pass_level);
+			clif_status_change(&sd->bl, RefineDataNew->icon, 1, -1, 0, 0, 0);
+			run_script(RefineDataNew->script, 0, sd->bl.id, 0);
+		}
+	}
+
 
 	// Process and check item combos
 	if (!sd->combos.empty()) {

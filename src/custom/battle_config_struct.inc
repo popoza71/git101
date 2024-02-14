@@ -14,3 +14,4 @@
 
 int party_bonus_system_enable;
 int party_bonus_same_map_minimum;
+int refine_pass_system_enable;
