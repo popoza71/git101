@@ -1,0 +1,82 @@
+//===== rAthena Script ======================================= 
+//= Barter Rate
+//===== By: ================================================== 
+//= BindVPS
+//============================================================ 
+// Type:
+// 1 แตกของไม่หาย คืนทุกอย่าง
+// 2 สวมใส่ไม่หาย คืนเเต่ไอเทมสวมใส่
+// 3 คืนไอเทมที่ไม่ใช่อุปกรณ์สวมใส่ + zeny กำหนดตาม .blessing_restore
+// 4 สวมใส่ไม่หาย คืนไอเทมที่ไม่ใช่อุปกรณ์สวมใส่ + zeny กำหนดตามตั้งค่า .blessing_restore
+// ****คำเตือน ศึกษาให้ดีก่อนใช้งานจริง
+//============================================================
+
+morocc,103,107,5	script	คราฟคอสอาชีพ	475,{
+
+	if (.blessing_nameid) {
+		switch(select("- แลกเลย:- ยังก่อน")) {
+			case 1:
+				// Type, Item , Amount, Restore;
+				if (barter_blessing(.blessing_type ,.blessing_nameid,.blessing_amount, .blessing_restore, .showui)){
+					mes .npcname$;
+					mes "";
+					//mes "[" + getitemname(.blessing_nameid) + "] จำนวน "+.blessing_amount+" ชิ้น!";
+					//mes "^f72835**คำเตือน*** โปรดศึกษาให้ดีก่อนการใช้งานจริง";
+				} else {
+					mes .npcname$;
+					mes "Barter Blessing Error!";
+					//mes "^f72835**คำเตือน*** โปรดศึกษาให้ดีก่อนการใช้งานจริง";
+				}
+				break;
+			/*case 1:
+				mes .npcname$;
+				mes "ไม่ใช้ Barter Blessing!";
+				//mes "^f72835**คำเตือน*** โปรดศึกษาให้ดีก่อนการใช้งานจริง";
+				break;*/
+			case 2:	
+			close;
+		}
+	} else {
+		// Example use type 1 don't use item
+		barter_blessing(1,0,0,0,0);
+	}
+
+	close2;
+	callshop "barter_cosweapon";
+	end;
+OnInit:
+	.blessing_type 		= 2;   //ตามบรรทัดที่ 7-10
+	.blessing_nameid 	= 40334; //รหัสไอเทมกันแตก
+	.blessing_amount 	= 5; //จำนวน
+	.blessing_restore	= 0; //50% 2 ก็คือคืนของ 50เปอเซน
+	.showui 			= 1; //แสดง รูปกันแตก
+	
+	.npcname$ = "[ อัพเกรดคอสอาชีพ ]";
+	waitingroom "[ อัพเกรดคอสอาชีพ ]",0;
+
+	end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

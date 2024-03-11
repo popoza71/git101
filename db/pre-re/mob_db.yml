@@ -113,7 +113,7 @@ Body:
       - Item: Boody_Red
         Rate: 70
       - Item: Scorpion's_Tail
-        Rate: 5500
+        Rate: 5000
       - Item: Elunium_Stone
         Rate: 57
       - Item: Solid_Shell
@@ -122,8 +122,8 @@ Body:
         Rate: 100
       - Item: Yellow_Herb
         Rate: 200
-      - Item: Lusty_Iron
-        Rate: 20
+#      - Item: Lusty_Iron
+#        Rate: 20
       - Item: Scorpion_Card
         Rate: 1
         StealProtected: true
@@ -164,8 +164,8 @@ Body:
         Rate: 1500
       - Item: Apple
         Rate: 150
-      - Item: Unripe_Apple
-        Rate: 20
+#      - Item: Unripe_Apple
+#        Rate: 20
       - Item: Poring_Card
         Rate: 1
         StealProtected: true
@@ -221,13 +221,13 @@ Body:
       Detector: true
     Drops:
       - Item: Wind_Of_Verdure
-        Rate: 80
+        Rate: 50
       - Item: Bee_Sting
-        Rate: 9000
+        Rate: 5000
       - Item: Jellopy
         Rate: 3500
       - Item: Main_Gauche_
-        Rate: 15
+        Rate: 10
       - Item: Green_Herb
         Rate: 350
       - Item: Honey
@@ -262,7 +262,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Tooth_Of_Bat
-        Rate: 5500
+        Rate: 5000
       - Item: Falchion_
         Rate: 20
       - Item: Ribbon_
@@ -321,7 +321,7 @@ Body:
       Detector: true
     Drops:
       - Item: Fluff
-        Rate: 6500
+        Rate: 5000
       - Item: Feather
         Rate: 500
       - Item: Club_
@@ -364,7 +364,7 @@ Body:
       - Item: Phracon
         Rate: 80
       - Item: Chrysalis
-        Rate: 5500
+        Rate: 5000
       - Item: Sticky_Mucus
         Rate: 600
       - Item: Guard_
@@ -405,9 +405,9 @@ Body:
     Ai: 03
     Drops:
       - Item: Talon
-        Rate: 9000
+        Rate: 5000
       - Item: Bow_
-        Rate: 150
+        Rate: 100
       - Item: Yellow_Gemstone
         Rate: 80
       - Item: Arrow
@@ -417,7 +417,7 @@ Body:
       - Item: Feather_Of_Birds
         Rate: 2000
       - Item: Orange
-        Rate: 600
+        Rate: 300
       - Item: Condor_Card
         Rate: 1
         StealProtected: true
@@ -500,11 +500,11 @@ Body:
       - Item: Iron
         Rate: 50
       - Item: Shell
-        Rate: 6500
+        Rate: 5000
       - Item: Jellopy
         Rate: 1500
       - Item: Cutter_
-        Rate: 55
+        Rate: 50
       - Item: Wing_Of_Fly
         Rate: 100
       - Item: Chonchon_Doll
@@ -543,7 +543,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Sticky_Webfoot
-        Rate: 9000
+        Rate: 5000
       - Item: Spawn
         Rate: 500
       - Item: Green_Herb
@@ -585,17 +585,17 @@ Body:
       - Item: Emveretarcon
         Rate: 20
       - Item: Claw_Of_Wolves
-        Rate: 9000
+        Rate: 5000
       - Item: Mantle_
         Rate: 10
       - Item: Meat
-        Rate: 650
+        Rate: 500
       - Item: Monster's_Feed
         Rate: 1050
       - Item: Animal's_Skin
-        Rate: 5500
+        Rate: 5000
       - Item: Strawberry
-        Rate: 600
+        Rate: 300
       - Item: Wolf_Card
         Rate: 1
         StealProtected: true
@@ -628,11 +628,11 @@ Body:
     Ai: 01
     Drops:
       - Item: Mushroom_Spore
-        Rate: 9000
+        Rate: 5000
       - Item: Red_Herb
         Rate: 800
       - Item: Blue_Herb
-        Rate: 50
+        Rate: 30
       - Item: Spore_Doll
         Rate: 10
       - Item: Hat
@@ -640,7 +640,7 @@ Body:
       - Item: Poison_Spore
         Rate: 5
       - Item: Strawberry
-        Rate: 600
+        Rate: 300
       - Item: Spore_Card
         Rate: 1
         StealProtected: true
@@ -671,7 +671,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Decayed_Nail
-        Rate: 9000
+        Rate: 5000
       - Item: Cardinal_Jewel_
         Rate: 5
       - Item: Sticky_Mucus
@@ -711,13 +711,13 @@ Body:
     Ai: 05
     Drops:
       - Item: Skel_Bone
-        Rate: 4500
+        Rate: 3500
       - Item: Oridecon_Stone
-        Rate: 70
+        Rate: 50
       - Item: Apple_Of_Archer
         Rate: 3
       - Item: Great_Bow_
-        Rate: 35
+        Rate: 15
       - Item: Fire_Arrow
         Rate: 1000
       - Item: Red_Herb
@@ -809,9 +809,9 @@ Body:
       Detector: true
     Drops:
       - Item: Powder_Of_Butterfly
-        Rate: 9000
+        Rate: 5000
       - Item: Silk_Robe_
-        Rate: 10
+        Rate: 5
       - Item: Honey
         Rate: 150
       - Item: Wing_Of_Butterfly
@@ -853,7 +853,7 @@ Body:
     Ai: 03
     Drops:
       - Item: Bill_Of_Birds
-        Rate: 9000
+        Rate: 5000
       - Item: Sandals_
         Rate: 20
       - Item: Yellow_Herb
@@ -861,9 +861,9 @@ Body:
       - Item: Red_Herb
         Rate: 900
       - Item: Wand
-        Rate: 100
+        Rate: 70
       - Item: Orange
-        Rate: 1000
+        Rate: 200
       - Item: Pecopeco_Card
         Rate: 1
         StealProtected: true
@@ -897,17 +897,17 @@ Body:
       - Item: Yellow_Live
         Rate: 50
       - Item: Stem
-        Rate: 9000
+        Rate: 5000
       - Item: Spear_
-        Rate: 30
+        Rate: 10
       - Item: Green_Herb
         Rate: 350
       - Item: Shoot
         Rate: 300
       - Item: Four_Leaf_Clover
         Rate: 3
-      - Item: Whip_Of_Earth
-        Rate: 10
+#      - Item: Whip_Of_Earth
+#        Rate: 10
       - Item: Mandragora_Card
         Rate: 1
         StealProtected: true
@@ -1040,7 +1040,7 @@ Body:
       - Item: Iron
         Rate: 210
       - Item: Orcish_Voucher
-        Rate: 9000
+        Rate: 5000
       - Item: Oridecon_Stone
         Rate: 40
       - Item: Cigar
@@ -1087,9 +1087,9 @@ Body:
       - Item: Emveretarcon
         Rate: 25
       - Item: Pointed_Scale
-        Rate: 5500
+        Rate: 5000
       - Item: Pike_
-        Rate: 30
+        Rate: 15
       - Item: Yellow_Herb
         Rate: 70
       - Item: Azure_Jewel
@@ -1128,19 +1128,19 @@ Body:
     Ai: 01
     Drops:
       - Item: Scale_Of_Snakes
-        Rate: 9000
+        Rate: 5000
       - Item: Katana_
-        Rate: 15
+        Rate: 10
       - Item: Red_Herb
         Rate: 900
       - Item: Emveretarcon
         Rate: 35
       - Item: Posionous_Canine
-        Rate: 800
+        Rate: 430
       - Item: Shining_Scales
         Rate: 1
       - Item: Strawberry
-        Rate: 600
+        Rate: 300
       - Item: Snake_Card
         Rate: 1
         StealProtected: true
@@ -1172,7 +1172,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Danggie
-        Rate: 9000
+        Rate: 5000
       - Item: Munak_Turban
         Rate: 2
       - Item: Shoes_
@@ -1250,11 +1250,11 @@ Body:
     Ai: 04
     Drops:
       - Item: Skel_Bone
-        Rate: 5500
+        Rate: 5000
       - Item: Oridecon_Stone
-        Rate: 60
+        Rate: 50
       - Item: Dagger_
-        Rate: 12
+        Rate: 10
       - Item: Red_Herb
         Rate: 700
       - Item: Mementos
@@ -1262,7 +1262,7 @@ Body:
       - Item: Knife
         Rate: 150
       - Item: Stiletto
-        Rate: 50
+        Rate: 10
       - Item: Soldier_Skeleton_Card
         Rate: 1
         StealProtected: true
@@ -1299,7 +1299,7 @@ Body:
       Detector: true
     Drops:
       - Item: Scales_Shell
-        Rate: 5335
+        Rate: 5000
       - Item: Circlet_
         Rate: 5
       - Item: Necklace
@@ -1345,9 +1345,9 @@ Body:
       - Item: Emveretarcon
         Rate: 50
       - Item: Posionous_Canine
-        Rate: 9000
+        Rate: 5000
       - Item: Glaive_
-        Rate: 10
+        Rate: 9
       - Item: Scale_Of_Snakes
         Rate: 1500
       - Item: Scales_Shell
@@ -1431,19 +1431,19 @@ Body:
     Ai: 02
     Drops:
       - Item: Immortal_Heart
-        Rate: 9000
+        Rate: 5000
       - Item: Zargon
         Rate: 700
       - Item: Rotten_Bandage
         Rate: 1100
       - Item: White_Herb
-        Rate: 600
+        Rate: 500
       - Item: Skul_Ring
         Rate: 1
       - Item: Flower_Ring
         Rate: 200
-      - Item: Armlet_Of_Obedience
-        Rate: 20
+#      - Item: Armlet_Of_Obedience
+#        Rate: 20
       - Item: Verit_Card
         Rate: 1
         StealProtected: true
@@ -1479,13 +1479,13 @@ Body:
       - Item: Boody_Red
         Rate: 50
       - Item: Resin
-        Rate: 9000
+        Rate: 5000
       - Item: Wooden_Block
         Rate: 350
       - Item: Elunium_Stone
-        Rate: 40
-      - Item: Wooden_Mail_
         Rate: 30
+      - Item: Wooden_Mail_
+        Rate: 25
       - Item: Fire_Scroll_1_3
         Rate: 100
       - Item: Branch_Of_Dead_Tree
@@ -1524,7 +1524,7 @@ Body:
       - Item: Emveretarcon
         Rate: 45
       - Item: Spawn
-        Rate: 5500
+        Rate: 5000
       - Item: Scell
         Rate: 600
       - Item: White_Herb
@@ -1573,11 +1573,11 @@ Body:
       - Item: Steel
         Rate: 100
       - Item: Solid_Shell
-        Rate: 5335
+        Rate: 5000
       - Item: Zargon
         Rate: 1300
       - Item: Oridecon_Stone
-        Rate: 129
+        Rate: 70
       - Item: Mini_Propeller
         Rate: 1
       - Item: Damascus_
@@ -1614,15 +1614,15 @@ Body:
     Ai: 04
     Drops:
       - Item: Horrendous_Mouth
-        Rate: 6000
+        Rate: 5000
       - Item: Oridecon_Stone
-        Rate: 110
+        Rate: 70
       - Item: White_Herb
-        Rate: 700
+        Rate: 400
       - Item: Green_Herb
         Rate: 800
       - Item: Skul_Ring
-        Rate: 60
+        Rate: 30
       - Item: Mementos
         Rate: 150
       - Item: Ghoul_Leg
@@ -1661,11 +1661,11 @@ Body:
     Ai: 09
     Drops:
       - Item: Shining_Scales
-        Rate: 5335
+        Rate: 4500
       - Item: Zargon
         Rate: 1400
       - Item: Oridecon_Stone
-        Rate: 134
+        Rate: 70
       - Item: Tsurugi_
         Rate: 2
       - Item: Posionous_Canine
@@ -1673,7 +1673,7 @@ Body:
       - Item: Scale_Of_Snakes
         Rate: 5000
       - Item: White_Herb
-        Rate: 1000
+        Rate: 500
       - Item: Side_Winder_Card
         Rate: 1
         StealProtected: true
@@ -1722,15 +1722,19 @@ Body:
       - Item: Assasin_Dagger
         Rate: 150
       - Item: Crown
-        Rate: 200
+        Rate: 70
       - Item: Jamadhar_
         Rate: 600
       - Item: Sacred_Marks
         Rate: 1000
       - Item: Spinx_Helm
-        Rate: 150
-      - Item: Cakram
-        Rate: 100
+        Rate: 70
+#      - Item: Cakram
+#        Rate: 100
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Osiris_Card
         Rate: 1
         StealProtected: true
@@ -1777,17 +1781,17 @@ Body:
       - Item: Crescent_Scythe
         Rate: 400
       - Item: Magestic_Goat
-        Rate: 300
-      - Item: Crescent_Scythe_
-        Rate: 50
+        Rate: 70
+#      - Item: Crescent_Scythe_
+#        Rate: 50
       - Item: Emperium
         Rate: 500
-      - Item: Magestic_Goat_
-        Rate: 10
+#      - Item: Magestic_Goat_
+#        Rate: 10
       - Item: Elunium
-        Rate: 5432
+        Rate: 3000
       - Item: Oridecon
-        Rate: 4171
+        Rate: 3000
       - Item: Baphomet_Card
         Rate: 1
         StealProtected: true
@@ -1822,7 +1826,7 @@ Body:
       - Item: Steel
         Rate: 150
       - Item: Stone_Heart
-        Rate: 9000
+        Rate: 5000
       - Item: Zargon
         Rate: 220
       - Item: Elunium_Stone
@@ -1865,15 +1869,15 @@ Body:
     Ai: 04
     Drops:
       - Item: Rotten_Bandage
-        Rate: 9000
+        Rate: 5000
       - Item: Oridecon_Stone
-        Rate: 100
+        Rate: 60
       - Item: Mementos
         Rate: 550
       - Item: Glove
         Rate: 1
       - Item: Silver_Ring
-        Rate: 10
+        Rate: 8
       - Item: Panacea
         Rate: 250
       - Item: Yellow_Herb
@@ -1912,13 +1916,13 @@ Body:
       Detector: true
     Drops:
       - Item: Wind_Of_Verdure
-        Rate: 90
+        Rate: 70
       - Item: Steel
         Rate: 30
       - Item: Garlet
         Rate: 2400
       - Item: Shell
-        Rate: 9000
+        Rate: 5000
       - Item: Solid_Shell
         Rate: 30
       - Item: Iron
@@ -1985,17 +1989,17 @@ Body:
       - Item: Mistic_Frozen
         Rate: 13
       - Item: Heart_Of_Mermaid
-        Rate: 9000
+        Rate: 5000
       - Item: Fin_Helm
         Rate: 1
       - Item: Saint_Robe_
-        Rate: 10
+        Rate: 8
       - Item: Skyblue_Jewel
         Rate: 10
       - Item: Fin
         Rate: 500
       - Item: Witherless_Rose
-        Rate: 30
+        Rate: 20
       - Item: Obeaune_Card
         Rate: 1
         StealProtected: true
@@ -2031,9 +2035,9 @@ Body:
       - Item: Mistic_Frozen
         Rate: 18
       - Item: Gill
-        Rate: 9000
+        Rate: 5000
       - Item: Oridecon_Stone
-        Rate: 95
+        Rate: 70
       - Item: Fin
         Rate: 1000
       - Item: Skyblue_Jewel
@@ -2041,7 +2045,7 @@ Body:
       - Item: Blue_Gemstone
         Rate: 200
       - Item: White_Herb
-        Rate: 700
+        Rate: 450
       - Item: Marc_Card
         Rate: 1
         StealProtected: true
@@ -2085,19 +2089,19 @@ Body:
         Rate: 6000
     Drops:
       - Item: Plate_Armor_
-        Rate: 250
+        Rate: 200
       - Item: Broad_Sword_
         Rate: 220
       - Item: Zweihander
         Rate: 150
       - Item: Sharp_Gear
-        Rate: 350
+        Rate: 70
       - Item: Lance_
         Rate: 550
       - Item: Elunium
-        Rate: 3686
+        Rate: 3000
       - Item: Oridecon
-        Rate: 2700
+        Rate: 3000
       - Item: Doppelganger_Card
         Rate: 1
         StealProtected: true
@@ -2130,8 +2134,8 @@ Body:
         Rate: 1500
       - Item: Guard_
         Rate: 2
-      - Item: Red_Herb
-        Rate: 400
+#      - Item: Red_Herb
+#        Rate: 400
       - Item: Red_Herb
         Rate: 400
       - Item: Empty_Bottle
@@ -2213,7 +2217,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Feather_Of_Birds
-        Rate: 9000
+        Rate: 5000
       - Item: Feather
         Rate: 700
       - Item: Cotton_Shirt_
@@ -2256,7 +2260,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Feather_Of_Birds
-        Rate: 9000
+        Rate: 5000
       - Item: Feather
         Rate: 700
       - Item: Egg_Shell
@@ -2347,13 +2351,13 @@ Body:
       Detector: true
     Drops:
       - Item: Grasshopper's_Leg
-        Rate: 9000
-      - Item: Guitar_Of_Vast_Land
-        Rate: 10
+        Rate: 6000
+#      - Item: Guitar_Of_Vast_Land
+#        Rate: 10
       - Item: Green_Feeler
         Rate: 4
       - Item: Javelin_
-        Rate: 80
+        Rate: 50
       - Item: Leaflet_Of_Hinal
         Rate: 10
       - Item: Grasshopper_Doll
@@ -2399,7 +2403,7 @@ Body:
       - Item: Garlet
         Rate: 250
       - Item: Blade_
-        Rate: 15
+        Rate: 10
       - Item: Insect_Feeler
         Rate: 200
       - Item: Red_Herb
@@ -2444,17 +2448,17 @@ Body:
       - Item: Emveretarcon
         Rate: 40
       - Item: Insect_Feeler
-        Rate: 5500
+        Rate: 5000
       - Item: Worm_Peelings
         Rate: 1500
       - Item: Slayer_
-        Rate: 10
+        Rate: 5
       - Item: Yellow_Herb
         Rate: 90
       - Item: Bluish_Green_Jewel
         Rate: 5
       - Item: Katana
-        Rate: 50
+        Rate: 10
       - Item: Thief_Bug_Male_Card
         Rate: 1
         StealProtected: true
@@ -2491,7 +2495,7 @@ Body:
       - Item: Yellow_Live
         Rate: 70
       - Item: Cactus_Needle
-        Rate: 9000
+        Rate: 5000
       - Item: Empty_Bottle
         Rate: 2000
       - Item: Green_Herb
@@ -2499,7 +2503,7 @@ Body:
       - Item: Red_Herb
         Rate: 1000
       - Item: Guisarme
-        Rate: 50
+        Rate: 10
       - Item: Iron_Ore
         Rate: 250
       - Item: Muka_Card
@@ -2534,9 +2538,9 @@ Body:
     Ai: 17
     Drops:
       - Item: Raccoon_Leaf
-        Rate: 5500
+        Rate: 5000
       - Item: Animal's_Skin
-        Rate: 5500
+        Rate: 5000
       - Item: Sweet_Potato
         Rate: 800
       - Item: Cat_Hairband
@@ -2578,7 +2582,7 @@ Body:
     Ai: 07
     Drops:
       - Item: Yoyo_Tail
-        Rate: 9000
+        Rate: 5000
       - Item: Banana
         Rate: 1500
       - Item: Yellow_Herb
@@ -2588,9 +2592,9 @@ Body:
       - Item: Monkey_Doll
         Rate: 10
       - Item: Oridecon_Stone
-        Rate: 24
+        Rate: 20
       - Item: Strawberry
-        Rate: 1000
+        Rate: 400
       - Item: Yoyo_Card
         Rate: 1
         StealProtected: true
@@ -2628,17 +2632,17 @@ Body:
       - Item: Boody_Red
         Rate: 60
       - Item: Grasshopper's_Leg
-        Rate: 6500
+        Rate: 5000
       - Item: Scell
         Rate: 400
       - Item: Elunium_Stone
-        Rate: 49
+        Rate: 45
       - Item: Singing_Plant
         Rate: 20
       - Item: Shell
         Rate: 3000
-      - Item: Guitar_Of_Passion
-        Rate: 10
+#      - Item: Guitar_Of_Passion
+#        Rate: 10
       - Item: Metaller_Card
         Rate: 1
         StealProtected: true
@@ -2684,19 +2688,21 @@ Body:
         Rate: 3000
     Drops:
       - Item: Gungnir
-        Rate: 150
+        Rate: 100
       - Item: Honey
         Rate: 10000
       - Item: Coronet
-        Rate: 250
+        Rate: 70
       - Item: Old_Card_Album
-        Rate: 1000
-      - Item: Young_Twig
-        Rate: 10
-      - Item: Elunium
-        Rate: 4268
-      - Item: Red_Square_Bag
         Rate: 100
+#      - Item: Young_Twig
+#        Rate: 10
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Red_Square_Bag
+#        Rate: 100
       - Item: Mistress_Card
         Rate: 1
         StealProtected: true
@@ -2729,9 +2735,9 @@ Body:
     Ai: 17
     Drops:
       - Item: Bear's_Foot
-        Rate: 9000
+        Rate: 5000
       - Item: Poo_Poo_Hat
-        Rate: 5
+        Rate: 4
       - Item: Animal's_Skin
         Rate: 5000
       - Item: Stuffed_Doll
@@ -2739,9 +2745,9 @@ Body:
       - Item: Sweet_Potato
         Rate: 1500
       - Item: Honey
-        Rate: 450
+        Rate: 300
       - Item: Oridecon_Stone
-        Rate: 43
+        Rate: 40
       - Item: BigFoot_Card
         Rate: 1
         StealProtected: true
@@ -2776,18 +2782,20 @@ Body:
       Detector: true
     Drops:
       - Item: Horseshoe
-        Rate: 6000
+        Rate: 5000
       - Item: Blue_Herb
-        Rate: 500
+        Rate: 300
       - Item: Rosary
         Rate: 2
       - Item: Old_Blue_Box
-        Rate: 30
+        Rate: 20
       - Item: Blue_Potion
-        Rate: 100
+        Rate: 70
       - Item: Infiltrator
         Rate: 1
-      - Item: Oridecon
+#      - Item: Oridecon
+#        Rate: 60
+      - Item: Oridecon_Stone
         Rate: 60
       - Item: Nightmare_Card
         Rate: 1
@@ -2863,7 +2871,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Clover
-        Rate: 6500
+        Rate: 5000
       - Item: Feather
         Rate: 1000
       - Item: Pierrot_Nose
@@ -2874,8 +2882,8 @@ Body:
         Rate: 600
       - Item: Carrot
         Rate: 1100
-      - Item: Rainbow_Carrot
-        Rate: 20
+#      - Item: Rainbow_Carrot
+#        Rate: 20
       - Item: Lunatic_Card
         Rate: 1
         StealProtected: true
@@ -2907,19 +2915,19 @@ Body:
     Ai: 01
     Drops:
       - Item: Rotten_Scale
-        Rate: 5500
+        Rate: 5000
       - Item: Skel_Bone
         Rate: 1500
       - Item: Blue_Herb
-        Rate: 80
+        Rate: 55
       - Item: Blue_Gemstone
         Rate: 120
       - Item: Violet_Jewel
         Rate: 10
       - Item: Old_Blue_Box
         Rate: 2
-      - Item: Rotten_Fish
-        Rate: 20
+#      - Item: Rotten_Fish
+#        Rate: 20
       - Item: Megalodon_Card
         Rate: 1
         StealProtected: true
@@ -2953,7 +2961,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Fin
-        Rate: 5335
+        Rate: 5000
       - Item: Oridecon_Stone
         Rate: 115
       - Item: Granpa_Beard
@@ -3000,7 +3008,7 @@ Body:
       - Item: Crystal_Blue
         Rate: 40
       - Item: Nipper
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 3000
       - Item: Padded_Armor_
@@ -3045,7 +3053,7 @@ Body:
       - Item: Crystal_Blue
         Rate: 45
       - Item: Conch
-        Rate: 5500
+        Rate: 5000
       - Item: Scell
         Rate: 800
       - Item: Elunium_Stone
@@ -3089,7 +3097,7 @@ Body:
       - Item: Emveretarcon
         Rate: 25
       - Item: Tentacle
-        Rate: 5500
+        Rate: 5000
       - Item: Sticky_Mucus
         Rate: 1500
       - Item: Detrimindexta
@@ -3133,7 +3141,7 @@ Body:
       - Item: Mistic_Frozen
         Rate: 10
       - Item: Sharp_Scale
-        Rate: 9000
+        Rate: 5000
       - Item: Oridecon_Stone
         Rate: 33
       - Item: Snowy_Horn
@@ -3141,7 +3149,7 @@ Body:
       - Item: Elunium_Stone
         Rate: 50
       - Item: Katana_
-        Rate: 25
+        Rate: 15
       - Item: Gill
         Rate: 600
       - Item: Sword_Fish_Card
@@ -3178,7 +3186,7 @@ Body:
       - Item: Crystal_Blue
         Rate: 30
       - Item: Worm_Peelings
-        Rate: 5500
+        Rate: 5000
       - Item: Garlet
         Rate: 400
       - Item: Monster's_Feed
@@ -3187,8 +3195,8 @@ Body:
         Rate: 650
       - Item: Insect_Feeler
         Rate: 450
-      - Item: Earthworm_The_Dude
-        Rate: 20
+#      - Item: Earthworm_The_Dude
+#        Rate: 20
       - Item: Kukre_Card
         Rate: 1
         StealProtected: true
@@ -3233,9 +3241,9 @@ Body:
       - Item: Falchion
         Rate: 250
       - Item: Oridecon_Stone
-        Rate: 43
-      - Item: Well_Dried_Bone
-        Rate: 20
+        Rate: 40
+#      - Item: Well_Dried_Bone
+#        Rate: 20
       - Item: Pirate_Skel_Card
         Rate: 1
         StealProtected: true
@@ -3279,7 +3287,7 @@ Body:
       - Item: Fire_Scroll_1_3
         Rate: 100
       - Item: Elunium_Stone
-        Rate: 1000
+        Rate: 100
       - Item: Red_Gemstone
         Rate: 300
       - Item: Alchol
@@ -3324,7 +3332,7 @@ Body:
       - Item: Sparkling_Dust
         Rate: 13
       - Item: Elunium_Stone
-        Rate: 37
+        Rate: 30
       - Item: Crab_Card
         Rate: 1
         StealProtected: true
@@ -3356,7 +3364,7 @@ Body:
     Ai: 17
     Drops:
       - Item: Clam_Shell
-        Rate: 5500
+        Rate: 5000
       - Item: Flesh_Of_Clam
         Rate: 1000
       - Item: Stone
@@ -3428,7 +3436,7 @@ Body:
       - Item: Red_Herb
         Rate: 850
       - Item: Skul_Ring
-        Rate: 30
+        Rate: 10
       - Item: Skeleton_Card
         Rate: 1
         StealProtected: true
@@ -3458,13 +3466,13 @@ Body:
     Ai: 04
     Drops:
       - Item: Poison_Spore
-        Rate: 9000
+        Rate: 5000
       - Item: Hat_
         Rate: 20
       - Item: Green_Herb
         Rate: 550
       - Item: Blue_Herb
-        Rate: 60
+        Rate: 30
       - Item: Karvodailnirol
         Rate: 50
       - Item: Mushroom_Spore
@@ -3590,8 +3598,8 @@ Body:
         Rate: 7000
       - Item: Flower
         Rate: 1000
-      - Item: Bitter_Herb
-        Rate: 20
+#      - Item: Bitter_Herb
+#        Rate: 20
       - Item: Stem
         Rate: 3000
       - Item: Pointed_Scale
@@ -3676,8 +3684,8 @@ Body:
         Rate: 5500
       - Item: Flower
         Rate: 1000
-      - Item: Deadly_Noxious_Herb
-        Rate: 20
+#      - Item: Deadly_Noxious_Herb
+#        Rate: 20
       - Item: Stem
         Rate: 3000
       - Item: Pointed_Scale
@@ -3763,8 +3771,8 @@ Body:
         Rate: 50
       - Item: Detrimindexta
         Rate: 50
-      - Item: Dew_Laden_Moss
-        Rate: 20
+#      - Item: Dew_Laden_Moss
+#        Rate: 20
       - Item: Feather
         Rate: 2000
       - Item: Crystal_Blue
@@ -3806,8 +3814,8 @@ Body:
         Rate: 50
       - Item: Karvodailnirol
         Rate: 50
-      - Item: Dew_Laden_Moss
-        Rate: 20
+#      - Item: Dew_Laden_Moss
+#        Rate: 20
       - Item: Feather
         Rate: 2000
       - Item: Boody_Red
@@ -3863,15 +3871,15 @@ Body:
       - Item: Golden_Mace
         Rate: 150
       - Item: Golden_Gear
-        Rate: 250
+        Rate: 70
       - Item: Golden_Bell
         Rate: 500
       - Item: Emperium
         Rate: 300
       - Item: Elunium
-        Rate: 2000
+        Rate: 3000
       - Item: Oridecon
-        Rate: 1500
+        Rate: 3000
       - Item: Golden_Bug_Card
         Rate: 1
         StealProtected: true
@@ -3924,11 +3932,13 @@ Body:
       - Item: Shield_
         Rate: 250
       - Item: Orcish_Sword
-        Rate: 1000
+        Rate: 30
       - Item: Elunium
-        Rate: 4559
-      - Item: Giant_Axe
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Giant_Axe
+#        Rate: 100
       - Item: Orc_Hero_Card
         Rate: 1
         StealProtected: true
@@ -3976,8 +3986,8 @@ Body:
         Rate: 1000
       - Item: Center_Potion
         Rate: 700
-      - Item: Guitar_Of_Gentle_Breeze
-        Rate: 10
+#      - Item: Guitar_Of_Gentle_Breeze
+#        Rate: 10
       - Item: Vocal_Card
         Rate: 1
         StealProtected: true
@@ -4056,8 +4066,8 @@ Body:
     Drops:
       - Item: Snowy_Horn
         Rate: 200
-      - Item: Unripe_Apple
-        Rate: 50
+#      - Item: Unripe_Apple
+#        Rate: 50
       - Item: Scarlet_Jewel
         Rate: 1000
       - Item: Angel's_Safeguard
@@ -4101,7 +4111,7 @@ Body:
     Class: Boss
     Drops:
       - Item: Sweet_Gents
-        Rate: 200
+        Rate: 50
       - Item: Red_Herb
         Rate: 8000
       - Item: Violet_Jewel
@@ -4109,9 +4119,9 @@ Body:
       - Item: Chonchon_Doll
         Rate: 2000
       - Item: Clip
-        Rate: 3000
-      - Item: Lusty_Iron
-        Rate: 50
+        Rate: 200
+#      - Item: Lusty_Iron
+#        Rate: 50
       - Item: Grape_Juice
         Rate: 3000
       - Item: Dragon_Fly_Card
@@ -4148,19 +4158,19 @@ Body:
     Class: Boss
     Drops:
       - Item: Western_Grace
-        Rate: 200
+        Rate: 50
       - Item: Claw_Of_Wolves
         Rate: 8000
       - Item: Golden_Jewel
         Rate: 1500
-      - Item: Star_Dust_Blade
-        Rate: 100
+#      - Item: Star_Dust_Blade
+#        Rate: 100
       - Item: Angel's_Warmth
         Rate: 1000
       - Item: Red_Jewel
         Rate: 10
-      - Item: Monster_Juice
-        Rate: 50
+#      - Item: Monster_Juice
+#        Rate: 50
       - Item: Vagabond_Wolf_Card
         Rate: 1
         StealProtected: true
@@ -4193,7 +4203,7 @@ Body:
     Class: Boss
     Drops:
       - Item: Fillet
-        Rate: 200
+        Rate: 50
       - Item: Red_Herb
         Rate: 8000
       - Item: White_Jewel
@@ -4202,8 +4212,8 @@ Body:
         Rate: 1500
       - Item: Four_Leaf_Clover
         Rate: 30
-      - Item: Rainbow_Carrot
-        Rate: 50
+#      - Item: Rainbow_Carrot
+#        Rate: 50
       - Item: Angel's_Protection
         Rate: 1000
       - Item: Eclipse_Card
@@ -4242,7 +4252,7 @@ Body:
       - Item: Crystal_Blue
         Rate: 50
       - Item: Snail's_Shell
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 1200
       - Item: Shell
@@ -4287,7 +4297,7 @@ Body:
       Detector: true
     Drops:
       - Item: Worm_Peelings
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 1000
       - Item: Sticky_Mucus
@@ -4333,7 +4343,7 @@ Body:
     Class: Boss
     Drops:
       - Item: Angelic_Chain
-        Rate: 100
+        Rate: 50
       - Item: Scapulare_
         Rate: 60
       - Item: Leaf_Of_Yggdrasil
@@ -4419,8 +4429,8 @@ Body:
     Drops:
       - Item: Rotten_Bandage
         Rate: 3000
-      - Item: Healing_Staff
-        Rate: 10
+#      - Item: Healing_Staff
+#        Rate: 10
       - Item: Mementos
         Rate: 550
 #      - Item: Oridecon
@@ -4468,7 +4478,7 @@ Body:
       Detector: true
     Drops:
       - Item: Short_Leg
-        Rate: 5335
+        Rate: 5000
       - Item: Zargon
         Rate: 1200
       - Item: Elunium_Stone
@@ -4513,7 +4523,7 @@ Body:
       Detector: true
     Drops:
       - Item: Spiderweb
-        Rate: 9000
+        Rate: 5000
       - Item: Scell
         Rate: 1200
       - Item: Short_Leg
@@ -4565,13 +4575,13 @@ Body:
 #        Rate: 63
 #add edit
       - Item: Oridecon_Stone
-        Rate: 63
+        Rate: 65
       - Item: Halberd_
         Rate: 2
       - Item: Yggdrasilberry
-        Rate: 50
+        Rate: 40
       - Item: Leaf_Of_Yggdrasil
-        Rate: 100
+        Rate: 70
       - Item: Yellow_Herb
         Rate: 1300
       - Item: Boots
@@ -4619,8 +4629,8 @@ Body:
         Rate: 30
       - Item: Old_Magic_Book
         Rate: 15
-      - Item: Old_Broom
-        Rate: 20
+#      - Item: Old_Broom
+#        Rate: 20
       - Item: Bathory_Card
         Rate: 1
         StealProtected: true
@@ -4655,17 +4665,17 @@ Body:
     Ai: 17
     Drops:
       - Item: Porcupine_Spike
-        Rate: 9000
+        Rate: 5000
       - Item: Coat_
         Rate: 5
       - Item: Animal's_Skin
-        Rate: 5500
+        Rate: 5000
       - Item: Glaive_
-        Rate: 10
+        Rate: 8
       - Item: Spear_
         Rate: 15
       - Item: Pike_
-        Rate: 20
+        Rate: 10
       - Item: Caramel_Card
         Rate: 1
         StealProtected: true
@@ -4698,7 +4708,7 @@ Body:
     Ai: 17
     Drops:
       - Item: Acorn
-        Rate: 9000
+        Rate: 5000
       - Item: Hood_
         Rate: 20
       - Item: Fluff
@@ -4708,9 +4718,9 @@ Body:
       - Item: Sweet_Potato
         Rate: 500
       - Item: Sandals_
-        Rate: 25
+        Rate: 20
       - Item: Strawberry
-        Rate: 600
+        Rate: 300
       - Item: Coco_Card
         Rate: 1
         StealProtected: true
@@ -4745,7 +4755,7 @@ Body:
       Detector: true
     Drops:
       - Item: Worm_Peelings
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 3000
       - Item: Sticky_Mucus
@@ -4791,9 +4801,9 @@ Body:
     Ai: 13
     Drops:
       - Item: Katar_
-        Rate: 5
+        Rate: 2
       - Item: Claw_Of_Desert_Wolf
-        Rate: 5500
+        Rate: 5000
       - Item: Mink_Coat
         Rate: 1
       - Item: Meat
@@ -4801,9 +4811,9 @@ Body:
       - Item: Claw_Of_Wolves
         Rate: 2000
       - Item: Oridecon_Stone
-        Rate: 53
+        Rate: 50
       - Item: Stiletto_
-        Rate: 140
+        Rate: 15
       - Item: Desert_Wolf_Card
         Rate: 1
         StealProtected: true
@@ -4838,17 +4848,17 @@ Body:
       - Item: Phracon
         Rate: 85
       - Item: Animal's_Skin
-        Rate: 5500
+        Rate: 5000
       - Item: Adventurere's_Suit_
         Rate: 80
       - Item: Meat
         Rate: 600
       - Item: Cotton_Shirt
         Rate: 200
-      - Item: Asura_
-        Rate: 5
+#      - Item: Asura_
+#        Rate: 5
       - Item: Orange
-        Rate: 1000
+        Rate: 500
       - Item: Desert_Wolf_Babe_Card
         Rate: 1
         StealProtected: true
@@ -4884,7 +4894,7 @@ Body:
       - Item: Mistic_Frozen
         Rate: 25
       - Item: Tooth_Of_Ancient_Fish
-        Rate: 9000
+        Rate: 5000
       - Item: Lip_Of_Ancient_Fish
         Rate: 1000
       - Item: Antenna
@@ -4892,7 +4902,7 @@ Body:
       - Item: Detrimindexta
         Rate: 200
       - Item: Katar_Of_Cold_Icicle
-        Rate: 3
+        Rate: 2
       - Item: Oridecon_Stone
         Rate: 161
       - Item: Deviace_Card
@@ -4930,14 +4940,14 @@ Body:
       Detector: true
     Drops:
       - Item: Petite_DiablOfs_Horn
-        Rate: 5335
+        Rate: 5000
       - Item: Petite_DiablOfs_Wing
         Rate: 400
 #      - Item: Oridecon
 #        Rate: 2
 #add edit
-      - Item: Oridecon_Stone
-        Rate: 2
+#      - Item: Oridecon_Stone
+#        Rate: 2
       - Item: Partizan_
         Rate: 2
       - Item: Sacred_Marks
@@ -4945,7 +4955,7 @@ Body:
       - Item: Zargon
         Rate: 1500
       - Item: Oridecon_Stone
-        Rate: 154
+        Rate: 70
       - Item: Deviruchi_Card
         Rate: 1
         StealProtected: true
@@ -4981,9 +4991,9 @@ Body:
       Detector: true
     Drops:
       - Item: Dokkaebi_Horn
-        Rate: 9000
+        Rate: 5000
       - Item: Elunium_Stone
-        Rate: 150
+        Rate: 100
       - Item: Sword_Mace_
         Rate: 2
       - Item: Mighty_Staff
@@ -5031,7 +5041,7 @@ Body:
       - Item: Red_Herb
         Rate: 1000
       - Item: Wing_Of_Red_Bat
-        Rate: 5500
+        Rate: 5000
       - Item: Wing_Of_Red_Bat
         Rate: 1500
       - Item: Oridecon_Stone
@@ -5079,19 +5089,21 @@ Body:
         Rate: 500
     Drops:
       - Item: Saber_
-        Rate: 600
+        Rate: 200
       - Item: Ring_Pommel_Saber_
-        Rate: 950
+        Rate: 850
       - Item: Cutlas
         Rate: 150
       - Item: Hae_Dong_Gum_
-        Rate: 400
+        Rate: 200
       - Item: Corsair
-        Rate: 350
+        Rate: 70
       - Item: Elunium
-        Rate: 3200
-      - Item: Krasnaya
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Krasnaya
+#        Rate: 100
       - Item: Drake_Card
         Rate: 1
         StealProtected: true
@@ -5124,7 +5136,7 @@ Body:
       - Item: Jellopy
         Rate: 7500
       - Item: Rod_
-        Rate: 80
+        Rate: 50
       - Item: Sticky_Mucus
         Rate: 500
       - Item: Apple
@@ -5133,8 +5145,8 @@ Body:
         Rate: 1700
       - Item: Apple
         Rate: 800
-      - Item: Orange_Juice
-        Rate: 20
+#      - Item: Orange_Juice
+#        Rate: 20
       - Item: Drops_Card
         Rate: 1
         StealProtected: true
@@ -5168,7 +5180,7 @@ Body:
       Detector: true
     Drops:
       - Item: Moth_Dust
-        Rate: 9000
+        Rate: 5000
       - Item: Wing_Of_Moth
         Rate: 500
       - Item: Masquerade
@@ -5226,7 +5238,7 @@ Body:
       - Item: Fire_Brand
         Rate: 150
       - Item: Smoking_Pipe
-        Rate: 250
+        Rate: 70
       - Item: Honey
         Rate: 10000
       - Item: Katar_Of_Raging_Blaze
@@ -5234,9 +5246,11 @@ Body:
       - Item: Tiger_Footskin
         Rate: 250
       - Item: Elunium
-        Rate: 2300
-      - Item: Krieg
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Krieg
+#        Rate: 100
       - Item: Eddga_Card
         Rate: 1
         StealProtected: true
@@ -5314,21 +5328,21 @@ Body:
     Ai: 21
     Drops:
       - Item: Biretta_
-        Rate: 10
+        Rate: 7
       - Item: Bone_Wand
         Rate: 1
       - Item: Ragamuffin_Cape
         Rate: 2
       - Item: Bible
-        Rate: 10
+        Rate: 5
       - Item: Leaf_Of_Yggdrasil
-        Rate: 200
+        Rate: 140
       - Item: Cookbook07
         Rate: 4
       - Item: White_Herb
         Rate: 2000
-      - Item: Evil_Druid_Card
-        Rate: 1
+#      - Item: Evil_Druid_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1118
     AegisName: FLORA
@@ -5360,15 +5374,15 @@ Body:
     Ai: 10
     Drops:
       - Item: Blossom_Of_Maneater
-        Rate: 9000
+        Rate: 5000
       - Item: Sunflower
         Rate: 3
       - Item: Aloe
         Rate: 10
       - Item: Leaflet_Of_Aloe
         Rate: 50
-      - Item: Singing_Flower
-        Rate: 20
+#      - Item: Singing_Flower
+#        Rate: 20
       - Item: Stem
         Rate: 2000
       - Item: Witherless_Rose
@@ -5406,7 +5420,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Lizard_Scruff
-        Rate: 5500
+        Rate: 5000
       - Item: Elunium_Stone
         Rate: 90
       - Item: Reptile_Tongue
@@ -5455,9 +5469,9 @@ Body:
       - Item: Transparent_Cloth
         Rate: 5335
       - Item: Ghost_Bandana
-        Rate: 100
-      - Item: Thief_Clothes_
         Rate: 50
+      - Item: Thief_Clothes_
+        Rate: 15
       - Item: Branch_Of_Dead_Tree
         Rate: 500
       - Item: Old_Blue_Box
@@ -5506,11 +5520,11 @@ Body:
       - Item: Coal
         Rate: 150
       - Item: Elder_Pixie's_Beard
-        Rate: 5500
+        Rate: 5000
       - Item: Elven_Ears
         Rate: 1
       - Item: Cap_
-        Rate: 10
+        Rate: 7
       - Item: Sparkling_Dust
         Rate: 100
       - Item: Giearth_Card
@@ -5550,7 +5564,7 @@ Body:
       - Item: Iron
         Rate: 270
       - Item: Scell
-        Rate: 9000
+        Rate: 5000
       - Item: Oridecon_Stone
         Rate: 43
       - Item: Goblini_Mask
@@ -5598,7 +5612,7 @@ Body:
       - Item: Iron
         Rate: 250
       - Item: Scell
-        Rate: 9000
+        Rate: 5000
       - Item: Indian_Hair_Piece
         Rate: 3
       - Item: Flail_
@@ -5646,7 +5660,7 @@ Body:
       - Item: Iron
         Rate: 230
       - Item: Scell
-        Rate: 9000
+        Rate: 5000
       - Item: Red_Bandana
         Rate: 3
       - Item: Goblin_Mask_02
@@ -5742,9 +5756,9 @@ Body:
       - Item: Iron
         Rate: 150
       - Item: Scell
-        Rate: 9000
+        Rate: 5000
       - Item: Wand_
-        Rate: 15
+        Rate: 10
       - Item: Buckler_
         Rate: 1
       - Item: Goblin_Mask_03
@@ -5787,17 +5801,17 @@ Body:
       - Item: Yellow_Live
         Rate: 120
       - Item: Earthworm_Peeling
-        Rate: 9000
+        Rate: 5000
       - Item: Elunium_Stone
         Rate: 80
       - Item: Sticky_Mucus
         Rate: 3000
-      - Item: Town_Sword_
-        Rate: 10
+#      - Item: Town_Sword_
+#        Rate: 10
       - Item: Foolishness_Of_Blind
         Rate: 1
-      - Item: Fatty_Chubby_Earthworm
-        Rate: 20
+#      - Item: Fatty_Chubby_Earthworm
+#        Rate: 20
       - Item: Hode_Card
         Rate: 1
         StealProtected: true
@@ -5837,11 +5851,11 @@ Body:
       - Item: Emveretarcon
         Rate: 35
       - Item: Horn
-        Rate: 5500
+        Rate: 5000
       - Item: Guisarme_
-        Rate: 15
+        Rate: 10
       - Item: Shell
-        Rate: 5500
+        Rate: 5000
       - Item: Solid_Shell
         Rate: 70
       - Item: Horn_Card
@@ -5875,7 +5889,7 @@ Body:
     Ai: 13
     Drops:
       - Item: Stone_Heart
-        Rate: 6500
+        Rate: 5000
       - Item: Zargon
         Rate: 500
       - Item: Bomb_Wick
@@ -5883,9 +5897,9 @@ Body:
       - Item: Fire_Arrow
         Rate: 10000
       - Item: Elunium_Stone
-        Rate: 118
-      - Item: Baked_Yam
-        Rate: 20
+        Rate: 70
+#      - Item: Baked_Yam
+#        Rate: 20
       - Item: Alchol
         Rate: 50
       - Item: Horong_Card
@@ -5921,16 +5935,16 @@ Body:
     Ai: 21
     Drops:
       - Item: Pumpkin_Head
-        Rate: 9000
+        Rate: 5000
       - Item: Zargon
         Rate: 900
 #      - Item: Elunium
 #        Rate: 31
 #add edit
       - Item: Elunium_Stone
-        Rate: 31
+        Rate: 60
       - Item: Tights_
-        Rate: 5
+        Rate: 4
       - Item: Frozen_Heart
         Rate: 5
       - Item: Pumpkin
@@ -5970,9 +5984,9 @@ Body:
       - Item: Zargon
         Rate: 2000
       - Item: Old_Card_Album
-        Rate: 2
-      - Item: Contracts_In_Shadow
-        Rate: 20
+        Rate: 1
+#      - Item: Contracts_In_Shadow
+#        Rate: 20
       - Item: Yellow_Herb
         Rate: 1000
       - Item: Katar_Of_Piercing_Wind
@@ -6018,7 +6032,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Skel_Bone
-        Rate: 8000
+        Rate: 5000
 #      - Item: Elunium
 #        Rate: 191
 #add edit
@@ -6031,7 +6045,7 @@ Body:
       - Item: Patriotism_Marks
         Rate: 10
       - Item: White_Herb
-        Rate: 2000
+        Rate: 1500
       - Item: Saber_
         Rate: 2
       - Item: Khalitzburg_Card
@@ -6071,7 +6085,7 @@ Body:
       - Item: Steel
         Rate: 100
       - Item: Cobold_Hair
-        Rate: 5335
+        Rate: 5000
       - Item: Zargon
         Rate: 700
       - Item: Elunium_Stone
@@ -6079,7 +6093,7 @@ Body:
       - Item: Gladius_
         Rate: 2
       - Item: Buckler_
-        Rate: 5
+        Rate: 4
       - Item: Kobold_Card
         Rate: 1
         StealProtected: true
@@ -6117,7 +6131,7 @@ Body:
       - Item: Steel
         Rate: 100
       - Item: Cobold_Hair
-        Rate: 5335
+        Rate: 5000
       - Item: Zargon
         Rate: 200
       - Item: Buckler_
@@ -6165,7 +6179,7 @@ Body:
       - Item: Steel
         Rate: 100
       - Item: Cobold_Hair
-        Rate: 5335
+        Rate: 5000
       - Item: Zargon
         Rate: 200
       - Item: Hammer_
@@ -6304,7 +6318,7 @@ Body:
       Detector: true
     Drops:
       - Item: Old_Frying_Pan
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 800
       - Item: Scell
@@ -6353,7 +6367,7 @@ Body:
       - Item: Yellow_Live
         Rate: 110
       - Item: Limb_Of_Mantis
-        Rate: 9000
+        Rate: 5000
       - Item: Scell
         Rate: 1400
       - Item: Elunium_Stone
@@ -6396,7 +6410,7 @@ Body:
     Ai: 09
     Drops:
       - Item: Flame_Heart
-        Rate: 35
+        Rate: 20
       - Item: Sacred_Masque
         Rate: 4365
       - Item: Staff_
@@ -6407,8 +6421,8 @@ Body:
         Rate: 3
       - Item: Fire_Scroll_1_5
         Rate: 100
-      - Item: Book_Of_Devil
-        Rate: 20
+#      - Item: Book_Of_Devil
+#        Rate: 20
       - Item: Marduk_Card
         Rate: 1
         StealProtected: true
@@ -6449,8 +6463,8 @@ Body:
         Rate: 2
       - Item: Blue_Gemstone
         Rate: 200
-      - Item: Deadly_Noxious_Herb
-        Rate: 20
+#      - Item: Deadly_Noxious_Herb
+#        Rate: 20
       - Item: Marina_Card
         Rate: 1
         StealProtected: true
@@ -6526,7 +6540,7 @@ Body:
       Detector: true
     Drops:
       - Item: Golden_Hair
-        Rate: 9000
+        Rate: 5000
       - Item: Star_Dust
         Rate: 5
       - Item: Brooch
@@ -6571,7 +6585,7 @@ Body:
     Ai: 17
     Drops:
       - Item: Chinese_Ink
-        Rate: 9000
+        Rate: 5000
       - Item: Tentacle
         Rate: 3000
       - Item: Blue_Gemstone
@@ -6584,8 +6598,8 @@ Body:
         Rate: 5
       - Item: Grape
         Rate: 300
-      - Item: Marse_Card
-        Rate: 1
+#      - Item: Marse_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1145
     AegisName: MARTIN
@@ -6617,7 +6631,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Moustache_Of_Mole
-        Rate: 9000
+        Rate: 5000
       - Item: Nail_Of_Mole
         Rate: 500
       - Item: Jur_
@@ -6669,9 +6683,9 @@ Body:
       - Item: Pet_Food
         Rate: 400
       - Item: Elunium_Stone
-        Rate: 100
+        Rate: 70
       - Item: Grape
-        Rate: 200
+        Rate: 150
       - Item: Matyr_Card
         Rate: 1
         StealProtected: true
@@ -6719,17 +6733,19 @@ Body:
       - Item: Queen's_Hair_Ornament
         Rate: 500
       - Item: Safety_Ring
-        Rate: 200
+        Rate: 100
       - Item: Tiara
-        Rate: 200
-      - Item: Armlet_Of_Obedience
-        Rate: 500
+        Rate: 70
+#      - Item: Armlet_Of_Obedience
+#        Rate: 500
       - Item: Mother's_Nightmare
         Rate: 10
       - Item: Elunium
-        Rate: 3500
-      - Item: Dea_Staff
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Dea_Staff
+#        Rate: 100
       - Item: Maya_Card
         Rate: 1
         StealProtected: true
@@ -6765,17 +6781,17 @@ Body:
       Detector: true
     Drops:
       - Item: Slender_Snake
-        Rate: 5335
-      - Item: Whip_Of_Red_Flame
-        Rate: 250
+        Rate: 5000
+#      - Item: Whip_Of_Red_Flame
+#        Rate: 250
       - Item: Animal_Blood
         Rate: 200
-      - Item: Sea_Witch_Foot
-        Rate: 20
+#      - Item: Sea_Witch_Foot
+#        Rate: 20
       - Item: Scarlet_Jewel
-        Rate: 250
+        Rate: 75
       - Item: Turtle_Shell
-        Rate: 3500
+        Rate: 3000
       - Item: Penetration
         Rate: 3
       - Item: Medusa_Card
@@ -6812,9 +6828,9 @@ Body:
     Ai: 09
     Drops:
       - Item: Nose_Ring
-        Rate: 5335
+        Rate: 5000
       - Item: Oridecon_Stone
-        Rate: 196
+        Rate: 80
       - Item: Two_Handed_Axe_
         Rate: 2
       - Item: Hammer_Of_Blacksmith
@@ -6869,20 +6885,22 @@ Body:
       - Item: Golden_Jewel
         Rate: 500
     Drops:
-      - Item: Spectral_Spear
-        Rate: 500
+#      - Item: Spectral_Spear
+#        Rate: 500
       - Item: Moonlight_Sword
         Rate: 100
       - Item: Long_Mace
         Rate: 150
       - Item: Punisher
         Rate: 500
-      - Item: Silver_Knife_Of_Chaste
-        Rate: 650
+#      - Item: Silver_Knife_Of_Chaste
+#        Rate: 650
       - Item: Elunium
-        Rate: 2600
-      - Item: Staff_Of_Bordeaux
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Staff_Of_Bordeaux
+#        Rate: 100
       - Item: Moonlight_Flower_Card
         Rate: 1
         StealProtected: true
@@ -6961,15 +6979,15 @@ Body:
     Ai: 04
     Drops:
       - Item: Orcish_Cuspid
-        Rate: 5500
+        Rate: 5000
       - Item: Skel_Bone
-        Rate: 3500
+        Rate: 3000
       - Item: Elunium_Stone
-        Rate: 80
+        Rate: 65
       - Item: Viking_Helm
         Rate: 2
       - Item: Buster_
-        Rate: 10
+        Rate: 7
       - Item: Green_Herb
         Rate: 50
       - Item: Orc_Skeleton_Card
@@ -7006,7 +7024,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Nail_Of_Orc
-        Rate: 5500
+        Rate: 5000
       - Item: Sticky_Mucus
         Rate: 3000
       - Item: Emperium
@@ -7048,13 +7066,13 @@ Body:
       - Item: Honey_Jar
         Rate: 2500
       - Item: Elunium_Stone
-        Rate: 20
+        Rate: 10
       - Item: Falchion_
         Rate: 500
       - Item: Stiletto_
-        Rate: 150
+        Rate: 30
       - Item: Undershirt
-        Rate: 100
+        Rate: 5
       - Item: Pasana_Card
         Rate: 1
         StealProtected: true
@@ -7088,17 +7106,17 @@ Body:
     Ai: 09
     Drops:
       - Item: Dragon_Canine
-        Rate: 5335
+        Rate: 5000
       - Item: Dragon_Train
         Rate: 300
       - Item: Oridecon_Stone
-        Rate: 140
+        Rate: 50
       - Item: White_Herb
-        Rate: 1000
+        Rate: 300
       - Item: Flail
-        Rate: 150
+        Rate: 20
       - Item: Zargon
-        Rate: 1500
+        Rate: 1000
       - Item: Aloebera
         Rate: 15
       - Item: Petit_Card
@@ -7134,7 +7152,7 @@ Body:
     Ai: 09
     Drops:
       - Item: Dragon_Scale
-        Rate: 5335
+        Rate: 5000
       - Item: Dragon_Train
         Rate: 300
 #      - Item: Elunium
@@ -7143,11 +7161,11 @@ Body:
       - Item: Elunium_Stone
         Rate: 31
       - Item: White_Herb
-        Rate: 1000
-      - Item: Khukri
-        Rate: 5
+        Rate: 300
+#      - Item: Khukri
+#        Rate: 5
       - Item: Zargon
-        Rate: 1500
+        Rate: 1000
       - Item: Aloebera
         Rate: 15
       - Item: Petit__Card
@@ -7202,11 +7220,15 @@ Body:
       - Item: Holy_Robe
         Rate: 150
       - Item: Gemmed_Crown
-        Rate: 500
+        Rate: 100
       - Item: Tablet
         Rate: 300
       - Item: Bazerald
         Rate: 80
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Pharaoh_Card
         Rate: 1
         StealProtected: true
@@ -7295,7 +7317,7 @@ Body:
       - Item: Thin_N'_Long_Tongue
         Rate: 9700
       - Item: Forturn_Sword
-        Rate: 500
+        Rate: 300
       - Item: Sucsamad
         Rate: 150
       - Item: Jaws_Of_Ant
@@ -7303,9 +7325,11 @@ Body:
       - Item: Mr_Scream
         Rate: 300
       - Item: Elunium
-        Rate: 2900
-      - Item: Weihna
-        Rate: 100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Weihna
+#        Rate: 100
       - Item: Phreeoni_Card
         Rate: 1
         StealProtected: true
@@ -7340,7 +7364,7 @@ Body:
       Detector: true
     Drops:
       - Item: Worm_Peelings
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 1100
       - Item: Sticky_Mucus
@@ -7383,7 +7407,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Single_Cell
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 300
       - Item: Sticky_Mucus
@@ -7392,8 +7416,8 @@ Body:
         Rate: 4
       - Item: Empty_Bottle
         Rate: 1000
-      - Item: Dew_Laden_Moss
-        Rate: 20
+#      - Item: Dew_Laden_Moss
+#        Rate: 20
       - Item: Center_Potion
         Rate: 50
       - Item: Plankton_Card
@@ -7428,7 +7452,7 @@ Body:
     Ai: 04
     Drops:
       - Item: Root_Of_Maneater
-        Rate: 5500
+        Rate: 5000
       - Item: Scell
         Rate: 1600
       - Item: Four_Leaf_Clover
@@ -7478,7 +7502,7 @@ Body:
 #        Rate: 106
 #add edit
       - Item: Elunium_Stone
-        Rate: 106
+        Rate: 100
       - Item: Iron_Cane
         Rate: 1
       - Item: Chain_Mail_
@@ -7531,7 +7555,7 @@ Body:
       - Item: Horrendous_Mouth
         Rate: 3500
       - Item: Mementos
-        Rate: 1500
+        Rate: 1250
       - Item: Mantle_
         Rate: 10
       - Item: Cookbook06
@@ -7572,17 +7596,17 @@ Body:
       - Item: Great_Nature
         Rate: 35
       - Item: Grit
-        Rate: 5335
+        Rate: 5000
       - Item: Elunium_Stone
-        Rate: 118
+        Rate: 70
       - Item: Fine_Sand
         Rate: 350
       - Item: Sparkling_Dust
-        Rate: 200
+        Rate: 150
       - Item: Katar_Of_Thornbush
         Rate: 1
-      - Item: Hypnotist's_Staff_
-        Rate: 5
+#      - Item: Hypnotist's_Staff_
+#        Rate: 5
       - Item: Sand_Man_Card
         Rate: 1
         StealProtected: true
@@ -7616,9 +7640,9 @@ Body:
     Ai: 17
     Drops:
       - Item: Wild_Boar's_Mane
-        Rate: 9000
+        Rate: 5000
       - Item: Grape
-        Rate: 300
+        Rate: 200
       - Item: Animal_Blood
         Rate: 2
       - Item: Eagle_Eyes
@@ -7660,7 +7684,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Animal's_Skin
-        Rate: 9000
+        Rate: 5000
       - Item: Axe_
         Rate: 100
       - Item: Meat
@@ -7671,8 +7695,8 @@ Body:
         Rate: 850
       - Item: Phracon
         Rate: 80
-      - Item: Sweet_Milk
-        Rate: 40
+#      - Item: Sweet_Milk
+#        Rate: 40
       - Item: Savage_Babe_Card
         Rate: 1
         StealProtected: true
@@ -7752,7 +7776,7 @@ Body:
       - Item: Iron
         Rate: 400
       - Item: Lantern
-        Rate: 5500
+        Rate: 5000
       - Item: Elunium_Stone
         Rate: 90
       - Item: Safety_Helmet
@@ -7797,19 +7821,19 @@ Body:
       Detector: true
     Drops:
       - Item: Long_Hair
-        Rate: 9000
+        Rate: 5000
       - Item: Skirt_Of_Virgin
         Rate: 50
       - Item: Nurse_Cap
         Rate: 1
       - Item: Muffler_
-        Rate: 5
+        Rate: 4
       - Item: Stiletto_
-        Rate: 5
+        Rate: 4
       - Item: Red_Herb
         Rate: 1000
       - Item: Inspector_Certificate
-        Rate: 350
+        Rate: 140
       - Item: Sohee_Card
         Rate: 1
         StealProtected: true
@@ -7977,7 +8001,7 @@ Body:
       - Item: Emveretarcon
         Rate: 30
       - Item: Colorful_Shell
-        Rate: 9000
+        Rate: 5000
       - Item: Garlet
         Rate: 2100
       - Item: Elunium_Stone
@@ -8017,7 +8041,7 @@ Body:
     Ai: 17
     Drops:
       - Item: Rat_Tail
-        Rate: 9000
+        Rate: 5000
       - Item: Animal's_Skin
         Rate: 3000
       - Item: Feather
@@ -8066,12 +8090,12 @@ Body:
         Rate: 5000
       - Item: Scell
         Rate: 200
-      - Item: Honey
-        Rate: 350
+#      - Item: Honey
+#        Rate: 350
       - Item: Honey
         Rate: 350
       - Item: Royal_Jelly
-        Rate: 200
+        Rate: 170
       - Item: Oridecon_Stone
         Rate: 26
       - Item: Vitata_Card
@@ -8105,7 +8129,7 @@ Body:
     Ai: 02
     Drops:
       - Item: Tooth_Of_
-        Rate: 5500
+        Rate: 5000
       - Item: Oridecon_Stone
         Rate: 70
       - Item: Sticky_Mucus
@@ -8114,8 +8138,8 @@ Body:
         Rate: 5
       - Item: Yellow_Herb
         Rate: 100
-      - Item: Shining_Stone
-        Rate: 20
+#      - Item: Shining_Stone
+#        Rate: 20
       - Item: Zenorc_Card
         Rate: 1
         StealProtected: true
@@ -8151,7 +8175,7 @@ Body:
       - Item: Iron
         Rate: 190
       - Item: G_Strings
-        Rate: 200
+        Rate: 100
       - Item: Ganster_Mask
         Rate: 3
       - Item: Cuffs
@@ -8194,11 +8218,11 @@ Body:
       - Item: Sparkling_Dust
         Rate: 150
       - Item: Transparent_Cloth
-        Rate: 5335
+        Rate: 5000
       - Item: Spirit_Chain
         Rate: 1
       - Item: Silver_Robe_
-        Rate: 10
+        Rate: 8
       - Item: Whisper_Card
         Rate: 1
         StealProtected: true
@@ -8239,11 +8263,11 @@ Body:
       - Item: Branch_Of_Dead_Tree
         Rate: 100
       - Item: Royal_Jelly
-        Rate: 250
+        Rate: 150
       - Item: Panacea
         Rate: 350
       - Item: Oridecon_Stone
-        Rate: 100
+        Rate: 90
       - Item: Nine_Tail_Card
         Rate: 1
         StealProtected: true
@@ -8339,11 +8363,11 @@ Body:
       - Item: Iron
         Rate: 50
       - Item: Shell
-        Rate: 5500
+        Rate: 5000
       - Item: Jellopy
         Rate: 1500
       - Item: Cutter_
-        Rate: 55
+        Rate: 50
       - Item: Wing_Of_Fly
         Rate: 100
       - Item: Chonchon_Doll
@@ -8510,7 +8534,7 @@ Body:
     Ai: 09
     Drops:
       - Item: Short_Daenggie
-        Rate: 5500
+        Rate: 5000
       - Item: Old_Portrait
         Rate: 40
       - Item: Worn_Out_Scroll
@@ -8519,8 +8543,8 @@ Body:
         Rate: 1
       - Item: Amulet
         Rate: 15
-      - Item: Yellow_Herb
-        Rate: 1000
+#      - Item: Yellow_Herb
+#        Rate: 1000
       - Item: Yellow_Herb
         Rate: 1250
       - Item: Bon_Gun_Card
@@ -8540,7 +8564,7 @@ Body:
     Agi: 44
     Vit: 25
     Int: 20
-    Dex: 125
+    Dex: 140
     Luk: 20
     AttackRange: 9
     SkillRange: 10
@@ -8570,7 +8594,7 @@ Body:
       - Item: Red_Herb
         Rate: 1400
       - Item: White_Herb
-        Rate: 900
+        Rate: 450
       - Item: Orc_Archer_Card
         Rate: 1
         StealProtected: true
@@ -8616,17 +8640,19 @@ Body:
       - Item: Brood_Axe
         Rate: 400
       - Item: Ring_
-        Rate: 400
+        Rate: 100
       - Item: Loard_Circlet
-        Rate: 400
+        Rate: 70
 #      - Item: Doom_Slayer_
 #        Rate: 400
       - Item: Old_Violet_Box
         Rate: 1000
       - Item: Elunium
-        Rate: 4268
-      - Item: Erde
-        Rate: 3100
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Erde
+#        Rate: 3100
       - Item: Orc_Load_Card
         Rate: 1
         StealProtected: true
@@ -8673,9 +8699,9 @@ Body:
       - Item: Rosary_
         Rate: 1
       - Item: Elunium_Stone
-        Rate: 270
-      - Item: Mimic_Card
-        Rate: 1
+        Rate: 100
+#      - Item: Mimic_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1192
     AegisName: WRAITH
@@ -8707,7 +8733,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Transparent_Cloth
-        Rate: 5820
+        Rate: 5000
       - Item: Wedding_Veil
         Rate: 10
       - Item: Manteau_
@@ -8753,7 +8779,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Needle_Of_Alarm
-        Rate: 5335
+        Rate: 5000
       - Item: Clip
         Rate: 1
       - Item: Skull
@@ -8908,7 +8934,7 @@ Body:
       - Item: Rotten_Bandage
         Rate: 3500
       - Item: Cuffs
-        Rate: 35
+        Rate: 20
       - Item: Mementos
         Rate: 1500
       - Item: Skel_Prisoner_Card
@@ -8953,7 +8979,7 @@ Body:
       - Item: Rotten_Bandage
         Rate: 3500
       - Item: Cuffs
-        Rate: 39
+        Rate: 20
 #      - Item: Elunium
 #        Rate: 112
 #add edit
@@ -9039,7 +9065,7 @@ Body:
     Ai: 09
     Drops:
       - Item: Mould_Powder
-        Rate: 5335
+        Rate: 5000
       - Item: Yellow_Gemstone
         Rate: 800
       - Item: Pacifier
@@ -9049,7 +9075,7 @@ Body:
       - Item: Moth_Dust
         Rate: 3000
       - Item: Wing_Of_Fly
-        Rate: 1100
+        Rate: 650
       - Item: Hood_
         Rate: 15
       - Item: Punk_Card
@@ -9093,11 +9119,11 @@ Body:
       - Item: Rose_Quartz
         Rate: 1500
       - Item: Tights_
-        Rate: 8
+        Rate: 7
       - Item: Earring_
         Rate: 1
-      - Item: Queen's_Whip
-        Rate: 100
+#      - Item: Queen's_Whip
+#        Rate: 100
       - Item: Masquerade
         Rate: 3
       - Item: Zherlthsh_Card
@@ -9139,7 +9165,7 @@ Body:
       - Item: Executioner's_Mitten
         Rate: 3
       - Item: White_Herb
-        Rate: 1800
+        Rate: 900
       - Item: Crystal_Jewel_
         Rate: 30
       - Item: Frozen_Heart
@@ -9188,16 +9214,16 @@ Body:
       - Item: Executioner's_Mitten
         Rate: 4
       - Item: White_Herb
-        Rate: 1800
+        Rate: 900
 #      - Item: Oridecon
 #        Rate: 150
 #add edit
       - Item: Oridecon_Stone
         Rate: 150
-      - Item: Electric_Wire
-        Rate: 100
-      - Item: Phendark_Card
-        Rate: 1
+#      - Item: Electric_Wire
+#        Rate: 100
+#      - Item: Phendark_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1203
     AegisName: MYSTELTAINN
@@ -9284,8 +9310,8 @@ Body:
     Drops:
       - Item: Old_Hilt
         Rate: 1
-      - Item: Silver_Knife_Of_Chaste
-        Rate: 50
+#      - Item: Silver_Knife_Of_Chaste
+#        Rate: 50
       - Item: Muscovite
         Rate: 1500
       - Item: Dagger_
@@ -9387,18 +9413,18 @@ Body:
       - Item: Crystal_Arrow
         Rate: 2000
       - Item: Royal_Jelly
-        Rate: 5
+        Rate: 4
       - Item: Red_Muffler
         Rate: 10
       - Item: Solid_Shell
-        Rate: 5335
+        Rate: 4000
       - Item: Brooch_
         Rate: 1
 #      - Item: Oridecon
 #        Rate: 134
 #add edit
       - Item: Oridecon_Stone
-        Rate: 134
+        Rate: 60
       - Item: Anolian_Card
         Rate: 1
         StealProtected: true
@@ -9485,17 +9511,17 @@ Body:
         Rate: 4850
       - Item: Old_Card_Album
         Rate: 1
-      - Item: Hakujin_
-        Rate: 5
+#      - Item: Hakujin_
+#        Rate: 5
       - Item: Centimental_Leaf
         Rate: 5
       - Item: Leaf_Of_Yggdrasil
-        Rate: 650
+        Rate: 100
 #      - Item: Oridecon
 #        Rate: 217
 #add edit
       - Item: Oridecon_Stone
-        Rate: 217
+        Rate: 125
       - Item: Muramasa
         Rate: 1
       - Item: Wander_Man_Card
@@ -9534,13 +9560,13 @@ Body:
       - Item: Monster's_Feed
         Rate: 1000
       - Item: Blue_Jewel
-        Rate: 80
+        Rate: 40
       - Item: Glass_Bead
         Rate: 110
       - Item: Lemon
-        Rate: 250
+        Rate: 200
       - Item: Blue_Herb
-        Rate: 70
+        Rate: 50
 #      - Item: Oridecon
 #        Rate: 95
 #add edit
@@ -9627,19 +9653,19 @@ Body:
       Detector: true
     Drops:
       - Item: Glitter_Shell
-        Rate: 5335
+        Rate: 5000
       - Item: Wind_Of_Verdure
         Rate: 200
       - Item: Zargon
         Rate: 1200
       - Item: Wing_Of_Butterfly
-        Rate: 1000
+        Rate: 800
       - Item: Elunium_Stone
         Rate: 220
       - Item: Leaf_Of_Yggdrasil
-        Rate: 250
+        Rate: 125
       - Item: White_Herb
-        Rate: 2600
+        Rate: 1300
       - Item: Brilight_Card
         Rate: 1
         StealProtected: true
@@ -9675,11 +9701,11 @@ Body:
       Detector: true
     Drops:
       - Item: Tail_Of_Steel_Scorpion
-        Rate: 5335
+        Rate: 5000
       - Item: Elunium_Stone
-        Rate: 229
-      - Item: Elunium_Stone
-        Rate: 22
+        Rate: 120
+#      - Item: Elunium_Stone
+#        Rate: 22
       - Item: Iron_Ore
         Rate: 750
       - Item: Steel
@@ -9722,19 +9748,19 @@ Body:
     Ai: 21
     Drops:
       - Item: Ogre_Tooth
-        Rate: 2500
+        Rate: 1500
       - Item: Orcish_Axe
         Rate: 10
       - Item: Steel
-        Rate: 90
+        Rate: 50
       - Item: Orcish_Voucher
-        Rate: 7500
+        Rate: 4500
       - Item: Zargon
-        Rate: 1300
+        Rate: 700
       - Item: Oridecon_Stone
-        Rate: 196
+        Rate: 50
       - Item: Yellow_Herb
-        Rate: 900
+        Rate: 700
       - Item: High_Orc_Card
         Rate: 1
         StealProtected: true
@@ -9769,7 +9795,7 @@ Body:
     Ai: 09
     Drops:
       - Item: Claw_Of_Monkey
-        Rate: 5335
+        Rate: 5000
       - Item: Yoyo_Tail
         Rate: 7000
 #      - Item: Elunium
@@ -9779,8 +9805,8 @@ Body:
         Rate: 53
       - Item: Banana
         Rate: 5000
-      - Item: Tropical_Banana
-        Rate: 20
+#      - Item: Tropical_Banana
+#        Rate: 20
       - Item: Banana_Juice
         Rate: 1000
       - Item: Yggdrasilberry
@@ -9818,21 +9844,21 @@ Body:
     Ai: 09
     Drops:
       - Item: Tough_Scalelike_Stem
-        Rate: 5335
+        Rate: 5000
       - Item: White_Herb
-        Rate: 1800
-      - Item: Jump_Rope
-        Rate: 10
+        Rate: 900
+#      - Item: Jump_Rope
+#        Rate: 10
       - Item: Oridecon_Stone
-        Rate: 115
+        Rate: 90
       - Item: Great_Nature
         Rate: 5
       - Item: Glaive
-        Rate: 20
+        Rate: 10
       - Item: Seed_Of_Yggdrasil
         Rate: 45
-      - Item: Stem_Worm_Card
-        Rate: 1
+#      - Item: Stem_Worm_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1216
     AegisName: PENOMENA
@@ -9866,9 +9892,9 @@ Body:
       - Item: Coral_Reef
         Rate: 4850
       - Item: Tentacle
-        Rate: 8000
+        Rate: 5000
       - Item: Sticky_Mucus
-        Rate: 7000
+        Rate: 5000
       - Item: Panacea
         Rate: 200
       - Item: Violet_Jewel
@@ -9912,13 +9938,13 @@ Body:
     Ai: 21
     Drops:
       - Item: Reins
-        Rate: 5335
+        Rate: 5000
       - Item: Blade_Lost_In_Darkness
         Rate: 5
       - Item: Clothes_Of_The_Lord
         Rate: 1
-      - Item: Battle_Hook
-        Rate: 25
+#      - Item: Battle_Hook
+#        Rate: 25
       - Item: Broad_Sword_
         Rate: 1
 #      - Item: Elunium
@@ -9965,7 +9991,7 @@ Body:
       - Item: Katar_
         Rate: 5
       - Item: Claw_Of_Desert_Wolf
-        Rate: 5500
+        Rate: 5000
       - Item: Mink_Coat
         Rate: 1
       - Item: Meat
@@ -10007,7 +10033,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Wild_Boar's_Mane
-        Rate: 6000
+        Rate: 5000
       - Item: Grape
         Rate: 150
       - Item: Animal_Blood
@@ -10931,7 +10957,7 @@ Body:
       - Item: Skyblue_Jewel
         Rate: 40
       - Item: Blue_Herb
-        Rate: 75
+        Rate: 50
       - Item: Candy
         Rate: 350
       - Item: Poring_Hat
@@ -10971,7 +10997,7 @@ Body:
       - Item: Zargon
         Rate: 750
       - Item: White_Herb
-        Rate: 800
+        Rate: 500
       - Item: Feather
         Rate: 1000
       - Item: Panda_Cap
@@ -11212,10 +11238,10 @@ Body:
         Rate: 5
       - Item: Scell
         Rate: 3500
-      - Item: Branch
-        Rate: 5
+#      - Item: Branch
+#        Rate: 5
       - Item: Oridecon_Stone
-        Rate: 87
+        Rate: 60
       - Item: Cruiser_Card
         Rate: 1
         StealProtected: true
@@ -11256,15 +11282,15 @@ Body:
       - Item: Old_Blue_Box
         Rate: 20
       - Item: Piece_Of_Cake
-        Rate: 800
+        Rate: 600
       - Item: Scarlet_Jewel
-        Rate: 150
+        Rate: 100
       - Item: Crystal_Jewel_
         Rate: 5
       - Item: Candy
         Rate: 340
-      - Item: Mystcase_Card
-        Rate: 1
+#      - Item: Mystcase_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1250
     AegisName: CHEPET
@@ -11300,8 +11326,8 @@ Body:
         Rate: 750
       - Item: Apple
         Rate: 5500
-      - Item: Unripe_Apple
-        Rate: 40
+#      - Item: Unripe_Apple
+#        Rate: 40
       - Item: Red_Muffler
         Rate: 5
       - Item: Yellow_Herb
@@ -11354,17 +11380,19 @@ Body:
         Rate: 3000
     Drops:
       - Item: Zephyrus
-        Rate: 150
+        Rate: 100
       - Item: Old_Blue_Box
         Rate: 3000
       - Item: Old_Violet_Box
         Rate: 4000
       - Item: Ring_
-        Rate: 200
+        Rate: 100
       - Item: Manteau_
-        Rate: 500
+        Rate: 100
       - Item: Elunium
-        Rate: 4559
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Loard_Circlet
         Rate: 1
       - Item: Knight_Windstorm_Card
@@ -11418,12 +11446,12 @@ Body:
         Rate: 150
       - Item: Katar_Of_Cold_Icicle
         Rate: 500
-      - Item: Claw_Of_Garm
-        Rate: 500
+#      - Item: Claw_Of_Garm
+#        Rate: 500
       - Item: Elunium
-        Rate: 3977
+        Rate: 3000
       - Item: Oridecon
-        Rate: 2900
+        Rate: 3000
       - Item: Garm_Card
         Rate: 1
         StealProtected: true
@@ -11468,7 +11496,7 @@ Body:
       - Item: Silence_Arrow
         Rate: 2000
       - Item: Elunium_Stone
-        Rate: 238
+        Rate: 200
       - Item: Gargoyle_Card
         Rate: 1
         StealProtected: true
@@ -11510,7 +11538,7 @@ Body:
       - Item: Grape
         Rate: 200
       - Item: Wind_Of_Verdure
-        Rate: 90
+        Rate: 80
       - Item: Goggle_
         Rate: 7
       - Item: Oridecon_Stone
@@ -11548,21 +11576,21 @@ Body:
     Ai: 21
     Drops:
       - Item: Earthworm_Peeling
-        Rate: 5100
+        Rate: 5000
       - Item: Cyfar
         Rate: 1000
       - Item: Blue_Herb
         Rate: 230
-      - Item: Whip_Of_Ice_Piece
-        Rate: 10
+#      - Item: Whip_Of_Ice_Piece
+#        Rate: 10
       - Item: Grape
         Rate: 250
       - Item: Elunium_Stone
-        Rate: 180
+        Rate: 100
 #      - Item: Elunium
 #        Rate: 37
-      - Item: Neraid_Card
-        Rate: 1
+#      - Item: Neraid_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1256
     AegisName: PEST
@@ -11593,7 +11621,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Earthworm_Peeling
-        Rate: 5500
+        Rate: 5000
       - Item: Brigan
         Rate: 200
       - Item: Animal_Blood
@@ -11603,7 +11631,7 @@ Body:
       - Item: Red_Gemstone
         Rate: 250
       - Item: Oridecon_Stone
-        Rate: 115
+        Rate: 80
       - Item: Pest_Card
         Rate: 1
         StealProtected: true
@@ -11637,15 +11665,15 @@ Body:
       - Item: Steel
         Rate: 300
       - Item: Brigan
-        Rate: 5335
+        Rate: 4500
       - Item: Cyfar
-        Rate: 3500
+        Rate: 3000
       - Item: Padded_Armor_
         Rate: 5
       - Item: Plate_Armor
         Rate: 2
-      - Item: Prohibition_Red_Candle
-        Rate: 2
+#      - Item: Prohibition_Red_Candle
+#        Rate: 2
       - Item: Jamadhar_
         Rate: 2
       - Item: Injustice_Card
@@ -11692,9 +11720,9 @@ Body:
       - Item: Red_Herb
         Rate: 600
       - Item: Composite_Bow_
-        Rate: 25
+        Rate: 15
       - Item: Grape
-        Rate: 300
+        Rate: 150
       - Item: Goblin_Archer_Card
         Rate: 1
         StealProtected: true
@@ -11778,11 +11806,11 @@ Body:
       Detector: true
     Drops:
       - Item: Brigan
-        Rate: 4656
+        Rate: 4500
       - Item: Red_Frame
-        Rate: 1000
+        Rate: 750
       - Item: Manteau
-        Rate: 30
+        Rate: 15
       - Item: Star_Crumb
         Rate: 80
       - Item: Crystal_Mirror
@@ -11820,15 +11848,15 @@ Body:
     Ai: 02
     Drops:
       - Item: Cyfar
-        Rate: 5335
+        Rate: 5000
       - Item: Witherless_Rose
-        Rate: 50
+        Rate: 13
       - Item: Fruit_Shell
         Rate: 120
       - Item: Arrow_Of_Shadow
         Rate: 3000
-      - Item: Rotten_Fish
-        Rate: 35
+#      - Item: Rotten_Fish
+#        Rate: 35
       - Item: Monster's_Feed
         Rate: 600
       - Item: Big_Sis'_Ribbon
@@ -11876,12 +11904,12 @@ Body:
         Rate: 500
       - Item: Rotten_Bandage
         Rate: 500
-      - Item: Legacy_Of_Dragon
-        Rate: 100
+#      - Item: Legacy_Of_Dragon
+#        Rate: 100
       - Item: Pyroxene
         Rate: 1500
-      - Item: Dragon_Breath
-        Rate: 50
+#      - Item: Dragon_Breath
+#        Rate: 50
       - Item: Mutant_Dragon_Card
         Rate: 1
         StealProtected: true
@@ -11916,17 +11944,17 @@ Body:
       Detector: true
     Drops:
       - Item: Zargon
-        Rate: 4559
+        Rate: 4200
       - Item: Skel_Bone
-        Rate: 6000
+        Rate: 5000
       - Item: Skull
         Rate: 500
       - Item: Wind_Scroll_1_5
         Rate: 100
       - Item: Arc_Wand_
-        Rate: 8
+        Rate: 5
       - Item: Rough_Wind
-        Rate: 100
+        Rate: 50
       - Item: Bone_Wand
         Rate: 1
       - Item: Wind_Ghost_Card
@@ -11965,17 +11993,17 @@ Body:
       - Item: Lip_Of_Ancient_Fish
         Rate: 1300
       - Item: Holy_Water
-        Rate: 300
+        Rate: 200
       - Item: Lemon
-        Rate: 400
+        Rate: 300
       - Item: Skyblue_Jewel
         Rate: 40
       - Item: Mistic_Frozen
         Rate: 35
       - Item: Trident
-        Rate: 3
+        Rate: 2
       - Item: Oridecon_Stone
-        Rate: 203
+        Rate: 150
       - Item: Merman_Card
         Rate: 1
         StealProtected: true
@@ -12014,7 +12042,7 @@ Body:
       - Item: Darkgreen_Dyestuffs
         Rate: 1
       - Item: Great_Chef_Orleans01
-        Rate: 50
+        Rate: 35
       - Item: Sandals_
         Rate: 30
       - Item: Holy_Scroll_1_3
@@ -12105,7 +12133,7 @@ Body:
       - Item: Joker_Jester
         Rate: 1
       - Item: White_Herb
-        Rate: 1450
+        Rate: 900
       - Item: Carat_Card
         Rate: 1
         StealProtected: true
@@ -12145,10 +12173,10 @@ Body:
         Rate: 45
       - Item: Plate_Armor_
         Rate: 5
-      - Item: Strong_Shield
-        Rate: 62
-      - Item: Katzbalger
-        Rate: 1
+#      - Item: Strong_Shield
+#        Rate: 62
+#      - Item: Katzbalger
+#        Rate: 1
       - Item: Pole_Axe
         Rate: 2
 #      - Item: Elunium
@@ -12189,13 +12217,13 @@ Body:
     Ai: 17
     Drops:
       - Item: Needle_Of_Alarm
-        Rate: 5335
+        Rate: 5000
       - Item: Wooden_Block
         Rate: 800
       - Item: White_Herb
-        Rate: 1900
+        Rate: 850
       - Item: Lemon
-        Rate: 320
+        Rate: 300
       - Item: Key_Of_Clock_Tower
         Rate: 30
       - Item: Underground_Key
@@ -12238,15 +12266,15 @@ Body:
     Ai: 17
     Drops:
       - Item: Needle_Of_Alarm
-        Rate: 5335
+        Rate: 5000
       - Item: Brigan
-        Rate: 5335
+        Rate: 5000
       - Item: Steel
         Rate: 500
       - Item: Leaflet_Of_Hinal
         Rate: 850
-      - Item: Memorize_Book
-        Rate: 1
+#      - Item: Memorize_Book
+#        Rate: 1
       - Item: Key_Of_Clock_Tower
         Rate: 2000
       - Item: Underground_Key
@@ -12338,16 +12366,18 @@ Body:
     Drops:
       - Item: Bone_Wand
         Rate: 800
-      - Item: Kronos
-        Rate: 100
-      - Item: Grimtooth_
-        Rate: 300
+#      - Item: Kronos
+#        Rate: 100
+#      - Item: Grimtooth_
+#        Rate: 300
       - Item: Mage_Coat
         Rate: 300
       - Item: Cape_Of_Ancient_Lord
         Rate: 100
       - Item: Elunium
-        Rate: 5141
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Bone_Helm_
         Rate: 10
       - Item: Dark_Lord_Card
@@ -12395,8 +12425,8 @@ Body:
         Rate: 1
 #      - Item: High_end_Cooking_Kits
 #        Rate: 10
-#      - Item: Cookbook06
-#        Rate: 3
+      - Item: Cookbook06
+        Rate: 3
       - Item: Wedding_Dress
         Rate: 1
       - Item: Orc_Lady_Card
@@ -12477,8 +12507,8 @@ Body:
     Drops:
       - Item: Alice's_Apron
         Rate: 2500
-      - Item: Old_Broom
-        Rate: 40
+#      - Item: Old_Broom
+#        Rate: 40
       - Item: Chrystal_Pumps
         Rate: 3
       - Item: Rouge
@@ -12533,7 +12563,7 @@ Body:
       - Item: Incisive_Arrow
         Rate: 2000
       - Item: Arbalest_
-        Rate: 3
+        Rate: 2
 #      - Item: Elunium
 #        Rate: 106
 #add edit
@@ -12578,7 +12608,7 @@ Body:
       - Item: Club
         Rate: 100
       - Item: Inspector_Certificate
-        Rate: 300
+        Rate: 150
       - Item: Stop_Post
         Rate: 1
       - Item: Yellow_Herb
@@ -12625,7 +12655,7 @@ Body:
       - Item: Brigan
         Rate: 4850
       - Item: Star_Crumb
-        Rate: 250
+        Rate: 100
       - Item: Great_Nature
         Rate: 30
       - Item: Elunium_Stone
@@ -12722,8 +12752,8 @@ Body:
         Rate: 55
       - Item: Coal
         Rate: 320
-      - Item: The_Garrison
-        Rate: 5
+#      - Item: The_Garrison
+#        Rate: 5
       - Item: Elunium_Stone
         Rate: 124
       - Item: Steam_Goblin_Card
@@ -12757,8 +12787,8 @@ Body:
     DamageMotion: 288
     Ai: 17
     Drops:
-      - Item: Librarian_Glove
-        Rate: 5
+#      - Item: Librarian_Glove
+#        Rate: 5
       - Item: Worn_Out_Page
         Rate: 1000
       - Item: Earthworm_Peeling
@@ -12817,7 +12847,7 @@ Body:
       - Item: Poison_Arrow
         Rate: 2000
       - Item: CrossBow_
-        Rate: 5
+        Rate: 4
       - Item: Oridecon_Stone
         Rate: 79
       - Item: Kobold_Archer_Card
@@ -12859,8 +12889,8 @@ Body:
         Rate: 2500
       - Item: Lemon
         Rate: 1000
-      - Item: War_Axe
-        Rate: 1
+#      - Item: War_Axe
+#        Rate: 1
       - Item: Citrine
         Rate: 1500
       - Item: Great_Axe
@@ -13127,15 +13157,15 @@ Body:
       - Item: Burn_Tree
         Rate: 2550
       - Item: Oridecon_Stone
-        Rate: 160
+        Rate: 100
       - Item: Yellow_Herb
         Rate: 800
       - Item: Gladius_
-        Rate: 35
+        Rate: 10
       - Item: Gladius
-        Rate: 80
-      - Item: Sandstorm
-        Rate: 15
+        Rate: 22
+#      - Item: Sandstorm
+#        Rate: 15
       - Item: Ghost_Bandana
         Rate: 1
       - Item: Skeleton_General_Card
@@ -13174,17 +13204,17 @@ Body:
       - Item: Transparent_Cloth
         Rate: 4413
       - Item: Wedding_Veil
-        Rate: 10
+        Rate: 8
       - Item: Manteau_
         Rate: 8
       - Item: Red_Gemstone
-        Rate: 700
+        Rate: 550
       - Item: Crystal_Jewel__
         Rate: 5
       - Item: Old_Blue_Box
         Rate: 100
       - Item: Lemon
-        Rate: 300
+        Rate: 200
       - Item: Wraith_Dead_Card
         Rate: 1
         StealProtected: true
@@ -13225,15 +13255,15 @@ Body:
       - Item: Petite_DiablOfs_Wing
         Rate: 450
       - Item: Satanic_Chain
-        Rate: 3
+        Rate: 2
       - Item: Elunium_Stone
         Rate: 160
       - Item: Zargon
         Rate: 2500
       - Item: Sacred_Marks
         Rate: 10
-      - Item: Ahlspiess
-        Rate: 5
+#      - Item: Ahlspiess
+#        Rate: 5
       - Item: Mini_Demon_Card
         Rate: 1
         StealProtected: true
@@ -13279,8 +13309,8 @@ Body:
         Rate: 200
       - Item: Book
         Rate: 8
-      - Item: Icarus_Wing
-        Rate: 5
+#      - Item: Icarus_Wing
+#        Rate: 5
       - Item: Fruit_Of_Mastela
         Rate: 50
       - Item: Cremy_Fear_Card
@@ -13367,15 +13397,15 @@ Body:
     Class: Boss
     Drops:
       - Item: Tatters_Clothes
-        Rate: 3500
+        Rate: 5000
       - Item: Soft_Feather
         Rate: 2500
       - Item: Kakkung_
         Rate: 2
       - Item: Staff_Of_Soul
         Rate: 1
-      - Item: Walking_Stick
-        Rate: 2
+#      - Item: Walking_Stick
+#        Rate: 2
       - Item: Wind_Scroll_1_5
         Rate: 100
       - Item: Magician_Hat
@@ -13469,11 +13499,11 @@ Body:
       - Item: Glove_
         Rate: 1
       - Item: Silver_Ring
-        Rate: 150
+        Rate: 40
       - Item: Yellow_Herb
         Rate: 650
       - Item: Oridecon_Stone
-        Rate: 150
+        Rate: 100
       - Item: Elunium_Stone
         Rate: 100
       - Item: Ancient_Mummy_Card
@@ -13621,8 +13651,8 @@ Body:
         Rate: 12
       - Item: Yellow_Herb
         Rate: 500
-      - Item: Caterpillar_Card
-        Rate: 1
+#      - Item: Caterpillar_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1301
     AegisName: AM_MUT
@@ -13754,9 +13784,9 @@ Body:
       Detector: true
     Drops:
       - Item: Royal_Jelly
-        Rate: 550
+        Rate: 450
       - Item: Honey
-        Rate: 1200
+        Rate: 900
       - Item: Fruit_Of_Mastela
         Rate: 12
       - Item: Leaf_Of_Yggdrasil
@@ -13765,8 +13795,8 @@ Body:
         Rate: 3
       - Item: Scarlet_Jewel
         Rate: 20
-      - Item: Double_Bound
-        Rate: 15
+#      - Item: Double_Bound
+#        Rate: 15
       - Item: Giant_Honet_Card
         Rate: 1
         StealProtected: true
@@ -13856,9 +13886,9 @@ Body:
       - Item: Zargon
         Rate: 2500
       - Item: Boots_
-        Rate: 9
-      - Item: Bowman_Scarf
-        Rate: 5
+        Rate: 7
+#      - Item: Bowman_Scarf
+#        Rate: 5
       - Item: Round_Shell
         Rate: 680
       - Item: Sticky_Mucus
@@ -13906,8 +13936,8 @@ Body:
         Rate: 120
       - Item: Honey
         Rate: 500
-      - Item: Pocket_Watch_
-        Rate: 5
+#      - Item: Pocket_Watch_
+#        Rate: 5
       - Item: Gold
         Rate: 5
       - Item: Cyfar
@@ -13948,8 +13978,8 @@ Body:
     Drops:
       - Item: Puppy_Love
         Rate: 1
-      - Item: Silver_Knife_Of_Chaste
-        Rate: 150
+#      - Item: Silver_Knife_Of_Chaste
+#        Rate: 150
       - Item: Punisher
         Rate: 5
 #      - Item: Elunium
@@ -13961,7 +13991,7 @@ Body:
 #        Rate: 800
 #add edit
       - Item: Oridecon_Stone
-        Rate: 800
+        Rate: 600
       - Item: Gold
         Rate: 6
       - Item: Old_Violet_Box
@@ -14009,8 +14039,8 @@ Body:
         Rate: 360
       - Item: Coal
         Rate: 580
-      - Item: Butcher
-        Rate: 5
+#      - Item: Butcher
+#        Rate: 5
       - Item: Flame_Heart
         Rate: 160
       - Item: Panzer_Goblin_Card
@@ -14047,7 +14077,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Stone_Heart
-        Rate: 6500
+        Rate: 5000
       - Item: Zargon
         Rate: 2300
       - Item: Yellow_Herb
@@ -14056,8 +14086,8 @@ Body:
         Rate: 8
       - Item: Fire_Arrow
         Rate: 10000
-      - Item: Magic_Study_Vol1
-        Rate: 20
+#      - Item: Magic_Study_Vol1
+#        Rate: 20
       - Item: Flame_Heart
         Rate: 180
       - Item: Gajomart_Card
@@ -14096,20 +14126,20 @@ Body:
       - Item: Nose_Ring
         Rate: 4413
       - Item: Two_Handed_Axe_
-        Rate: 4
+        Rate: 3
       - Item: Lemon
-        Rate: 300
+        Rate: 200
 #      - Item: Oridecon
 #        Rate: 16
 #add edit
       - Item: Oridecon_Stone
         Rate: 16
       - Item: White_Herb
-        Rate: 1850
+        Rate: 1000
       - Item: Silver_Ring
-        Rate: 160
+        Rate: 120
       - Item: Star_Crumb
-        Rate: 250
+        Rate: 225
       - Item: Majoruros_Card
         Rate: 1
         StealProtected: true
@@ -14203,16 +14233,20 @@ Body:
     Drops:
       - Item: Iron_Driver
         Rate: 8
-      - Item: War_Axe
-        Rate: 5
-      - Item: Cookbook09
-        Rate: 200
+#      - Item: War_Axe
+#        Rate: 5
+#      - Item: Cookbook09
+#        Rate: 200
       - Item: Pole_Axe
         Rate: 9
       - Item: Broken_Shell
         Rate: 5335
-      - Item: Immaterial_Sword
-        Rate: 80
+#      - Item: Immaterial_Sword
+#        Rate: 80
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Union_Of_Tribe
         Rate: 1
       - Item: Turtle_General_Card
@@ -14248,8 +14282,8 @@ Body:
     DamageMotion: 580
     Ai: 21
     Drops:
-      - Item: Poison_Knife
-        Rate: 3
+#      - Item: Poison_Knife
+#        Rate: 3
       - Item: Blue_Jewel
         Rate: 4559
       - Item: Ring_
@@ -14351,11 +14385,11 @@ Body:
       - Item: Rust_Suriken
         Rate: 840
       - Item: Yellow_Herb
-        Rate: 1280
+        Rate: 1000
       - Item: Zargon
         Rate: 1240
-      - Item: Huuma_Bird_Wing
-        Rate: 5
+#      - Item: Huuma_Bird_Wing
+#        Rate: 5
       - Item: Old_Blue_Box
         Rate: 1
       - Item: Assulter_Card
@@ -14442,11 +14476,11 @@ Body:
       - Item: Zargon
         Rate: 4365
       - Item: Blue_Herb
-        Rate: 250
+        Rate: 150
       - Item: Coat_
         Rate: 5
       - Item: Cyfar
-        Rate: 1200
+        Rate: 600
       - Item: Guisarme_
         Rate: 1
       - Item: Panacea
@@ -14641,7 +14675,7 @@ Body:
       - Item: Cap
         Rate: 2
       - Item: Wing_Of_Fly
-        Rate: 300
+        Rate: 200
       - Item: Wing_Of_Butterfly
         Rate: 150
       - Item: Dragon_Tail_Card
@@ -14688,9 +14722,9 @@ Body:
       - Item: Yellow_Herb
         Rate: 800
       - Item: Blue_Herb
-        Rate: 200
+        Rate: 180
       - Item: White_Herb
-        Rate: 800
+        Rate: 500
       - Item: Spring_Rabbit_Card
         Rate: 1
         StealProtected: true
@@ -14725,19 +14759,19 @@ Body:
     Ai: 04
     Drops:
       - Item: Scarlet_Jewel
-        Rate: 150
+        Rate: 100
       - Item: Clam_Shell
-        Rate: 5500
+        Rate: 5000
       - Item: Sea_Otter_Leather
         Rate: 4365
       - Item: Red_Jewel
-        Rate: 50
+        Rate: 40
       - Item: Blue_Jewel
-        Rate: 50
+        Rate: 40
       - Item: Glass_Bead
-        Rate: 650
+        Rate: 400
       - Item: Cyfar
-        Rate: 1200
+        Rate: 600
       - Item: See_Otter_Card
         Rate: 1
         StealProtected: true
@@ -16140,9 +16174,9 @@ Body:
     Ai: 10
     Drops:
       - Item: Blossom_Of_Maneater
-        Rate: 6200
+        Rate: 5000
       - Item: Root_Of_Maneater
-        Rate: 5500
+        Rate: 5000
       - Item: Sunflower
         Rate: 30
       - Item: Fancy_Flower
@@ -16190,7 +16224,7 @@ Body:
       - Item: Gold
         Rate: 1
       - Item: Orange
-        Rate: 500
+        Rate: 300
       - Item: Grand_Peco_Card
         Rate: 1
         StealProtected: true
@@ -16226,19 +16260,19 @@ Body:
       Detector: true
     Drops:
       - Item: Fruit_Of_Mastela
-        Rate: 1500
+        Rate: 800
       - Item: Chrystal_Pumps
         Rate: 3
-      - Item: Boy's_Naivety
-        Rate: 1
+#      - Item: Boy's_Naivety
+#        Rate: 1
       - Item: Diamond_Ring
-        Rate: 250
+        Rate: 200
       - Item: Horn_Of_Succubus
         Rate: 1
       - Item: Staff_Of_Soul
         Rate: 1
       - Item: Blue_Potion
-        Rate: 1000
+        Rate: 500
       - Item: Succubus_Card
         Rate: 1
         StealProtected: true
@@ -16280,10 +16314,10 @@ Body:
         Rate: 1000
       - Item: Water_Of_Darkness
         Rate: 1000
-      - Item: Carrot_Whip
-        Rate: 20
-      - Item: Fake_Angel_Card
-        Rate: 1
+#      - Item: Carrot_Whip
+#        Rate: 20
+#      - Item: Fake_Angel_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1372
     AegisName: GOAT
@@ -16377,13 +16411,17 @@ Body:
       - Item: Pole_Axe
         Rate: 5
       - Item: House_Auger
-        Rate: 10
+        Rate: 1
       - Item: Ring_
         Rate: 2
       - Item: Shine_Spear_Blade
         Rate: 10
-      - Item: War_Axe
-        Rate: 1
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: War_Axe
+#        Rate: 1
       - Item: Iron_Driver
         Rate: 2
       - Item: Lord_Of_Death_Card
@@ -16421,19 +16459,19 @@ Body:
       Detector: true
     Drops:
       - Item: Fruit_Of_Mastela
-        Rate: 1500
-      - Item: White_Herb
-        Rate: 5500
+        Rate: 800
+#      - Item: White_Herb
+#        Rate: 5500
       - Item: Inccubus_Horn
         Rate: 1
       - Item: Ring_
         Rate: 1
       - Item: Gold_Ring
-        Rate: 500
+        Rate: 250
       - Item: Diamond_Ring
         Rate: 150
       - Item: White_Herb
-        Rate: 2200
+        Rate: 1400
       - Item: Incubus_Card
         Rate: 1
         StealProtected: true
@@ -16474,8 +16512,8 @@ Body:
         Rate: 1800
       - Item: Green_Herb
         Rate: 2000
-      - Item: Kamaitachi
-        Rate: 5
+#      - Item: Kamaitachi
+#        Rate: 5
       - Item: The_Paper_Card
         Rate: 1
         StealProtected: true
@@ -16520,8 +16558,8 @@ Body:
         Rate: 800
       - Item: Izidor
         Rate: 20
-      - Item: Electric_Fist
-        Rate: 20
+#      - Item: Electric_Fist
+#        Rate: 20
       - Item: Harpy_Card
         Rate: 1
         StealProtected: true
@@ -16560,8 +16598,8 @@ Body:
         Rate: 1500
       - Item: Rent_Scroll
         Rate: 1500
-      - Item: Encyclopedia
-        Rate: 10
+#      - Item: Encyclopedia
+#        Rate: 10
       - Item: Wizardy_Staff
         Rate: 1
       - Item: Old_Card_Album
@@ -16607,7 +16645,7 @@ Body:
       - Item: Mould_Powder
         Rate: 4559
       - Item: Yellow_Gemstone
-        Rate: 3880
+        Rate: 2000
       - Item: Starsand_Of_Witch
         Rate: 5000
       - Item: Demon_Pungus_Card
@@ -16860,8 +16898,8 @@ Body:
         Rate: 3880
       - Item: Dragon_Scale
         Rate: 3589
-      - Item: Flying_Deleter_Card
-        Rate: 1
+#      - Item: Flying_Deleter_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1385
     AegisName: DELETER_
@@ -16900,8 +16938,8 @@ Body:
         Rate: 3880
       - Item: Dragon_Scale
         Rate: 3589
-      - Item: Deleter_Card
-        Rate: 1
+#      - Item: Deleter_Card
+#        Rate: 1
         StealProtected: true
   - Id: 1386
     AegisName: SLEEPER
@@ -16935,15 +16973,15 @@ Body:
       - Item: Sand_Lump
         Rate: 4947
       - Item: Grit
-        Rate: 5335
+        Rate: 5000
       - Item: Great_Nature
-        Rate: 2500
+        Rate: 2000
       - Item: Oridecon_Stone
-        Rate: 300
+        Rate: 200
       - Item: Damascus_
-        Rate: 5
-      - Item: Hypnotist's_Staff_
-        Rate: 5
+        Rate: 4
+#      - Item: Hypnotist's_Staff_
+#        Rate: 5
       - Item: Fine_Sand
         Rate: 1200
       - Item: Sleeper_Card
@@ -16981,7 +17019,7 @@ Body:
       - Item: Scropion's_Nipper
         Rate: 4365
       - Item: Scorpion's_Tail
-        Rate: 5500
+        Rate: 5000
       - Item: Red_Gemstone
         Rate: 150
       - Item: Panacea
@@ -17083,14 +17121,18 @@ Body:
         Rate: 4700
       - Item: Wizardy_Staff
         Rate: 5
-      - Item: Balistar
-        Rate: 5
+#      - Item: Balistar
+#        Rate: 5
       - Item: Cape_Of_Ancient_Lord
         Rate: 15
       - Item: Ring_
         Rate: 4
-      - Item: Book_Of_The_Apocalypse
-        Rate: 4
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Book_Of_The_Apocalypse
+#        Rate: 4
       - Item: Dracula_Card
         Rate: 1
         StealProtected: true
@@ -17170,7 +17212,7 @@ Body:
     Ai: 07
     Drops:
       - Item: Cyfar
-        Rate: 5335
+        Rate: 5000
       - Item: Leaf_Of_Yggdrasil
         Rate: 100
       - Item: Yellow_Herb
@@ -17182,7 +17224,7 @@ Body:
       - Item: Galapago_Cap
         Rate: 1
       - Item: Orange
-        Rate: 1000
+        Rate: 700
       - Item: Galapago_Card
         Rate: 1
         StealProtected: true
@@ -17571,7 +17613,7 @@ Body:
     Ai: 21
     Drops:
       - Item: Broken_Shuriken
-        Rate: 5335
+        Rate: 5000
       - Item: Ninja_Suit
         Rate: 2
       - Item: Cyfar
@@ -17618,7 +17660,7 @@ Body:
     Ai: 01
     Drops:
       - Item: Poison_Toad's_Skin
-        Rate: 5500
+        Rate: 5000
       - Item: Poison_Powder
         Rate: 2400
       - Item: Gold_Ring
@@ -17629,8 +17671,8 @@ Body:
         Rate: 2
       - Item: Royal_Jelly
         Rate: 2
-      - Item: Cinquedea_
-        Rate: 10
+#      - Item: Cinquedea_
+#        Rate: 10
       - Item: Poison_Toad_Card
         Rate: 1
         StealProtected: true
@@ -17677,8 +17719,8 @@ Body:
         Rate: 350
       - Item: Panacea
         Rate: 250
-      - Item: The_Cyclone_
-        Rate: 5
+#      - Item: The_Cyclone_
+#        Rate: 5
       - Item: Antique_Firelock_Card
         Rate: 1
         StealProtected: true
@@ -17715,7 +17757,7 @@ Body:
       Detector: true
     Drops:
       - Item: Glossy_Hair
-        Rate: 5335
+        Rate: 5000
       - Item: Old_Japaness_Clothes
         Rate: 2500
       - Item: White_Herb
@@ -17724,10 +17766,10 @@ Body:
         Rate: 1250
 #      - Item: High_end_Cooking_Kits
 #        Rate: 10
-      - Item: Hakujin
-        Rate: 5
-      - Item: Mandolin_
-        Rate: 2
+#      - Item: Hakujin
+#        Rate: 5
+#      - Item: Mandolin_
+#        Rate: 2
       - Item: Miyabi_Ningyo_Card
         Rate: 1
         StealProtected: true
@@ -17766,13 +17808,13 @@ Body:
       - Item: Tengu's_Nose
         Rate: 3500
       - Item: Broken_Wine_Vessel
-        Rate: 5500
-      - Item: Huuma_Giant_Wheel
-        Rate: 5
+        Rate: 5000
+#      - Item: Huuma_Giant_Wheel
+#        Rate: 5
       - Item: Fruit_Of_Mastela
         Rate: 150
-      - Item: Huuma_Giant_Wheel_
-        Rate: 5
+#      - Item: Huuma_Giant_Wheel_
+#        Rate: 5
 #      - Item: Imperial_Cooking_Kits
 #        Rate: 20
       - Item: Earth_Scroll_1_5
@@ -17813,16 +17855,16 @@ Body:
         Rate: 6500
       - Item: Cyfar
         Rate: 3500
-      - Item: Huuma_Calm_Mind
-        Rate: 20
+#      - Item: Huuma_Calm_Mind
+#        Rate: 20
       - Item: Leaflet_Of_Aloe
         Rate: 2300
       - Item: Ment
         Rate: 2
-      - Item: Guitar_Of_Blue_Solo
-        Rate: 10
-      - Item: Jitte_
-        Rate: 5
+#      - Item: Guitar_Of_Blue_Solo
+#        Rate: 10
+#      - Item: Jitte_
+#        Rate: 5
       - Item: Kapha_Card
         Rate: 1
         StealProtected: true
@@ -18272,8 +18314,8 @@ Body:
         Rate: 500
       - Item: Pill
         Rate: 900
-      - Item: Sway_Apron
-        Rate: 2000
+#      - Item: Sway_Apron
+#        Rate: 2000
       - Item: Dark_Snake_Lord_Card
         Rate: 1
         StealProtected: true
@@ -20246,15 +20288,17 @@ Body:
       - Item: Masamune
         Rate: 2
       - Item: Elunium
-        Rate: 3500
-      - Item: Assassin_Mask_
-        Rate: 500
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
+#      - Item: Assassin_Mask_
+#        Rate: 500
       - Item: Yggdrasilberry
         Rate: 4500
       - Item: Steel
         Rate: 6305
-      - Item: Huuma_Blaze
-        Rate: 7500
+#      - Item: Huuma_Blaze
+#        Rate: 7500
       - Item: Azoth
         Rate: 80
       - Item: Incant_Samurai_Card
@@ -21061,17 +21105,19 @@ Body:
         Rate: 5500
     Drops:
       - Item: Spinx_Helm
-        Rate: 150
+        Rate: 70
       - Item: Safety_Ring
         Rate: 50
       - Item: Rojerta_Piece
         Rate: 7760
       - Item: Elunium
-        Rate: 3880
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Old_Card_Album
-        Rate: 400
+        Rate: 100
       - Item: Tablet
-        Rate: 10
+        Rate: 5
       - Item: Yggdrasilberry
         Rate: 3000
       - Item: Amon_Ra_Card
@@ -23170,7 +23216,7 @@ Body:
       Mvp: true
     MvpDrops:
       - Item: Oridecon
-        Rate: 6000
+        Rate: 3000
       - Item: Old_Violet_Box
         Rate: 3000
       - Item: Blue_Potion
@@ -23188,6 +23234,10 @@ Body:
         Rate: 3000
       - Item: Iron_Ore
         Rate: 1000
+      - Item: Elunium
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 3000
       - Item: Gemmed_Sallet_
         Rate: 5
       - Item: Tao_Gunka_Card
@@ -23279,8 +23329,8 @@ Body:
         Rate: 1500
       - Item: Poring_Doll
         Rate: 5
-      - Item: Unripe_Apple
-        Rate: 20
+#      - Item: Unripe_Apple
+#        Rate: 20
   - Id: 1586
     AegisName: LEAF_CAT
     Name: Leaf Cat
@@ -24360,8 +24410,8 @@ Body:
         Rate: 1000
       - Item: Iron
         Rate: 500
-      - Item: Lusty_Iron
-        Rate: 50
+#      - Item: Lusty_Iron
+#        Rate: 50
       - Item: Iron_Ore
         Rate: 1000
       - Item: Branch_Of_Dead_Tree
@@ -24458,8 +24508,8 @@ Body:
         Rate: 1000
       - Item: Single_Cell
         Rate: 3000
-      - Item: Dew_Laden_Moss
-        Rate: 2
+#      - Item: Dew_Laden_Moss
+#        Rate: 2
       - Item: Fluorescent_Liquid
         Rate: 30
       - Item: Porcellio_Card
@@ -24584,12 +24634,12 @@ Body:
         Rate: 1000
       - Item: Oridecon_Hammer
         Rate: 300
-      - Item: Gold_Lux
-        Rate: 5
+#      - Item: Gold_Lux
+#        Rate: 5
       - Item: Angry_Mouth
         Rate: 50
-      - Item: Cursed_Lucky_Brooch
-        Rate: 10
+#      - Item: Cursed_Lucky_Brooch
+#        Rate: 10
 #      - Item: Elunium
 #        Rate: 100
 #add edit
@@ -27381,8 +27431,8 @@ Body:
         Rate: 5000
       - Item: Milk_Bottle
         Rate: 200
-      - Item: Bib
-        Rate: 100
+#      - Item: Bib
+#        Rate: 100
       - Item: Orc_Baby_Card
         Rate: 1
         StealProtected: true
@@ -27474,8 +27524,8 @@ Body:
     Drops:
 #      - Item: Agi_Dish10
 #        Rate: 5000
-      - Item: Tropical_Banana
-        Rate: 4000
+#      - Item: Tropical_Banana
+#        Rate: 4000
 #      - Item: Fantastic_Cooking_Kits
 #        Rate: 1000
       - Item: Banana_Hat
@@ -29463,8 +29513,8 @@ Body:
         Rate: 5
 #      - Item: Imperial_Cooking_Kits
 #        Rate: 50
-      - Item: Sway_Apron
-        Rate: 1
+#      - Item: Sway_Apron
+#        Rate: 1
       - Item: Orleans_Server
         Rate: 5
       - Item: Aliza_Card
@@ -31065,14 +31115,14 @@ Body:
         Rate: 3000
       - Item: Blossom_Of_Maneater
         Rate: 3000
-      - Item: Singing_Flower
-        Rate: 2
+#      - Item: Singing_Flower
+#        Rate: 2
       - Item: Root_Of_Maneater
         Rate: 2000
       - Item: Stem
         Rate: 1000
-      - Item: Deadly_Noxious_Herb
-        Rate: 3
+#      - Item: Deadly_Noxious_Herb
+#        Rate: 3
       - Item: Muscipular_Card
         Rate: 1
         StealProtected: true
@@ -31113,8 +31163,8 @@ Body:
         Rate: 2000
       - Item: Root_Of_Maneater
         Rate: 2000
-      - Item: Bitter_Herb
-        Rate: 3
+#      - Item: Bitter_Herb
+#        Rate: 3
       - Item: Stem
         Rate: 1000
       - Item: Drosera_Card
@@ -32727,8 +32777,8 @@ Body:
         Rate: 1
       - Item: Platinum_Shield
         Rate: 10
-      - Item: Muscle_Cutter
-        Rate: 50
+#      - Item: Muscle_Cutter
+#        Rate: 50
       - Item: Sword_Guardian_Card
         Rate: 1
         StealProtected: true
@@ -33647,17 +33697,17 @@ Body:
     Ai: 02
     Drops:
       - Item: Yellow_Live
-        Rate: 70
+        Rate: 50
       - Item: Cactus_Needle
-        Rate: 9000
+        Rate: 6000
       - Item: Empty_Bottle
         Rate: 2000
-      - Item: Kaong
-        Rate: 400
+#      - Item: Kaong
+#        Rate: 400
       - Item: Red_Herb
         Rate: 1000
       - Item: Guisarme
-        Rate: 50
+        Rate: 20
       - Item: Iron_Ore
         Rate: 250
       - Item: Muka_Card
@@ -33833,8 +33883,8 @@ Body:
         Rate: 4
       - Item: Empty_Bottle
         Rate: 1000
-      - Item: Dew_Laden_Moss
-        Rate: 20
+#      - Item: Dew_Laden_Moss
+#        Rate: 20
       - Item: Center_Potion
         Rate: 50
       - Item: Plankton_Card
@@ -33970,8 +34020,8 @@ Body:
         Rate: 53
       - Item: Banana
         Rate: 5000
-      - Item: Tropical_Banana
-        Rate: 20
+#      - Item: Tropical_Banana
+#        Rate: 20
       - Item: Sweet_Banana
         Rate: 1000
       - Item: Yggdrasilberry
@@ -34184,8 +34234,8 @@ Body:
         Rate: 10
       - Item: Skel_Bone
         Rate: 4500
-      - Item: Well_Dried_Bone
-        Rate: 20
+#      - Item: Well_Dried_Bone
+#        Rate: 20
       - Item: Animal's_Skin
         Rate: 5500
       - Item: Pet_Food
@@ -34837,8 +34887,8 @@ Body:
         Rate: 900
       - Item: Ancient_Magic
         Rate: 5
-      - Item: Bitter_Herb
-        Rate: 100
+#      - Item: Bitter_Herb
+#        Rate: 100
       - Item: Fruit_Of_Mastela
         Rate: 100
       - Item: Sticky_Webfoot
@@ -34878,8 +34928,8 @@ Body:
     Drops:
       - Item: Principles_Of_Magic
         Rate: 5
-      - Item: Singing_Flower
-        Rate: 300
+#      - Item: Singing_Flower
+#        Rate: 300
       - Item: Singing_Plant
         Rate: 300
       - Item: Illusion_Flower
@@ -37490,17 +37540,17 @@ Body:
       - Item: Mistic_Frozen
         Rate: 26
       - Item: Heart_Of_Mermaid
-        Rate: 9000
+        Rate: 5000
       - Item: Fin_Helm
         Rate: 2
       - Item: Saint_Robe_
-        Rate: 20
+        Rate: 15
       - Item: Skyblue_Jewel
         Rate: 20
       - Item: Fin
         Rate: 500
       - Item: Witherless_Rose
-        Rate: 60
+        Rate: 22
       - Item: Obeaune_Card
         Rate: 1
         StealProtected: true
@@ -37586,8 +37636,8 @@ Body:
         Rate: 4
       - Item: Blue_Gemstone
         Rate: 200
-      - Item: Deadly_Noxious_Herb
-        Rate: 40
+#      - Item: Deadly_Noxious_Herb
+#        Rate: 40
       - Item: Marina_Card
         Rate: 1
         StealProtected: true

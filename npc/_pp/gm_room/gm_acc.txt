@@ -23,7 +23,7 @@ End();
 }
 
 
-/*
+
 
 //-----GM MAP FILTER ACCES-----
 -	script	GMFILTER	-1,{
@@ -44,6 +44,6 @@ End();
 gm_room	mapflag	loadevent
 
 
-*/
+
 
 

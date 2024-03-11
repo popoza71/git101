@@ -22,27 +22,27 @@ if(select("^D75DF1รับบัพ^000000 ( ^10D513รับบัพฟรี^000000 ) :^B6AFB8ยกเลิก") == 
 		//}
 		progressbar "0x007000", .@cast;
 		set @delay_heal, gettimetick(2);
-		if (getbrokenid(1) > 0) { atcommand "@repairall"; }
+		//if (getbrokenid(1) > 0) { atcommand "@repairall"; }
 		//แก้สถานะต่างๆ
-		sc_end SC_POISON;
-		sc_end SC_FREEZE;
-		sc_end SC_SLEEP;
-		sc_end SC_STAN;
-		sc_end SC_STUN;
-		sc_end SC_STONE;
-		sc_end SC_SILENCE;
-		sc_end SC_BLIND;
-		sc_end SC_Bleeding;
-		sc_end SC_CONFUSION;
-		sc_end SC_CURSE;
-		sc_end SC_HALLUCINATION;
-		sc_end SC_ORCISH;
-		sc_end SC_DONTFORGETME;
+		//sc_end SC_POISON;
+		//sc_end SC_FREEZE;
+		//sc_end SC_SLEEP;
+		//sc_end SC_STAN;
+		//sc_end SC_STUN;
+		//sc_end SC_STONE;
+		//sc_end SC_SILENCE;
+		//sc_end SC_BLIND;
+		//sc_end SC_Bleeding;
+		//sc_end SC_CONFUSION;
+		//sc_end SC_CURSE;
+		//sc_end SC_HALLUCINATION;
+		//sc_end SC_ORCISH;
+		//sc_end SC_DONTFORGETME;
 		//sc_end SC_ITEMBOOST;
 		//sc_end SC_ITEMBOOST_CARD;
 		//sc_end SC_PKPASS_ATK;
 		//sc_end SC_PKPASS_DEF;
-		atcommand "@identifyall";
+		//atcommand "@identifyall";
 		//----------------เอฟเฟค------------------------
 		specialeffect2 37;
 		//specialeffect2 682;
@@ -60,8 +60,8 @@ if(select("^D75DF1รับบัพ^000000 ( ^10D513รับบัพฟรี^000000 ) :^B6AFB8ยกเลิก") == 
 			//sc_start SC_INTFood,1200000,3;
 			//sc_start SC_DEXFood,1200000,3;
 			//sc_start SC_LUKFood,1200000,3;
-			sc_start SC_BLESSING,900000,5;
-			sc_start SC_INCREASEAGI,900000,5;
+			sc_start SC_BLESSING,300000,3;
+			sc_start SC_INCREASEAGI,300000,3;
 			//sc_start 41,600000,10; //กอเรีย
 			//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
 			//sc_start4 SC_POEMBRAGI,1000*45*1,5,70,90,10;
@@ -70,15 +70,15 @@ if(select("^D75DF1รับบัพ^000000 ( ^10D513รับบัพฟรี^000000 ) :^B6AFB8ยกเลิก") == 
 			dispbottom "คุณอยู่ในสถานะ  VIP";
 			end;
 		}
-		if ((rentalcountitem(41002) > 0) && agitcheck() || agitcheck2() || agitcheck3()){
-			//sc_start 41,600000,10; //กอเรีย
-			//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
-			sc_start SC_BLESSING,900000,10;
-			sc_start SC_INCREASEAGI,900000,10;
-			percentheal 100,0;
-			dispbottom "[Charms WOE] คุณได้บัพช่วงเวลาสงคราม";
-			end;
-			}
+		//if ((rentalcountitem(41002) > 0) && agitcheck() || agitcheck2() || agitcheck3()){
+		//	//sc_start 41,600000,10; //กอเรีย
+		//	//sc_start 40,600000,10; // MAGNIFICAT เร่งsp
+		//	sc_start SC_BLESSING,900000,10;
+		//	sc_start SC_INCREASEAGI,900000,10;
+		//	percentheal 100,0;
+		//	dispbottom "[Charms WOE] คุณได้บัพช่วงเวลาสงคราม";
+		//	end;
+		//	}
 		
 		else{
 			//sc_start SC_FOOD_STR_CASH,600000,10;

@@ -15699,6 +15699,7 @@ Body:
       Head_Top: true
     ArmorLevel: 1
     Refineable: true
+    View: 2211
     Script: |
       bonus bMdef,3;
   - Id: 2231
@@ -15723,6 +15724,7 @@ Body:
       Head_Top: true
     ArmorLevel: 1
     Refineable: true
+    View: 2211
     Script: |
       bonus bMdef,3;
   - Id: 2232

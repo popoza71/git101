@@ -1,0 +1,65 @@
+
+morocc,115,79,5	cashshop	Kafra Shop#1	117 ,30003:10, 30002:100, 40322:100, 41014:290,41015:790,41016:1890,12790:2990
+
+morocc,117,81,5	cashshop	Kafra Shop#2	117 ,7621:50,12221:100, 40506:50, 40510:50, 40500:50, 12209:10, 12212:50, 7776:1490, 13721:550,25793:99,40335:1490,40336:1490
+
+//morocc,121,81,5	cashshop	Kafra Shop (‰Õ‡∑Á¡‡™Ë“)	117 ,/*41001:200,41003:200,41009:200,41011:200,*/40333:1990,12953:1490,12954:1490,12955:1490,12956:1490,12957:1490,12958:1490,12959:1490,14242:1490,14243:1490,14244:1490,14245:1490,14246:1490,14247:1490,14248:1490,14249:1490,14251:1490
+morocc,119,83,5	cashshop	Kafra Shop (‰Õ‡∑Á¡‡™Ë“)	117, 40333:1990,12953:1490,12954:1490,12955:1490,12956:1490,12957:1490,12958:1490,12959:1490,14242:1490,14243:1490,14244:1490,14245:1490,14246:1490,14247:1490,14248:1490,14249:1490,14251:1490
+
+//7619:200,7620:200,
+
+//40330:1490,40331:1490,
+
+//0,41015,690 // VIP Card 3Day
+//0,41016,1890 // VIP Card 7Day
+//0,40322,100 // Tressure Key
+//0,40612,790	// Costume Egg V2
+
+//1,40506,50 // Battle Manual 50
+//1,40510,50 // JOB Battle Manual 50
+//1,12209,10 // Life Insurance
+//1,40500,50 // Bubble Gum 50
+//1,40501,70 // Bubble Gum 100
+//1,12212,50 // Giant Fly Wing
+//1,12214,500 // Convex Mirror
+//1,7776,990  // Gym Pass
+//1,13721,550  // Dungeon Teleport Scroll 10 Box
+
+
+//3,41001,290	//Charm Booster Box 2HR
+//3,12953,1490	//Critical Ring Box
+//3,12954,1490	//Earring Box
+//3,12955,1490	//Ring Box
+//3,12956,1490	//Necklace Box
+//3,12957,1490	//Glove Box
+//3,12958,1490	//Brooch Box
+//3,12959,1490	//Rosary Box
+//3,14242,1490	//Beholder Ring Box
+//3,14243,1490	//Hallow Ring Box
+//3,14244,1490	//Clamorous Ring Box
+//3,14245,1490	//Chemical Ring Box
+//3,14246,1490	//Insecticide Ring Box
+//3,14247,1490	//Fisher Ring Box
+//3,14248,1490	//Decussate Ring Box
+//3,14249,1490	//Bloody Ring Box
+//3,14251,1490	//Dragon Ring Box
+
+
+
+//5,12215,20000 // LV10 Blessing Scroll
+//5,12216,20000 // LV10 Agil Scroll
+//5,12217,20000 // LV5 Aspersio Scroll
+//5,12218,20000 // LV5 Assumptio Scroll
+//5,12219,20000 // LV10 Wind Walker Scroll
+//5,12220,20000 // LV5 Adrenaline Scroll
+
+
+//7,12010,20000 // Wind Arrow Quiver
+//7,12011,20000 // Stone Arrow Quiver
+//7,12012,20000 // Crystal Arrow Quiver
+//7,12013,20000 // Shadow Arrow Quiver
+//7,12014,20000 // Immaterial Arrow Quiver
+//7,12015,20000 // Rusty Arrow Quiver
+//7,12221,100 // Megaphone
+//7,7619,200  // Enriched Elunium
+//7,7620,200  // Enriched Oridecon

@@ -50,10 +50,9 @@ Body:
     Items:
       - Index: 0
         Item: Bubble_Gum_200
+        Stock: 10
         Zeny: 100
         SuccessRate: 10000
-        ShowRate: true
-        ShowEffect: true
         RequiredItems:
           - Index: 0
             Item: red_potion
@@ -62,12 +61,29 @@ Body:
         Item: Bubble_Gum_200
         Zeny: 100
         SuccessRate: 5000
-        ShowRate: true
-        ShowEffect: true
         RequiredItems:
           - Index: 0
             Item: red_potion
             Amount: 1
           - Index: 1
             Item: green_potion
+            Amount: 1
+      - Index: 2
+        Item: Bubble_Gum_200
+        Zeny: 100
+        SuccessRate: 1000
+        RequiredItems:
+          - Index: 0
+            Item: red_potion
+            Amount: 1
+      - Index: 3
+        Item: Bubble_Gum_200
+        Zeny: 100
+        SuccessRate: 1000
+        RequiredItems:
+          - Index: 0
+            Item: hat
+            Amount: 1
+          - Index: 1
+            Item: red_potion
             Amount: 1

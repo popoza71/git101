@@ -2341,7 +2341,7 @@ Body:
     AegisName: Woe_White_Potion
     Name: Woe White Potion
     Type: Healing
-    Weight: 70
+    Weight: 120
     Trade:
       NoDrop: true
       NoCart: true
@@ -2358,7 +2358,7 @@ Body:
     AegisName: Woe_Blue_Potion
     Name: Woe Blue Potion
     Type: Healing
-    Weight: 50
+    Weight: 70
     Trade:
       NoDrop: true
       NoTrade: true
@@ -13538,7 +13538,7 @@ Body:
     AegisName: aegis_480123
     Name: Costume Nydhog Rumor
     Type: Armor
-    View: 113
+    View: 109
     Locations:
       Costume_Garment: true
     ArmorLevel: 1
@@ -13546,7 +13546,7 @@ Body:
     AegisName: C_Beer_Server
     Name: Costume Beer Server
     Type: Armor
-    View: 117
+    View: 136
     Locations:
       Costume_Garment: true
     ArmorLevel: 1
@@ -22306,7 +22306,7 @@ Body:
       Costume_Head_Top: true
     EquipLevelMin: 1
     Refineable: true
-    View: 4689
+    View: 6689
   - Id: 76535
     AegisName: C_Guitar_Limited_Dance
     Name: C Guitar Limited Dance
@@ -26751,6 +26751,10 @@ Body:
     ArmorLevel: 1
     View: 163
 ###########################################################################
+# Wing puppy
+###########################################################################
+
+###########################################################################
 # credit puppy
 ###########################################################################
   - Id: 80001
@@ -26917,7 +26921,7 @@ Body:
     Buy: 1
     Weight: 1
     Script: |
-      getexp 10000,0;
+      getexp 1000000,0;
   - Id: 41028
     AegisName: Rank_Title_Book
     Name: Rank Title Book
@@ -26964,3 +26968,8 @@ Body:
       NoSell: true
     Script: |
       pkpass("def",10);
+  - Id: 77777
+    AegisName: Percent_Booster
+    Name: Percent Booster
+    Type: Etc
+    Weight: 10

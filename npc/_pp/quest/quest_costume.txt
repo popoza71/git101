@@ -1,43 +1,36 @@
-prontera,150,188,0	script	Barter NPC	77,{
-	mes "[Barter NPC]";
-	next;
-	
-	switch(select("Normal barter shop.:Extended barter shop.:test stock")) {
-		case 1:
-			mes "[Barter NPC]";
-			mes "...";
-			close2;
-			callshop "barter_test_npc";
-			end;
-		case 2:
-			mes "[Barter NPC]";
-			mes "...";
-			close2;
-			callshop "barter_test_npc_ex";
-			end;
-		case 3:
-			mes "[Barter NPC]";
-			mes "...";
+morocc,142,102,0	script	Barter NPC	77,{
+		if(getgmlevel()>= 99) { goto GMmenu; }else{ goto Onslot; }
+		end;
+		GMmenu:
+			if(select("~ เมนูปกติ :~ เติมของ ^ff0000(GM Only)^000000") == 1) { goto Onslot; }
+				mes .npcmas$;
+				mes "เรียบร้อย";
+				barterstock "barter_test_npc_O",0,10;
+				barterstock "barter_test_npc_O",1,10;
+				end;
+		Onslot:
+			mes .npcmas$;
+			if(countitem(.boost_craft_item) >= 1 ) {
+			mes "==================";
+			mes "^ff0000ท่านมีไอเทม<ITEM>" +getitemname(.boost_craft_item)+ "<INFO>"+.boost_craft_item+"</INFO></ITEM> จะถูกใช้โดยอัตโนมัติ^000000";
+			}
+			if(countitem(.blessing_craft_item) >= 1 ) {
+			mes "==================";
+			mes "^ff0000ท่านมีไอเทม<ITEM>" +getitemname(.blessing_craft_item)+ "<INFO>"+.blessing_craft_item+"</INFO></ITEM> จะถูกใช้โดยอัตโนมัติ^000000";
+			}
 			close2;
 			callshop "barter_test_npc_O";
 			end;
-	}
+			
+OnInIt:
+	// ชื่อของ npc
+	.npcmas$ = "[Barter ทดสอบ]"; 
+	// หัวห้อง npc
+	waitingroom "Barter ทดสอบ",0;
+	//show รหัสไอเท็ม เพิ่มเปอร์
+	.boost_craft_item = 77777;
+	//show รหัสไอเท็ม กันแตก
+	.blessing_craft_item = 909;
 	
-	end;
-OnInit:
-	//barter_clear "barter_test_npc";
-	//barter_add "barter_test_npc", 504, 10, 501, 20;
-	//barter_add "barter_test_npc", 504, 10, 502, 10;
-	//barter_add "barter_test_npc", "White_Potion", 10, "Yellow_Potion", 3;
-	//
-	//barter_clear "barter_test_npc_ex";
-	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9;
-	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9, "White_Potion", 10, 0;
-	//barter_add_ex "barter_test_npc_ex", "Zeny_Knife", 5, 5000, "Knife", 1, 9, "White_Potion", 10, 0, "White_Potion", 10, 0;
-	end;
-}
-
-prontera,152,188,0	script	Barter NPC2	77,{
-	callshop "barter_test_npc";
-	end;
-}
+end;
+		}

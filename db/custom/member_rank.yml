@@ -11,88 +11,77 @@ Header:
 
 Body:
   - Level: 1
-    Point: 1000
+    Point: 20000
     Icon: EFST_MEMBER_LV1
     Script: |
       bonus2 bExpAddRace,RC_All,1;
       bonus2 bDropAddRace,RC_All,1;
-      bonus bAddMaxWeight,500;
-      bonus bStr,100;
   - Level: 2
-    Point: 2000
+    Point: 40000
     Icon: EFST_MEMBER_LV2
     Script: |
       bonus2 bExpAddRace,RC_All,2;
       bonus2 bDropAddRace,RC_All,2;
-      bonus bAddMaxWeight,1500;
-      bonus bAgi,100;
   - Level: 3
-    Point: 4000
+    Point: 60000
     Icon: EFST_MEMBER_LV3
     Script: |
       bonus2 bExpAddRace,RC_All,3;
       bonus2 bDropAddRace,RC_All,3;
-      bonus bAddMaxWeight,2000;
-      bonus bDex,100;
   - Level: 4
-    Point: 7000
+    Point: 100000
     Icon: EFST_MEMBER_LV4
     Script: |
       bonus2 bExpAddRace,RC_All,4;
       bonus2 bDropAddRace,RC_All,4;
       bonus bAddMaxWeight,2500;
-      bonus bSPrecovRate,1;
-      bonus bLuk,100;
   - Level: 5
-    Point: 10000
+    Point: 140000
     Icon: EFST_MEMBER_LV5
     Script: |
       bonus2 bExpAddRace,RC_All,5;
       bonus2 bDropAddRace,RC_All,5;
-      bonus bAddMaxWeight,3000;
-      bonus bSPrecovRate,2;
-      bonus bVit,100;
+      bonus bMaxHPrate,2;
   - Level: 6
-    Point: 15000
+    Point: 180000
     Icon: EFST_MEMBER_LV6
     Script: |
       bonus2 bExpAddRace,RC_All,6;
       bonus2 bDropAddRace,RC_All,6;
-      bonus bAddMaxWeight,3500;
-      bonus bSPrecovRate,3;
+      bonus bMaxHPrate,3;
   - Level: 7
-    Point: 20000
+    Point: 250000
     Icon: EFST_MEMBER_LV7
     Script: |
       bonus2 bExpAddRace,RC_All,7;
       bonus2 bDropAddRace,RC_All,7;
       bonus bAddMaxWeight,4000;
-      bonus bSPrecovRate,5;
-      bonus bStr,1000;
-  - Level: 8
-    Point: 24000
-    Icon: EFST_MEMBER_LV8
-    Script: |
-      bonus2 bExpAddRace,RC_All,7;
-      bonus2 bDropAddRace,RC_All,7;
-      bonus bAddMaxWeight,4000;
-      bonus bSPrecovRate,5;
-      bonus bStr,1000;
-  - Level: 9
-    Point: 30000
-    Icon: EFST_MEMBER_LV9
-    Script: |
-      bonus2 bExpAddRace,RC_All,7;
-      bonus2 bDropAddRace,RC_All,7;
-      bonus bAddMaxWeight,4000;
-      bonus bSPrecovRate,5;
-      bonus bStr,1000;
-  - Level: 10
-    Point: 35000
-    Icon: EFST_MEMBER_LV10
-    Script: |
-      bonus2 bExpAddRace,RC_All,7;
-      bonus2 bDropAddRace,RC_All,7;
-      bonus bAddMaxWeight,4000;
-      bonus bSPrecovRate,5;
-      bonus bStr,1000;
+      bonus bMaxHPrate,5;
+      bonus bAddMaxWeight,1000;
+#  - Level: 8
+#    Point: 24000
+#    Icon: EFST_MEMBER_LV8
+#    Script: |
+#      bonus2 bExpAddRace,RC_All,7;
+#      bonus2 bDropAddRace,RC_All,7;
+#      bonus bAddMaxWeight,4000;
+#      bonus bSPrecovRate,5;
+#      bonus bStr,1000;
+#  - Level: 9
+#    Point: 30000
+#    Icon: EFST_MEMBER_LV9
+#    Script: |
+#      bonus2 bExpAddRace,RC_All,7;
+#      bonus2 bDropAddRace,RC_All,7;
+#      bonus bAddMaxWeight,4000;
+#      bonus bSPrecovRate,5;
+#      bonus bStr,1000;
+#  - Level: 10
+#    Point: 35000
+#    Icon: EFST_MEMBER_LV10
+#    Script: |
+#      bonus2 bExpAddRace,RC_All,7;
+#      bonus2 bDropAddRace,RC_All,7;
+#      bonus bAddMaxWeight,4000;
+#      bonus bSPrecovRate,5;
+#      bonus bStr,1000;

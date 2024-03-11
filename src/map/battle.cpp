@@ -10852,6 +10852,23 @@ static const struct _battle_data {
 	{ "pkpass_magic_damage_rate",      		&battle_config.pkpass_magic_damage_rate,		100,    0,      UINT16_MAX,     },
 	{ "pkpass_misc_damage_rate",       		&battle_config.pkpass_misc_damage_rate,			100,    0,      UINT16_MAX,     },
 
+	// Refinet option
+	{ "refine_announce_success",      		&battle_config.refine_announce_success,   		0,      0,      MAX_REFINE,		},
+	{ "refine_announce_broken",      		&battle_config.refine_announce_broken,   		0,      0,      MAX_REFINE,		},
+	{ "refine_option_announce",      		&battle_config.refine_option_announce,   		0,      0,      1,              },
+	{ "refine_option_color",      			&battle_config.refine_option_color,		 0xff0000,      0,      INT_MAX,		},
+	{ "refine_option_color_self",			&battle_config.refine_option_color_self, 0xff0000,      0,      INT_MAX,		},
+	{ "refine_broken_color",				&battle_config.refine_broken_color, 	 0xff0000,      0,      INT_MAX,		},
+	{ "refine_normal_color",				&battle_config.refine_normal_color, 	 0xff0000,      0,      INT_MAX,		},
+
+	// Barter Rate
+	{ "boost_craft_item",					&battle_config.boost_craft_item,				0,      0,      INT_MAX,		},
+	{ "boost_craft_rate",					&battle_config.boost_craft_rate,				0,      0,      INT_MAX,		},
+	{ "blessing_craft_item",				&battle_config.blessing_craft_item,				0,      0,      INT_MAX,		},
+
+
+
+
 #include <custom/battle_config_init.inc>
 };
 

@@ -9,48 +9,60 @@ Header:
   Version: 1
 
 Body:
-  - Job: Novice
-    LevelNeed: 99
-    Icon: EFST_MAX_NOV
-    BonusScript: |
-      bonus bAllStats,10;
+#  - Job: Novice
+#    LevelNeed: 95
+#    Icon: EFST_MAX_NOV
+#    BonusScript: |
+#      bonus bAllStats,10;
 
   - Job: Swordman
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_SWORD
     BonusScript: |
-      bonus bStr,10;
-
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+        bonus2 bDropAddRace,RC_All,2;
+        bonus bMatkRate,5;
+      }
   - Job: Acolyte
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_ACO
     BonusScript: |
-      bonus bInt,10;
-
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bLongAtkRate,5;
+      }
   - Job: Mage
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_MAGE
     BonusScript: |
-      bonus bInt,100;
-
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bAspdRate,5;
+      }
   - Job: Archer
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_ARCHER
     BonusScript: |
-      bonus bDex,10;
-
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bShortAtkRate,5;
+      }
   - Job: Thief
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_THIEF
     BonusScript: |
-      bonus bAgi,10;
-
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bSPrecovRate,5;
+      }
   - Job: Merchant
-    LevelNeed: 99
+    LevelNeed: 95
     Icon: EFST_MAX_MER
     BonusScript: |
-      bonus bLuk,10;
-      
+      if(!getmapflag( strcharinfo(3),mf_gvg )) {
+      bonus2 bDropAddRace,RC_All,2;
+      bonus bCastrate,-5;
+      }
 #  - Job: All
 #    LevelNeed: 99
 #    Icon: EFST_ENDURE

@@ -982,34 +982,83 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,getrandomoptinfo(ROA_VALUE);
   - Id: 243
+    Option: VAR_POWAMOUNT
+    Script: |
+      bonus bPow,getrandomoptinfo(ROA_VALUE);
+  - Id: 244
+    Option: VAR_SPLAMOUNT
+    Script: |
+      bonus bSpl,getrandomoptinfo(ROA_VALUE);
+  - Id: 245
+    Option: VAR_STAAMOUNT
+    Script: |
+      bonus bSta,getrandomoptinfo(ROA_VALUE);
+  - Id: 246
+    Option: VAR_WISAMOUNT
+    Script: |
+      bonus bWis,getrandomoptinfo(ROA_VALUE);
+  - Id: 247
+    Option: VAR_CONAMOUNT
+    Script: |
+      bonus bCon,getrandomoptinfo(ROA_VALUE);
+  - Id: 248
+    Option: VAR_CRTAMOUNT
+    Script: |
+      bonus bCritical,getrandomoptinfo(ROA_VALUE);
+  - Id: 249
+    Option: VAR_PATKAMOUNT
+    Script: |
+      bonus bPAtk,getrandomoptinfo(ROA_VALUE);
+  - Id: 250
+    Option: VAR_SMATKAMOUNT
+    Script: |
+      bonus bSMatk,getrandomoptinfo(ROA_VALUE);
+  - Id: 251
+    Option: VAR_RESAMOUNT
+    Script: |
+      bonus bRes,getrandomoptinfo(ROA_VALUE);
+  - Id: 252
+    Option: VAR_MRESAMOUNT
+    Script: |
+      bonus bMRes,getrandomoptinfo(ROA_VALUE);
+  - Id: 253
+    Option: VAR_HEAL_PLUS
+    Script: |
+      bonus bHealPower,getrandomoptinfo(ROA_VALUE);
+  - Id: 254
+    Option: VAR_CRITICAL_RATE
+    Script: |
+      bonus bCriticalRate,getrandomoptinfo(ROA_VALUE);
+#####################################################################
+  - Id: 255
     Option: ADDDROPPERCENT_ALL
     Script: |
       bonus2 bDropAddRace,RC_All,getrandomoptinfo(ROA_VALUE);
-  - Id: 244
+  - Id: 256
     Option: ADDSUBSTUN_ALL
     Script: |
       bonus2 bResEff,Eff_Stun,getrandomoptinfo(ROA_VALUE);
-  - Id: 245
+  - Id: 257
     Option: ADDSUBCURSE_ALL
     Script: |
       bonus2 bResEff,Eff_Curse,getrandomoptinfo(ROA_VALUE);
-  - Id: 246
+  - Id: 258
     Option: ADDSUBSLEEP_ALL
     Script: |
       bonus2 bResEff,Eff_Sleep,getrandomoptinfo(ROA_VALUE);
-  - Id: 247
+  - Id: 259
     Option: ADDSUBFREEZE_ALL
     Script: |
       bonus2 bResEff,Eff_Freeze,getrandomoptinfo(ROA_VALUE);
-  - Id: 248
+  - Id: 260
     Option: ADDSUBPOISON_ALL
     Script: |
       bonus2 bResEff,Eff_Poison,getrandomoptinfo(ROA_VALUE);
-  - Id: 249
+  - Id: 261
     Option: ADDSUBSILENCE_ALL
     Script: |
       bonus2 bResEff,Eff_Silence,getrandomoptinfo(ROA_VALUE);
-  - Id: 250
+  - Id: 262
     Option: ADDSUBSTONE_ALL
     Script: |
       bonus2 bResEff,Eff_Stone,getrandomoptinfo(ROA_VALUE);

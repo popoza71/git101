@@ -9,142 +9,258 @@ Header:
   Version: 1
 
 Body:
-
+  - Id: 1100
+    RankName: Baby
+    EXP: 3200000
   - Id: 1101
     RankName: Child
-    EXP: 2000
+    EXP: 7200000
     Script: |
-      bonus bStr,10;
-
+      bonus2 bAddSize,Size_Small,2;
   - Id: 1102
     RankName: Adult
-    EXP: 4000
+    EXP: 12800000
     Script: |
-      bonus bStr,20;
-
+      bonus2 bAddSize,Size_Medium,2;
   - Id: 1103
     RankName: Rookie
-    EXP: 6000
+    EXP: 20000000
     Script: |
-      bonus bDex,10;
-
+      bonus2 bAddSize,Size_Large,2;
   - Id: 1104
     RankName: Novice
-    EXP: 8000
+    EXP: 28800000
     Script: |
-      bonus bDex,20;
-
+      bonus bLuk,1;
   - Id: 1105
-    RankName: Commander
-    EXP: 10000
+    RankName: Common
+    EXP: 39200000
     Script: |
-      bonus bLuk,10;
-
-	# - Id: 1101
-  #   RankName: AAAA
-  #   EXP: 1000
-  #   Script: |
-  #     bonus bStr,1;
-
-	# - Id: 1102
-  #   RankName: BBBB
-  #   EXP: 1500
-  #   Script: |
-  #     bonus bStr,2;
-
-	# - Id: 1103
-  #   RankName: Child
-	# - Id: 1104
-  #   RankName: Adult
-	# - Id: 1105
-  #   RankName: Rookie
-	# - Id: 1106
-  #   RankName: Novice
-	# - Id: 1107
-  #   RankName: Common
-	# - Id: 1108
-  #   RankName: Soldier
-	# - Id: 1109
-  #   RankName: Sergeant
-	# - Id: 1110
-  #   RankName: Captain
-	# - Id: 1111
-  #   RankName: Major
-	# - Id: 1112
-  #   RankName: Colonel
-	# - Id: 1113
-  #   RankName: General
-	# - Id: 1114
-  #   RankName: Commander
-	# - Id: 1115
-  #   RankName: Supreme
-	# - Id: 1116
-  #   RankName: Sir
-	# - Id: 1117
-  #   RankName: Baron
-	# - Id: 1118
-  #   RankName: Viscount
-	# - Id: 1119
-  #   RankName: Count
-	# - Id: 1120
-  #   RankName: Marquis
-	# - Id: 1121
-  #   RankName: Duke
-	# - Id: 1122
-  #   RankName: King
-	# - Id: 1123
-  #   RankName: Great King
-	# - Id: 1124
-  #   RankName: Incredible
-	# - Id: 1125
-  #   RankName: Invincible
-	# - Id: 1126
-  #   RankName: Hero
-	# - Id: 1127
-  #   RankName: Nobel
-	# - Id: 1128
-  #   RankName: Berserker
-	# - Id: 1129
-  #   RankName: Legend
-	# - Id: 1130
-  #   RankName: Legendary
-	# - Id: 1131
-  #   RankName: Mythical
-	# - Id: 1132
-  #   RankName: Immortal
-	# - Id: 1133
-  #   RankName: Immortal Spirit
-	# - Id: 1134
-  #   RankName: Commander
-	# - Id: 1135
-  #   RankName: Saint
-	# - Id: 1136
-  #   RankName: Angel
-	# - Id: 1137
-  #   RankName: Angel Of Death
-	# - Id: 1138
-  #   RankName: Guardain
-	# - Id: 1139
-  #   RankName: Master
-	# - Id: 1140
-  #   RankName: Golden
-	# - Id: 1141
-  #   RankName: Evil God
-	# - Id: 1142
-  #   RankName: King Of Hell
-	# - Id: 1143
-  #   RankName: King Of Heaven
-	# - Id: 1144
-  #   RankName: God Of Prophesy
-	# - Id: 1145
-  #   RankName: God Of Hunt
-	# - Id: 1146
-  #   RankName: God Of War
-	# - Id: 1147
-  #   RankName: God Of Death
-	# - Id: 1148
-  #   RankName: Demi-God
-	# - Id: 1149
-  #   RankName: God
-	# - Id: 1150
-  #   RankName: Super God
+      bonus bCritical,2;
+  - Id: 1106
+    RankName: Soldier
+    EXP: 51200000
+    Script: |
+      bonus bAgi,1;
+  - Id: 1107
+    RankName: Sergeant
+    EXP: 64800000
+    Script: |
+      bonus bFlee,3;
+  - Id: 1108
+    RankName: Captain
+    EXP: 80000000
+    Script: |
+      bonus bCritical,1;
+  - Id: 1109
+    RankName: Major
+    EXP: 96800000
+    Script: |
+      bonus bHit,3;
+  - Id: 1110
+    RankName: Colonel
+    EXP: 115200000
+    Script: |
+      bonus bInt,1;
+  - Id: 1111
+    RankName: General
+    EXP: 135200000
+    Script: |
+      bonus bMaxSP,25;
+  - Id: 1112
+    RankName: Commander
+    EXP: 156800000
+    Script: |
+      bonus bVit,1;
+  - Id: 1113
+    RankName: Supreme
+    EXP: 180000000
+    Script: |
+      bonus bMaxHP,25;
+  - Id: 1114
+    RankName: Sir
+    EXP: 204800000
+    Script: |
+      bonus bStr,1;
+  - Id: 1115
+    RankName: Baron
+    EXP: 231200000
+    Script: |
+      bonus2 bSubSize,Size_Small,2;
+  - Id: 1116
+    RankName: Viscount
+    EXP: 259200000
+    Script: |
+      bonus bBaseAtk,5;
+  - Id: 1117
+    RankName: Count
+    EXP: 288800000
+    Script: |
+      bonus bMatkRate,1;
+  - Id: 1118
+    RankName: Marquis
+    EXP: 320000000
+    Script: |
+      bonus bAspdRate,1;
+  - Id: 1119
+    RankName: Duke
+    EXP: 352800000
+    Script: |
+      bonus bMaxHP,30;
+      bonus bMaxSP,30;
+  - Id: 1120
+    RankName: King
+    EXP: 387200000
+    Script: |
+      bonus bStr,1;
+      bonus bVit,1;
+  - Id: 1121
+    RankName: Great King
+    EXP: 423200000
+    Script: |
+      bonus bAgi,1;
+      bonus bLuk,1;
+  - Id: 1122
+    RankName: Incredible
+    EXP: 460800000
+    Script: |
+      bonus bInt,1;
+      bonus bDex,1;
+  - Id: 1123
+    RankName: Invincible
+    EXP: 500000000
+    Script: |
+      bonus2 bSubSize,Size_Medium,2;
+  - Id: 1124
+    RankName: Hero
+    EXP: 540800000
+    Script: |
+      bonus bDef,2;
+  - Id: 1125
+    RankName: Nobel
+    EXP: 583200000
+    Script: |
+      bonus bMdef,2;
+  - Id: 1126
+    RankName: Berserker
+    EXP: 627200000
+    Script: |
+      bonus2 bAddClass,Class_Boss,5;
+  - Id: 1127
+    RankName: Legend
+    EXP: 672800000
+    Script: |
+      bonus bMaxHP,50;
+      bonus bMaxSP,50;
+  - Id: 1128
+    RankName: Legendary
+    EXP: 720000000
+    Script: |
+      bonus bAspdRate,2;
+  - Id: 1129
+    RankName: Mythical
+    EXP: 768800000
+    Script: |
+      bonus bBaseAtk,10;
+  - Id: 1130
+    RankName: Immortal
+    EXP: 819200000
+    Script: |
+      bonus bMatkRate,2;
+  - Id: 1131
+    RankName: Immortal Spirit
+    EXP: 871200000
+    Script: |
+      bonus2 bSubSize,Size_Large,2;
+  - Id: 1132
+    RankName: Commander
+    EXP: 924800000
+    Script: |
+      bonus bCritical,3;
+  - Id: 1133
+    RankName: Saint
+    EXP: 980000000
+    Script: |
+      bonus bCritAtkRate,10;
+  - Id: 1134
+    RankName: Angel
+    EXP: 1036800000
+    Script: |
+      bonus bDef,3;
+  - Id: 1135
+    RankName: Angel Of Death
+    EXP: 1095200000
+    Script: |
+      bonus bMdef,3;
+  - Id: 1136
+    RankName: Guardain Spirit
+    EXP: 1155200000
+    Script: |
+      bonus bLongAtkRate,3;
+  - Id: 1137
+    RankName: Master
+    EXP: 1216800000
+    Script: |
+      bonus bAspdRate,3;
+  - Id: 1138
+    RankName: Golden
+    EXP: 1280000000
+    Script: |
+      bonus bBaseAtk,15;
+  - Id: 1139
+    RankName: Evil God
+    EXP: 1344800000
+    Script: |
+      bonus bMatkRate,3;
+  - Id: 1140
+    RankName: King Of Hell
+    EXP: 1411200000
+    Script: |
+      bonus2 bAddRace,RC_DemiHuman,2;
+      bonus2 bAddRace,RC_Player_Human,2;
+  - Id: 1141
+    RankName: King Of Heaven
+    EXP: 1479200000
+    Script: |
+      bonus2 bSubRace,RC_DemiHuman,2;
+      bonus2 bSubRace,RC_Player_Human,2;
+  - Id: 1142
+    RankName: God Of Prophesy
+    EXP: 1548800000
+    Script: |
+      bonus bMaxHP,75;
+      bonus bMaxSP,75;
+  - Id: 1143
+    RankName: God Of Hunt
+    EXP: 1620000000
+    Script: |
+      bonus bAspdRate,4;
+  - Id: 1144
+    RankName: God Of War
+    EXP: 1692800000
+    Script: |
+      bonus bCastrate,-3;
+  - Id: 1145
+    RankName: God Of Death
+    EXP: 1767200000
+    Script: |
+      bonus bDelayrate,-3;
+  - Id: 1146
+    RankName: Demi Of God
+    EXP: 1843200000
+    Script: |
+      bonus bUseSPrate,10;
+  - Id: 1147
+    RankName: God
+    EXP: 1920800000
+    Script: |
+      bonus bMaxHPrate,5;
+      bonus bMaxSPrate,5;
+      bonus bAllStats,1;
+  - Id: 1148
+    RankName: Super God
+    EXP: 2000000000
+    Script: |
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus bAllStats,2;

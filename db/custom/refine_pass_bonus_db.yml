@@ -6,24 +6,49 @@ Body:
   - Level: 5
     Icon: EFST_REFINE_PASS_5
     Script: |
-        bonus bStr,1;
+        bonus2 bExpAddClass,Class_All,5;
+        bonus2 bDropAddRace,RC_All,5;
+        bonus2 bAddClass,Class_All,1;
+        bonus bMatkRate,1;
+        bonus bAddMaxWeight,1000;
   - Level: 6
     Icon: EFST_REFINE_PASS_6
     Script: |
-        bonus bStr,2;
+        bonus2 bExpAddClass,Class_All,6;
+        bonus2 bDropAddRace,RC_All,6;
+        bonus2 bAddClass,Class_All,2;
+        bonus bMatkRate,2;
+        bonus bAddMaxWeight,2000;
   - Level: 7
     Icon: EFST_REFINE_PASS_7
     Script: |
-        bonus bStr,3;
+        bonus2 bExpAddClass,Class_All,7;
+        bonus2 bDropAddRace,RC_All,7;
+        bonus2 bAddClass,Class_All,3;
+        bonus bMatkRate,3;
+        bonus bAddMaxWeight,3000;
   - Level: 8
     Icon: EFST_REFINE_PASS_8
     Script: |
-        bonus bStr,4;
+        bonus2 bExpAddClass,Class_All,8;
+        bonus2 bDropAddRace,RC_All,8;
+        bonus2 bAddClass,Class_All,4;
+        bonus bMatkRate,4;
+        bonus bAddMaxWeight,4000;
   - Level: 9
     Icon: EFST_REFINE_PASS_9
     Script: |
-        bonus bStr,5;
+        bonus2 bExpAddClass,Class_All,9;
+        bonus2 bDropAddRace,RC_All,9;
+        bonus2 bAddClass,Class_All,5;
+        bonus bMatkRate,5;
+        bonus bAddMaxWeight,5000;
   - Level: 10
     Icon: EFST_REFINE_PASS_10
     Script: |
-        bonus bStr,6;
+        bonus2 bExpAddClass,Class_All,10;
+        bonus2 bDropAddRace,RC_All,10;
+        bonus2 bAddClass,Class_All,10;
+        bonus bMatkRate,10;
+        bonus bAddMaxWeight,10000;
+        bonus bAllStats,1;

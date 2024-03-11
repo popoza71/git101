@@ -28,3 +28,29 @@
 // 519,322  // Milk can't be consumed in PVP and maps marked as 'restricted zone 2' or 'restricted zone 4' (256+64+2)
 // 519,-2   // Unset `restricted in PVP` flag from Milk. Making it usable in PVP again.
 
+//----------------------------------------------------------------------------
+// All maps
+//----------------------------------------------------------------------------
+4040,15	//Creamy Card
+4307,15	//Beetle King Card
+4289,15	//Caterpillar Card
+4182,15	//Diabolic Card
+4180,15	//Driller Card
+4316,15	//False Angel Card
+4165,15	//Gig Card
+4167,15	//Nereid Card
+4329,15	//Phendark Card
+4308,15	//Tri Joint Card
+4274,15	//Zombie Master Card
+4215,15	//Blazzer Card
+
+
+//----------------------------------------------------------------------------
+// PVP
+//----------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------
+// GVG
+//----------------------------------------------------------------------------
+1370,4	//doom slayerr
+1371,4	//doom slayerr

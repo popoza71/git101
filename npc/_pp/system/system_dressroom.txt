@@ -1,0 +1,183 @@
+morocc,108,73,4	script	Stylist#super_stylist	122,{
+//gm_room,113,74,4	script	Stylist#super_stylist	122,{
+		.@eac = eaclass();
+		.@gm_level = getgmlevel();
+		
+	mes "^FF0000[ Stylist ]^000000";
+	mes "สวัสดีคุณ,"+strcharinfo(0)+"";
+	mes "ฉันคือช่างเสริมสวยของเซิร์ฟเวอร์นี้";
+	mes "ฉันสามารถเปลี่ยนรูปลักษณ์ของคุณ";
+	mes "ภายนอกให้ออกมาดูดีได้น่ะ";
+	mes "คุณอยากลองดูมั้ยล่ะ..?";
+	next;
+	switch(select("~ ใช่, ฉันต้องการ:~ เปล่า,แค่แวะผ่านมา.."))
+	{
+		case 1:
+			Lmain:
+				mes "^FF0000[ Stylist ]^000000";
+				mes "โอเค.....";
+				mes "กรุณาเลือกรูปแบบที่คุณต้องการ";
+				mes "ในช่องหน้าต่างด้านข้าง";
+				next;
+				switch (select(
+					"~ เปลี่ยน ทรงผม",
+					"~ เปลี่ยน สีผม",
+					"~ เปลี่ยน สีผ้าคลุม",
+					"~ ตัวอย่างทรงผม สีผม สีชุด"
+				)) {
+					case 1:
+						if(countitem(40335)<1) {
+							mes "^FF0000[ Stylist ]^000000";
+							mes "ฉันต้องการ ^FF0000"+getitemname(40335)+" 1ea^000000";
+							mes "หาซื้อได้ที่ ร้าน Kafra Shop";
+							close;
+						}
+						set .@hairstylemin,getBattleFlag("min_hair_style");
+						if (.@eac != EAJL_SUMMONER) {
+						set .@hairstylemaxf,getBattleFlag("max_hair_style");
+						set .@hairstylemaxm,getBattleFlag("max_hair_style");
+						} else {
+							set .@hairstylemaxf,getBattleFlag("max_hair_style");
+							set .@hairstylemaxm,getBattleFlag("max_hair_style");
+						}
+						next;
+						mes "^FF0000[ Stylist ]^000000";
+						mes "กรุณากรอกหมายเลข ทรงผม ลงในช่องว่าง";
+						if (Sex) {
+							mes "หมายเลขทรงผม : " +.@hairstylemin+ " ถึง " +.@hairstylemaxm;
+						} else {
+							mes "หมายเลขทรงผม : " +.@hairstylemin+ " ถึง " +.@hairstylemaxf;
+						}
+						input .@hairstyle;
+												
+						if ( .@hairstyle < 0 )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40335,1;
+							close;
+						}
+						else if ( .@hairstyle > 33 )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40335,1;
+							close;
+						}
+						
+						delitem 40335,1;
+						
+						if (Sex) {
+							if (.@hairstyle < .@hairstylemin || .@hairstyle > .@hairstylemaxm) { 
+							set .@hairstyle,1; 
+							}
+						} else {
+							if (.@hairstyle < .@hairstylemin || .@hairstyle > .@hairstylemaxf) { 
+							set .@hairstyle,1; 
+							}
+						}
+						setlook LOOK_HAIR,.@hairstyle;
+						next;
+						break;
+					case 2:
+						if(countitem(40336)<1) {
+							mes "^FF0000[ Stylist ]^000000";
+							mes "ฉันต้องการ ^FF0000"+getitemname(40336)+" 1ea^000000";
+							mes "หาซื้อได้ที่ ร้าน Kafra Shop";
+							close;
+						}
+						set .@hairdyemin,getBattleFlag("min_hair_color");
+						set .@hairdyemax,getBattleFlag("max_hair_color");
+						mes "^FF0000[ Stylist ]^000000";
+						mes "กรุณากรอกหมายเลข สีผม ลงในช่องว่าง";
+						mes "หมายเลขสีผม : " +.@hairdyemin+ " ถึง " +.@hairdyemax;
+						input .@hairdye;
+						
+						if ( .@hairdye < .@hairdyemin )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40336,1;
+							close;
+						}
+						else if ( .@hairdye > .@hairdyemax )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40336,1;
+							close;
+						}
+						delitem 40336,1;
+						
+						
+						if (.@hairdye < .@hairdyemin || .@hairdye > .@hairdyemax) { 
+						set .@hairdye,0; 
+						}
+						setlook LOOK_HAIR_COLOR,.@hairdye;
+						next;
+						break;
+					case 3:
+						if(countitem(40336)<1) {
+							mes "^FF0000[ Stylist ]^000000";
+							mes "ฉันต้องการ";
+							mes "^FF0000"+getitemname(40336)+" 1ea^000000";
+							mes "หาซื้อได้ที่ ร้าน Kafra Shop";
+							close;
+						}
+						set .@clothcolormin,getBattleFlag("min_cloth_color");
+						set .@clothcolormax,getBattleFlag("max_cloth_color");
+						mes "^FF0000[ Stylist ]^000000";
+						mes "กรุณากรอกหมายเลข สีผ้าคลุม ลงในช่องว่าง";
+						mes "หมายเลขสีผ้าคลุม : " +.@clothcolormin+ " ถึง " +.@clothcolormax;
+						input .@clothcolor;
+												
+						if ( .@clothcolor < .@clothcolormin )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40336,1;
+							close;
+						}
+						else if ( .@clothcolor > .@clothcolormax )
+						{
+							next;
+							mes "^FF0000[ Stylist ]^000000";
+							mes "หมายเลขไม่ถูกต้อง";
+							//getitem 40336,1;
+							close;
+						}
+						
+						
+						delitem 40336,1;
+						if (.@clothcolor < .@clothcolormin || .@clothcolor > .@clothcolormax) { 
+						set .@clothcolor,0; 
+						}
+						setlook LOOK_CLOTHES_COLOR,.@clothcolor;
+						next;
+						break;
+						
+					case 4:
+					close2;
+					opendressroom(0);
+					end;
+				}
+				goto Lmain;
+		case 2:
+		end;
+	}
+	
+OnInit:
+	// =============== Configure ==============================
+		set $@HCLOTH_WAITINGROOM, 1;							// เปิดแสดงชื่อห้องบนหัว ( 0 = ปิด / 1 = เปิด )
+		set $@HCLOTH_WAITINGROOM$, "[ ร้านค้าเสริมสวย ]";					// ชื่อห้องบนหัว
+	// ========================================================
+	
+	sleep 1000;
+		if($@HCLOTH_WAITINGROOM) waitingroom "" + $@HCLOTH_WAITINGROOM$,0;
+end;
+}

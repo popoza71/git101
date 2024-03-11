@@ -48,11 +48,16 @@ Body:
     Commands:
       changedress: true
       resurrect: true
+      autotrade: true
+      mobinfo: true
+      time: true
+      refresh: true
     Permissions:
       # without this basic permissions regular players could not trade or party
       can_trade: true
       can_party: true
       attendance: true
+      view_equipment: true
   - Id: 1
     Name: Super Player
     # Can do everything Players can and more
@@ -182,6 +187,20 @@ Body:
     Commands:
       rates: true
       who: true
+  - Id: 7
+    Name: Streamer
+    # Can do everything Players can
+    Inherit:
+      Player: true
+    Level: 0
+    Commands:
+      jump: true
+      load: true   
+      hide: true  
+      warp: true
+      speed: true
+    Permissions:
+      any_warp: true
   - Id: 10
     Name: Law Enforcement
     Inherit:

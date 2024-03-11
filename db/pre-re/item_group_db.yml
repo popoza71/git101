@@ -333,33 +333,33 @@ Body:
           - Index: 37
             Item: Fish_Slice
             Rate: 12
-#          - Index: 38
-#            Item: Red_Slim_Potion
-#            Rate: 12
-#          - Index: 39
-#            Item: Yellow_Slim_Potion
-#            Rate: 12
-#          - Index: 40
-#            Item: White_Slim_Potion
-#            Rate: 12
-#          - Index: 41
-#            Item: Cheese
-#            Rate: 12
-#          - Index: 42
-#            Item: Nice_Sweet_Potato
-#            Rate: 12
-#          - Index: 43
-#            Item: Popped_Rice
-#            Rate: 12
-#          - Index: 44
-#            Item: Shusi
-#            Rate: 12
-#          - Index: 45
-#            Item: Bun
-#            Rate: 12
-#          - Index: 46
-#            Item: Rice_Cake
-#            Rate: 12
+          - Index: 38
+            Item: Red_Slim_Potion
+            Rate: 12
+          - Index: 39
+            Item: Yellow_Slim_Potion
+            Rate: 12
+          - Index: 40
+            Item: White_Slim_Potion
+            Rate: 12
+          - Index: 41
+            Item: Cheese
+            Rate: 12
+          - Index: 42
+            Item: Nice_Sweet_Potato
+            Rate: 12
+          - Index: 43
+            Item: Popped_Rice
+            Rate: 12
+          - Index: 44
+            Item: Shusi
+            Rate: 12
+          - Index: 45
+            Item: Bun
+            Rate: 12
+          - Index: 46
+            Item: Rice_Cake
+            Rate: 12
           - Index: 47
             Item: Chocolate
             Rate: 12
@@ -411,78 +411,78 @@ Body:
           - Index: 63
             Item: Worn_Out_Scroll
             Rate: 12
-          - Index: 64
-            Item: Unripe_Apple
-            Rate: 12
-          - Index: 65
-            Item: Orange_Juice
-            Rate: 12
-          - Index: 66
-            Item: Bitter_Herb
-            Rate: 12
-          - Index: 67
-            Item: Rainbow_Carrot
-            Rate: 12
-          - Index: 68
-            Item: Earthworm_The_Dude
-            Rate: 12
-          - Index: 69
-            Item: Rotten_Fish
-            Rate: 12
-          - Index: 70
-            Item: Lusty_Iron
-            Rate: 12
-          - Index: 71
-            Item: Monster_Juice
-            Rate: 12
-          - Index: 72
-            Item: Sweet_Milk
-            Rate: 12
-          - Index: 73
-            Item: Well_Dried_Bone
-            Rate: 12
-          - Index: 74
-            Item: Singing_Flower
-            Rate: 12
-          - Index: 75
-            Item: Dew_Laden_Moss
-            Rate: 12
-          - Index: 76
-            Item: Deadly_Noxious_Herb
-            Rate: 12
-          - Index: 77
-            Item: Fatty_Chubby_Earthworm
-            Rate: 12
-          - Index: 78
-            Item: Baked_Yam
-            Rate: 12
-          - Index: 79
-            Item: Tropical_Banana
-            Rate: 12
-          - Index: 80
-            Item: Horror_Of_Tribe
-            Rate: 12
-          - Index: 81
-            Item: No_Recipient
-            Rate: 12
-          - Index: 82
-            Item: Old_Broom
-            Rate: 12
-          - Index: 83
-            Item: Silver_Knife_Of_Chaste
-            Rate: 12
-          - Index: 84
-            Item: Armlet_Of_Obedience
-            Rate: 12
-          - Index: 85
-            Item: Shining_Stone
-            Rate: 12
-          - Index: 86
-            Item: Contracts_In_Shadow
-            Rate: 12
-          - Index: 87
-            Item: Book_Of_Devil
-            Rate: 12
+##          - Index: 64
+##            Item: Unripe_Apple
+##            Rate: 12
+##          - Index: 65
+##            Item: Orange_Juice
+##            Rate: 12
+##          - Index: 66
+##            Item: Bitter_Herb
+##            Rate: 12
+##          - Index: 67
+##            Item: Rainbow_Carrot
+##            Rate: 12
+##          - Index: 68
+##            Item: Earthworm_The_Dude
+##            Rate: 12
+##          - Index: 69
+##            Item: Rotten_Fish
+##            Rate: 12
+##          - Index: 70
+##            Item: Lusty_Iron
+##            Rate: 12
+##          - Index: 71
+##            Item: Monster_Juice
+##            Rate: 12
+##          - Index: 72
+##            Item: Sweet_Milk
+##            Rate: 12
+##          - Index: 73
+##            Item: Well_Dried_Bone
+##            Rate: 12
+##          - Index: 74
+##            Item: Singing_Flower
+##            Rate: 12
+##          - Index: 75
+##            Item: Dew_Laden_Moss
+##            Rate: 12
+##          - Index: 76
+##            Item: Deadly_Noxious_Herb
+##            Rate: 12
+##          - Index: 77
+##            Item: Fatty_Chubby_Earthworm
+##            Rate: 12
+##          - Index: 78
+##            Item: Baked_Yam
+##            Rate: 12
+##          - Index: 79
+##            Item: Tropical_Banana
+##            Rate: 12
+##          - Index: 80
+##            Item: Horror_Of_Tribe
+##            Rate: 12
+##          - Index: 81
+##            Item: No_Recipient
+##            Rate: 12
+##          - Index: 82
+##            Item: Old_Broom
+##            Rate: 12
+##          - Index: 83
+##            Item: Silver_Knife_Of_Chaste
+##            Rate: 12
+##          - Index: 84
+##            Item: Armlet_Of_Obedience
+##            Rate: 12
+##          - Index: 85
+##            Item: Shining_Stone
+##            Rate: 12
+##          - Index: 86
+##            Item: Contracts_In_Shadow
+##            Rate: 12
+##          - Index: 87
+##            Item: Book_Of_Devil
+##            Rate: 12
           - Index: 88
             Item: Pet_Incubator
             Rate: 12
@@ -498,9 +498,9 @@ Body:
           - Index: 92
             Item: Berserk_Potion
             Rate: 12
-          - Index: 93
-            Item: Heart_Of_Her
-            Rate: 12
+##          - Index: 93
+##            Item: Heart_Of_Her
+##            Rate: 12
 #          - Index: 94
 #            Item: Korea_Rice_Cake
 #            Rate: 12
@@ -1253,22 +1253,22 @@ Body:
             Rate: 6
           - Index: 344
             Item: Saber_
-            Rate: 6
+            Rate: 4
           - Index: 345
             Item: Hae_Dong_Gum_
-            Rate: 6
+            Rate: 4
           - Index: 346
             Item: Flamberge
             Rate: 6
-          - Index: 347
-            Item: Town_Sword
-            Rate: 1
-          - Index: 348
-            Item: Town_Sword_
-            Rate: 1
-          - Index: 349
-            Item: Star_Dust_Blade
-            Rate: 1
+#          - Index: 347
+#            Item: Town_Sword
+#            Rate: 1
+#          - Index: 348
+#            Item: Town_Sword_
+#            Rate: 1
+#          - Index: 349
+#            Item: Star_Dust_Blade
+#            Rate: 1
           - Index: 350
             Item: Slayer
             Rate: 3
@@ -1337,19 +1337,19 @@ Body:
             Rate: 3
           - Index: 372
             Item: Gladius_
-            Rate: 3
+            Rate: 2
           - Index: 373
             Item: Damascus
             Rate: 3
           - Index: 374
             Item: Damascus_
-            Rate: 3
+            Rate: 2
           - Index: 375
             Item: Novice_Knife
             Rate: 3
-          - Index: 376
-            Item: Cinquedea
-            Rate: 1
+#          - Index: 376
+#            Item: Cinquedea
+#            Rate: 1
 #          - Index: 377
 #            Item: Kindling_Dagger
 #            Rate: 1
@@ -1379,22 +1379,22 @@ Body:
             Rate: 3
           - Index: 386
             Item: Katar_Of_Cold_Icicle
-            Rate: 3
+            Rate: 1
           - Index: 387
             Item: Katar_Of_Thornbush
-            Rate: 3
+            Rate: 1
           - Index: 388
             Item: Katar_Of_Raging_Blaze
-            Rate: 3
+            Rate: 1
           - Index: 389
             Item: Katar_Of_Piercing_Wind
-            Rate: 3
-          - Index: 390
-            Item: Nail_Of_Loki
             Rate: 1
-          - Index: 391
-            Item: Unholy_Touch
-            Rate: 1
+#          - Index: 390
+#            Item: Nail_Of_Loki
+#            Rate: 1
+#          - Index: 391
+#            Item: Unholy_Touch
+#            Rate: 1
 #          - Index: 392
 #            Item: Various_Jur
 #            Rate: 2
@@ -1499,16 +1499,16 @@ Body:
             Rate: 3
           - Index: 426
             Item: Trident_
-            Rate: 3
+            Rate: 2
           - Index: 427
             Item: Halberd
             Rate: 3
           - Index: 428
             Item: Halberd_
-            Rate: 3
-#          - Index: 429
-#            Item: Staff_Of_Soul
-#            Rate: 3
+            Rate: 2
+          - Index: 429
+            Item: Staff_Of_Soul
+            Rate: 1
 #          - Index: 430
 #            Item: Gae_Bolg
 #            Rate: 1
@@ -1550,13 +1550,13 @@ Body:
             Rate: 6
           - Index: 443
             Item: Sword_Mace_
-            Rate: 6
+            Rate: 4
           - Index: 444
             Item: Chain
             Rate: 6
           - Index: 445
             Item: Chain_
-            Rate: 6
+            Rate: 4
           - Index: 446
             Item: Stunner
             Rate: 6
@@ -1571,28 +1571,28 @@ Body:
             Rate: 3
           - Index: 450
             Item: Book_Of_Billows
-            Rate: 3
+            Rate: 1
           - Index: 451
             Item: Book_Of_Mother_Earth
-            Rate: 3
+            Rate: 1
           - Index: 452
             Item: Book_Of_Blazing_Sun
-            Rate: 3
+            Rate: 1
           - Index: 453
             Item: Book_Of_Gust_Of_Wind
-            Rate: 3
+            Rate: 1
           - Index: 454
             Item: Girl's_Diary
             Rate: 3
-          - Index: 455
-            Item: Legacy_Of_Dragon
-            Rate: 1
-          - Index: 456
-            Item: Diary_Of_Great_Sage
-            Rate: 1
-          - Index: 457
-            Item: Hardback
-            Rate: 1
+##          - Index: 455
+##            Item: Legacy_Of_Dragon
+##            Rate: 1
+##          - Index: 456
+##            Item: Diary_Of_Great_Sage
+##            Rate: 1
+#          - Index: 457
+#            Item: Hardback
+#            Rate: 1
           - Index: 458
             Item: Rod
             Rate: 3
@@ -1616,7 +1616,7 @@ Body:
             Rate: 3
           - Index: 465
             Item: Arc_Wand_
-            Rate: 3
+            Rate: 1
           - Index: 466
             Item: Mighty_Staff
             Rate: 3
@@ -1625,28 +1625,28 @@ Body:
             Rate: 3
           - Index: 468
             Item: Bone_Wand
-            Rate: 3
-#          - Index: 469
-#            Item: Staff_Of_Wing
-#            Rate: 1
-#          - Index: 470
-#            Item: Survival_Rod
-#            Rate: 1
-#          - Index: 471
-#            Item: Survival_Rod_
-#            Rate: 1
-#          - Index: 472
-#            Item: Survival_Rod2
-#            Rate: 1
-#          - Index: 473
-#            Item: Survival_Rod2_
-#            Rate: 1
-          - Index: 474
-            Item: Hypnotist's_Staff
+            Rate: 2
+          - Index: 469
+            Item: Staff_Of_Wing
             Rate: 1
-          - Index: 475
-            Item: Hypnotist's_Staff_
+          - Index: 470
+            Item: Survival_Rod
             Rate: 1
+          - Index: 471
+            Item: Survival_Rod_
+            Rate: 1
+          - Index: 472
+            Item: Survival_Rod2
+            Rate: 1
+          - Index: 473
+            Item: Survival_Rod2_
+            Rate: 1
+#          - Index: 474
+#            Item: Hypnotist's_Staff
+#            Rate: 1
+#          - Index: 475
+#            Item: Hypnotist's_Staff_
+#            Rate: 1
           - Index: 476
             Item: Bow
             Rate: 3
@@ -1658,7 +1658,7 @@ Body:
             Rate: 3
           - Index: 479
             Item: Composite_Bow_
-            Rate: 3
+            Rate: 1
           - Index: 480
             Item: Great_Bow
             Rate: 3
@@ -1670,7 +1670,7 @@ Body:
             Rate: 3
           - Index: 483
             Item: CrossBow_
-            Rate: 3
+            Rate: 1
           - Index: 484
             Item: Arbalest
             Rate: 3
@@ -1679,10 +1679,10 @@ Body:
             Rate: 3
           - Index: 486
             Item: Arbalest_
-            Rate: 3
+            Rate: 1
           - Index: 487
             Item: Kakkung_
-            Rate: 3
+            Rate: 1
           - Index: 488
             Item: Hunter_Bow
             Rate: 3
@@ -1943,31 +1943,31 @@ Body:
             Rate: 3
           - Index: 574
             Item: Guard_
-            Rate: 3
+            Rate: 2
           - Index: 575
             Item: Buckler
             Rate: 3
           - Index: 576
             Item: Buckler_
-            Rate: 3
+            Rate: 2
           - Index: 577
             Item: Shield
             Rate: 3
           - Index: 578
             Item: Shield_
-            Rate: 3
+            Rate: 2
           - Index: 579
             Item: Mirror_Shield
             Rate: 3
           - Index: 580
             Item: Mirror_Shield_
-            Rate: 3
-          - Index: 581
-            Item: Memorize_Book
-            Rate: 3
-          - Index: 582
-            Item: Novice_Guard
-            Rate: 3
+            Rate: 2
+#          - Index: 581
+#            Item: Memorize_Book
+#            Rate: 3
+#          - Index: 582
+#            Item: Novice_Guard
+#            Rate: 3
 #          - Index: 583
 #            Item: Novice_Shield
 #            Rate: 1
@@ -2024,7 +2024,7 @@ Body:
             Rate: 3
           - Index: 601
             Item: Biretta_
-            Rate: 3
+            Rate: 2
           - Index: 602
             Item: Flu_Mask
             Rate: 3
@@ -2057,19 +2057,19 @@ Body:
             Rate: 3
           - Index: 612
             Item: Helm_
-            Rate: 3
+            Rate: 2
           - Index: 613
             Item: Gemmed_Sallet
             Rate: 3
           - Index: 614
             Item: Gemmed_Sallet_
-            Rate: 3
+            Rate: 2
           - Index: 615
             Item: Circlet
             Rate: 3
           - Index: 616
             Item: Circlet_
-            Rate: 3
+            Rate: 2
           - Index: 617
             Item: Santa's_Hat
             Rate: 3
@@ -2087,19 +2087,19 @@ Body:
             Rate: 3
           - Index: 622
             Item: Big_Sis'_Ribbon
-            Rate: 3
+            Rate: 2
           - Index: 623
             Item: Sweet_Gents
-            Rate: 3
+            Rate: 2
           - Index: 624
             Item: Golden_Gear
-            Rate: 3
+            Rate: 1
           - Index: 625
             Item: Oldman's_Romance
             Rate: 3
           - Index: 626
             Item: Western_Grace
-            Rate: 3
+            Rate: 2
           - Index: 627
             Item: Coronet
             Rate: 1
@@ -2186,7 +2186,7 @@ Body:
             Rate: 3
           - Index: 655
             Item: Apple_Of_Archer
-            Rate: 3
+            Rate: 2
           - Index: 656
             Item: Pirate_Bandana
             Rate: 3
@@ -2207,7 +2207,7 @@ Body:
             Rate: 3
           - Index: 662
             Item: Blinker
-            Rate: 3
+            Rate: 2
           - Index: 663
             Item: Goblini_Mask
             Rate: 3
@@ -2261,37 +2261,37 @@ Body:
             Rate: 3
           - Index: 680
             Item: Chain_Mail_
-            Rate: 3
+            Rate: 2
           - Index: 681
             Item: Plate_Armor
             Rate: 3
           - Index: 682
             Item: Plate_Armor_
-            Rate: 3
+            Rate: 1
           - Index: 683
             Item: Clothes_Of_The_Lord
-            Rate: 3
+            Rate: 2
           - Index: 684
             Item: Formal_Suit
-            Rate: 3
+            Rate: 2
           - Index: 685
             Item: Silk_Robe
             Rate: 3
           - Index: 686
             Item: Silk_Robe_
-            Rate: 3
+            Rate: 2
           - Index: 687
             Item: Scapulare
             Rate: 3
           - Index: 688
             Item: Scapulare_
-            Rate: 3
+            Rate: 2
           - Index: 689
             Item: Saint_Robe
             Rate: 3
           - Index: 690
             Item: Saint_Robe_
-            Rate: 3
+            Rate: 2
           - Index: 691
             Item: Wooden_Mail
             Rate: 3
@@ -2303,7 +2303,7 @@ Body:
             Rate: 3
           - Index: 694
             Item: Tights_
-            Rate: 3
+            Rate: 2
           - Index: 695
             Item: Silver_Robe
             Rate: 3
@@ -2315,26 +2315,26 @@ Body:
             Rate: 3
           - Index: 698
             Item: Thief_Clothes_
-            Rate: 3
+            Rate: 2
           - Index: 699
             Item: Ninja_Suit
             Rate: 3
           - Index: 700
             Item: G_Strings
             Rate: 3
-          - Index: 701
-            Item: Novice_Breast
-            Rate: 3
-          - Index: 702
-            Item: Full_Plate_Armor
-            Rate: 3
-          - Index: 703
-            Item: Novice_Plate
-            Rate: 3
-#          - Index: 704
-#            Item: Orleans_Gown
-#            Rate: 1
-#          - Index: 705
+##          - Index: 701
+##            Item: Novice_Breast
+##            Rate: 3
+##          - Index: 702
+##            Item: Full_Plate_Armor
+##            Rate: 3
+##          - Index: 703
+##            Item: Novice_Plate
+##            Rate: 3
+##          - Index: 704
+##            Item: Orleans_Gown
+##            Rate: 1
+          - Index: 705
             Item: Sandals
             Rate: 3
           - Index: 706
@@ -2345,13 +2345,13 @@ Body:
             Rate: 3
           - Index: 708
             Item: Shoes_
-            Rate: 3
+            Rate: 2
           - Index: 709
             Item: Boots
             Rate: 3
           - Index: 710
             Item: Boots_
-            Rate: 3
+            Rate: 2
           - Index: 711
             Item: Chrystal_Pumps
             Rate: 3
@@ -2361,18 +2361,18 @@ Body:
           - Index: 713
             Item: Spiky_Heel
             Rate: 3
-          - Index: 714
-            Item: Grave
-            Rate: 3
-          - Index: 715
-            Item: Novice_Boots
-            Rate: 3
-          - Index: 716
-            Item: Novice_Shoes
-            Rate: 1
-          - Index: 717
-            Item: Angel's_Arrival
-            Rate: 1
+#          - Index: 714
+#            Item: Grave
+#            Rate: 3
+#          - Index: 715
+#            Item: Novice_Boots
+#            Rate: 3
+#          - Index: 716
+#            Item: Novice_Shoes
+#            Rate: 1
+#          - Index: 717
+#            Item: Angel's_Arrival
+#            Rate: 1
           - Index: 718
             Item: Hood
             Rate: 3
@@ -2384,13 +2384,13 @@ Body:
             Rate: 3
           - Index: 721
             Item: Muffler_
-            Rate: 3
+            Rate: 2
           - Index: 722
             Item: Manteau
             Rate: 3
           - Index: 723
             Item: Manteau_
-            Rate: 3
+            Rate: 2
           - Index: 724
             Item: Cape_Of_Ancient_Lord
             Rate: 3
@@ -2475,18 +2475,18 @@ Body:
           - Index: 751
             Item: Belt
             Rate: 3
-          - Index: 752
-            Item: Novice_Armlet
-            Rate: 3
-          - Index: 753
-            Item: Cursed_Lucky_Brooch
-            Rate: 1
-          - Index: 754
-            Item: Shinobi's_Sash
-            Rate: 1
-          - Index: 755
-            Item: Hyper_Changer
-            Rate: 1
+##          - Index: 752
+##            Item: Novice_Armlet
+##            Rate: 3
+##          - Index: 753
+##            Item: Cursed_Lucky_Brooch
+##            Rate: 1
+##          - Index: 754
+##            Item: Shinobi's_Sash
+##            Rate: 1
+#          - Index: 755
+#            Item: Hyper_Changer
+#            Rate: 1
           - Index: 756
             Item: Gemmed_Crown
             Rate: 1
@@ -2538,36 +2538,36 @@ Body:
           - Index: 772
             Item: Goblin_Mask_04
             Rate: 3
-          - Index: 773
-            Item: Galapago_Cap
-            Rate: 1
-          - Index: 774
-            Item: Super_Novice_Hat
-            Rate: 1
-          - Index: 775
-            Item: Angry_Mouth
-            Rate: 1
-          - Index: 776
-            Item: Fedora
-            Rate: 1
-          - Index: 777
-            Item: Banana_Hat
-            Rate: 1
+#          - Index: 773
+#            Item: Galapago_Cap
+#            Rate: 1
+#          - Index: 774
+#            Item: Super_Novice_Hat
+#            Rate: 1
+#          - Index: 775
+#            Item: Angry_Mouth
+#            Rate: 1
+#          - Index: 776
+#            Item: Fedora
+#            Rate: 1
+#          - Index: 777
+#            Item: Banana_Hat
+#            Rate: 1
           - Index: 778
             Item: Ear_Of_Puppy
             Rate: 1
-          - Index: 779
-            Item: Super_Novice_Hat_
-            Rate: 1
-          - Index: 780
-            Item: Fedora_
-            Rate: 1
-          - Index: 781
-            Item: Magni_Cap
-            Rate: 1
-          - Index: 782
-            Item: Censor_Bar
-            Rate: 1
+#          - Index: 779
+#            Item: Super_Novice_Hat_
+#            Rate: 1
+#          - Index: 780
+#            Item: Fedora_
+#            Rate: 1
+#          - Index: 781
+#            Item: Magni_Cap
+#            Rate: 1
+#          - Index: 782
+#            Item: Censor_Bar
+#            Rate: 1
           - Index: 783
             Item: Mould_Powder
             Rate: 12
@@ -2618,10 +2618,10 @@ Body:
             Rate: 12
           - Index: 799
             Item: Key_Of_Clock_Tower
-            Rate: 12
+            Rate: 10
           - Index: 800
             Item: Underground_Key
-            Rate: 12
+            Rate: 10
           - Index: 801
             Item: Claw_Of_Desert_Wolf
             Rate: 12
@@ -2634,15 +2634,15 @@ Body:
           - Index: 804
             Item: Poison_Spore
             Rate: 12
-          - Index: 805
-            Item: Red_Socks_With_Holes
-            Rate: 12
+#          - Index: 805
+#            Item: Red_Socks_With_Holes
+#            Rate: 12
           - Index: 806
             Item: Matchstick
             Rate: 12
           - Index: 807
             Item: Fang_Of_Garm
-            Rate: 12
+            Rate: 6
           - Index: 808
             Item: Yarn
             Rate: 12
@@ -2675,7 +2675,7 @@ Body:
             Rate: 12
           - Index: 818
             Item: Soft_Feather
-            Rate: 12
+            Rate: 1
           - Index: 819
             Item: Dragon_Fly_Wing
             Rate: 12
@@ -2850,15 +2850,15 @@ Body:
           - Index: 876
             Item: Cloud_Piece
             Rate: 12
-##          - Index: 877
-##            Item: Sharp_Feeler
-##            Rate: 12
-##          - Index: 878
-##            Item: Hard_Peach
-##            Rate: 12
-##          - Index: 879
-##            Item: Limpid_Celestial_Robe
-##            Rate: 12
+          - Index: 877
+            Item: Sharp_Feeler
+            Rate: 12
+          - Index: 878
+            Item: Hard_Peach
+            Rate: 12
+          - Index: 879
+            Item: Limpid_Celestial_Robe
+            Rate: 12
           - Index: 880
             Item: Soft_Silk_Cloth
             Rate: 12
@@ -3042,9 +3042,9 @@ Body:
           - Index: 940
             Item: Air_Pollutant
             Rate: 1
-          - Index: 941
-            Item: Fragment_Of_Crystal
-            Rate: 1
+#          - Index: 941
+#            Item: Fragment_Of_Crystal
+#            Rate: 1
           - Index: 942
             Item: Poisonous_Gas
             Rate: 1
@@ -3072,9 +3072,9 @@ Body:
           - Index: 950
             Item: Tri_Headed_Dragon_Head
             Rate: 1
-          - Index: 951
-            Item: Treasure_Box
-            Rate: 1
+#          - Index: 951
+#            Item: Treasure_Box
+#            Rate: 1
           - Index: 952
             Item: Dragonball_Green
             Rate: 1
@@ -3090,12 +3090,12 @@ Body:
           - Index: 956
             Item: Bloody_Page
             Rate: 1
-          - Index: 957
-            Item: Piece_Of_Bone_Armor
-            Rate: 1
-          - Index: 958
-            Item: Scale_Of_Red_Dragon
-            Rate: 1
+#          - Index: 957
+#            Item: Piece_Of_Bone_Armor
+#            Rate: 1
+#          - Index: 958
+#            Item: Scale_Of_Red_Dragon
+#            Rate: 1
 #          - Index: 959
 #            Item: Yellow_Spice
 #            Rate: 1
@@ -3129,15 +3129,15 @@ Body:
 #          - Index: 969
 #            Item: Cookbook05
 #            Rate: 1
-          - Index: 970
-            Item: Pot
-            Rate: 1
-          - Index: 971
-            Item: Burnt_Parts
-            Rate: 1
-          - Index: 972
-            Item: Pocket_Watch
-            Rate: 1
+#          - Index: 970
+#            Item: Pot
+#            Rate: 1
+#          - Index: 971
+#            Item: Burnt_Parts
+#            Rate: 1
+#          - Index: 972
+#            Item: Pocket_Watch
+#            Rate: 1
           - Index: 973
             Item: Ice_Heart
             Rate: 15
@@ -3225,9 +3225,9 @@ Body:
           - Index: 1001
             Item: Red_Muffler
             Rate: 3
-#          - Index: 1002
-#            Item: Sword_Of_Grave_Keeper
-#            Rate: 3
+          - Index: 1002
+            Item: Sword_Of_Grave_Keeper
+            Rate: 3
 #          - Index: 1003
 #            Item: Jujube_Dagger
 #            Rate: 1
@@ -3351,7 +3351,7 @@ Body:
             Rate: 6
           - Index: 3
             Item: Drops_Card
-            Rate: 11
+            Rate: 5
           - Index: 4
             Item: Poring__Card
             Rate: 1
@@ -3363,7 +3363,7 @@ Body:
             Rate: 4
           - Index: 7
             Item: Picky_Card
-            Rate: 10
+            Rate: 8
           - Index: 8
             Item: Chonchon_Card
             Rate: 10
@@ -3441,7 +3441,7 @@ Body:
             Rate: 3
           - Index: 33
             Item: Hydra_Card
-            Rate: 3
+            Rate: 2
           - Index: 34
             Item: Muka_Card
             Rate: 3
@@ -3517,9 +3517,9 @@ Body:
           - Index: 58
             Item: Zerom_Card
             Rate: 2
-          - Index: 59
-            Item: Kaho_Card
-            Rate: 2
+#          - Index: 59
+#            Item: Kaho_Card
+#            Rate: 2
           - Index: 60
             Item: Orc_Warrior_Card
             Rate: 2
@@ -3607,9 +3607,9 @@ Body:
           - Index: 88
             Item: Archer_Skeleton_Card
             Rate: 1
-          - Index: 89
-            Item: Marse_Card
-            Rate: 1
+#          - Index: 89
+#            Item: Marse_Card
+#            Rate: 1
           - Index: 90
             Item: Zenorc_Card
             Rate: 1
@@ -3655,9 +3655,9 @@ Body:
           - Index: 104
             Item: Ghoul_Card
             Rate: 1
-          - Index: 105
-            Item: Strouf_Card
-            Rate: 1
+##          - Index: 105
+##            Item: Strouf_Card
+##            Rate: 1
           - Index: 106
             Item: Marduk_Card
             Rate: 1
@@ -3718,9 +3718,9 @@ Body:
 #          - Index: 125
 #            Item: Galapago_Card
 #            Rate: 1
-          - Index: 126
-            Item: Crab_Card
-            Rate: 1
+##          - Index: 126
+##            Item: Crab_Card
+##            Rate: 1
 #          - Index: 127
 #            Item: Rice_Cake_Boy_Card
 #            Rate: 1
@@ -3757,12 +3757,12 @@ Body:
 #          - Index: 138
 #            Item: Neraid_Card
 #            Rate: 1
-#          - Index: 139
-#            Item: Dark_Frame_Card
-#            Rate: 1
-#          - Index: 140
-#            Item: The_Paper_Card
-#            Rate: 1
+          - Index: 139
+            Item: Dark_Frame_Card
+            Rate: 1
+          - Index: 140
+            Item: The_Paper_Card
+            Rate: 1
 #          - Index: 141
 #            Item: Demon_Pungus_Card
 #            Rate: 1
@@ -3775,9 +3775,9 @@ Body:
 #          - Index: 144
 #            Item: Dryad_Card
 #            Rate: 1
-#          - Index: 145
-#            Item: Dragon_Tail_Card
-#            Rate: 1
+          - Index: 145
+            Item: Dragon_Tail_Card
+            Rate: 1
 #          - Index: 146
 #            Item: Driller_Card
 #            Rate: 1
@@ -3808,18 +3808,18 @@ Body:
           - Index: 155
             Item: Wraith_Card
             Rate: 1
-#          - Index: 156
-#            Item: Loli_Ruri_Card
-#            Rate: 1
+          - Index: 156
+            Item: Loli_Ruri_Card
+            Rate: 1
           - Index: 157
             Item: Rotar_Zairo_Card
             Rate: 1
-#          - Index: 158
-#            Item: Lude_Card
+##          - Index: 158
+##            Item: Lude_Card
+##            Rate: 1
+#          - Index: 159
+#            Item: Rybio_Card
 #            Rate: 1
-          - Index: 159
-            Item: Rybio_Card
-            Rate: 1
 #          - Index: 160
 #            Item: Leaf_Cat_Card
 #            Rate: 1
@@ -3841,15 +3841,15 @@ Body:
 #          - Index: 166
 #            Item: Mini_Demon_Card
 #            Rate: 1
-          - Index: 167
-            Item: Mimic_Card
-            Rate: 1
-          - Index: 168
-            Item: Mystcase_Card
-            Rate: 1
-#          - Index: 169
-#            Item: Miyabi_Ningyo_Card
+#          - Index: 167
+#            Item: Mimic_Card
 #            Rate: 1
+#          - Index: 168
+#            Item: Mystcase_Card
+#            Rate: 1
+          - Index: 169
+            Item: Miyabi_Ningyo_Card
+            Rate: 1
 #          - Index: 170
 #            Item: Violy_Card
 #            Rate: 1
@@ -3871,21 +3871,21 @@ Body:
           - Index: 176
             Item: Sasquatch_Card
             Rate: 1
-#          - Index: 177
-#            Item: Live_Peach_Tree_Card
-#            Rate: 1
+          - Index: 177
+            Item: Live_Peach_Tree_Card
+            Rate: 1
 #          - Index: 178
 #            Item: Succubus_Card
 #            Rate: 1
-          - Index: 179
-            Item: Sageworm_Card
-            Rate: 1
+#          - Index: 179
+#            Item: Sageworm_Card
+#            Rate: 1
           - Index: 180
             Item: Solider_Card
             Rate: 1
-          - Index: 181
-            Item: Skeleton_General_Card
-            Rate: 1
+##          - Index: 181
+##            Item: Skeleton_General_Card
+##            Rate: 1
           - Index: 182
             Item: Skel_Prisoner_Card
             Rate: 1
@@ -3907,27 +3907,27 @@ Body:
 #          - Index: 188
 #            Item: Sleeper_Card
 #            Rate: 1
-          - Index: 189
-            Item: C_Tower_Manager_Card
+#          - Index: 189
+#            Item: C_Tower_Manager_Card
+#            Rate: 1
+          - Index: 190
+            Item: Shinobi_Card
             Rate: 1
-#          - Index: 190
-#            Item: Shinobi_Card
-#            Rate: 1
-#          - Index: 191
-#            Item: Increase_Soil_Card
-#            Rate: 1
+          - Index: 191
+            Item: Increase_Soil_Card
+            Rate: 1
 #          - Index: 192
 #            Item: Wild_Ginseng_Card
 #            Rate: 1
 #          - Index: 193
-#            Item: Baby_Leopard_Card
-#            Rate: 1
-#          - Index: 194
-#            Item: Anolian_Card
-#            Rate: 1
-#          - Index: 195
-            Item: Cookie_XMAS_Card
+            Item: Baby_Leopard_Card
             Rate: 1
+          - Index: 194
+            Item: Anolian_Card
+            Rate: 1
+##          - Index: 195
+##            Item: Cookie_XMAS_Card
+##            Rate: 1
           - Index: 196
             Item: Owl_Duke_Card
             Rate: 1
@@ -3943,24 +3943,24 @@ Body:
 #          - Index: 200
 #            Item: Apocalips_Card
 #            Rate: 1
-          - Index: 201
-            Item: Antonio_Card
-            Rate: 1
+#          - Index: 201
+#            Item: Antonio_Card
+#            Rate: 1
           - Index: 202
             Item: Alarm_Card
             Rate: 1
-          - Index: 203
-            Item: Am_Mut_Card
-            Rate: 1
-#          - Index: 204
-#            Item: Assulter_Card
+#          - Index: 203
+#            Item: Am_Mut_Card
 #            Rate: 1
-          - Index: 205
-            Item: Aster_Card
+          - Index: 204
+            Item: Assulter_Card
             Rate: 1
-#          - Index: 206
-#            Item: Ancient_Mummy_Card
-#            Rate: 1
+##          - Index: 205
+##            Item: Aster_Card
+##            Rate: 1
+          - Index: 206
+            Item: Ancient_Mummy_Card
+            Rate: 1
 #          - Index: 207
 #            Item: Ancient_Worm_Card
 #            Rate: 1
@@ -3970,9 +3970,9 @@ Body:
           - Index: 209
             Item: Alligator_Card
             Rate: 1
-          - Index: 210
-            Item: Alice_Card
-            Rate: 1
+#          - Index: 210
+#            Item: Alice_Card
+#            Rate: 1
           - Index: 211
             Item: Orc_Lady_Card
             Rate: 1
@@ -3982,9 +3982,9 @@ Body:
           - Index: 213
             Item: Wild_Rose_Card
             Rate: 1
-#          - Index: 214
-#            Item: Wicked_Nymph_Card
-#            Rate: 1
+          - Index: 214
+            Item: Wicked_Nymph_Card
+            Rate: 1
 #          - Index: 215
 #            Item: Wooden_Golem_Card
 #            Rate: 1
@@ -3997,12 +3997,12 @@ Body:
 #          - Index: 218
 #            Item: Evil_Cloud_Hermit_Card
 #            Rate: 1
-#          - Index: 219
-#            Item: Wind_Ghost_Card
-#            Rate: 1
-#          - Index: 220
-#            Item: Li_Me_Mang_Ryang_Card
-#            Rate: 1
+          - Index: 219
+            Item: Wind_Ghost_Card
+            Rate: 1
+##          - Index: 220
+##            Item: Li_Me_Mang_Ryang_Card
+##            Rate: 1
 #          - Index: 221
 #            Item: Explosion_Card
 #            Rate: 1
@@ -4012,15 +4012,15 @@ Body:
 #          - Index: 223
 #            Item: Incubus_Card
 #            Rate: 1
-#          - Index: 224
-#            Item: Giant_Spider_Card
-#            Rate: 1
+          - Index: 224
+            Item: Giant_Spider_Card
+            Rate: 1
 #          - Index: 225
 #            Item: Giant_Honet_Card
 #            Rate: 1
-#          - Index: 226
-#            Item: Dancing_Dragon_Card
-#            Rate: 1
+          - Index: 226
+            Item: Dancing_Dragon_Card
+            Rate: 1
 #          - Index: 227
 #            Item: Shellfish_Card
 #            Rate: 1
@@ -4030,27 +4030,27 @@ Body:
 #          - Index: 229
 #            Item: Zombie_Prisoner_Card
 #            Rate: 1
-#          - Index: 230
-#            Item: Zherlthsh_Card
-#            Rate: 1
+          - Index: 230
+            Item: Zherlthsh_Card
+            Rate: 1
 #          - Index: 231
 #            Item: Gibbet_Card
 #            Rate: 1
 #          - Index: 232
 #            Item: Deleter_Card
 #            Rate: 1
-#          - Index: 233
-#            Item: Geographer_Card
-#            Rate: 1
-#          - Index: 234
-#            Item: Zipper_Bear_Card
-#            Rate: 1
+          - Index: 233
+            Item: Geographer_Card
+            Rate: 1
+          - Index: 234
+            Item: Zipper_Bear_Card
+            Rate: 1
 #          - Index: 235
 #            Item: Tengu_Card
 #            Rate: 1
-#          - Index: 236
-#            Item: Greatest_General_Card
-#            Rate: 1
+          - Index: 236
+            Item: Greatest_General_Card
+            Rate: 1
 #          - Index: 237
 #            Item: Chepet_Card
 #            Rate: 1
@@ -4063,18 +4063,18 @@ Body:
 #          - Index: 240
 #            Item: Kapha_Card
 #            Rate: 1
-#          - Index: 241
-#            Item: Carat_Card
-#            Rate: 1
+          - Index: 241
+            Item: Carat_Card
+            Rate: 1
 #          - Index: 242
 #            Item: Caterpillar_Card
 #            Rate: 1
 #          - Index: 243
 #            Item: Cat_O_Nine_Tail_Card
 #            Rate: 1
-#          - Index: 244
-#            Item: Kobold_Archer_Card
-#            Rate: 1
+          - Index: 244
+            Item: Kobold_Archer_Card
+            Rate: 1
 #          - Index: 245
 #            Item: Cookie_Card
 #            Rate: 1
@@ -4087,18 +4087,18 @@ Body:
 #          - Index: 248
 #            Item: Cramp_Card
 #            Rate: 1
-#          - Index: 249
-#            Item: Cruiser_Card
-#            Rate: 1
-#          - Index: 250
-#            Item: Cremy_Fear_Card
-#            Rate: 1
-#          - Index: 251
-#            Item: Clock_Card
-#            Rate: 1
-#          - Index: 252
-#            Item: Chimera_Card
-#            Rate: 1
+          - Index: 249
+            Item: Cruiser_Card
+            Rate: 1
+##          - Index: 250
+##            Item: Cremy_Fear_Card
+##            Rate: 1
+          - Index: 251
+            Item: Clock_Card
+            Rate: 1
+          - Index: 252
+            Item: Chimera_Card
+            Rate: 1
 #          - Index: 253
 #            Item: Killer_Mantis_Card
 #            Rate: 1
@@ -4111,96 +4111,96 @@ Body:
 #          - Index: 256
 #            Item: Tri_Joint_Card
 #            Rate: 1
-#          - Index: 257
-#            Item: Parasite_Card
-#            Rate: 1
+          - Index: 257
+            Item: Parasite_Card
+            Rate: 1
 #          - Index: 258
 #            Item: Panzer_Goblin_Card
 #            Rate: 1
-#          - Index: 259
-#            Item: Permeter_Card
-#            Rate: 1
-#          - Index: 260
-#            Item: Fur_Seal_Card
-#            Rate: 1
+          - Index: 259
+            Item: Permeter_Card
+            Rate: 1
+          - Index: 260
+            Item: Fur_Seal_Card
+            Rate: 1
 #          - Index: 261
 #            Item: Punk_Card
 #            Rate: 1
 #          - Index: 262
 #            Item: Penomena_Card
 #            Rate: 1
-#          - Index: 263
-#            Item: Pest_Card
-#            Rate: 1
+          - Index: 263
+            Item: Pest_Card
+            Rate: 1
 #          - Index: 264
 #            Item: Fake_Angel_Card
 #            Rate: 1
-#          - Index: 265
-#            Item: Freezer_Card
-#            Rate: 1
-#          - Index: 266
-#            Item: Hylozoist_Card
-#            Rate: 1
-#          - Index: 267
-#            Item: High_Orc_Card
-#            Rate: 1
+          - Index: 265
+            Item: Freezer_Card
+            Rate: 1
+          - Index: 266
+            Item: Hylozoist_Card
+            Rate: 1
+          - Index: 267
+            Item: High_Orc_Card
+            Rate: 1
 #          - Index: 268
 #            Item: Garm_Baby_Card
 #            Rate: 1
-#          - Index: 269
-#            Item: Harpy_Card
-#            Rate: 1
+          - Index: 269
+            Item: Harpy_Card
+            Rate: 1
 #          - Index: 270
 #            Item: See_Otter_Card
 #            Rate: 1
-#          - Index: 271
-#            Item: Blood_Butterfly_Card
-#            Rate: 1
+          - Index: 271
+            Item: Blood_Butterfly_Card
+            Rate: 1
 #          - Index: 272
 #            Item: Hyegun_Card
 #            Rate: 1
 #          - Index: 273
 #            Item: Phendark_Card
 #            Rate: 1
-#          - Index: 274
-#            Item: Heater_Card
-#            Rate: 1
-#          - Index: 275
-#            Item: Waste_Stove_Card
-#            Rate: 1
+          - Index: 274
+            Item: Heater_Card
+            Rate: 1
+##          - Index: 275
+##            Item: Waste_Stove_Card
+##            Rate: 1
 #          - Index: 276
 #            Item: Venomous_Card
 #            Rate: 3
-#          - Index: 277
-#            Item: Noxious_Card
-#            Rate: 1
-#          - Index: 278
-#            Item: Pitman_Card
-#            Rate: 3
-#          - Index: 279
-#            Item: Ungoliant_Card
-#            Rate: 1
+##          - Index: 277
+##            Item: Noxious_Card
+##            Rate: 1
+          - Index: 278
+            Item: Pitman_Card
+            Rate: 3
+##          - Index: 279
+##            Item: Ungoliant_Card
+##            Rate: 1
 #          - Index: 280
 #            Item: Porcellio_Card
 #            Rate: 1
 #          - Index: 281
 #            Item: Obsidian_Card
 #            Rate: 1
-#          - Index: 282
-#            Item: Mineral_Card
-#            Rate: 1
+          - Index: 282
+            Item: Mineral_Card
+            Rate: 1
 #          - Index: 283
 #            Item: Teddy_Bear_Card
 #            Rate: 1
-#          - Index: 284
-#            Item: Metaling_Card
-#            Rate: 1
-#          - Index: 285
-#            Item: Mole_Card
-#            Rate: 1
-#          - Index: 286
-#            Item: Anopheles_Card
-#            Rate: 3
+##          - Index: 284
+##            Item: Metaling_Card
+##            Rate: 1
+          - Index: 285
+            Item: Mole_Card
+            Rate: 1
+##          - Index: 286
+##            Item: Anopheles_Card
+##            Rate: 3
 #          - Index: 287
 #            Item: Hill_Wind_Card
 #            Rate: 3
@@ -4240,9 +4240,9 @@ Body:
 #          - Index: 299
 #            Item: Eremes_Card
 #            Rate: 3
-#          - Index: 300
-#            Item: Harword_Card
-#            Rate: 1
+##          - Index: 300
+##            Item: Harword_Card
+##            Rate: 1
 #          - Index: 301
 #            Item: Katrinn_Card
 #            Rate: 1
@@ -4273,9 +4273,9 @@ Body:
 #          - Index: 310
 #            Item: Acidus__Card
 #            Rate: 1
-#          - Index: 311
-#            Item: Ferus_Card
-#            Rate: 3
+##          - Index: 311
+##            Item: Ferus_Card
+##            Rate: 3
 #          - Index: 312
 #            Item: Ferus__Card
 #            Rate: 1
@@ -4354,9 +4354,9 @@ Body:
 #          - Index: 337
 #            Item: Hodremlin_Card
 #            Rate: 1
-#          - Index: 338
-#            Item: Seeker_Card
-#            Rate: 1
+##          - Index: 338
+##            Item: Seeker_Card
+##            Rate: 1
 #          - Index: 339
 #            Item: Snowier_Card
 #            Rate: 2
@@ -5225,9 +5225,9 @@ Body:
           - Index: 68
             Item: Poring__Card
             Rate: 1
-          - Index: 69
-            Item: Red_Socks_With_Holes
-            Rate: 1
+#          - Index: 69
+#            Item: Red_Socks_With_Holes
+#            Rate: 1
   - Group: GIFTBOXCHINA
     SubGroups:
       - SubGroup: 1
@@ -5757,9 +5757,9 @@ Body:
           - Index: 174
             Item: Hunter_Bow
             Rate: 1
-          - Index: 175
-            Item: Bow_Of_Roguemaster
-            Rate: 1
+#          - Index: 175
+#            Item: Bow_Of_Roguemaster
+#            Rate: 1
           - Index: 176
             Item: Guard_
             Rate: 1
@@ -6235,9 +6235,9 @@ Body:
           - Index: 68
             Item: Poring__Card
             Rate: 1
-          - Index: 69
-            Item: Red_Socks_With_Holes
-            Rate: 1
+#          - Index: 69
+#            Item: Red_Socks_With_Holes
+#            Rate: 1
   - Group: GIFTBOX_2
     SubGroups:
       - SubGroup: 1
@@ -6449,9 +6449,9 @@ Body:
           - Index: 68
             Item: Poring__Card
             Rate: 1
-          - Index: 69
-            Item: Red_Socks_With_Holes
-            Rate: 1
+#          - Index: 69
+#            Item: Red_Socks_With_Holes
+#            Rate: 1
   - Group: GIFTBOX_3
     SubGroups:
       - SubGroup: 1
@@ -6663,9 +6663,9 @@ Body:
           - Index: 68
             Item: Poring__Card
             Rate: 1
-          - Index: 69
-            Item: Red_Socks_With_Holes
-            Rate: 1
+#          - Index: 69
+#            Item: Red_Socks_With_Holes
+#            Rate: 1
   - Group: GIFTBOX_4
     SubGroups:
       - SubGroup: 1
@@ -6877,9 +6877,9 @@ Body:
           - Index: 68
             Item: Poring__Card
             Rate: 1
-          - Index: 69
-            Item: Red_Socks_With_Holes
-            Rate: 1
+#          - Index: 69
+#            Item: Red_Socks_With_Holes
+#            Rate: 1
   - Group: GREENBOX
     SubGroups:
       - SubGroup: 1
@@ -8359,78 +8359,78 @@ Body:
           - Index: 65
             Item: Worn_Out_Scroll
             Rate: 14
-          - Index: 66
-            Item: Unripe_Apple
-            Rate: 14
-          - Index: 67
-            Item: Orange_Juice
-            Rate: 14
-          - Index: 68
-            Item: Bitter_Herb
-            Rate: 14
-          - Index: 69
-            Item: Rainbow_Carrot
-            Rate: 14
-          - Index: 70
-            Item: Earthworm_The_Dude
-            Rate: 14
-          - Index: 71
-            Item: Rotten_Fish
-            Rate: 14
-          - Index: 72
-            Item: Lusty_Iron
-            Rate: 14
-          - Index: 73
-            Item: Monster_Juice
-            Rate: 14
-          - Index: 74
-            Item: Sweet_Milk
-            Rate: 14
-          - Index: 75
-            Item: Well_Dried_Bone
-            Rate: 14
-          - Index: 76
-            Item: Singing_Flower
-            Rate: 14
-          - Index: 77
-            Item: Dew_Laden_Moss
-            Rate: 14
-          - Index: 78
-            Item: Deadly_Noxious_Herb
-            Rate: 14
-          - Index: 79
-            Item: Fatty_Chubby_Earthworm
-            Rate: 14
-          - Index: 80
-            Item: Baked_Yam
-            Rate: 14
-          - Index: 81
-            Item: Tropical_Banana
-            Rate: 14
-          - Index: 82
-            Item: Horror_Of_Tribe
-            Rate: 14
-          - Index: 83
-            Item: No_Recipient
-            Rate: 14
-          - Index: 84
-            Item: Old_Broom
-            Rate: 14
-          - Index: 85
-            Item: Silver_Knife_Of_Chaste
-            Rate: 14
-          - Index: 86
-            Item: Armlet_Of_Obedience
-            Rate: 14
-          - Index: 87
-            Item: Shining_Stone
-            Rate: 14
-          - Index: 88
-            Item: Contracts_In_Shadow
-            Rate: 14
-          - Index: 89
-            Item: Book_Of_Devil
-            Rate: 14
+##          - Index: 66
+##            Item: Unripe_Apple
+##            Rate: 14
+##          - Index: 67
+##            Item: Orange_Juice
+##            Rate: 14
+##          - Index: 68
+##            Item: Bitter_Herb
+##            Rate: 14
+##          - Index: 69
+##            Item: Rainbow_Carrot
+##            Rate: 14
+##          - Index: 70
+##            Item: Earthworm_The_Dude
+##            Rate: 14
+##          - Index: 71
+##            Item: Rotten_Fish
+##            Rate: 14
+##          - Index: 72
+##            Item: Lusty_Iron
+##            Rate: 14
+##          - Index: 73
+##            Item: Monster_Juice
+##            Rate: 14
+##          - Index: 74
+##            Item: Sweet_Milk
+##            Rate: 14
+##          - Index: 75
+##            Item: Well_Dried_Bone
+##            Rate: 14
+##          - Index: 76
+##            Item: Singing_Flower
+##            Rate: 14
+##          - Index: 77
+##            Item: Dew_Laden_Moss
+##            Rate: 14
+##          - Index: 78
+##            Item: Deadly_Noxious_Herb
+##            Rate: 14
+##          - Index: 79
+##            Item: Fatty_Chubby_Earthworm
+##            Rate: 14
+##          - Index: 80
+##            Item: Baked_Yam
+##            Rate: 14
+##          - Index: 81
+##            Item: Tropical_Banana
+##            Rate: 14
+##          - Index: 82
+##            Item: Horror_Of_Tribe
+##            Rate: 14
+##          - Index: 83
+##            Item: No_Recipient
+##            Rate: 14
+##          - Index: 84
+##            Item: Old_Broom
+##            Rate: 14
+##          - Index: 85
+##            Item: Silver_Knife_Of_Chaste
+##            Rate: 14
+##          - Index: 86
+##            Item: Armlet_Of_Obedience
+##            Rate: 14
+##          - Index: 87
+##            Item: Shining_Stone
+##            Rate: 14
+##          - Index: 88
+##            Item: Contracts_In_Shadow
+##            Rate: 14
+##          - Index: 89
+##            Item: Book_Of_Devil
+##            Rate: 14
           - Index: 90
             Item: Pet_Incubator
             Rate: 14
@@ -8446,12 +8446,12 @@ Body:
           - Index: 94
             Item: Berserk_Potion
             Rate: 14
-          - Index: 95
-            Item: Heart_Of_Her
-            Rate: 14
-#          - Index: 96
-#            Item: Korea_Rice_Cake
-#            Rate: 14
+##          - Index: 95
+##            Item: Heart_Of_Her
+##            Rate: 14
+##          - Index: 96
+##            Item: Korea_Rice_Cake
+##            Rate: 14
           - Index: 97
             Item: Gift_Box_1
             Rate: 14
@@ -8464,15 +8464,15 @@ Body:
           - Index: 100
             Item: Gift_Box_4
             Rate: 14
-          - Index: 101
-            Item: Handsei
-            Rate: 14
-          - Index: 102
-            Item: Poison_Bottle
-            Rate: 14
-          - Index: 103
-            Item: Gold_Pill
-            Rate: 14
+##          - Index: 101
+##            Item: Handsei
+##            Rate: 14
+##          - Index: 102
+##            Item: Poison_Bottle
+##            Rate: 14
+##          - Index: 103
+##            Item: Gold_Pill
+##            Rate: 14
           - Index: 104
             Item: Ora_Ora
             Rate: 14
@@ -9178,12 +9178,12 @@ Body:
           - Index: 338
             Item: Flamberge
             Rate: 7
-          - Index: 339
-            Item: Town_Sword_
-            Rate: 1
-          - Index: 340
-            Item: Star_Dust_Blade
-            Rate: 1
+##          - Index: 339
+##            Item: Town_Sword_
+##            Rate: 1
+##          - Index: 340
+##            Item: Star_Dust_Blade
+##            Rate: 1
           - Index: 341
             Item: Slayer_
             Rate: 7
@@ -9325,12 +9325,12 @@ Body:
           - Index: 387
             Item: Staff_Of_Soul
             Rate: 7
-          - Index: 388
-            Item: Gae_Bolg
-            Rate: 1
-          - Index: 389
-            Item: Ahlspiess
-            Rate: 1
+##          - Index: 388
+##            Item: Gae_Bolg
+##            Rate: 1
+##          - Index: 389
+##            Item: Ahlspiess
+##            Rate: 1
           - Index: 390
             Item: Club_
             Rate: 7
@@ -9403,24 +9403,24 @@ Body:
           - Index: 413
             Item: Mighty_Staff
             Rate: 7
-#          - Index: 414
-#            Item: Blessed_Wand
-#            Rate: 7
+          - Index: 414
+            Item: Blessed_Wand
+            Rate: 7
           - Index: 415
             Item: Bone_Wand
             Rate: 7
-#          - Index: 416
-#            Item: Staff_Of_Wing
-#            Rate: 1
-#          - Index: 417
-#            Item: Survival_Rod_
-#            Rate: 1
-#          - Index: 418
-#            Item: Survival_Rod2_
-#            Rate: 1
-          - Index: 419
-            Item: Hypnotist's_Staff_
+          - Index: 416
+            Item: Staff_Of_Wing
             Rate: 1
+          - Index: 417
+            Item: Survival_Rod_
+            Rate: 1
+          - Index: 418
+            Item: Survival_Rod2_
+            Rate: 1
+#          - Index: 419
+#            Item: Hypnotist's_Staff_
+#            Rate: 1
           - Index: 420
             Item: Bow_
             Rate: 7
@@ -9655,9 +9655,9 @@ Body:
 #          - Index: 497
 #            Item: Memorize_Book
 #            Rate: 7
-          - Index: 498
-            Item: Novice_Guard
-            Rate: 7
+#          - Index: 498
+#            Item: Novice_Guard
+#            Rate: 7
           - Index: 499
             Item: Sunglasses
             Rate: 7
@@ -9831,10 +9831,10 @@ Body:
             Rate: 7
           - Index: 556
             Item: Smoking_Pipe
-            Rate: 7
+            Rate: 1
           - Index: 557
             Item: Centimental_Flower
-            Rate: 7
+            Rate: 1
           - Index: 558
             Item: Centimental_Leaf
             Rate: 7
@@ -9964,12 +9964,12 @@ Body:
           - Index: 600
             Item: G_Strings
             Rate: 7
-          - Index: 601
-            Item: Novice_Breast
-            Rate: 7
-          - Index: 602
-            Item: Novice_Plate
-            Rate: 7
+##          - Index: 601
+##            Item: Novice_Breast
+##            Rate: 7
+##          - Index: 602
+##            Item: Novice_Plate
+##            Rate: 7
           - Index: 603
             Item: Sandals_
             Rate: 7
@@ -9988,12 +9988,12 @@ Body:
           - Index: 608
             Item: Spiky_Heel
             Rate: 7
-          - Index: 609
-            Item: Grave
-            Rate: 7
-          - Index: 610
-            Item: Novice_Boots
-            Rate: 7
+##          - Index: 609
+##            Item: Grave
+##            Rate: 7
+##          - Index: 610
+##            Item: Novice_Boots
+##            Rate: 7
           - Index: 611
             Item: Hood_
             Rate: 7
@@ -10009,18 +10009,18 @@ Body:
           - Index: 615
             Item: Ragamuffin_Cape
             Rate: 7
-          - Index: 616
-            Item: Novice_Hood
-            Rate: 7
-          - Index: 617
-            Item: Celestial_Robe
-            Rate: 1
-          - Index: 618
-            Item: Pauldron
-            Rate: 1
-          - Index: 619
-            Item: Wing_Of_Eagle
-            Rate: 1
+##          - Index: 616
+##            Item: Novice_Hood
+##            Rate: 7
+##          - Index: 617
+##            Item: Celestial_Robe
+##            Rate: 1
+##          - Index: 618
+##            Item: Pauldron
+##            Rate: 1
+##          - Index: 619
+##            Item: Wing_Of_Eagle
+##            Rate: 1
           - Index: 620
             Item: Ring
             Rate: 7
@@ -10057,15 +10057,15 @@ Body:
           - Index: 631
             Item: Diamond_Ring
             Rate: 7
-          - Index: 632
-            Item: An_Eye_Of_Dullahan
-            Rate: 1
+##          - Index: 632
+##            Item: An_Eye_Of_Dullahan
+##            Rate: 1
           - Index: 633
             Item: Safety_Ring
             Rate: 1
-          - Index: 634
-            Item: Critical_Ring
-            Rate: 1
+##          - Index: 634
+##            Item: Critical_Ring
+##            Rate: 1
           - Index: 635
             Item: Mitten_Of_Presbyter
             Rate: 7
@@ -10093,21 +10093,21 @@ Body:
           - Index: 643
             Item: Belt
             Rate: 7
-          - Index: 644
-            Item: Novice_Armlet
-            Rate: 7
-          - Index: 645
-            Item: Cursed_Lucky_Brooch
-            Rate: 1
-          - Index: 646
-            Item: Shinobi's_Sash
-            Rate: 1
-          - Index: 647
-            Item: Bloody_Iron_Ball
-            Rate: 1
-          - Index: 648
-            Item: Hyper_Changer
-            Rate: 1
+##          - Index: 644
+##            Item: Novice_Armlet
+##            Rate: 7
+##          - Index: 645
+##            Item: Cursed_Lucky_Brooch
+##            Rate: 1
+##          - Index: 646
+##            Item: Shinobi's_Sash
+##            Rate: 1
+##          - Index: 647
+##            Item: Bloody_Iron_Ball
+##            Rate: 1
+##          - Index: 648
+##            Item: Hyper_Changer
+##            Rate: 1
           - Index: 649
             Item: Gemmed_Crown
             Rate: 1
@@ -10174,24 +10174,24 @@ Body:
           - Index: 670
             Item: Goblin_Mask_04
             Rate: 7
-          - Index: 671
-            Item: Galapago_Cap
-            Rate: 1
-          - Index: 672
-            Item: Angry_Mouth
-            Rate: 1
-          - Index: 673
-            Item: Banana_Hat
-            Rate: 1
+##          - Index: 671
+##            Item: Galapago_Cap
+##            Rate: 1
+#          - Index: 672
+#            Item: Angry_Mouth
+#            Rate: 1
+##          - Index: 673
+##            Item: Banana_Hat
+##            Rate: 1
           - Index: 674
             Item: Ear_Of_Puppy
             Rate: 1
-          - Index: 675
-            Item: Super_Novice_Hat_
-            Rate: 1
-          - Index: 676
-            Item: Fedora_
-            Rate: 1
+##          - Index: 675
+##            Item: Super_Novice_Hat_
+##            Rate: 1
+##          - Index: 676
+##            Item: Fedora_
+##            Rate: 1
           - Index: 677
             Item: Mould_Powder
             Rate: 14
@@ -10258,15 +10258,15 @@ Body:
           - Index: 698
             Item: Poison_Spore
             Rate: 14
-          - Index: 699
-            Item: Red_Socks_With_Holes
-            Rate: 14
+##          - Index: 699
+##            Item: Red_Socks_With_Holes
+##            Rate: 14
           - Index: 700
             Item: Matchstick
             Rate: 14
           - Index: 701
             Item: Fang_Of_Garm
-            Rate: 14
+            Rate: 10
           - Index: 702
             Item: Yarn
             Rate: 14
@@ -10420,21 +10420,21 @@ Body:
           - Index: 752
             Item: Medicine_Bowl
             Rate: 14
-          - Index: 753
-            Item: Fire_Bottle
-            Rate: 14
-          - Index: 754
-            Item: Acid_Bottle
-            Rate: 14
-          - Index: 755
-            Item: MenEater_Plant_Bottle
-            Rate: 14
-          - Index: 756
-            Item: Mini_Bottle
-            Rate: 14
-          - Index: 757
-            Item: Coating_Bottle
-            Rate: 14
+##          - Index: 753
+##            Item: Fire_Bottle
+##            Rate: 14
+##          - Index: 754
+##            Item: Acid_Bottle
+##            Rate: 14
+##          - Index: 755
+##            Item: MenEater_Plant_Bottle
+##            Rate: 14
+##          - Index: 756
+##            Item: Mini_Bottle
+##            Rate: 14
+##          - Index: 757
+##            Item: Coating_Bottle
+##            Rate: 14
           - Index: 758
             Item: Yellow_Plate
             Rate: 14
@@ -10663,12 +10663,12 @@ Body:
           - Index: 833
             Item: Old_Steel_Plate
             Rate: 1
-          - Index: 834
-            Item: Air_Pollutant
-            Rate: 1
-          - Index: 835
-            Item: Fragment_Of_Crystal
-            Rate: 1
+#          - Index: 834
+#            Item: Air_Pollutant
+#            Rate: 1
+##          - Index: 835
+##            Item: Fragment_Of_Crystal
+##            Rate: 1
           - Index: 836
             Item: Poisonous_Gas
             Rate: 1
@@ -10684,33 +10684,33 @@ Body:
           - Index: 840
             Item: Headlamp
             Rate: 1
-          - Index: 841
-            Item: Piece_Of_Memory_Green
-            Rate: 1
-          - Index: 842
-            Item: Piece_Of_Memory_Purple
-            Rate: 1
-          - Index: 843
-            Item: Piece_Of_Memory_Blue
-            Rate: 1
-          - Index: 844
-            Item: Piece_Of_Memory_Red
-            Rate: 1
-          - Index: 845
-            Item: Red_Feather
-            Rate: 1
-          - Index: 846
-            Item: Blue_Feather
-            Rate: 1
-          - Index: 847
-            Item: Cursed_Seal
-            Rate: 1
-          - Index: 848
-            Item: Tri_Headed_Dragon_Head
-            Rate: 1
-          - Index: 849
-            Item: Treasure_Box
-            Rate: 1
+#          - Index: 841
+#            Item: Piece_Of_Memory_Green
+#            Rate: 1
+#          - Index: 842
+#            Item: Piece_Of_Memory_Purple
+#            Rate: 1
+#          - Index: 843
+#            Item: Piece_Of_Memory_Blue
+#            Rate: 1
+#          - Index: 844
+#            Item: Piece_Of_Memory_Red
+#            Rate: 1
+#          - Index: 845
+#            Item: Red_Feather
+#            Rate: 1
+#          - Index: 846
+#            Item: Blue_Feather
+#            Rate: 1
+#          - Index: 847
+#            Item: Cursed_Seal
+#            Rate: 1
+#          - Index: 848
+#            Item: Tri_Headed_Dragon_Head
+#            Rate: 1
+##          - Index: 849
+##            Item: Treasure_Box
+##            Rate: 1
           - Index: 850
             Item: Dragonball_Green
             Rate: 1
@@ -10930,6 +10930,18 @@ Body:
 #          - Index: 922
 #            Item: Huuma_Calm_Mind
 #            Rate: 1
+          - Index: 923
+            Item: Crown
+            Rate: 1
+          - Index: 924
+            Item: Corsair
+            Rate: 1
+          - Index: 925
+            Item: Magestic_Goat
+            Rate: 1
+          - Index: 926
+            Item: Tiara
+            Rate: 1
   - Group: XMAS_GIFT
     SubGroups:
       - SubGroup: 1

@@ -7,7 +7,7 @@ function get_size_name;
 function get_race_name;
 function get_ele_name;
 	ignoretimeout 1;
-	mes "Current punching bag info:";
+	mes "ข้อมูลกระสอบทรายปัจจุบัน:";
 	.@dupid = atoi(strnpcinfo(2));
 	getunitdata .gid[.@dupid], .@data;
 	mes "Size : "+ get_size_name(.@data[UMOB_SIZE]);
@@ -20,19 +20,19 @@ function get_ele_name;
 	mes "Int - "+ .@data[UMOB_INT] +"    Dex - "+ .@data[UMOB_DEX] +"    Luk - "+ .@data[UMOB_LUK];
 	mes "Def - "+ .@data[UMOB_DEF] +"    Mdef - "+ .@data[UMOB_MDEF];
 	next;
-	if ( select("> Set parameter:Cancel") == 2 ) {
-		mes "Bye";
+	if ( select("~ ตั้งค่ากระสอบทราย:~ ยกเลิก") == 2 ) {
+		mes "โชคดี";
 		close;
 	}
 	do {
-		mes "Select which parameter to change.";
+		mes "เลือกค่าที่ต้องการเปลี่ยนแปลง";
 		next;
-		switch(select("> Size [ ^ff0000"+(.@UMOB_SIZE ? get_size_name(.@UMOB_SIZE):get_size_name(.UMOB_SIZE))+"^000000 ]:> Level [ ^ff0000"+(.@UMOB_LEVEL ? .@UMOB_LEVEL:.UMOB_LEVEL)+"^000000 ]:> Race [ ^ff0000"+(.@UMOB_RACE ? get_race_name(.@UMOB_RACE):get_race_name(.UMOB_RACE))+"^000000 ]:> Element [ ^ff0000"+(.@UMOB_ELETYPE ? get_ele_name(.@UMOB_ELETYPE):get_ele_name(.UMOB_ELETYPE))+" Lv "+(.@UMOB_ELELEVEL ? .@UMOB_ELELEVEL:.UMOB_ELELEVEL)+"^000000 ]:> Stats:> Enter Mob ID:^0000ffDone^000000")) {
+		switch(select("> Size [ ^ff0000"+(.@UMOB_SIZE ? get_size_name(.@UMOB_SIZE):get_size_name(.UMOB_SIZE))+"^000000 ]:> Level [ ^ff0000"+(.@UMOB_LEVEL ? .@UMOB_LEVEL:.UMOB_LEVEL)+"^000000 ]:> Race [ ^ff0000"+(.@UMOB_RACE ? get_race_name(.@UMOB_RACE):get_race_name(.UMOB_RACE))+"^000000 ]:> Element [ ^ff0000"+(.@UMOB_ELETYPE ? get_ele_name(.@UMOB_ELETYPE):get_ele_name(.UMOB_ELETYPE))+" Lv "+(.@UMOB_ELELEVEL ? .@UMOB_ELELEVEL:.UMOB_ELELEVEL)+"^000000 ]:> Stats:> ใส่รหัสมอนส์เตอร์ Mob ID:^0000ffเสร็จสิ้น^000000")) {
 		case 1:
 			.@UMOB_SIZE = select("- Small:- Medium:- Large")-1;
 			break;
 		case 2:
-			mes "Input level (1-"+.maxlv+"):";
+			mes "กรอก Level (1-"+.maxlv+"):";
 			next;
 			input .@UMOB_LEVEL, 1, .maxlv;
 			break;
@@ -40,10 +40,10 @@ function get_ele_name;
 			.@UMOB_RACE = select("- Formless:- Undead:- Brute:- Plant:- Insect:- Fish:- Demon:- Demihuman:- Angel:- Dragon:- Player") - 1;
 			break;
 		case 4:
-			mes "Select Element:";
+			mes "เลือก Element:";
 			next;
 			.@UMOB_ELETYPE = select("- Neutral:- Water:- Earth:- Fire:- Wind:- Poison:- Holy:- Shadow:- Ghost:- Undead") - 1;
-			mes "Select Level:";
+			mes "เลือก Level:";
 			next;
 			.@UMOB_ELELEVEL = select("Lv 1:Lv 2:Lv 3:Lv 4");
 			break;
@@ -66,11 +66,11 @@ function get_ele_name;
 			setd ".@UMOB_"+.@data$, .@val;
 			break;
 		case 6:
-			mes "Enter Monster ID to simulate:";
+			mes "กรอก Monster ID เพื่อจำลองเป็นกระสอบทราย :";
 			next;
 			input .@val;
 			if ( (.@name_english$ = getmonsterinfo(.@val, MOB_NAME)) == "null" ) {
-				mes "Cannot find Monster ID "+.@val+" on the database!";
+				mes "ไม่พบมอนส์เตอร์ "+.@val+" ในฐานข้อมูล!";
 				next;
 				break;
 			}
@@ -87,7 +87,7 @@ function get_ele_name;
 			.@UMOB_INT = getmonsterinfo(.@val, MOB_INT);
 			.@UMOB_DEX = getmonsterinfo(.@val, MOB_DEX);
 			.@UMOB_LUK = getmonsterinfo(.@val, MOB_LUK);
-			mes "Fetching and applying data of monster '"+.@name_english$+"("+.@val+")' on punching bag...";
+			mes "การดึงข้อมูลและการประยุกต์ใช้ข้อมูลของมอนสเตอร์ '"+.@name_english$+"("+.@val+")' เป็นกระสอบทราย...";
 			next;
 			break;
 	
@@ -96,7 +96,7 @@ function get_ele_name;
 			break;
 		}
 	} while ( !.@done );
-	mes "Please review before I spawn:";
+	mes "โปรดตรวจสอบอีกครั้ง:";
 	mes "Size : "+ get_size_name((.@UMOB_SIZE ? .@UMOB_SIZE:.UMOB_SIZE));
 	mes "Level : "+ (.@UMOB_LEVEL ? .@UMOB_LEVEL:.UMOB_LEVEL);
 	mes "Race : "+ get_race_name((.@UMOB_RACE ? .@UMOB_RACE:.UMOB_RACE));
@@ -107,8 +107,8 @@ function get_ele_name;
 	mes "Int - "+ (.@UMOB_INT ? .@UMOB_INT:.UMOB_INT) +"    Dex - "+ (.@UMOB_DEX ? .@UMOB_DEX:.UMOB_DEX) +"    Luk - "+ (.@UMOB_LUK ? .@UMOB_LUK:.UMOB_LUK);
 	mes "Def - "+ (.@UMOB_DEF ? .@UMOB_DEF:.UMOB_DEF) +"    Mdef - "+ (.@UMOB_MDEF ? .@UMOB_MDEF:.UMOB_MDEF);
 	next;
-	if (select("> Finalize!:> Cancel")==2) close;
-	mes "Done!";
+	if (select("~ ยืนยัน!:~ ยกเลิก")==2) close;
+	mes "ยกเลิก!";
 	close2;
 	.UMOB_SIZE = (.@UMOB_SIZE) ? .@UMOB_SIZE:.UMOB_SIZE;
 	.UMOB_LEVEL = (.@UMOB_LEVEL) ? .@UMOB_LEVEL:.UMOB_LEVEL;
@@ -182,9 +182,9 @@ OnTimer5000:
 		getunitdata(.gid[.@dupid],.@d);
 		.@diff = (.mhp[.@dupid] - .@d[UMOB_HP]);
 		if(.@diff > 0){
-			npctalk "Punching Bag : I've taken " + F_InsertComma(.@diff/5) + " DPS in last 5 seconds.";
+			npctalk "Punching Bag : สร้าง " + F_InsertComma(.@diff/5) + " DPS ใน 5 วินาที";
 			setunitdata .gid[.@dupid],UMOB_HP,.mhp[.@dupid];
-			specialeffect EF_HEAL, .gid[.@dupid];
+			//specialeffect EF_HEAL, .gid[.@dupid];
 		}
 	}
 	initnpctimer;
@@ -232,7 +232,10 @@ OnTimer5000:
 	}
 }
 
-prontera,216,79,0	duplicate(Set Parameters#0)	Set Parameters#1	844
-prontera,224,70,0	duplicate(Set Parameters#0)	Set Parameters#2	844
-prontera,216,58,0	duplicate(Set Parameters#0)	Set Parameters#3	844
-prontera,224,58,0	duplicate(Set Parameters#0)	Set Parameters#4	844
+//prontera,216,79,0	duplicate(Set Parameters#0)	Set Parameters#1	844
+//prontera,224,70,0	duplicate(Set Parameters#0)	Set Parameters#2	844
+//prontera,216,58,0	duplicate(Set Parameters#0)	Set Parameters#3	844
+//prontera,224,58,0	duplicate(Set Parameters#0)	Set Parameters#4	844
+
+morocc,180,58,0	duplicate(Set Parameters#0)	Set Parameters#5	844
+morocc,184,58,0	duplicate(Set Parameters#0)	Set Parameters#6	844

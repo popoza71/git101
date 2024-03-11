@@ -1,0 +1,370 @@
+///////////////////////
+//warp war Function
+///////////////////////
+
+//20/01/2567
+function	script	F_NyxCasTele11	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Repherion (3,000) (1.2) [" + getmapusers("gefg_cas01") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "gef_fild13",217,75; end;
+	}
+	return;
+}
+//23/01/2567
+function	script	F_NyxCasTele22	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Swanhild (3,000) (1.2) [" + getmapusers("prtg_cas02") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "prt_gld",240,131; end;
+	}
+	return;
+}
+//27/01/2567
+function	script	F_NyxCasTele33	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Scarlet Palace (3,000) (1.2) [" + getmapusers("payg_cas02") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "pay_gld",297,117; end;
+	}
+	return;
+}
+//30/01/2567
+function	script	F_NyxCasTele44	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Hohenschwangau (3,000) (1.2) [" + getmapusers("aldeg_cas02") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "alde_gld",103,245; end;
+	}
+	return;
+}
+//03/02/2567
+function	script	F_NyxCasTele55	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Mersetzdeitz (3,000) (1.2) [" + getmapusers("gefg_cas05") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "gef_fild13",312,91; end;
+	}
+	return;
+}
+//06/02/2567
+function	script	F_NyxCasTele66	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Fadhgridh (3,000) (1.2) [" + getmapusers("prtg_cas03") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "prt_gld",153,133; end;
+	}
+	return;
+}
+//10/02/2567
+function	script	F_NyxCasTele77	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Scarlet Palace (3,000) (1.2) [" + getmapusers("payg_cas04") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "pay_gld",140,164; end;
+	}
+	return;
+}
+//13/02/2567
+function	script	F_NyxCasTele	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] :~ Rothenburg (3,000) (1.2) [" + getmapusers("aldeg_cas05") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "alde_gld",269,90; end;
+	}
+	return;
+}
+
+
+
+
+
+
+
+
+
+/*
+function	script	F_NyxCasTele	{
+	switch(select("~ Bergel (คณะปฎิวัติ VS ALLDAY) [" + getmapusers("gefg_cas04") + "] ")) {
+	case 1: warp "gef_fild13",190,276; end;
+	}
+	return;
+}
+
+
+
+function	script	F_NyxCasTele	{
+	switch(select("~ Yesnelph (บ้านโซน) [" + getmapusers("gefg_cas03") + "] 
+	:~ Scarlet Palace (3,500) (1.2) [" + getmapusers("payg_cas02") + "] 
+	:~ Nuernberg (3,500) (0.8) [" + getmapusers("aldeg_cas03") + "] 
+	:~ Rothenburg (3,000) (1.0) [" + getmapusers("aldeg_cas05") + "] ")) {
+	case 1: warp "gef_fild13",154,241; end;
+	case 2: warp "pay_gld",297,117; end;
+	case 3: warp "alde_gld",142,87; end;
+	case 4: warp "alde_gld",269,90; end;
+	}
+	return;
+}
+
+
+/*
+function	script	F_NyxCasTele	{
+	switch(select("~ Bamboo Grove Hill (ALLDAY VS -[ตัวตึJ]-) [" + getmapusers("payg_cas05") + "] ")) {
+	case 1: warp "pay_gld",202,264; end;
+	}
+	return;
+}
+
+
+function	script	F_NyxCasTele	{
+	switch(select("~ Scarlet Palace (ALLDAY VS ตัวตึง RO) [" + getmapusers("payg_cas02") + "] ")) {
+	case 1: warp "pay_gld",297,117; end;
+	}
+	return;
+}
+
+
+
+function	script	F_NyxCasTele	{
+	switch(select("~ Sacred Altar (War คู่รัก) [" + getmapusers("payg_cas04") + "] ")) {
+	case 1: warp "pay_gld",140,164; end;
+	}
+	return;
+}
+
+
+function	script	F_NyxCasTele	{
+	switch(select("~ Hohenschwangau (ตะลุมบอน 5,000) [" + getmapusers("aldeg_cas02") + "] ")) {
+	case 1: warp "alde_gld",103,245; end;
+
+	}
+	return;
+}
+
+
+
+
+
+
+
+// Siege Teleport Scroll
+//============================================================ 
+// - Warp player to selected guild castle.
+// - No arguments.
+function	script	F_NyxCasTele	{
+	switch(select("Neuschwanstein (aldeg_cas01):Hohenschwangau (aldeg_cas02):Nuernberg (aldeg_cas03):Wuerzburg (aldeg_cas04):Rothenburg (aldeg_cas05):Repherion (gefg_cas01):Eeyorbriggar (gefg_cas02):Yesnelph (gefg_cas03):Bergel (gefg_cas04):Mersetzdeitz (gefg_cas05):Bright Arbor (payg_cas01):Sacred Altar (payg_cas02):Holy Shadow (payg_cas03):Scarlet Palace (payg_cas04):Bamboo Grove Hill (payg_cas05):Kriemhild (prtg_cas01):Swanhild (prtg_cas02):Fadhgridh (prtg_cas03):Skoegul (prtg_cas04):Gondul (prtg_cas05)")) {
+	case 1: warp "alde_gld",48,91; end;
+	case 2: warp "alde_gld",103,245; end;
+	case 3: warp "alde_gld",142,87; end;
+	case 4: warp "alde_gld",236,243; end;
+	case 5: warp "alde_gld",269,90; end;
+	case 6: warp "gef_fild13",217,75; end;
+	case 7: warp "gef_fild13",307,237; end;
+	case 8: warp "gef_fild13",77,297; end;
+	case 9: warp "gef_fild13",190,276; end;
+	case 10: warp "gef_fild13",312,91; end;
+	case 11: warp "pay_gld",121,232; end;
+	case 12: warp "pay_gld",297,116; end;
+	case 13: warp "pay_gld",318,293; end;
+	case 14: warp "pay_gld",140,164; end;
+	case 15: warp "pay_gld",202,264; end;
+	case 16: warp "prt_gld",141,64; end;
+	case 17: warp "prt_gld",240,131; end;
+	case 18: warp "prt_gld",153,133; end;
+	case 19: warp "prt_gld",126,240; end;
+	case 20: warp "prt_gld",195,240; end;
+	}
+	return;
+}
+
+*/
+
+
+// Dungeon Teleport Scroll
+//============================================================ 
+// - Warp player to the selected dungeon.
+// - Arg(0) = type of scroll.
+function	script	F_NYXDungeon	{
+	switch(getarg(0)) {
+	case 1:
+		switch(select("Mjolnir Dead Pit:Payon Dungeon:Toy Dungeon:Glast Heim Underprison:Izlude Dungeon:Clock Tower B3f:Clock Tower 3f:Glast Heim Culvert 2f:Sphinx Dungeon 4f:Inside Pyramid 4f:Prontera Culvert 3f:Turtle Dungeon:Lasa Field ^0000FF(New Dungeon)^000000:Cave in Glast Heim F2 ^0000FF(วัวแดง)^000000:Gonryun Dungeon F2:Ayothaya Dungeon F2:Amatsu Dungeon F2:Lou Yang Dungeon F2:Magma Dungeon F1:Niflheim Field:Ice Dungeon f3:Abyss Lakes Underground Cave F3:Juperos Ruins F1:Bio Laboratory F3")) {
+		case 1: warp "mjo_dun02",80,297; end;	// Mjolnir Dead Pit
+		case 2: warp "pay_dun03",155,150; end;	// Payon Caves
+		case 3: warp "xmas_dun01",133,130; end;	// Toy Factory
+		case 4: warp "gl_prison",140,15; end;	// Glast Heim Prison
+		case 5: warp "iz_dun02",350,335; end;	// Izlude Undersea Tunnel
+		case 6: warp "alde_dun03",275,180; end;	// Clocktower 3F
+		case 7: warp "c_tower3",34,42; end;	// Clocktower B3F
+		case 8: warp "gl_sew02",292,295; end;	// Glast Heim Sewers 2F
+		case 9: warp "in_sphinx4",120,120; end;	// Sphinx Dungeon 4F
+		case 10: warp "moc_pryd04",195,4; end;	// Pyramid Dungeon 4F
+		case 11: warp "prt_sewb3",20,175; end;	// Prontera Culverts 3F
+		case 12: warp "tur_dun02",167,28; end;	// Turtle Dun 2F
+		case 13: warp "lasa_fild02",95,38; end;	// Lasa Fild
+		case 14: warp "gl_dun02",224,272; end;	// วัวแดง
+		case 15: warp "gon_dun02",252,263; end;	// Gonryun Dungeon
+		case 16: warp "ayo_dun02",150,245; end;	// ayo Dungeon
+		case 17: warp "ama_dun02",196,115; end;	// Amatsu Dungeon
+		case 18: warp "lou_dun02",165,264; end;	// Lou Yang Dungeon
+		case 19: warp "mag_dun01",239,238; end;	// Magma Dungeon
+		case 20: warp "nif_fild02",25,311; end;	// Niflheim Field
+		case 21: warp "ice_dun03",264,40; end;	// ice dun3
+		case 22: warp "abyss_03",116,28; end;	// abys lake
+		case 23: warp "juperos_01",101,137; end;	// juperos_01
+		case 24: warp "lhz_dun03",139,139; end;	// Bio_lab3
+		}
+	case 2: // Menu names are not official.
+		switch(select("Thor Volcano 2f:Ice Dungeon Entrance:Nameless Island Entrance:Niflheim:Labyrinth Forest 2f:Ruins of Juperos Entrance:Ant Hell 2f:Kiel Hyre's Academy Entrance:Thanatos Tower Entrance:Abyss Lake Entrance:Rachel Sanctuary Entrance:Odin Temple 2f")) {
+		case 1: warp "thor_v02",77,208; end;	// Thor Volcano 2F
+		case 2: warp "ra_fild01",237,333; end;	// Ice Dungeon
+		case 3: warp "ve_fild07",127,131; end;	// Nameless Island
+		case 4: warp "niflheim",206,179; end;	// Niflheim
+		case 5: warp "prt_maze02",100,174; end;	// Labyrinth Forest F2
+		case 6: warp "jupe_cave",36,54; end;	// Juperos
+		case 7: warp "anthell02",36,265; end;	// Ant Hell F2
+		case 8: warp "yuno_fild08",70,171; end;	// Kiel Hyre's Academy
+		case 9: warp "hu_fild01",140,160; end;	// Thanatos Tower
+		case 10: warp "hu_fild05",168,302; end;	// Abyss Lake
+		case 11: warp "ra_temple",117,173; end;	// Rachel Sanctuary
+		case 12: warp "odin_tem02",257,374; end;	// Odin Temple F2
+		}
+	case 3:
+		switch(select("Bio Lab (2nd Floor):Ice Dungeon (3rd Floor):Odin Temple (3rd Floor):Thor Volcano (3rd Floor):Abyss Lake (3rd Floor):Juperos Ruins (2nd Floor)")) {
+		case 1: warp "lhz_dun02",145,149; end;	// Somatology Laboratory 2F
+		case 2: warp "ice_dun03",150,176; end;	// Ice Dungeon 3F
+		case 3: warp "odin_tem03",278,235; end;	// Odin Temple 3F
+		case 4: warp "thor_v03",144,170; end;	// Thor Volcano 3F
+		case 5: warp "abyss_03",97,104; end;	// Abyss Lakes 3F
+		case 6: warp "juperos_02",130,159; end;	// Juperos Dungeon 2F
+		}
+	}
+	return;
+}
+		/*
+		switch(select("Nogg Road:Mjolnir Dead Pit:"+((checkre(0))?"":"Umbala Dungeon")+":Einbroch Mine Dungeon:Payon Dungeon:Toy Dungeon:Glast Heim Underprison:Luoyang Dungeon:Hermit's Checkers:Izlude Dungeon:Turtle Island Dungeon:Clock Tower B3f:Clock Tower 3f:Glast Heim Culvert 2f:Sphinx Dungeon 4f:Inside Pyramid 4f:Prontera Culvert 3f:Amatsu Dungeon 1f (Tatami Maze):Somatology Laboratory 1st floor:Ayothya Ancient Shrine 2nd floor")) {
+		case 1: warp "mag_dun01",125,71; end;	// Nogg Road Magma
+		case 2: warp "mjo_dun02",80,297; end;	// Mjolnir Dead Pit
+		case 3: warp "um_dun02",125,122; end;	// Umbala Dungeon (Pre-Renewal only)
+		case 4: warp "ein_dun01",261,262; end;	// Einbroch Dungeon
+		case 5: warp "pay_dun03",155,150; end;	// Payon Caves
+		case 6: warp "xmas_dun01",133,130; end;	// Toy Factory
+		case 7: warp "gl_prison",140,15; end;	// Glast Heim Prison
+		case 8: warp "lou_dun03",165,38; end;	// Luoyang Dungeon
+		case 9: warp "gon_dun02",251,263; end;	// Kunlun Dungeon
+		case 10: warp "iz_dun02",350,335; end;	// Izlude Undersea Tunnel
+		case 11: warp "tur_dun02",165,30; end;	// Turtle Island
+		case 12: warp "alde_dun03",275,180; end;	// Clocktower 3F
+		case 13: warp "c_tower3",34,42; end;	// Clocktower B3F
+		case 14: warp "gl_sew02",292,295; end;	// Glast Heim Sewers 2F
+		case 15: warp "in_sphinx4",120,120; end;	// Sphinx Dungeon 4F
+		case 16: warp "moc_pryd04",195,4; end;	// Pyramid Dungeon 4F
+		case 17: warp "prt_sewb3",20,175; end;	// Prontera Culverts 3F
+		case 18: warp "ama_dun01",222,144; end;	// Amatsu Dungeon 1F
+		case 19: warp "lhz_dun01",19,153; end;	// Somatology Laboratory 1F
+		case 20: warp "ayo_dun02",70,240; end;	// Ayothaya Dungeon 2F
+		
+		*/
+		
+///////////////////////////////////////////////////////////
+///////////////GYMPASS/////////////////////////////////////
+///////////////////////////////////////////////////////////
+function	script	gympass	{
+	if (gympassmemory < 10) {
+			set .@add_carry,gympassmemory + 1;
+			set .@remain_carry,10 - .@add_carry;
+			if (countitem(7776) > 0) {
+				specialeffect2 EF_SIGHTRASHER;
+				delitem 7776,1; //Max_Weight_Up_Scroll
+				set gympassmemory,.@add_carry;
+				skill "ALL_INCCARRY",.@add_carry,SKILL_PERM_GRANT;
+				end;
+			}
+			else {
+				mes "[Ripped]";
+				mes " เพื่อนรัก ข้าบอกเจ้าไปแล้วนี่?";
+				mes " เจ้าจะต้องเอา";
+				mes "^FF0000Gym Pass^000000 มาให้ข้าด้วย";
+				mes " หากเจ้าต้องการที่จะ";
+				mes " เพิ่มความแข็งแกร่งของกล้ามเนื้อเจ้า";
+				cutin "",255;
+				end;
+			}
+		}
+		else {
+			dispbottom "[ System ] : ขณะนี้สกิลแบบน้ำหนักเสริมของเจ้าได้ถึงเลเวลสูงสุุดแล้ว !";
+			end;
+		}
+end;
+}
+
+
+
+function	script	F_CashResetNT	{
+	mes "[ Reset System ]";
+	mes "อาชีพ Novice ไม่สามารถรีเซ็ตได้";
+	mes "คุณต้องปลดรถเข็น/เป็ด/นก/ไก่";
+	mes "จึงจะสามารถรีเซ็ตได้ ขอบคุณค่ะ";
+	next;
+	switch(select("~ ตกลง:~ ยกเลิก"))
+	{
+		case 1:
+		if (Class == Job_Novice) {
+			mes "[ Reset System ]";
+			mes "อาชีพ Novice ไม่สามารถรีเซ็ตได้";
+			end;
+		}
+		if (checkriding() || checkfalcon() || checkcart()) {
+			mes "[ Reset System ]";
+			mes "คุณต้องปลดรถเข็น/เป็ด/นก/ไก่";
+			end;
+		}
+		if (countitem(40347) < 1)  {
+			mes "[ Reset System ]";
+			mes "ฉันต้องการไอเท็มรีเซ็ต";
+			end;
+		}
+			progressbar "0x00ff00",2;
+			resetskill;
+			sc_end SC_ALL;
+			delitem 40347,1;
+			mes "[ Reset System ]";
+			mes "ระบบได้ทำการรีเซ็ตเรียบร้อย";
+			close2;
+		end;
+		
+		case 2:
+		end;
+	}
+}
+
+
+
+function	script	F_CashReStatusNT	{
+	mes "[ Reset System ]";
+	mes "อาชีพ Novice ไม่สามารถรีเซ็ตได้";
+	mes "คุณต้องปลดรถเข็น/เป็ด/นก/ไก่";
+	mes "จึงจะสามารถรีเซ็ตได้ ขอบคุณค่ะ";
+	next;
+	switch(select("~ ตกลง:~ ยกเลิก"))
+	{
+		case 1:
+		if (Class == Job_Novice) {
+			mes "[ Reset System ]";
+			mes "อาชีพ Novice ไม่สามารถรีเซ็ตได้";
+			end;
+		}
+		if (checkriding() || checkfalcon() || checkcart()) {
+			mes "[ Reset System ]";
+			mes "คุณต้องปลดรถเข็น/เป็ด/นก/ไก่";
+			end;
+		}
+		if (countitem(40348) < 1)  {
+			mes "[ Reset System ]";
+			mes "ฉันต้องการไอเท็มรีเซ็ต";
+			end;
+		}
+			progressbar "0x00ff00",2;
+			resetstatus;
+		sc_end SC_ALL;
+			delitem 40348,1;
+			mes "[ Reset System ]";
+			mes "ระบบได้ทำการรีเซ็ตเรียบร้อย";
+			close2;
+		end;
+		
+		case 2:
+		end;
+	}
+}

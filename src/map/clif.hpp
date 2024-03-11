@@ -1257,4 +1257,7 @@ void clif_dynamicnpc_result( map_session_data& sd, e_dynamicnpc_result result );
 //goldpc
 void clif_goldpc_info(map_session_data& sd);
 
+// Refinet option
+std::string clif_hide_name(const char* original_name);
+
 #endif /* CLIF_HPP */

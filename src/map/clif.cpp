@@ -21092,7 +21092,8 @@ void clif_parse_merge_item_cancel(int fd, map_session_data* sd) {
 	return; // Nothing todo yet
 }
 
-static std::string clif_hide_name(const char* original_name)
+//static std::string clif_hide_name(const char* original_name)
+std::string clif_hide_name(const char* original_name)
 {
 	std::string censored(original_name);
 	int hide = min(battle_config.broadcast_hide_name, censored.length() - 1);
@@ -22404,6 +22405,39 @@ void clif_parse_refineui_add( int fd, map_session_data* sd ){
 #endif
 }
 
+
+// Refinet option
+void boardcast_refine_message(map_session_data* sd, struct item& item) {
+
+	nullpo_retv(sd);
+
+	std::shared_ptr<item_data> id = item_db.find(item.nameid);
+
+	if(battle_config.refine_announce_success && item.refine >= battle_config.refine_announce_success){
+
+		char char_name[NAME_LENGTH];
+
+		if( battle_config.broadcast_hide_name ){
+			std::string dispname = clif_hide_name(sd->status.name);
+			safestrncpy(char_name, dispname.c_str(), sizeof(char_name));
+		}else{
+			safestrncpy(char_name, sd->status.name, sizeof(char_name));
+		}
+
+		char boardcast_msg[CHAT_SIZE_MAX];
+		memset(boardcast_msg, '\0', sizeof(boardcast_msg));
+		sprintf(boardcast_msg,msg_txt(sd,2306),char_name,id->ename.c_str(),item.refine);
+		clif_broadcast2(NULL, boardcast_msg, (int)strlen(boardcast_msg)+1, battle_config.refine_normal_color, FW_NORMAL, 12, 0, 0, ALL_CLIENT);
+	}
+
+	char self_msg[CHAT_SIZE_MAX];
+	memset(self_msg, '\0', sizeof(self_msg));
+	sprintf(self_msg,msg_txt(NULL,2307),id->ename.c_str(),item.refine);
+
+	clif_messagecolor(&sd->bl, battle_config.refine_option_color_self, self_msg, true, SELF);
+}
+
+
 /**
  * Client requests to try to refine an item.
  * 0aa3 <index>.W <material>.W <catalyst>.B
@@ -22527,6 +22561,35 @@ void clif_parse_refineui_refine( int fd, map_session_data* sd ){
 		log_pick_pc( sd, LOG_TYPE_OTHER, -1, item );
 		// Success
 		item->refine = cap_value( item->refine + 1, 0, MAX_REFINE );
+
+
+		std::shared_ptr<s_refineopt> RefineRandomOpt = refine_randomopt_db.find(item->refine);
+		bool found = false;
+		if(RefineRandomOpt != nullptr){
+			if(RefineRandomOpt->groups.size()){
+				for(const auto& group : RefineRandomOpt->groups){
+					if(util::vector_exists(group->items, item->nameid)) {
+						group->option_group->apply_refine(sd, *item, true);
+						clif_delitem(sd, index, 1, 3);
+						clif_additem(sd, index, 1, 0);
+						found = true;
+						break;
+					}
+				}
+			}
+
+			if(!found && RefineRandomOpt->default_group != nullptr){
+				RefineRandomOpt->default_group->apply_refine(sd, *item, true);
+				clif_delitem(sd, index, 1, 3);
+				clif_additem(sd, index, 1, 0);
+			}
+		}
+
+		boardcast_refine_message(sd, *item);
+
+
+
+
 		log_pick_pc( sd, LOG_TYPE_OTHER, 1, item );
 		clif_misceffect( &sd->bl, 3 );
 		clif_refine( fd, 0, index, item->refine );
@@ -22539,6 +22602,23 @@ void clif_parse_refineui_refine( int fd, map_session_data* sd ){
 		clif_refineui_info( sd, index );
 	}else{
 		// Failure
+
+		char char_name[NAME_LENGTH];
+
+		if( battle_config.broadcast_hide_name ){
+			std::string dispname = clif_hide_name(sd->status.name);
+			safestrncpy(char_name, dispname.c_str(), sizeof(char_name));
+		}else{
+			safestrncpy(char_name, sd->status.name, sizeof(char_name));
+		}
+
+		char boardcast_msg[CHAT_SIZE_MAX];
+		memset(boardcast_msg, '\0', sizeof(boardcast_msg));
+		sprintf(boardcast_msg,msg_txt(sd,2302),char_name,id->ename.c_str(),item->refine+1);
+		if(battle_config.refine_announce_broken && (item->refine+1) >= battle_config.refine_announce_broken)
+			clif_broadcast2(NULL, boardcast_msg, (int)strlen(boardcast_msg)+1, battle_config.refine_broken_color, FW_NORMAL, 12, 0, 0, ALL_CLIENT);
+
+
 
 		if (info->broadcast_failure) {
 			clif_broadcast_refine_result(*sd, item->nameid, item->refine, false);
@@ -22554,6 +22634,20 @@ void clif_parse_refineui_refine( int fd, map_session_data* sd ){
 		// Downgrade the item if necessary
 		}else if( cost->downgrade_amount > 0 ){
 			item->refine = cap_value( item->refine - cost->downgrade_amount, 0, MAX_REFINE );
+
+
+			std::shared_ptr<s_refineopt> RefineRandomOpt = refine_randomopt_db.find(item->refine);
+			if(RefineRandomOpt != nullptr){
+				for(const auto& group : RefineRandomOpt->groups){
+					if(util::vector_exists(group->items, item->nameid)) {
+						group->option_group->apply_refine(sd, *item, false);
+						clif_delitem(sd, index, 1, 3);
+						clif_additem(sd, index, 1, 0);
+						break;
+					}
+				}
+			}
+
 			clif_refine( fd, 2, index, item->refine );
 			clif_refineui_info(sd, index);
 		// Only show failure, but dont do anything
@@ -23118,6 +23212,15 @@ void clif_barter_extended_open( map_session_data& sd, struct npc_data& nd ){
 	sd.state.barter_extended_open = true;
 		
 	clif_displaymessage(fd, msg_txt(&sd, 2236)); // Item creation success rate:
+	//If have item battle_config.boost_craft_item in inventory show warning msg
+	if (pc_search_inventory(&sd, battle_config.boost_craft_item) >= 0) {
+		clif_displaymessage(fd, msg_txt(&sd, 2243)); //warning msg
+	}
+	//if have item battle_config.blessing_craft_item in inventory show warning msg
+	if (pc_search_inventory(&sd, battle_config.blessing_craft_item) >= 0) {
+		clif_displaymessage(fd, msg_txt(&sd, 2244)); //warning msg
+	}
+
 
 	struct PACKET_ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO* p = (struct PACKET_ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO*)packet_buffer;
 
@@ -23152,10 +23255,18 @@ void clif_barter_extended_open( map_session_data& sd, struct npc_data& nd ){
 
 		item->currency_count = 0;
 
-		//show message with item name and success rate
-		char msg[CHAT_SIZE_MAX];
-		safesnprintf(msg, CHAT_SIZE_MAX, msg_txt(&sd, 2237), item_db.create_item_link(id).c_str(), (float)itemPair.second->successRate / 100); // %s success rate: %d%%
-		clif_displaymessage(fd, msg);
+
+		//show message with item name and success rate if have battle_config.boost_craft_item in inventory add 10% success rate ex %s success rate: %d%% + battle_config.boost_craft_rate
+		if (pc_search_inventory(&sd, battle_config.boost_craft_item) >= 0) {
+			char msg[CHAT_SIZE_MAX];
+			safesnprintf(msg, CHAT_SIZE_MAX, msg_txt(&sd, 2237), item_db.create_item_link(id).c_str(), (float)itemPair.second->successRate / 100 + battle_config.boost_craft_rate / 100); // %s success rate: %d%%
+			clif_displaymessage(fd, msg);
+		} else {
+			char msg[CHAT_SIZE_MAX];
+			safesnprintf(msg, CHAT_SIZE_MAX, msg_txt(&sd, 2237), item_db.create_item_link(id).c_str(), (float)itemPair.second->successRate / 100); // %s success rate: %d%%
+			clif_displaymessage(fd, msg);
+		}
+
 
 		for( const auto& requirementPair : itemPair.second->requirements ){
 			// Needs dynamic calculation, because of variable currencies
@@ -23237,6 +23348,14 @@ void clif_parse_barter_extended_buy( int fd, map_session_data* sd ){
 	for( int i = 0; i < entries; i++ ){
 		std::shared_ptr<s_npc_barter_item> item = util::map_find( barter->items, (uint16)p->list[i].shopIndex );
 
+		//คราฟไอเท็มได้ครั้งละ 1 ชิ้น
+		if (p->list[i].amount > 1) {
+			char msg[CHAT_SIZE_MAX];
+			sprintf(msg, msg_txt(sd, 2242)); // %s success rate: %d%%
+			clif_messagecolor(&sd->bl, color_table[COLOR_RED], msg, false, SELF);
+			return;
+		}
+
 		// Invalid shop index
 		if( item == nullptr ){
 			return;
@@ -23261,6 +23380,10 @@ void clif_parse_barter_extended_buy( int fd, map_session_data* sd ){
 			}
 		}
 
+		if (pc_search_inventory(sd, battle_config.boost_craft_item) >= 0) {
+			item->successRate += battle_config.boost_craft_rate;
+		}
+
 		//random 1-10000 if < successRate add get item else delete all items
 		if ((rnd() % 10000) < item->successRate) {
 			s_barter_purchase purchase = {};
@@ -23269,20 +23392,29 @@ void clif_parse_barter_extended_buy( int fd, map_session_data* sd ){
 			purchase.amount = p->list[i].amount;
 
 			purchases.push_back(purchase);
+			clif_specialeffect(&sd->bl, EF_PHARMACY_OK, AREA);
 		}
 		else {
 			//delete all item requirement and amount to fill
 			for (const auto& requirementPair : item->requirements) {
 				std::shared_ptr<s_npc_barter_requirement> requirement = requirementPair.second;
-
+			
 				//delete all item requirement
+				//if inventory have item battle_config.blessing_craft_item item requirement type IT_ARMOR not be lost
+					if (pc_search_inventory(sd, battle_config.blessing_craft_item) >= 0 && itemtype(requirement->nameid) == IT_ARMOR) {
+					//delete item battle_config.blessing_craft_item
+						int16 index = pc_search_inventory(sd, battle_config.blessing_craft_item);
+						pc_delitem(sd, index, 1, 0, 0, LOG_TYPE_OTHER);
+					continue;
+				}
+
 				for (int k = 0; k < requirement->amount; k++) {
 					int16 index = pc_search_inventory(sd, requirement->nameid);
-
+			
 					if (index < 0) {
 						return;
 					}
-
+			
 					pc_delitem(sd, index, 1, 0, 0, LOG_TYPE_OTHER);
 				}
 			}
@@ -23291,19 +23423,18 @@ void clif_parse_barter_extended_buy( int fd, map_session_data* sd ){
 			char msg[CHAT_SIZE_MAX];
 			sprintf(msg, msg_txt(sd, 2239), item_db.create_item_link(id).c_str(), (float)item->successRate / 100); // %s success rate: %d%%
 			clif_messagecolor(&sd->bl, color_table[COLOR_RED], msg, false, SELF);
-
+			clif_specialeffect(&sd->bl, EF_PHARMACY_FAIL, AREA);
 			clif_npc_buy_result(sd, e_purchase_result::PURCHASE_FAIL_EXCHANGE_FAILED); // "Exchange failed."
-			return;
+			//return;
 
+		}	
+		//delete battle_config.boost_craft_item from inventory if have and clear successRate to normal
+		if (pc_search_inventory(sd, battle_config.boost_craft_item) >= 0) {
+			int16 index = pc_search_inventory(sd, battle_config.boost_craft_item);
+			pc_delitem(sd, index, 1, 0, 0, LOG_TYPE_OTHER);
+			item->successRate -= battle_config.boost_craft_rate;
 		}
 
-
-//		s_barter_purchase purchase = {};
-//
-//		purchase.item = item;
-//		purchase.amount = p->list[i].amount;
-//
-//		purchases.push_back( purchase );
 	}
 
 	clif_npc_buy_result( sd, npc_barter_purchase( *sd, barter, purchases )  );

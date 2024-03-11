@@ -1,0 +1,24 @@
+//===== Developers Script ===================================
+//= Server Rate
+//===== Current Version =====================================
+//= 1.0
+//===== Description =========================================
+//= Server Rate
+//===== Additional Comments =================================
+//= 1.0 Start Version
+//= 1.1 Edit By Ragnarok PVP GVG
+//===========================================================
+-	script	Novending	-1,{
+
+OnInit:
+setcell "morocc",96,115,149,101,cell_novending,1;  //ลานกิจกรรม
+setcell "morocc",122,89,145,63,cell_novending,1;  //cash shop
+setcell "morocc",144,84,152,78,cell_novending,1;  //cash shop2
+setcell "morocc",144,78,152,55,cell_novending,1;  //cash shop3
+setcell "morocc",177,62,187,55,cell_novending,1;  //testDMG
+end;
+
+
+
+}
+

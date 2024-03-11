@@ -793,7 +793,21 @@ struct Battle_Config
 	int pkpass_long_damage_rate;
 	int pkpass_weapon_damage_rate;
 	int pkpass_magic_damage_rate;
-	int pkpass_misc_damage_rate;	
+	int pkpass_misc_damage_rate;
+
+	// Refinet option
+	int refine_announce_success;
+	int refine_announce_broken;
+	int refine_option_announce;
+	int refine_option_color;
+	int refine_option_color_self;
+	int refine_broken_color;
+	int refine_normal_color;
+
+	// Barter Rate
+	int boost_craft_item;
+	int boost_craft_rate;
+	int blessing_craft_item;
 
 
 #include <custom/battle_config_struct.inc>

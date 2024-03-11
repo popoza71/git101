@@ -1035,7 +1035,7 @@ Body:
     AegisName: Wing_Of_Fly
     Name: Fly Wing
     Type: Delayconsume
-    Buy: 60
+    Buy: 120
     Weight: 50
     Flags:
       BuyingStore: true

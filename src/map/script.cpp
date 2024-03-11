@@ -27760,6 +27760,29 @@ BUILDIN_FUNC(barter_add)
 
 	return SCRIPT_CMD_SUCCESS;
 }
+/**
+ * restock barter shop
+ * barterstock "<npc name>",<barter index> ,<stock>
+ * if key stock -1 = unlimited stock
+ * */
+BUILDIN_FUNC(barterstock)
+{
+	const char* npcname = script_getstr(st, 2);
+	std::shared_ptr<s_npc_barter> barter = barter_db.find(npcname);
+	if (barter == nullptr) {
+		ShowError("buildin_barterstock: Nonexistant barter shop %s\n", npcname);
+		return SCRIPT_CMD_FAILURE;
+	}
+	int index = script_getnum(st, 3);
+	int stock = script_getnum(st, 4);
+	if (barter->items.find(index) == barter->items.end()) {
+		ShowError("buildin_barterstock: Nonexistant barter index %d\n", index);
+		return SCRIPT_CMD_FAILURE;
+	}
+	barter->items[index]->stock = stock;
+	barter->items[index]->stockLimited = (stock != -1);
+	return SCRIPT_CMD_SUCCESS;
+}
 
 
 
@@ -28493,6 +28516,8 @@ struct script_function buildin_func[] = {
 
 	BUILDIN_DEF(pkpass, "si"),
 	BUILDIN_DEF(pkpass_end, "s"),
+
+	BUILDIN_DEF(barterstock, "sii?"),
 
 #include <custom/script_def.inc>
 

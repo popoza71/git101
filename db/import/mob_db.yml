@@ -79,4 +79,292 @@ Header:
   Type: MOB_DB
   Version: 3
 
-#Body:
+Body:
+  - Id: 30001
+    AegisName: ZOMBIE_PRISONER_EX
+    Name: Zombie Prisoner
+    Level: 53
+    Hp: 11280
+    BaseExp: 2635
+    JobExp: 1724
+    Attack: 780
+    Attack2: 930
+    Defense: 10
+    MagicDefense: 20
+    Agi: 24
+    Vit: 39
+    Dex: 72
+    Luk: 25
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    Element: Undead
+    ElementLevel: 3
+    WalkSpeed: 350
+    AttackDelay: 1768
+    AttackMotion: 500
+    DamageMotion: 192
+    Ai: 13
+    Drops:
+      - Item: Worn_Out_Prison_Uniform
+        Rate: 3500
+      - Item: Spoon_Stub
+        Rate: 105
+      - Item: Iron_Cane
+        Rate: 1
+      - Item: Red_Gemstone
+        Rate: 600
+      - Item: Rotten_Bandage
+        Rate: 3500
+      - Item: Cuffs
+        Rate: 39
+#      - Item: Elunium
+#        Rate: 112
+#add edit
+      - Item: Elunium_Stone
+        Rate: 112
+      - Item: Zombie_Prisoner_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30002
+    AegisName: RYBIO_EX
+    Name: Rybio
+    Level: 71
+    Hp: 9572
+    BaseExp: 6317
+    JobExp: 3520
+    Attack: 686
+    Attack2: 912
+    Defense: 45
+    MagicDefense: 37
+    Agi: 97
+    Vit: 75
+    Int: 74
+    Dex: 77
+    Luk: 90
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 1790
+    AttackMotion: 1440
+    DamageMotion: 540
+    Ai: 13
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Thin_N'_Long_Tongue
+        Rate: 3880
+      - Item: Executioner's_Mitten
+        Rate: 3
+      - Item: White_Herb
+        Rate: 1800
+      - Item: Crystal_Jewel_
+        Rate: 30
+      - Item: Frozen_Heart
+        Rate: 10
+#      - Item: Oridecon
+#        Rate: 100
+#add edit
+      - Item: Oridecon_Stone
+        Rate: 100
+      - Item: Izidor
+        Rate: 30
+      - Item: Rybio_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30003
+    AegisName: INJUSTICE_EX
+    Name: Injustice
+    Level: 51
+    Hp: 7600
+    BaseExp: 2118
+    JobExp: 1488
+    Attack: 480
+    Attack2: 600
+    Str: 84
+    Agi: 42
+    Vit: 39
+    Dex: 71
+    Luk: 35
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 400
+    AttackDelay: 770
+    AttackMotion: 720
+    DamageMotion: 336
+    Ai: 21
+    Drops:
+      - Item: Steel
+        Rate: 300
+      - Item: Brigan
+        Rate: 5335
+      - Item: Cyfar
+        Rate: 3500
+      - Item: Padded_Armor_
+        Rate: 5
+      - Item: Plate_Armor
+        Rate: 2
+      - Item: Prohibition_Red_Candle
+        Rate: 2
+      - Item: Jamadhar_
+        Rate: 2
+      - Item: Injustice_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30004
+    AegisName: SKEL_PRISONER_EX
+    Name: Skeleton Prisoner
+    Level: 52
+    Hp: 8691
+    BaseExp: 2466
+    JobExp: 1562
+    Attack: 660
+    Attack2: 890
+    Defense: 10
+    MagicDefense: 20
+    Str: 55
+    Agi: 20
+    Vit: 36
+    Dex: 76
+    Luk: 25
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    Element: Undead
+    ElementLevel: 3
+    WalkSpeed: 350
+    AttackDelay: 1848
+    AttackMotion: 500
+    DamageMotion: 576
+    Ai: 13
+    Drops:
+      - Item: Manacles
+        Rate: 3500
+      - Item: Spoon_Stub
+        Rate: 100
+      - Item: Formal_Suit
+        Rate: 1
+      - Item: Red_Gemstone
+        Rate: 600
+      - Item: Rotten_Bandage
+        Rate: 3500
+      - Item: Cuffs
+        Rate: 35
+      - Item: Mementos
+        Rate: 1500
+      - Item: Skel_Prisoner_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30005
+    AegisName: HUNTER_FLY_EX
+    Name: Hunter Fly
+    Level: 42
+    Hp: 5242
+    BaseExp: 1517
+    JobExp: 952
+    Attack: 246
+    Attack2: 333
+    Defense: 25
+    MagicDefense: 15
+    Str: 33
+    Agi: 105
+    Vit: 32
+    Int: 15
+    Dex: 72
+    Luk: 30
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 676
+    AttackMotion: 576
+    DamageMotion: 480
+    Ai: 04
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Rough_Wind
+        Rate: 30
+      - Item: Steel
+        Rate: 100
+      - Item: Solid_Shell
+        Rate: 5335
+      - Item: Zargon
+        Rate: 1300
+      - Item: Oridecon_Stone
+        Rate: 129
+      - Item: Mini_Propeller
+        Rate: 1
+      - Item: Damascus_
+        Rate: 2
+      - Item: Hunter_Fly_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 30006
+    AegisName: BRILIGHT_EX
+    Name: Brilight
+    Level: 46
+    Hp: 5562
+    BaseExp: 1826
+    JobExp: 1331
+    Attack: 298
+    Attack2: 383
+    Defense: 30
+    MagicDefense: 5
+    Agi: 90
+    Vit: 15
+    Int: 10
+    Dex: 50
+    Luk: 35
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 1500
+    AttackMotion: 500
+    DamageMotion: 1000
+    Ai: 09
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Glitter_Shell
+        Rate: 5335
+      - Item: Wind_Of_Verdure
+        Rate: 200
+      - Item: Zargon
+        Rate: 1200
+      - Item: Wing_Of_Butterfly
+        Rate: 1000
+      - Item: Elunium_Stone
+        Rate: 220
+      - Item: Leaf_Of_Yggdrasil
+        Rate: 250
+      - Item: White_Herb
+        Rate: 2600
+      - Item: Brilight_Card
+        Rate: 1
+        StealProtected: true
+
+

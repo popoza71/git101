@@ -9,6 +9,7 @@
 
 
 #include <common/mmo.hpp> // struct party
+#include "status.hpp" // unit_data
 
 struct block_list;
 class map_session_data;

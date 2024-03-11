@@ -46,105 +46,460 @@ Header:
   Version: 1
 
 Body:
+  - Id: 101
+    Group: Group_Helm_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 102
+    Group: Group_Helm_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 103
+    Group: Group_Helm_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 104
+    Group: Group_Helm_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
   - Id: 105
     Group: Group_Helm_5
     Slots:
       - Slot: 1
         Options:
           - Option: ADDDROPPERCENT_ALL
-            MinValue: 1
-            MaxValue: 1
-            Chance: 5000
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
           - Option: ADDEXPPERCENT_KILLRACE_ALL
-            MinValue: 1
-            MaxValue: 1
-            Chance: 5000
-          - Option: VAR_MAGICATKPERCENT
-            MinValue: 1
-            MaxValue: 1
+            MinValue: 3
+            MaxValue: 3
             Chance: 5000
           - Option: VAR_ATKPERCENT
-            MinValue: 1
-            MaxValue: 1
-            Chance: 5000
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
           - Option: VAR_MAXHPAMOUNT
-            MinValue: 20
-            MaxValue: 20
+            MinValue: 80
+            MaxValue: 80
             Chance: 5000
           - Option: VAR_MAXSPAMOUNT
-            MinValue: 15
-            MaxValue: 15
+            MinValue: 25
+            MaxValue: 25
             Chance: 5000
           - Option: ADDSUBSLEEP_ALL
             MinValue: 5
             MaxValue: 5
-            Chance: 5000
-          - Option: VAR_MDEFPOWER
-            MinValue: 1
-            MaxValue: 1
             Chance: 5000
           - Option: RACE_TOLERACE_PLAYER_HUMAN
             MinValue: 1
             MaxValue: 1
             Chance: 5000
           - Option: DEC_SPELL_CAST_TIME
-            MinValue: 1
-            MaxValue: 1
-            Chance: 3000
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
   - Id: 106
     Group: Group_Helm_6
     Slots:
       - Slot: 1
         Options:
           - Option: ADDDROPPERCENT_ALL
-            MinValue: 2
-            MaxValue: 2
-            Chance: 5000
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
           - Option: ADDEXPPERCENT_KILLRACE_ALL
-            MinValue: 2
-            MaxValue: 2
-            Chance: 5000
-          - Option: VAR_MAGICATKPERCENT
-            MinValue: 1
-            MaxValue: 1
+            MinValue: 3
+            MaxValue: 3
             Chance: 5000
           - Option: VAR_ATKPERCENT
-            MinValue: 1
-            MaxValue: 1
-            Chance: 5000
-          - Option: VAR_MAXHPAMOUNT
-            MinValue: 40
-            MaxValue: 40
-            Chance: 5000
-          - Option: VAR_MAXSPAMOUNT
-            MinValue: 20
-            MaxValue: 20
-            Chance: 5000
-          - Option: ADDSUBSLEEP_ALL
-            MinValue: 8
-            MaxValue: 8
-            Chance: 5000
-          - Option: VAR_MDEFPOWER
             MinValue: 2
             MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 120
+            MaxValue: 120
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 30
+            MaxValue: 30
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 6
+            MaxValue: 6
             Chance: 5000
           - Option: RACE_TOLERACE_PLAYER_HUMAN
             MinValue: 1
             MaxValue: 1
             Chance: 5000
           - Option: DEC_SPELL_CAST_TIME
-            MinValue: 1
-            MaxValue: 1
-            Chance: 3000
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
   - Id: 107
     Group: Group_Helm_7
     Slots:
       - Slot: 1
         Options:
           - Option: ADDDROPPERCENT_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 160
+            MaxValue: 160
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 35
+            MaxValue: 35
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+  - Id: 108
+    Group: Group_Helm_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 200
+            MaxValue: 200
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+  - Id: 109
+    Group: Group_Helm_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_ATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 240
+            MaxValue: 240
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 50
+            MaxValue: 50
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 9
+            MaxValue: 9
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
             MinValue: 4
             MaxValue: 4
             Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+  - Id: 110
+    Group: Group_Helm_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_ATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 280
+            MaxValue: 280
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 70
+            MaxValue: 70
+            Chance: 5000
+          - Option: ADDSUBSLEEP_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+  - Id: 201
+    Group: Group_ARMOR_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 202
+    Group: Group_ARMOR_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 203
+    Group: Group_ARMOR_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 204
+    Group: Group_ARMOR_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
           - Option: ADDEXPPERCENT_KILLRACE_ALL
             MinValue: 2
             MaxValue: 2
@@ -152,10 +507,395 @@ Body:
           - Option: VAR_MAGICATKPERCENT
             MinValue: 1
             MaxValue: 1
-            Chance: 5000
+            Chance: 1000
           - Option: VAR_ATKPERCENT
             MinValue: 1
             MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+  - Id: 205
+    Group: Group_ARMOR_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 80
+            MaxValue: 80
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+  - Id: 206
+    Group: Group_ARMOR_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 120
+            MaxValue: 120
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+  - Id: 207
+    Group: Group_ARMOR_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 160
+            MaxValue: 160
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+  - Id: 208
+    Group: Group_ARMOR_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 200
+            MaxValue: 200
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 25
+            MaxValue: 25
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+  - Id: 209
+    Group: Group_ARMOR_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 240
+            MaxValue: 240
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 30
+            MaxValue: 30
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 13
+            MaxValue: 13
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 13
+            MaxValue: 13
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+  - Id: 210
+    Group: Group_ARMOR_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_ATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 280
+            MaxValue: 280
+            Chance: 5000
+          - Option: VAR_HPACCELERATION
+            MinValue: 35
+            MaxValue: 35
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_ATTMPOWER
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+  - Id: 301
+    Group: Group_Garment_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 302
+    Group: Group_Garment_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 303
+    Group: Group_Garment_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
             Chance: 5000
           - Option: VAR_MAXHPAMOUNT
             MinValue: 40
@@ -165,19 +905,2816 @@ Body:
             MinValue: 20
             MaxValue: 20
             Chance: 5000
-          - Option: ADDSUBSLEEP_ALL
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 304
+    Group: Group_Garment_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 305
+    Group: Group_Garment_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 80
+            MaxValue: 80
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 25
+            MaxValue: 25
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 306
+    Group: Group_Garment_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 120
+            MaxValue: 120
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 30
+            MaxValue: 30
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
             MinValue: 8
             MaxValue: 8
+            Chance: 5000
+  - Id: 307
+    Group: Group_Garment_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 160
+            MaxValue: 160
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 35
+            MaxValue: 35
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 12
+            MaxValue: 12
+            Chance: 5000
+  - Id: 308
+    Group: Group_Garment_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 200
+            MaxValue: 200
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+  - Id: 309
+    Group: Group_Garment_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 13
+            MaxValue: 13
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 240
+            MaxValue: 240
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 50
+            MaxValue: 50
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+  - Id: 310
+    Group: Group_Garment_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_ATTPOWER
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+          - Option: RACE_TOLERACE_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 280
+            MaxValue: 280
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 70
+            MaxValue: 70
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 15
+            MaxValue: 15
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: ADDSUBSTUN_ALL
+            MinValue: 25
+            MaxValue: 25
+            Chance: 5000
+  - Id: 401
+    Group: Group_SHOES_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 402
+    Group: Group_SHOES_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 403
+    Group: Group_SHOES_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
             Chance: 5000
           - Option: VAR_MDEFPOWER
             MinValue: 2
             MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 404
+    Group: Group_SHOES_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 405
+    Group: Group_SHOES_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 80
+            MaxValue: 80
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 25
+            MaxValue: 25
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 406
+    Group: Group_SHOES_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 120
+            MaxValue: 120
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 30
+            MaxValue: 30
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 407
+    Group: Group_SHOES_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 160
+            MaxValue: 160
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 35
+            MaxValue: 35
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+  - Id: 408
+    Group: Group_SHOES_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 200
+            MaxValue: 200
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+  - Id: 409
+    Group: Group_SHOES_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 240
+            MaxValue: 240
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 50
+            MaxValue: 50
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 13
+            MaxValue: 13
+            Chance: 5000
+  - Id: 410
+    Group: Group_SHOES_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MDEFPOWER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 280
+            MaxValue: 280
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 70
+            MaxValue: 70
+            Chance: 5000
+          - Option: VAR_AVOIDSUCCESSVALUE
+            MinValue: 15
+            MaxValue: 15
+            Chance: 2000
+          - Option: VAR_SPACCELERATION
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_ATTPOWER
+            MinValue: 15
+            MaxValue: 15
+            Chance: 5000
+  - Id: 501
+    Group: Group_Shield_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+  - Id: 502
+    Group: Group_Shield_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+  - Id: 503
+    Group: Group_Shield_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+  - Id: 504
+    Group: Group_Shield_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 20
+            MaxValue: 20
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 505
+    Group: Group_Shield_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 80
+            MaxValue: 80
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 25
+            MaxValue: 25
             Chance: 5000
           - Option: RACE_TOLERACE_PLAYER_HUMAN
             MinValue: 1
             MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 2
+            MaxValue: 2
             Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 506
+    Group: Group_Shield_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 120
+            MaxValue: 120
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 30
+            MaxValue: 30
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 507
+    Group: Group_Shield_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 160
+            MaxValue: 160
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 35
+            MaxValue: 35
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 508
+    Group: Group_Shield_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 200
+            MaxValue: 200
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 40
+            MaxValue: 40
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+  - Id: 509
+    Group: Group_Shield_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 240
+            MaxValue: 240
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 50
+            MaxValue: 50
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+  - Id: 510
+    Group: Group_Shield_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: ADDDROPPERCENT_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_ITEMDEFPOWER
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAXHPAMOUNT
+            MinValue: 280
+            MaxValue: 280
+            Chance: 5000
+          - Option: VAR_MAXSPAMOUNT
+            MinValue: 70
+            MaxValue: 70
+            Chance: 5000
+          - Option: RACE_TOLERACE_PLAYER_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_USER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_USER
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+  - Id: 601
+    Group: Group_WEAPON1_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
           - Option: DEC_SPELL_CAST_TIME
             MinValue: 1
             MaxValue: 1
-            Chance: 3000
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 602
+    Group: Group_WEAPON1_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 603
+    Group: Group_WEAPON1_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 604
+    Group: Group_WEAPON1_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 605
+    Group: Group_WEAPON1_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+  - Id: 606
+    Group: Group_WEAPON1_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 607
+    Group: Group_WEAPON1_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+  - Id: 608
+    Group: Group_WEAPON1_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+  - Id: 609
+    Group: Group_WEAPON1_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+  - Id: 610
+    Group: Group_WEAPON1_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 2000
+          - Option: VAR_STRAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 9
+            MaxValue: 9
+            Chance: 5000
+  - Id: 701
+    Group: Group_WEAPON2_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 702
+    Group: Group_WEAPON2_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 703
+    Group: Group_WEAPON2_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 704
+    Group: Group_WEAPON2_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 705
+    Group: Group_WEAPON2_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+  - Id: 706
+    Group: Group_WEAPON2_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 707
+    Group: Group_WEAPON2_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+  - Id: 708
+    Group: Group_WEAPON2_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+  - Id: 709
+    Group: Group_WEAPON2_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+  - Id: 710
+    Group: Group_WEAPON2_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 5000
+          - Option: VAR_STRAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 9
+            MaxValue: 9
+            Chance: 5000
+  - Id: 801
+    Group: Group_WEAPON3_1
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 802
+    Group: Group_WEAPON3_2
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+  - Id: 803
+    Group: Group_WEAPON3_3
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+  - Id: 804
+    Group: Group_WEAPON3_4
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+  - Id: 805
+    Group: Group_WEAPON3_5
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 3
+            MaxValue: 3
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 3
+            MaxValue: 3
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+  - Id: 806
+    Group: Group_WEAPON3_6
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 4
+            MaxValue: 4
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 4
+            MaxValue: 4
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+  - Id: 807
+    Group: Group_WEAPON3_7
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 5
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 5
+            MaxValue: 5
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 5
+            MaxValue: 5
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+  - Id: 808
+    Group: Group_WEAPON3_8
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 6
+            MaxValue: 6
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 6
+            MaxValue: 6
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 3
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 6
+            MaxValue: 6
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+  - Id: 809
+    Group: Group_WEAPON3_9
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 7
+            MaxValue: 7
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 7
+            MaxValue: 7
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 1
+            MaxValue: 1
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 9
+            MaxValue: 9
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 7
+            MaxValue: 7
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+  - Id: 810
+    Group: Group_WEAPON3_10
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_ATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: RACE_DAMAGE_HUMAN
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 8
+            MaxValue: 8
+            Chance: 2000
+          - Option: VAR_AGIAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_VITAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 8
+            MaxValue: 8
+            Chance: 1000
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 4
+            MaxValue: 4
+            Chance: 2000
+          - Option: CLASS_DAMAGE_BOSS_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: VAR_STRAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 5000
+          - Option: VAR_DEXAMOUNT
+            MinValue: 2
+            MaxValue: 2
+            Chance: 1000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 10
+            MaxValue: 10
+            Chance: 1000
+          - Option: CLASS_IGNORE_MDEF_PERCENT_NORMAL
+            MinValue: 8
+            MaxValue: 8
+            Chance: 5000
+          - Option: VAR_LUKAMOUNT
+            MinValue: 9
+            MaxValue: 9
+            Chance: 5000
