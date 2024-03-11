@@ -301,11 +301,16 @@ struct weapon_data {
 	short sp_drain_race[RC_MAX];
 	short hp_drain_class[CLASS_MAX];
 	short sp_drain_class[CLASS_MAX];
+	short magic_hp_drain_race[RC_MAX];
+	short magic_hp_drain_class[CLASS_MAX];
+	short magic_sp_drain_race[RC_MAX];
+	short magic_sp_drain_class[CLASS_MAX];
+
 
 	struct drain_data {
 		short rate; ///< Success rate 10000 = 100%
 		short per;  ///< Drain value/rate per attack
-	} hp_drain_rate, sp_drain_rate;
+	} hp_drain_rate, sp_drain_rate, magic_hp_drain_rate, magic_sp_drain_rate;
 
 	std::vector<s_item_bonus> add_dmg;
 	std::vector<s_addele2> addele2;

@@ -863,6 +863,16 @@
 	export_constant2("bAllowDice", SP_ALLOW_DICE);
 	export_constant2("bPkDefensePass", SP_PKPASS_DEFENSE);
 
+	export_constant2("bMagicHPDrainValue", SP_CHP_MAGIC_DRAIN);
+	export_constant2("bMagicHPDrainValueRace", SP_CHP_MAGIC_DRAIN_RACE);
+	export_constant2("bMagicHPDrainValueClass", SC_CHP_MAGIC_DRAIN_CLASS);
+	export_constant2("bMagicHPDrainRate", SC_CHP_MAGIC_DRAINP_RATE);
+
+	export_constant2("bMagicSPDrainValue", SP_CSP_MAGIC_DRAIN);
+	export_constant2("bMagicSPDrainValueRace", SP_CSP_MAGIC_DRAIN_RACE);
+	export_constant2("bMagicSPDrainValueClass", SC_CSP_MAGIC_DRAIN_CLASS);
+	export_constant2("bMagicSPDrainRate", SC_CSP_MAGIC_DRAINP_RATE);
+
 	/* equip indices */
 	export_constant(EQI_COMPOUND_ON);
 	export_constant(EQI_HEAD_TOP);

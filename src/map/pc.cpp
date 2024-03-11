@@ -4485,6 +4485,24 @@ void pc_bonus(map_session_data *sd,int type,int val)
 			if(sd->state.lr_flag != 2)
 				sd->bonus.itemsphealrate2 += val;
 			break;
+		case SP_CHP_MAGIC_DRAIN: // bonus bHPDrainValue,n;
+			if(!sd->state.lr_flag) {
+				sd->right_weapon.magic_hp_drain_class[CLASS_NORMAL] += val;
+				sd->right_weapon.magic_hp_drain_class[CLASS_BOSS] += val;
+			} else if(sd->state.lr_flag == 1) {
+				sd->left_weapon.magic_hp_drain_class[CLASS_NORMAL] += val;
+				sd->left_weapon.magic_hp_drain_class[CLASS_BOSS] += val;
+			}
+			break;
+		case SP_CSP_MAGIC_DRAIN: // bonus bSPDrainValue,n;
+			if(!sd->state.lr_flag) {
+				sd->right_weapon.magic_sp_drain_class[CLASS_NORMAL] += val;
+				sd->right_weapon.magic_sp_drain_class[CLASS_BOSS] += val;
+			} else if(sd->state.lr_flag == 1) {
+				sd->left_weapon.magic_sp_drain_class[CLASS_NORMAL] += val;
+				sd->left_weapon.magic_sp_drain_class[CLASS_BOSS] += val;
+			}
+			break;
 		case SP_PKPASS_DEFENSE:
 			sd->special_state.pkpass_defense = 1;
 			break;			
@@ -5130,6 +5148,66 @@ void pc_bonus2(map_session_data *sd,int type,int type2,int val)
 
 		pc_bonus_itembonus( sd->itemgroupsphealrate, type2, val, false );
 		break;
+	case SP_CHP_MAGIC_DRAIN_RACE: // bonus2 bHPDrainValueRace,r,n;
+		PC_BONUS_CHK_RACE(type2,SP_CHP_MAGIC_DRAIN_RACE);
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_hp_drain_race[type2] += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_hp_drain_race[type2] += val;
+		}
+		break;
+	case SC_CHP_MAGIC_DRAIN_CLASS: // bonus2 bHPDrainValueClass,c,n;
+		PC_BONUS_CHK_CLASS(type2,SC_CHP_MAGIC_DRAIN_CLASS);
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_hp_drain_class[type2] += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_hp_drain_class[type2] += val;
+		}
+		break;
+	case SC_CHP_MAGIC_DRAINP_RATE: // bonus2 bHPDrainRate,x,n;
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_hp_drain_rate.rate += type2;
+			sd->right_weapon.magic_hp_drain_rate.per += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_hp_drain_rate.rate += type2;
+			sd->left_weapon.magic_hp_drain_rate.per += val;
+		}
+		break;
+
+
+
+	case SP_CSP_MAGIC_DRAIN_RACE: // bonus2 bSPDrainValueRace,r,n;
+		PC_BONUS_CHK_RACE(type2,SP_CSP_MAGIC_DRAIN_RACE);
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_sp_drain_race[type2] += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_sp_drain_race[type2] += val;
+		}
+		break;
+	case SC_CSP_MAGIC_DRAIN_CLASS: // bonus2 bSPDrainValueClass,c,n;
+		PC_BONUS_CHK_CLASS(type2,SC_CSP_MAGIC_DRAIN_CLASS);
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_sp_drain_class[type2] += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_sp_drain_class[type2] += val;
+		}
+		break;
+	case SC_CSP_MAGIC_DRAINP_RATE: // bonus2 bMagicSPDrainRate,x,n;
+		if(!sd->state.lr_flag) {
+			sd->right_weapon.magic_sp_drain_rate.rate += type2;
+			sd->right_weapon.magic_sp_drain_rate.per += val;
+		}
+		else if(sd->state.lr_flag == 1) {
+			sd->left_weapon.magic_sp_drain_rate.rate += type2;
+			sd->left_weapon.magic_sp_drain_rate.per += val;
+		}
+		break;
+
 	default:
 		if (current_equip_combo_pos > 0) {
 			ShowWarning("pc_bonus2: unknown bonus type %d %d %d in a combo with item #%u\n", type, type2, val, sd->inventory_data[pc_checkequip( sd, current_equip_combo_pos )]->nameid);

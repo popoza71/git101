@@ -828,5 +828,6 @@ struct block_list* battle_getenemyarea(struct block_list *src, int x, int y, int
  * Royal Guard
  **/
 int battle_damage_area( struct block_list *bl, va_list ap);
+void battle_magic_drain(struct block_list* src, struct block_list* target, int64 rdamage, int64 ldamage);
 
 #endif /* BATTLE_HPP */
