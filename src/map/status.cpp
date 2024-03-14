@@ -476,6 +476,17 @@ bool RefineDatabase::calculate_refine_info( const struct item_data& data, e_refi
 		level = 1;
 
 		return true;
+	}else if( data.type == IT_CHARM && battle_config.charm_refine_enable){	// Charm Refine
+		refine_type = REFINE_TYPE_CHARM;
+		level = 1;
+
+		return true;
+	}else if( data.type == IT_PETEGG && battle_config.pet_refine_enable){	// Pet Refine
+		refine_type = REFINE_TYPE_PETEGG;
+		level = 1;
+
+
+		return true;
 	}else{
 		return false;
 	}
@@ -3885,20 +3896,21 @@ int status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	}
 
 
-
-	// Parse equipment
-	//for (i = 0; i < EQI_MAX; i++) {
+	//refine charms
 	for (i = 0; i < MAX_INVENTORY; i++)
-	{ //dh
+	{
 		if (!sd->inventory_data[i] || sd->inventory_data[i]->type != IT_CHARM)
 			continue;
 		if (sd->inventory_data[i]->script && sd->inventory_data[i]->elv <= sd->status.base_level && sd->inventory_data[i]->class_upper)
 		{
+			current_equip_item_index = i;
 			run_script(sd->inventory_data[i]->script, 0, sd->bl.id, 0);
-			if (!calculating) //Abort, run_script retriggered this. [Skotlex]
+			if (!calculating)
 				return 1;
 		}
 	}
+
+
 
 	// Parse equipment
 	for (i = 0; i < EQI_MAX; i++)

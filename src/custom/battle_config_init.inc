@@ -14,4 +14,7 @@
 { "party_bonus_system_enable",		&battle_config.party_bonus_system_enable,		0,	0,	1,			},
 { "party_bonus_same_map_minimum",	&battle_config.party_bonus_same_map_minimum,	1,	0,	MAX_PARTY,	},
 { "refine_pass_system_enable",		&battle_config.refine_pass_system_enable,		0,	0,	1,			},
+{ "charm_refine_enable",			&battle_config.charm_refine_enable,				0,	0,	1,			},	// Charm Refine
+{ "pet_refine_enable",				&battle_config.pet_refine_enable,				0,	0,	1,			},	// Pet Refine
+
 

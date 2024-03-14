@@ -4738,6 +4738,7 @@
 	export_constant(PETINFO_BLOCKID);
 	export_constant(PETINFO_EGGID);
 	export_constant(PETINFO_FOODID);
+	export_constant(PETINFO_REFINE);	// Pet Refine
 
 	// For backwards compatability - might be removed in the near future
 	export_constant2("PET_ID",PETINFO_ID);
@@ -10251,6 +10252,8 @@
 	export_constant(REFINE_TYPE_WEAPON);
 	export_constant(REFINE_TYPE_SHADOW_ARMOR);
 	export_constant(REFINE_TYPE_SHADOW_WEAPON);
+	export_constant(REFINE_TYPE_CHARM);	// Charm Refine
+	export_constant(REFINE_TYPE_PETEGG);	// Pet Refine
 
 	/* autospell flags */
 	export_constant(AUTOSPELL_FORCE_SELF);

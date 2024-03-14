@@ -6143,6 +6143,7 @@ enum e_additem_result pc_additem(map_session_data *sd,struct item *item,int amou
 		pc_equipitem(sd, i, id->equip);
 
 	if (id->type == IT_CHARM) status_calc_pc(sd, SCO_NONE); //dh
+
 	/* rental item check */
 	if( item->expire_time ) {
 		if( time(NULL) > item->expire_time ) {
